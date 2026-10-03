@@ -1,10 +1,10 @@
-name: ITensor WXY
+name: ITensor WXY Validation
 
 on:
   workflow_dispatch:
 
 jobs:
-  test-itensor:
+  validate:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,6 +17,65 @@ jobs:
         run: |
           julia -e 'using Pkg; Pkg.add("ITensors"); Pkg.add("ITensorMPS")'
 
-      - name: Verify ITensor
+      - name: Run WXY single-star validation
+        shell: bash
         run: |
-          julia -e 'using ITensors, ITensorMPS; println("ITENSOR_OK"); println("Julia ", VERSION)'
+          cat > /tmp/validate_wxy.jl <<'JULIA'
+          using ITensors
+          using ITensorMPS
+          using LinearAlgebra
+
+          omega = exp(2im*pi/3)
+
+          W = ComplexF64[
+            1 1 1;
+            1 omega conj(omega);
+            1 conj(omega) omega
+          ] / sqrt(3)
+
+          println("=== Fourier W checks ===")
+          println("max |W†W-I| = ", maximum(abs.(W' * W - I(3))))
+          @assert maximum(abs.(W' * W - I(3))) < 1e-12
+
+          # matter = sites 1:3
+          # gauge  = sites 4:6
+          sites = siteinds("S=1/2", 6; conserve_qns=true)
+
+          os = OpSum()
+
+          for a in 1:3, i in 1:3
+            os += -W[a,i], "S-", a, "S+", 3+i
+            os += -conj(W[a,i]), "S+", a, "S-", 3+i
+          end
+
+          H = MPO(os, sites)
+
+          # N_up = 3 sector (dimension 20)
+          state = ["Up","Up","Up","Dn","Dn","Dn"]
+          psi0 = random_mps(sites, state; linkdims=8)
+
+          energy, psi = dmrg(
+            H, psi0;
+            nsweeps=12,
+            maxdim=[16,32,64,128],
+            cutoff=1e-13,
+            noise=[1e-6,1e-7,1e-8,0.0],
+            outputlevel=1
+          )
+
+          target = -2.40309213
+          err = abs(energy-target)
+
+          println()
+          println("=== WXY SINGLE STAR RESULT ===")
+          println("DMRG E0/J      = ", energy)
+          println("reference E0/J = ", target)
+          println("|difference|   = ", err)
+          println("max bond dim   = ", maxlinkdim(psi))
+
+          @assert err < 5e-8
+
+          println("WXY_SINGLE_STAR_PASS")
+          JULIA
+
+          julia /tmp/validate_wxy.jl
