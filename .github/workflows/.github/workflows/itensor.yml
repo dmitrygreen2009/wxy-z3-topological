@@ -1,0 +1,22 @@
+name: ITensor WXY
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-itensor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install Julia
+        uses: julia-actions/setup-julia@v2
+        with:
+          version: '1.10'
+
+      - name: Install ITensor
+        run: |
+          julia -e 'using Pkg; Pkg.add("ITensors"); Pkg.add("ITensorMPS")'
+
+      - name: Verify ITensor
+        run: |
+          julia -e 'using ITensors, ITensorMPS; println("ITENSOR_OK"); println("Julia ", VERSION)'
