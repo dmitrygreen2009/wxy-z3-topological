@@ -33,7 +33,7 @@ jobs:
         run: OPENBLAS_NUM_THREADS=1 python scripts/torus_solver_audit.py
       - if: github.event_name == 'workflow_dispatch'
         run: python scripts/torus_gate.py
-      - run: julia --project=. -e 'include("test/runtests.jl"); include("test/entanglement.jl"); include("test/transfer.jl"); include("test/checkpoints.jl"); include("test/triplet.jl"); include("test/cgs_projection.jl"); include("test/infinite_entropy.jl"); include("test/infinite_observables.jl"); include("test/particle_hole.jl"); include("test/spatial_partition.jl"); include("test/variational_bound.jl")'
+      - run: julia --project=. -e 'include("test/runtests.jl"); include("test/entanglement.jl"); include("test/transfer.jl"); include("test/checkpoints.jl"); include("test/triplet.jl"); include("test/cgs_projection.jl"); include("test/infinite_entropy.jl"); include("test/infinite_observables.jl"); include("test/particle_hole.jl"); include("test/spatial_partition.jl"); include("test/variational_bound.jl"); include("test/cgs_operator_mpo.jl"); include("test/infinite_triplet_correlations.jl")'
       - if: github.event_name == 'workflow_dispatch'
         run: julia --project=. test/audit_driver.jl
       - if: github.event_name == 'workflow_dispatch'

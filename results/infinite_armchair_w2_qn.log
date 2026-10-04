@@ -127,3 +127,10 @@ The two-site subspace expansion produced a zero-norm expansion at (30, 31). This
 The two-site subspace expansion produced a zero-norm expansion at (34, 35). This is likely due to the long-range nature of the QN conserving Hamiltonian.
 The two-site subspace expansion produced a zero-norm expansion at (35, 36). This is likely due to the long-range nature of the QN conserving Hamiltonian.
 The two-site subspace expansion produced a zero-norm expansion at (36, 37). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+AUDITED VUMPS iteration=1 chi=7 residual=0.8656005261514903 seconds=239.287452375
+AUDITED VUMPS iteration=2 chi=7 residual=0.19125293866708026 seconds=245.1594305
+AUDITED VUMPS iteration=3 chi=7 residual=0.0316878700718482 seconds=231.776613083
+AUDITED VUMPS iteration=4 chi=7 residual=0.009980433622384682 seconds=277.801380375
+AUDITED VUMPS iteration=5 chi=7 residual=0.0043504007667890835 seconds=248.691614292
+AUDITED VUMPS iteration=6 chi=7 residual=0.002862818158851483 seconds=283.268211709
+AUDITED VUMPS iteration=7 chi=7 residual=0.001829284962445919 seconds=316.025742333

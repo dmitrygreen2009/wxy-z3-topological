@@ -1,0 +1,160 @@
+ERROR: LoadError: Some tests did not pass: 12 passed, 12 failed, 0 errored, 0 broken.
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:5
+Factorized microscopic circumference MPO and translated infinite support: Test Failed at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:17
+  Expression: abs(inner(reference, measured) - 1) < 1.0e-11
+   Evaluated: 1.9999999999999978 < 1.0e-11
+
+Stacktrace:
+ [1] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:672 [inlined]
+ [2] macro expansion
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:17 [inlined]
+ [3] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [4] top-level scope
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:6
+Factorized microscopic circumference MPO and translated infinite support: Test Failed at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25
+  Expression: ≈(expect(product, operator), expected, atol = 1.0e-11)
+   Evaluated: 0.4999999999999999 - 0.8660254037844388im ≈ -0.4999999999999998 + 0.8660254037844387im (atol=1.0e-11)
+
+Stacktrace:
+ [1] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:672 [inlined]
+ [2] macro expansion
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25 [inlined]
+ [3] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [4] top-level scope
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:6
+Factorized microscopic circumference MPO and translated infinite support: Test Failed at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25
+  Expression: ≈(expect(product, operator), expected, atol = 1.0e-11)
+   Evaluated: -1.0000000000000002 + 0.0im ≈ 1.0 (atol=1.0e-11)
+
+Stacktrace:
+ [1] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:672 [inlined]
+ [2] macro expansion
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25 [inlined]
+ [3] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [4] top-level scope
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:6
+Factorized microscopic circumference MPO and translated infinite support: Test Failed at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25
+  Expression: ≈(expect(product, operator), expected, atol = 1.0e-11)
+   Evaluated: 0.4999999999999999 - 0.8660254037844388im ≈ -0.4999999999999998 + 0.8660254037844387im (atol=1.0e-11)
+
+Stacktrace:
+ [1] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:672 [inlined]
+ [2] macro expansion
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25 [inlined]
+ [3] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [4] top-level scope
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:6
+Factorized microscopic circumference MPO and translated infinite support: Test Failed at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:17
+  Expression: abs(inner(reference, measured) - 1) < 1.0e-11
+   Evaluated: 1.9999999999999978 < 1.0e-11
+
+Stacktrace:
+ [1] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:672 [inlined]
+ [2] macro expansion
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:17 [inlined]
+ [3] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [4] top-level scope
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:6
+Factorized microscopic circumference MPO and translated infinite support: Test Failed at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25
+  Expression: ≈(expect(product, operator), expected, atol = 1.0e-11)
+   Evaluated: 0.49999999999999967 - 0.8660254037844384im ≈ -0.4999999999999998 + 0.8660254037844387im (atol=1.0e-11)
+
+Stacktrace:
+ [1] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:672 [inlined]
+ [2] macro expansion
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25 [inlined]
+ [3] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [4] top-level scope
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:6
+Factorized microscopic circumference MPO and translated infinite support: Test Failed at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25
+  Expression: ≈(expect(product, operator), expected, atol = 1.0e-11)
+   Evaluated: 0.49999999999999967 - 0.8660254037844385im ≈ -0.4999999999999998 + 0.8660254037844387im (atol=1.0e-11)
+
+Stacktrace:
+ [1] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:672 [inlined]
+ [2] macro expansion
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25 [inlined]
+ [3] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [4] top-level scope
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:6
+Factorized microscopic circumference MPO and translated infinite support: Test Failed at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25
+  Expression: ≈(expect(product, operator), expected, atol = 1.0e-11)
+   Evaluated: 0.49999999999999967 - 0.8660254037844384im ≈ -0.4999999999999998 + 0.8660254037844387im (atol=1.0e-11)
+
+Stacktrace:
+ [1] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:672 [inlined]
+ [2] macro expansion
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25 [inlined]
+ [3] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [4] top-level scope
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:6
+Factorized microscopic circumference MPO and translated infinite support: Test Failed at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:17
+  Expression: abs(inner(reference, measured) - 1) < 1.0e-11
+   Evaluated: 2.0000000000000013 < 1.0e-11
+
+Stacktrace:
+ [1] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:672 [inlined]
+ [2] macro expansion
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:17 [inlined]
+ [3] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [4] top-level scope
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:6
+Factorized microscopic circumference MPO and translated infinite support: Test Failed at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25
+  Expression: ≈(expect(product, operator), expected, atol = 1.0e-11)
+   Evaluated: 0.49999999999999944 - 0.8660254037844378im ≈ -0.4999999999999998 + 0.8660254037844387im (atol=1.0e-11)
+
+Stacktrace:
+ [1] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:672 [inlined]
+ [2] macro expansion
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25 [inlined]
+ [3] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [4] top-level scope
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:6
+Factorized microscopic circumference MPO and translated infinite support: Test Failed at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25
+  Expression: ≈(expect(product, operator), expected, atol = 1.0e-11)
+   Evaluated: 0.49999999999999944 - 0.866025403784438im ≈ -0.4999999999999998 + 0.8660254037844387im (atol=1.0e-11)
+
+Stacktrace:
+ [1] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:672 [inlined]
+ [2] macro expansion
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25 [inlined]
+ [3] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [4] top-level scope
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:6
+Factorized microscopic circumference MPO and translated infinite support: Test Failed at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25
+  Expression: ≈(expect(product, operator), expected, atol = 1.0e-11)
+   Evaluated: 0.49999999999999944 - 0.8660254037844378im ≈ -0.4999999999999998 + 0.8660254037844387im (atol=1.0e-11)
+
+Stacktrace:
+ [1] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:672 [inlined]
+ [2] macro expansion
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:25 [inlined]
+ [3] macro expansion
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [4] top-level scope
+   @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:6
+Test Summary:                                                            | Pass  Fail  Total     Time
+Factorized microscopic circumference MPO and translated infinite support |   12    12     24  3m07.1s

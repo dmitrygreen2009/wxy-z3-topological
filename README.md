@@ -275,3 +275,35 @@ julia --project=. scripts/noncontractible_cycles.jl results/zigzag_L4_w2_chi256_
 ```
 
 The last command measures new circumference-cycle charges and density profiles on an existing state. CGS projection labels specify initialization; verify actual charges after optimization. A winding-operator eigenstate has not automatically been identified as a topological MES. Future finite-to-infinite fit caches carry source and payload fingerprints; legacy caches with unknown input fingerprints remain explicitly labeled reusable trial states with incomplete initializer provenance.
+
+### Audited circumference charges and physical matter correlations
+
+For a saved infinite state in the explicit `star` ordering, measure winding-one
+microscopic CGS loops and connected charge-three matter correlations with:
+
+```sh
+julia --project=. test/cgs_operator_mpo.jl
+julia --project=. test/infinite_triplet_correlations.jl
+julia --project=. scripts/infinite_circumference_cycles.jl RESULT.jls
+```
+
+The operator is factored into local three-spin library MPOs, so its construction
+does not allocate a dense whole-circumference tensor. Results include complex
+loop expectations, three charge probabilities, connected matter correlations,
+source checksums, and inherited convergence errors. Use a consistent canonical
+state for these contractions; `scripts/recanonicalize_infinite.jl` rebuilds the
+same AL-defined state without optimizing it when stored centers are inconsistent.
+See `results/circumference_operator_validation.md` for the independent checks.
+Loop charge alone does not identify a minimally entangled state or certify a
+2D phase, and unconverged variational correlations remain provisional.
+
+When another running driver may reuse a completed result alias, preserve its
+exact local checkpoint and small result manifest first:
+
+```sh
+python scripts/preserve_result_snapshot.py results/RESULT.json descriptive_label
+```
+
+This verifies the input checksum and copies bytes without repeating any
+calculation. Large payloads remain git-ignored; snapshot JSON records are kept
+under `results/snapshots/`.

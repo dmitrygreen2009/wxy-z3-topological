@@ -1,0 +1,32 @@
+ERROR: LoadError: Some tests did not pass: 5 passed, 0 failed, 1 errored, 0 broken.
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:5
+Factorized microscopic circumference MPO and translated infinite support: Error During Test at /Users/dmitrygreen/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:5
+  Got exception outside of a @test
+  BoundsError: attempt to access 18-element CelledVector{Index{Int64}, typeof(translatecelltags)} at index [19:26]
+  Stacktrace:
+    [1] throw_boundserror(A::CelledVector{Index{Int64}, typeof(translatecelltags)}, I::Tuple{UnitRange{Int64}})
+      @ Base ./abstractarray.jl:737
+    [2] checkbounds
+      @ ./abstractarray.jl:702 [inlined]
+    [3] _getindex
+      @ ./multidimensional.jl:888 [inlined]
+    [4] getindex
+      @ ./abstractarray.jl:1290 [inlined]
+    [5] cgs_product_mpo(s::CelledVector{Index{Int64}, typeof(translatecelltags)}, spec::@NamedTuple{family::String, w::Int64, offset::Int64, triplets::Vector{Tuple{Int64, Int64, Int64}}, gauges::Vector{Tuple{Int64, Int64}}, first_site::Int64, last_site::Int64}; cutoff::Float64)
+      @ Main ~/Documents/wxy-z3-topological/src/cgs_operator_mpo.jl:22
+    [6] cgs_product_mpo(s::CelledVector{Index{Int64}, typeof(translatecelltags)}, spec::@NamedTuple{family::String, w::Int64, offset::Int64, triplets::Vector{Tuple{Int64, Int64, Int64}}, gauges::Vector{Tuple{Int64, Int64}}, first_site::Int64, last_site::Int64})
+      @ Main ~/Documents/wxy-z3-topological/src/cgs_operator_mpo.jl:21
+    [7] macro expansion
+      @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:23 [inlined]
+    [8] macro expansion
+      @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+    [9] top-level scope
+      @ ~/Documents/wxy-z3-topological/test/cgs_operator_mpo.jl:6
+   [10] include(mod::Module, _path::String)
+      @ Base ./Base.jl:495
+   [11] exec_options(opts::Base.JLOptions)
+      @ Base ./client.jl:323
+   [12] _start()
+      @ Base ./client.jl:557
+Test Summary:                                                            | Pass  Error  Total     Time
+Factorized microscopic circumference MPO and translated infinite support |    5      1      6  2m35.1s
