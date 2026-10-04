@@ -68,6 +68,7 @@ function finite_checkpoint_observer(lat;family,L,w,cap,seed,stage,ordering,audit
         metadata=merge(copy(audit),Dict("kind"=>"finite","family"=>family,"length"=>L,"width"=>w,
             "physical_circumference"=>lat.circumference,"physical_spins"=>lat.n,"ordering"=>ordering,
             "cap"=>cap,"bond_dimension"=>maxlinkdim(psi),"nup"=>nup,"stage"=>stage,"sweep"=>sweep,
+            "basis"=>get(get(audit,"solver_settings",Dict()),"basis","physical_spin"),
             "energy"=>real(kwargs[:energy]),"full_state_entropy"=>S,"schmidt_probabilities"=>p,
             "cutoff"=>cutoff,"noise"=>noise,"runtime_seconds"=>time()-started,
             "sweep_energies"=>energies(holder[]),"sweep_max_truncation_errors"=>truncerrors(holder[]),

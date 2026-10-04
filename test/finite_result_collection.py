@@ -12,6 +12,8 @@ class CollectionTest(unittest.TestCase):
    (root/'scan.json').write_text(json.dumps({'geometry':{'family':'armchair'},'records':[candidate]}))
    mirror=dict(candidate,nup=43)
    (root/'mirror.json').write_text(json.dumps({'source_scan':'scan.json','records':[mirror]}))
+   fixture=dict(ordinary,validation_fixture=True,nup=2)
+   (root/'optimizer_fixture.json').write_text(json.dumps(fixture))
    rows=list(finite_groups(str(root/'*.json')))
    self.assertEqual({r['nup'] for p,r,s in rows},{33,38,43})
    best=min(rows,key=lambda row:row[2][-1][1]['energy'])

@@ -1,3 +1,5 @@
+# ARCHIVAL ONLY: no distinguished microscopic diagnostic role established.
+# Excluded from core phase interpretation and convergence judgments.
 using Test
 include("../scripts/observables.jl")
 @testset "Matter triplet correlator" begin

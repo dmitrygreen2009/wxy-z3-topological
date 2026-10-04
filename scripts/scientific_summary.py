@@ -10,7 +10,7 @@ for path,r,indexed_stages in finite_groups():
     energies=q.get('sweep_energies',[])
     prior=[v for v in stages if v['cap']<q['cap']]
     finite.append(dict(file=path,record_index=index,family=r['family'],L=r['length'],w=r['width'],Ly=r['physical_circumference'],
-        ordering=r.get('ordering','axial'),nup=r.get('nup',(r['spins']+1)//2),ground_state_scope='Fixed number sector; global cylinder minimum not certified',spins=r['spins'],chi=q['cap'],actual_chi=q['maxlinkdim'],E=q['energy'],S=q['entropy'],
+        ordering=r.get('ordering','axial'),basis=r.get('basis','physical_spin'),winding_charge=r.get('winding_charge'),nup=r.get('nup',(r['spins']+1)//2),ground_state_scope='Fixed number sector; global cylinder minimum not certified',spins=r['spins'],chi=q['cap'],actual_chi=q['maxlinkdim'],E=q['energy'],S=q['entropy'],
         last_sweep_energy_change=energies[-1]-energies[-2] if len(energies)>1 else None,
         last_truncation_error=q.get('sweep_max_truncation_errors',[None])[-1],
         entropy_refinement_change=q.get('entropy_change_refinement'),

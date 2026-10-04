@@ -5,6 +5,14 @@ for path in ARGS
     started=time();meta=JSON3.read(read(replace(path,".jls"=>".json"),String),Dict{String,Any})
     family=meta["family"];L=meta["length"];w=meta["width"];ordering=get(meta,"ordering","axial")
     lat=cylinder(family,L,w;ordering);psi=load_state(path);sites=siteinds(psi)
+    settings=get(meta,"solver_settings",get(get(meta,"audit",Dict()),"solver_settings",Dict()))
+    basis=get(meta,"basis",get(settings,"basis","physical_spin"))
+    if basis=="exact_matter_charge_basis"
+        isdefined(Main,:physical_from_charge_basis) || include("../src/matter_charge_basis.jl")
+        psi=physical_from_charge_basis(psi,lat);sites=siteinds(psi)
+    else
+        @assert basis=="physical_spin" "Unrecognized finite-state basis"
+    end
     table="geometry/cgs_cycles/$(family)_L$(L)_w$(w)_$(ordering).json"
     definitions=JSON3.read(read(table,String),Dict{String,Any});records=[]
     @assert definitions["family"]==family && definitions["L"]==L && definitions["width"]==w
@@ -21,7 +29,9 @@ for path in ARGS
             "charge_purity_error"=>minimum(abs(z-cis(2pi*q/3)) for q=0:2),
             "maxlinkdim_after_apply"=>maxlinkdim(rotated)))
     end
-    density=real.(expect(psi,"Sz"));nup=(lat.n+val(flux(psi),"Sz"))÷2
+    density=real.(expect(psi,"Sz"))
+    nup=hasqns(psi) ? (lat.n+val(flux(psi),"Sz"))÷2 : Int(meta["nup"])
+    @assert abs(sum(density)+lat.n/2-nup)<1e-9
     r=Dict("source_result"=>replace(path,".jls"=>".json"),"source_checkpoint"=>resolve_checkpoint(path),
         "family"=>family,"length"=>L,"width"=>w,"ordering"=>ordering,"physical_spins"=>lat.n,
         "actual_nup"=>nup,"bond_dimension"=>maxlinkdim(psi),"geometry_cycle_definitions"=>table,

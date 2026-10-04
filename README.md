@@ -443,3 +443,23 @@ Matter-triplet measurements and their historical interpretations are retained
 in `results/archive/triplet_provenance/` and the original raw result files.
 They are excluded from core diagnostics, phase interpretation, convergence
 criteria, and entropy fits. No distinguished microscopic role has been derived.
+
+Exact winding-sector isolation uses the commuting projector penalty described
+in [results/sector_preserving_strategy.md](results/sector_preserving_strategy.md).
+The microscopic ED and MPO algebra are validated. The optimization driver is
+being checked on small cylinders before physical-filling and wider runs:
+
+```sh
+OPENBLAS_NUM_THREADS=1 python scripts/sector_penalty_ed_audit.py
+OPENBLAS_NUM_THREADS=1 python scripts/sector_particle_hole_audit.py
+julia --project=. test/cgs_sector_penalty.jl
+julia --project=. scripts/sector_preserving_dmrg.jl zigzag 2 1 2 0 64
+julia --project=. scripts/sector_preserving_dmrg.jl zigzag 2 1 2 1 64
+python scripts/analyze_sector_penalty.py
+```
+
+Replace the final optional argument with a valid saved checkpoint after the
+bond cap to resume the same number and loop sector. N_up=2 here is an algebra
+and optimizer fixture, not a proposed ground filling. The driver stores
+physical-H energies and variances separately from penalized energies. No
+sector result is automatically admitted to a topological entropy fit.

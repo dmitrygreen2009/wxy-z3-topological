@@ -1,0 +1,13 @@
+{
+  "fixture_result_files": [
+    "results/zigzag_L2_w1_Nup2_winding0_penalty_seed7252.json",
+    "results/zigzag_L2_w1_Nup2_winding0_qn_seed7254.json",
+    "results/zigzag_L2_w1_Nup2_winding1_penalty_seed7252.json",
+    "results/zigzag_L2_w1_Nup2_winding1_qn_seed7254.json",
+    "results/armchair_L2_w1_Nup2_winding0_penalty_seed7252.json",
+    "results/armchair_L2_w1_Nup2_winding0_qn_seed7254.json",
+    "results/armchair_L2_w1_Nup2_winding1_penalty_seed7252.json",
+    "results/armchair_L2_w1_Nup2_winding1_qn_seed7254.json"
+  ],
+  "scope": "Small-cylinder optimizer/basis validation at N_up=2; excluded from ground-phase entropy and convergence summaries. Raw fixture energies/entropies are summarized separately in sector_penalty_comparison.json."
+}

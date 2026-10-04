@@ -1,0 +1,6 @@
+Test Summary:                                               | Pass  Total      Time
+Exact winding-sector penalty on both microscopic geometries |   36     36  10m33.0s
+Test Summary:                                                            | Pass  Total     Time
+Factorized microscopic circumference MPO and translated infinite support |   24     24  4m42.7s
+Test Summary:                          | Pass  Total   Time
+Independent local-loop operator checks |    3      3  16.3s

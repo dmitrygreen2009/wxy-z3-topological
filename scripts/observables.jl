@@ -6,6 +6,14 @@ function measure_file(path)
     meta=JSON3.read(read(replace(path,".jls"=>".json"),String))
     family=String(meta.family);L=Int(meta.length);w=Int(meta.width)
     lat=cylinder(family,L,w;ordering=haskey(meta,:ordering) ? String(meta.ordering) : "axial");invorder=invperm(lat.order)
+    settings=get(meta,:solver_settings,get(get(meta,:audit,Dict()),"solver_settings",Dict()))
+    basis=get(meta,:basis,get(settings,"basis","physical_spin"))
+    if basis=="exact_matter_charge_basis"
+        isdefined(Main,:physical_from_charge_basis) || include("../src/matter_charge_basis.jl")
+        psi=physical_from_charge_basis(psi,lat)
+    else
+        @assert basis=="physical_spin" "Unrecognized finite-state basis"
+    end
     # Same matter species and sublattice, j=0, across the axial direction.
     vertices=[findfirst(==((t,0,0)),lat.verts) for t=0:L-1]
     selected=[invorder[3(v-1)+1] for v in vertices]

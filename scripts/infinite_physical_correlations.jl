@@ -1,3 +1,5 @@
+# ARCHIVAL ONLY: no distinguished microscopic diagnostic role established.
+# Excluded from core phase interpretation and convergence judgments.
 include("infinite.jl")
 include("../src/infinite_observables.jl")
 # New two-point contractions, using previously measured one-point data.
@@ -32,6 +34,6 @@ result=Dict("family"=>meta["family"],"width"=>w,"cell_slices"=>length(psi.AL)÷(
     "matter_charge_three_correlations"=>records,"runtime_seconds"=>time()-started,
     "audit"=>run_provenance(solver="ITensorInfiniteMPS CGS-invariant charge-three two-point contractions",
         settings=Dict("distances_cells"=>[1,2,4,8]),initialization=path,conserved_quantum_numbers=[]),
-    "interpretation"=>"Physical invariant connected correlations of this variational state; compared with its full transfer length without interpreting either as a 2D spectral gap. Previously validated one-point contractions are reused.")
+    "interpretation"=>"Archival triplet correlations only. No distinguished physical diagnostic role has been derived; excluded from phase interpretation, convergence and core transfer-mode analysis.")
 atomic_json(replace(path,".jls"=>"_physical_correlations.json"),result)
 println("Saved invariant two-point correlations for ",path);flush(stdout)

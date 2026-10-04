@@ -1,3 +1,5 @@
+# ARCHIVAL ONLY: no distinguished microscopic diagnostic role established.
+# Excluded from core phase interpretation and convergence judgments.
 using Test,ITensors,ITensorMPS,ITensorInfiniteMPS
 isdefined(Main,:infinite_triplet_pair_mpo) || include("../src/infinite_observables.jl")
 @testset "Charge-three correlations against exact product expectations" begin
