@@ -43,27 +43,28 @@ function resume_checkpoint(path,target=nothing)
         end
         return
     end
-    L=meta["length"];seed=get(meta,"random_seed",7103);ordering=meta["ordering"]
+    L=meta["length"];nup=get(meta,"nup",cld(meta["physical_spins"],2));explicit_sector=nup!=cld(meta["physical_spins"],2);seed=get(meta,"random_seed",get(meta,"seed",7103));ordering=meta["ordering"]
     lat=cylinder(family,L,w;ordering);H=MPO(lat.os,siteinds(psi))
     phase=string(get(meta,"stage",get(meta,"phase","resume")))
     settings=get(meta,"solver_settings",Dict())
-    planned=occursin("refinement",phase) ? 6 : get(settings,"sweeps_per_cap",get(settings,"stage_sweeps",get(settings,"sweeps_per_pass",8)))
+    planned=occursin("refinement",phase) ? 6 : get(settings,"sweeps_per_cap",get(settings,"stage_sweeps",get(settings,"sweeps_per_pass",get(settings,"sweeps",8))))
     remaining=max(1,planned-get(meta,"sweep",0))
     target===nothing && (target=get(settings,"target_chi",get(settings,"chi",cap)))
     audit=run_provenance(;seed,solver="ITensorMPS DMRG resume",settings=Dict("remaining_sweeps"=>remaining,"cutoff"=>get(meta,"cutoff",1e-11),"target_chi"=>target),
-        initialization=path,conserved_quantum_numbers=["total Sz"])
+        initialization=path,conserved_quantum_numbers=["total N_up=$nup"])
     cutoff=get(meta,"cutoff",1e-11)
-    obs=finite_checkpoint_observer(lat;family,L,w,cap,seed,stage="resumed",ordering,audit,cutoff,noise=0)
+    obs=finite_checkpoint_observer(lat;family,L,w,cap,seed,stage="resumed",ordering,audit,nup,cutoff,noise=0)
     started=time()
     E,psi=dmrg(H,psi;nsweeps=remaining,maxdim=cap,cutoff,noise=0,eigsolve_krylovdim=12,observer=obs,outputlevel=1)
     S,p=entropy_at(psi,lat.cut)
-    result=Dict("family"=>family,"length"=>L,"width"=>w,"spins"=>lat.n,"vertices"=>lat.nv,
+    result=Dict("family"=>family,"length"=>L,"width"=>w,"spins"=>lat.n,"vertices"=>lat.nv,"nup"=>nup,"explicit_number_sector"=>explicit_sector,
         "physical_circumference"=>lat.circumference,"ordering"=>ordering,"cut"=>lat.cut,"legs"=>lat.legs,
         "vertices_table"=>lat.verts,"mps_order"=>lat.order,"seed"=>seed,"audit"=>audit,"git_commit"=>audit["git_commit"],
         "runtime_seconds"=>time()-started,"resumed_from"=>path,"records"=>[Dict("cap"=>cap,"energy"=>E,"entropy"=>S,
         "maxlinkdim"=>maxlinkdim(psi),"schmidt_probabilities"=>p,"sweep_energies"=>energies(obs),"sweep_max_truncation_errors"=>truncerrors(obs))])
     manifest=completed_finite_checkpoint(psi,result,cap,"resumed")
     point="results/$(family)_L$(L)_w$(w)_chi$(cap)_$(ordering)_resumed.json"
+    explicit_sector && (point=replace(point,".json"=>"_Nup$(nup).json"))
     atomic_json(point,manifest)
     current=manifest["checkpoint_file"]
     for nextcap in [32,64,128,256,512,1024,2048]
@@ -71,6 +72,7 @@ function resume_checkpoint(path,target=nothing)
         continue_cylinder(current,nextcap)
         output="results/$(family)_L$(L)_w$(w)_chi$(nextcap)"*(ordering=="axial" ? "" : "_"*ordering)
         seed==7103 || (output*="_seed$(seed)")
+        explicit_sector && (output*="_Nup$(nup)")
         current=JSON3.read(read(output*".json",String),Dict{String,Any})["checkpoint_file"]
     end
 end

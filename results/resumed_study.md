@@ -118,3 +118,32 @@ armchair (gap 0.01252816539). Maximum residuals are 2.61e-13 and 5.24e-13.
 This again shows why a scalar low-eigenvalue list cannot certify degeneracies:
 the latest armchair scalar run returned only two of the four ground states.
 These tiny open-cylinder gaps are not thermodynamic gap estimates.
+
+Important number-sector audit: all-number ED on the L2 width-one armchair
+cylinder gives E=-8.037741645057586 in N_up=8 and 12, compared with
+E=-7.994302046793339 at half filling N_up=10. The zigzag N19 cylinder
+minimizes in N_up=9 and 10. Larger half-filled data remain valid sector
+measurements, but do not certify the global armchair ground state. Exact
+spin Hamiltonians are unchanged; explicit-sector drivers and convergence
+searches are required before interpreting ground-state entropy fits. See
+`number_sector_cylinder_audit.md` and the complete machine-readable scan.
+
+The explicit-sector ITensor armchair L2 N_up=8 state reaches
+E=-8.037741644994776 at cap256, achieved chi230, with full-state entropy
+1.14414415305 and variance 5.45e-10. Ten checkpoint regressions verify
+unchanged optimization, actual number labels, previous-state selection, and
+checksum rejection. Five exact particle-hole mapping tests verify energy,
+entropy, QNs, norm, and involution. The large L4 armchair scan shows partner
+solver discrepancies; exact mapped partner states reproduce energies within
+7.2e-15 and entropies within 2.3e-15. These remain variational candidates,
+not certification of the larger global minimum.
+
+The refined projected zigzag L6 width-one chi512 state has
+E=-22.37819535397228 and S=1.74861849941, with final-pass entropy change
+2.02e-8. Its six microscopic two-cycle expectations and the four L4
+expectations are all nearly one. The QN infinite width-one states instead
+have mixed nontrivial local cycle charges. An independently verified local
+S3 enhancement on the parallel-edge quotient explains why these state
+choices require particular care; see `infinite_sector_audit.md`. Neither
+the entropy drift nor an effective two-point entropy/log-xi slope establishes
+a critical two-dimensional bulk. Wider-circumference studies continue.

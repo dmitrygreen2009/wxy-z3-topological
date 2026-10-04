@@ -18,6 +18,16 @@ isdefined(Main,:cylinder) || include("../src/model.jl")
     loaded,metadata=load_valid_checkpoint(path)
     @test metadata["sweep"]==4
     @test entropy_at(loaded,3)[1]≈entropy_at(psi,3)[1] atol=1e-12
+    @test_throws AssertionError save_checkpoint(path*".invalid",psi,merge(copy(metadata),Dict("nup"=>2)))
+    @test !isfile(path*".invalid")
+    @test resolve_checkpoint(path*".previous")==path*".previous"
+    @test abs(inner(load_state(path),psi)-1)<1e-12
+    mktempdir() do directory
+        corrupt=joinpath(directory,"corrupt.jls")
+        bytes=read(path);bytes[end]=xor(bytes[end],0x01);write(corrupt,bytes)
+        cp(replace(path,".jls"=>".json"),replace(corrupt,".jls"=>".json"))
+        @test_throws AssertionError load_valid_checkpoint(corrupt)
+    end
     resumed,_=dmrg(H,loaded;nsweeps=2,maxdim=8,cutoff=1e-13,noise=0,outputlevel=0)
     @test resumed≈candidate atol=1e-12
 end

@@ -10,18 +10,18 @@ for path in sorted(glob.glob('results/*_L*_w*_chi*.json')):
     energies=q.get('sweep_energies',[])
     prior=[v for v in stages if v['cap']<q['cap']]
     finite.append(dict(file=path,family=r['family'],L=r['length'],w=r['width'],Ly=r['physical_circumference'],
-        ordering=r.get('ordering','axial'),spins=r['spins'],chi=q['cap'],actual_chi=q['maxlinkdim'],E=q['energy'],S=q['entropy'],
+        ordering=r.get('ordering','axial'),nup=r.get('nup',(r['spins']+1)//2),ground_state_scope='Fixed number sector; global cylinder minimum not certified',spins=r['spins'],chi=q['cap'],actual_chi=q['maxlinkdim'],E=q['energy'],S=q['entropy'],
         last_sweep_energy_change=energies[-1]-energies[-2] if len(energies)>1 else None,
         last_truncation_error=q.get('sweep_max_truncation_errors',[None])[-1],
         entropy_refinement_change=q.get('entropy_change_refinement'),
         entropy_change_from_lower_chi=q['entropy']-prior[-1]['entropy'] if prior else None,
         energy_change_from_lower_chi=q['energy']-prior[-1]['energy'] if prior else None))
-# One record per geometry/order: select highest achieved cap, then lowest energy.
+# One record per geometry/order: select lowest energy across sectors and seeds.
 best=[]
 keys=sorted(set((r['family'],r['L'],r['w'],r['ordering']) for r in finite))
 for key in keys:
     candidates=[r for r in finite if (r['family'],r['L'],r['w'],r['ordering'])==key]
-    best.append(sorted(candidates,key=lambda r:(-r['chi'],r['E']))[0])
+    best.append(sorted(candidates,key=lambda r:(r['E'],-r['chi']))[0])
 fits=[]
 for family,ordering,L in sorted(set((r['family'],r['ordering'],r['L']) for r in best)):
     group=[r for r in best if r['family']==family and r['ordering']==ordering and r['L']==L]

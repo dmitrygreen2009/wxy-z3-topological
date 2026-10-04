@@ -1,0 +1,3 @@
+Test Summary:                                         | Pass  Total     Time
+Finite checkpoint observer preserves DMRG and resumes |   10     10  2m31.7s
+results/armchair_L2_w1_chi256_star_Nup8.jls E=-8.037741644994778 variance=5.454126039694529e-10 entropy=1.1441441530501577

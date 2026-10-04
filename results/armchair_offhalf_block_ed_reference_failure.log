@@ -1,0 +1,7 @@
+ERROR: LoadError: AssertionError: abs(values[1] - reference) < 1.0e-9
+Stacktrace:
+ [1] cylinder_block_ed(family::SubString{String}; nup_override::Int64)
+   @ Main ~/Documents/wxy-z3-topological/scripts/cylinder_block_ed.jl:39
+ [2] top-level scope
+   @ ~/Documents/wxy-z3-topological/scripts/cylinder_block_ed.jl:58
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/cylinder_block_ed.jl:57

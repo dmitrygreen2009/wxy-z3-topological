@@ -1,6 +1,6 @@
 {
   "interpretation": "Recorded log values, not reconstructed launch settings. Runtime excludes compilation, setup and measurements.",
-  "iteration_count": 1441,
+  "iteration_count": 1827,
   "original_parent_commit": "80e59690c220e93b3241a9bf61d3eb1628da3956",
   "first_reproducible_source_commit": "5dfb1876638f8a38032c27f821174fc069849070",
   "limitations": [
@@ -10,16 +10,22 @@
     "New version-3 jobs record source fingerprints and launch metadata in checkpoint sidecars."
   ],
   "log_runtime_lower_bounds_seconds": {
+    "results/armchair_offhalf_dmrg.log": 153.515,
+    "results/armchair_offhalf_refinement.log": 110.932,
     "results/audit_driver_selfcontained.log": 3.190138167,
     "results/audit_driver_tolerance_validation.log": 3.650771834,
     "results/audit_driver_validation_refined.log": 2.1160415,
     "results/batch.log": 780.444,
-    "results/extend_study.log": 6358.866,
+    "results/cylinder_number_search.log": 2911.038,
+    "results/extend_study.log": 12180.252,
     "results/extended_batch.log": 919.167,
-    "results/infinite_armchair_warm_start.log": 4052.168443794,
-    "results/infinite_qn_continuation_audited_refined.log": 8074.484312123,
+    "results/infinite_armchair_warm_start.log": 9569.431936877,
+    "results/infinite_qn_continuation_audited_refined.log": 13827.373333456,
+    "results/infinite_zigzag_w2_warm_start.log": 5206.478610916,
     "results/multiple_seeds.log": 738.57,
     "results/ordered_batch.log": 927.942,
+    "results/particle_hole_driver_regression.log": 119.136,
+    "results/projected_L6_refinement.log": 1449.205,
     "results/projected_zigzag.log": 3870.462,
     "results/refined_batch.log": 1168.837,
     "results/resume_finite.log": 8113.624,

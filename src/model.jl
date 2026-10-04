@@ -78,7 +78,7 @@ function cylinder(family,L,w;ordering="axial")
             gaugekeys[e]=(i==2 ? t-1 : t,9j+(i==1 ? 4 : i==3 ? 5 : 9))
         end
         append!(sortkeys,gaugekeys)
-        order=sortperm(1:n,by=i->(sortkeys[i],i))
+        order=sortperm(1:n,by=i->(keys[i]<L/2 ? 0 : 1,sortkeys[i],i))
     else
         order=sortperm(1:n,by=i->(keys[i],i))
     end
@@ -96,3 +96,5 @@ end
 include("audit.jl")
 
 include("geometry.jl")
+
+include("particle_hole.jl")

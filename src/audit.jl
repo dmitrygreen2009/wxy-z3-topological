@@ -25,6 +25,10 @@ function atomic_json(path,data)
     mv(temporary,path;force=true)
 end
 function save_checkpoint(path,psi,metadata)
+    if get(metadata,"kind",nothing)=="finite" && haskey(metadata,"nup") && hasqns(psi)
+        n=length(psi)
+        @assert val(flux(psi),"Sz")==2metadata["nup"]-n "Checkpoint number sector does not match the physical MPS"
+    end
     mkpath(dirname(path));temporary=path*".tmp"
     serialize(temporary,psi)
     if isfile(path)
@@ -75,6 +79,7 @@ function finite_checkpoint_observer(lat;family,L,w,cap,seed,stage,ordering,audit
 end
 
 function resolve_checkpoint(path)
+    endswith(path,".previous") && isfile(path) && return path
     sidecar=replace(path,".jls"=>".json")
     if isfile(sidecar)
         metadata=JSON3.read(read(sidecar,String),Dict{String,Any})
@@ -85,7 +90,19 @@ function resolve_checkpoint(path)
     @assert isfile(path) "No valid checkpoint or result manifest for $path"
     path
 end
-load_state(path)=deserialize(resolve_checkpoint(path))
+function load_state(path)
+    actual=resolve_checkpoint(path)
+    sidecar=replace(actual,".jls"=>".json")
+    if isfile(sidecar)
+        metadata=JSON3.read(read(sidecar,String),Dict{String,Any})
+        if haskey(metadata,"checkpoint_sha256") && haskey(metadata,"kind")
+            return first(load_valid_checkpoint(actual))
+        end
+    end
+    # Legacy payloads and the short finite-to-infinite fitting cache lack a
+    # checksummed manifest; preserve their compatibility explicitly.
+    deserialize(actual)
+end
 function completed_finite_checkpoint(psi,result,cap,phase)
     family=result["family"];L=result["length"];w=result["width"];n=result["spins"]
     seed=get(result,"seed",7103);nup=get(result,"nup",cld(n,2));Ly=round(result["physical_circumference"];digits=5)

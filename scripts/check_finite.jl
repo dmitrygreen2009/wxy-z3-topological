@@ -1,4 +1,4 @@
-include("../src/model.jl")
+isdefined(Main,:cylinder) || include("../src/model.jl")
 for path in ARGS
     started=time();meta=JSON3.read(read(replace(path,".jls"=>".json"),String),Dict{String,Any})
     psi=load_state(path);lat=cylinder(meta["family"],meta["length"],meta["width"];ordering=get(meta,"ordering","axial"))

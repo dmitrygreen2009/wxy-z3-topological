@@ -1,0 +1,30 @@
+Reusing complete validated sector window for armchair L=4 w=1
+Reusing complete validated sector window for zigzag L=4 w=1
+After sweep 1 energy=-30.519800697528805  maxlinkdim=256 maxerr=8.71E-05 time=93.211
+After sweep 2 energy=-30.531550538404016  maxlinkdim=256 maxerr=1.61E-04 time=68.666
+After sweep 3 energy=-30.533306183938624  maxlinkdim=256 maxerr=1.74E-04 time=60.722
+After sweep 4 energy=-30.54589658268427  maxlinkdim=256 maxerr=1.69E-04 time=61.681
+After sweep 5 energy=-30.57652236047781  maxlinkdim=256 maxerr=1.58E-04 time=63.164
+After sweep 6 energy=-30.5797700745679  maxlinkdim=256 maxerr=1.60E-04 time=64.275
+After sweep 7 energy=-30.58037427613965  maxlinkdim=256 maxerr=1.60E-04 time=65.541
+After sweep 8 energy=-30.58043921128995  maxlinkdim=256 maxerr=1.60E-04 time=64.073
+After sweep 9 energy=-30.580474053301256  maxlinkdim=256 maxerr=1.60E-04 time=65.634
+After sweep 10 energy=-30.58048409477591  maxlinkdim=256 maxerr=1.60E-04 time=63.151
+After sweep 11 energy=-30.580513093046697  maxlinkdim=256 maxerr=1.60E-04 time=64.169
+After sweep 12 energy=-30.58052641659642  maxlinkdim=256 maxerr=1.60E-04 time=63.829
+After sweep 1 energy=-30.482881916731948  maxlinkdim=256 maxerr=6.32E-05 time=75.791
+After sweep 2 energy=-30.511114276849987  maxlinkdim=256 maxerr=7.26E-05 time=76.581
+After sweep 3 energy=-30.517647202762504  maxlinkdim=256 maxerr=7.25E-05 time=69.633
+After sweep 4 energy=-30.52049473476048  maxlinkdim=256 maxerr=7.33E-05 time=71.088
+After sweep 5 energy=-30.563707494541674  maxlinkdim=256 maxerr=9.54E-05 time=71.117
+After sweep 6 energy=-30.56767600963975  maxlinkdim=256 maxerr=6.35E-05 time=71.439
+After sweep 7 energy=-30.56790923945913  maxlinkdim=256 maxerr=6.41E-05 time=65.963
+After sweep 8 energy=-30.568080435802248  maxlinkdim=256 maxerr=6.44E-05 time=61.716
+After sweep 9 energy=-30.568115026020276  maxlinkdim=256 maxerr=6.44E-05 time=62.948
+After sweep 10 energy=-30.568163456057306  maxlinkdim=256 maxerr=6.46E-05 time=65.481
+After sweep 11 energy=-30.56822069996508  maxlinkdim=256 maxerr=6.46E-05 time=63.398
+After sweep 12 energy=-30.568229327554377  maxlinkdim=256 maxerr=6.48E-05 time=64.935
+After sweep 1 energy=-30.376894358347556  maxlinkdim=256 maxerr=6.60E-05 time=74.566
+After sweep 2 energy=-30.503291448594233  maxlinkdim=256 maxerr=6.20E-05 time=73.315
+After sweep 3 energy=-30.516884809643226  maxlinkdim=256 maxerr=6.82E-05 time=70.530
+After sweep 4 energy=-30.525297518450706  maxlinkdim=256 maxerr=6.85E-05 time=66.391

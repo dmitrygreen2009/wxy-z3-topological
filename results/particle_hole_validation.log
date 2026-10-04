@@ -1,0 +1,4 @@
+┌ Warning: MPS center bond dimension is less than requested (you requested 8, but in practice it is 5. This is likely due to technicalities of truncating quantum number sectors.
+└ @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/mps.jl:154
+Test Summary:                                             | Pass  Total     Time
+Exact particle-hole state mapping retains QNs and entropy |    5      5  1m29.6s

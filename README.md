@@ -211,3 +211,53 @@ a positive imaginary transfer eigenvalue component above 1e-15 even when
 the eigensolver converges at 1e-14. The driver retries seeded library Krylov
 starts on the same cached fitted state, preserving all tolerances. Every
 attempt and exact error is saved in the fit's canonicalization JSON.
+
+Refresh the additional full-state spectral, infinite-convergence, and plotting
+summaries from saved small results:
+```sh
+python scripts/entanglement_spectra.py
+python scripts/analyze_infinite.py
+MPLCONFIGDIR=/tmp/wxy-mpl python scripts/plot_study.py
+```
+`infinite_analysis.json` separates raw measurements, selected canonical
+remeasurements, bond-dimension changes, and circumference fits. The two-point
+finite-entanglement effective-central-charge slope is descriptive and cannot
+establish a critical bulk phase. Missing circumference fits indicate too few
+widths; no synthetic data are inserted.
+
+Number-sector selection is part of the ground-state audit. The complete tiny
+open-cylinder scan finds an armchair global minimum outside half filling;
+see `results/number_sector_cylinder_audit.md`. Existing half-filled armchair
+points describe fixed-number-sector states. To run a specified sector:
+```sh
+julia --project=. -e 'include("scripts/cylinders.jl"); run_cylinder("armchair",2,1,128;ordering="star",nup=8)'
+python scripts/benchmark_number_sectors.py --cylinders
+```
+Explicit-sector result names include `_Nup8` and checkpoints verify the MPS
+quantum-number flux. Continuation and explicit checkpoint resume retain the
+sector. The default `--latest` resume chooses the closest half-filled sector;
+use an explicit checkpoint path for a different sector.
+
+Independent exact symmetry audits:
+```sh
+python scripts/parallel_edge_symmetry.py
+julia --project=. test/particle_hole.jl
+julia --project=. scripts/particle_hole_audit.jl results/armchair_L4_w1_chi256_star_charge_sectors_global_audit.json
+```
+`particle_hole_mps` implements the exact antiunitary product of physical spin
+flips and complex conjugation using library tensors, preserves QNs, and maps
+N_up to N-N_up without changing energy or spatial entropy. This supplies
+partner-sector starting states and exposes independent solver discrepancies.
+The narrow zigzag parallel-edge graph has additional local S3 symmetry; see
+`results/infinite_sector_audit.md`. Its mixed-cycle infinite measurements
+must not be pooled with the finite projected q=0 states as one sector.
+
+The star ordering sorts the declared physical left/right spatial sets before
+its local star order, so odd as well as even finite lengths have the correct
+individual-site entropy partition. Existing even-length production orders
+are unchanged. The finite-to-infinite bulk-slice fitter requires an even
+length of at least four; this is checked explicitly. A permanent regression
+compares both orderings and physical spatial membership on 24 geometries.
+Checksummed manifests are verified on state loads and continuations; explicit
+`.previous` payloads retain their own state instead of following a newer
+manifest. Legacy unmanifested fitting caches remain explicitly identifiable.

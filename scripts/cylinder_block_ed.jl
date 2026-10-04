@@ -2,11 +2,11 @@
 # Block starts retain degeneracies that scalar Lanczos may omit.
 using LinearAlgebra, SparseArrays, Random, KrylovKit, JSON3, SHA
 BLAS.set_num_threads(1)
-function cylinder_block_ed(family)
+function cylinder_block_ed(family;nup_override=nothing)
     started=time();seed=7115;Random.seed!(seed)
     path="geometry/$(family)_L2_w1_star.json"
     geometry=JSON3.read(read(path,String),Dict{String,Any})
-    n=geometry["physical_spins"];nup=cld(n,2)
+    n=geometry["physical_spins"];nup=nup_override===nothing ? cld(n,2) : nup_override
     @assert n<=22
     basis=[b for b=0:(2^n-1) if count_ones(b)==nup]
     lookup=Dict(b=>k for (k,b) in enumerate(basis))
@@ -35,7 +35,12 @@ function cylinder_block_ed(family)
     residuals=[norm(H*v-values[k]*v) for (k,v) in enumerate(vectors)]
     gram=norm(hcat(vectors...)'*hcat(vectors...)-I)
     @assert info.converged>=16 && maximum(residuals)<1e-9 && gram<1e-8
-    reference=JSON3.read(read("results/small_cylinders_ed.json",String))[family]["energies"][1]
+    reference=if nup_override===nothing
+        JSON3.read(read("results/small_cylinders_ed.json",String))[family]["energies"][1]
+    else
+        scan=JSON3.read(read("results/small_cylinder_number_sectors.json",String))[family*"_L2_w1"]["points"]
+        only(p["energy"] for p in scan if p["nup"]==nup)
+    end
     @assert abs(values[1]-reference)<1e-9
     ground_count=count(e->abs(e-values[1])<1e-9,values)
     @assert ground_count<16
@@ -50,7 +55,10 @@ function cylinder_block_ed(family)
         "geometry_file"=>path,"geometry_sha256"=>bytes2hex(sha256(read(path))),
         "source_sha256"=>bytes2hex(sha256(read(@__FILE__))),
         "interpretation"=>"Finite open-cylinder spectrum only; last returned excited cluster may be incomplete. No thermodynamic phase inference.")
-    open("results/$(family)_L2_w1_block_ed.json","w") do io;JSON3.write(io,result);end
+    sector_suffix=nup_override===nothing ? "" : "_Nup$(nup)"
+    open("results/$(family)_L2_w1$(sector_suffix)_block_ed.json","w") do io;JSON3.write(io,result);end
     println(family," ground multiplicity=",ground_count," gap=",result["gap_within_number_sector"]," max residual=",maximum(residuals));flush(stdout)
 end
-for family in ARGS; cylinder_block_ed(family);GC.gc();end
+for argument in ARGS
+    parts=split(argument,":");cylinder_block_ed(parts[1];nup_override=length(parts)>1 ? parse(Int,parts[2]) : nothing);GC.gc()
+end

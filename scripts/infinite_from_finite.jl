@@ -1,8 +1,9 @@
 include("infinite.jl")
-function infinite_from_finite(path;initial_chi=16,target_chi=64)
+function infinite_from_finite(path;initial_chi=16,target_chi=64,tag="_finite_seed_star")
     Random.seed!(7103)
     meta=JSON3.read(read(replace(path,".jls"=>".json"),String),Dict{String,Any})
     family=meta["family"];w=meta["width"];L=meta["length"]
+    @assert L>=4 && iseven(L) "Bulk two-slice warm-start indexing requires an even length of at least four"
     @assert get(meta,"ordering","axial")=="star"
     lat=cylinder(family,L,w;ordering="star");n=18w
     finite=dense(load_state(path))
@@ -51,9 +52,9 @@ function infinite_from_finite(path;initial_chi=16,target_chi=64)
     for (iteration,cap) in enumerate(unique([initial_chi,min(32,target_chi),target_chi]))
         estimate_memory(psi,cap;label="$(family) infinite w$(w) expansion")
         psi=subspace_expansion(psi,H;cutoff=1e-10,maxdim=cap)
-        psi=audited_vumps(H,psi;family,w,cap,tag="_finite_seed_star",ordering="star",tol=1e-7,maxiter=40,
+        psi=audited_vumps(H,psi;family,w,cap,tag,ordering="star",tol=1e-7,maxiter=40,
             solver_tol=x->1e-10)
-        measure_infinite(psi,H,family,w,cap,iteration;tag="_finite_seed_star",ordering="star")
+        measure_infinite(psi,H,family,w,cap,iteration;tag,ordering="star")
     end
 end
 if abspath(PROGRAM_FILE)==@__FILE__;infinite_from_finite(ARGS[1]);end
