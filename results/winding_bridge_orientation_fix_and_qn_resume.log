@@ -1,0 +1,26 @@
+Test Summary:                                               | Pass  Total     Time
+Existing physical MPS to exact winding-QN checkpoint bridge |   36     36  8m58.8s
+After sweep 1 energy=-2.73463474701433  maxlinkdim=24 maxerr=9.42E-14 time=91.214
+After sweep 2 energy=-2.734634747094663  maxlinkdim=25 maxerr=9.83E-14 time=13.201
+After sweep 3 energy=-2.734634747094661  maxlinkdim=24 maxerr=3.30E-14 time=3.782
+After sweep 4 energy=-2.7346347470946615  maxlinkdim=7 maxerr=3.98E-25 time=5.716
+After sweep 5 energy=-2.7346347470946584  maxlinkdim=7 maxerr=9.11E-27 time=1.323
+After sweep 6 energy=-2.7346347470946593  maxlinkdim=7 maxerr=5.15E-33 time=1.626
+After sweep 7 energy=-2.734634747094661  maxlinkdim=7 maxerr=4.34E-34 time=0.324
+After sweep 8 energy=-2.7346347470946606  maxlinkdim=7 maxerr=2.49E-36 time=0.688
+After sweep 9 energy=-2.7346347470946606  maxlinkdim=7 maxerr=2.78E-36 time=0.231
+After sweep 10 energy=-2.7346347470946615  maxlinkdim=7 maxerr=4.49E-36 time=0.205
+After sweep 11 energy=-2.734634747094662  maxlinkdim=7 maxerr=3.25E-36 time=0.970
+After sweep 12 energy=-2.7346347470946575  maxlinkdim=7 maxerr=6.63E-36 time=0.195
+After sweep 1 energy=-2.7346347470946624  maxlinkdim=25 maxerr=2.84E-14 time=2.352
+After sweep 2 energy=-2.734634747094659  maxlinkdim=25 maxerr=7.57E-14 time=2.119
+After sweep 3 energy=-2.7346347470946615  maxlinkdim=24 maxerr=3.30E-14 time=0.963
+After sweep 4 energy=-2.734634747094658  maxlinkdim=7 maxerr=1.64E-33 time=0.378
+After sweep 5 energy=-2.7346347470946615  maxlinkdim=7 maxerr=6.16E-36 time=0.489
+After sweep 6 energy=-2.734634747094662  maxlinkdim=7 maxerr=3.74E-36 time=0.373
+After sweep 7 energy=-2.734634747094661  maxlinkdim=7 maxerr=1.04E-35 time=0.218
+After sweep 8 energy=-2.73463474709466  maxlinkdim=7 maxerr=1.21E-36 time=1.143
+After sweep 9 energy=-2.734634747094662  maxlinkdim=7 maxerr=3.38E-36 time=0.179
+After sweep 10 energy=-2.7346347470946633  maxlinkdim=7 maxerr=8.32E-36 time=0.272
+After sweep 11 energy=-2.7346347470946633  maxlinkdim=7 maxerr=4.29E-36 time=0.748
+After sweep 12 energy=-2.7346347470946615  maxlinkdim=7 maxerr=1.74E-36 time=0.165

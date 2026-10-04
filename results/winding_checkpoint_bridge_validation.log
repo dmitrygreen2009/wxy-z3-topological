@@ -1,0 +1,36 @@
+ERROR: LoadError: Some tests did not pass: 0 passed, 0 failed, 1 errored, 0 broken.
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/test/winding_checkpoint_bridge.jl:5
+Existing physical MPS to exact winding-QN checkpoint bridge: Error During Test at /Users/dmitrygreen/Documents/wxy-z3-topological/test/winding_checkpoint_bridge.jl:5
+  Got exception outside of a @test
+  AssertionError: Normalize operator link orientation before lifting
+  Stacktrace:
+    [1] lifted_winding_link(old::Index{Vector{Pair{QN, Int64}}}, j::Int64)
+      @ Main ~/Documents/wxy-z3-topological/src/winding_checkpoint_bridge.jl:25
+    [2] #108
+      @ ./array.jl:0 [inlined]
+    [3] iterate
+      @ ./generator.jl:47 [inlined]
+    [4] collect_to!
+      @ ./array.jl:892 [inlined]
+    [5] collect_to_with_first!
+      @ ./array.jl:870 [inlined]
+    [6] collect(itr::Base.Generator{Base.Iterators.Enumerate{Vector{Index{Vector{Pair{QN, Int64}}}}}, var"#108#113"})
+      @ Base ./array.jl:844
+    [7] winding_basis_projector_mpo(lat::@NamedTuple{os::Sum{Scaled{ComplexF64, Prod{Op}}}, n::Int64, nv::Int64, legs::Vector{Vector{Int64}}, verts::Vector{Tuple{Int64, Int64, Int64}}, order::Vector{Int64}, cut::Int64, circumference::Float64}, oldsites::Vector{Index{Vector{Pair{QN, Int64}}}}, p::Vector{Int64}; charge::Int64, cutoff::Float64)
+      @ Main ~/Documents/wxy-z3-topological/src/winding_checkpoint_bridge.jl:45
+    [8] bridge_physical_checkpoint(psi::MPS, lat::@NamedTuple{os::Sum{Scaled{ComplexF64, Prod{Op}}}, n::Int64, nv::Int64, legs::Vector{Vector{Int64}}, verts::Vector{Tuple{Int64, Int64, Int64}}, order::Vector{Int64}, cut::Int64, circumference::Float64}, p::Vector{Int64}; charge::Int64, cutoff::Float64, maxdim::Int64)
+      @ Main ~/Documents/wxy-z3-topological/src/winding_checkpoint_bridge.jl:75
+    [9] macro expansion
+      @ ~/Documents/wxy-z3-topological/test/winding_checkpoint_bridge.jl:15 [inlined]
+   [10] macro expansion
+      @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+   [11] top-level scope
+      @ ~/Documents/wxy-z3-topological/test/winding_checkpoint_bridge.jl:6
+   [12] include(mod::Module, _path::String)
+      @ Base ./Base.jl:495
+   [13] exec_options(opts::Base.JLOptions)
+      @ Base ./client.jl:323
+   [14] _start()
+      @ Base ./client.jl:557
+Test Summary:                                               | Error  Total     Time
+Existing physical MPS to exact winding-QN checkpoint bridge |     1      1  5m03.1s

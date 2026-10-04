@@ -40,7 +40,7 @@ Independent audits:
   and multiplicities are saved. This validates the representation, not filling.
 - `test/matter_charge_basis.jl`: production-library QNs, original physical-H
   energies, microscopic loop eigenvalues, physical filling, and invariance
-  of the full-state spatial Schmidt entropy. Execution is pending.
+  of the full-state spatial Schmidt entropy. All 42 checks passed.
 
 The unitary acts within each complete star. All audited spatial slice cuts
 keep its three matter spins together, so the full-state spatial entropy is
@@ -63,3 +63,43 @@ proven to fix a single winding eigenvalue: it can instead fix a product of
 several translated generators. No such periodic charge is silently treated
 as a definite global flux/MES. Resolve this before extending the direct-QN
 construction to infinite sector calculations.
+
+A proposed checkpoint bridge avoids restarting wider states or forming their
+full wavefunctions. `src/winding_checkpoint_bridge.jl` uses a library-decomposed
+local B† MPO and a three-state virtual charge accumulator to implement the exact
+operator P_q B† between original U1 site indices and the new U1 x Z3 site
+indices. The library performs MPO application and compression. Projection
+weight, number preservation, cutoff and source sector must be recorded.
+All 36 checks in `test/winding_checkpoint_bridge.jl` passed, including independent physical-basis projector weights, state overlaps, number preservation and energy equivalence for both families and all three winding charges. Original states remain immutable; conversion produces a new branch.
+
+The first direct optimizer attempt passed all 42 physical-library basis tests,
+then reached E=-2.6131259237 in a restricted N2,q0 variational branch and failed
+with KrylovKit's LAPACK STEGR `LAPACKException(22)` during a local solve. This
+is not a failed Hamiltonian/basis validation or a ground-energy result. Its
+latest valid checkpoint is preserved by an immutable byte-copy snapshot.
+The next continuation uses a smaller Krylov subspace (12), more restarts (30),
+and a recorded density-matrix noise schedule [1e-5,1e-6,1e-7,0] to expand the
+allowed QN variational support. The requested local tolerance 1e-13 and final
+convergence criteria remain unchanged. All updates still preserve physical
+number and the target winding QN. The known exact-sector physical states also
+provide a checkpoint-bridge initialization route if the product/random QN
+initializer remains trapped.
+
+The resumed direct N2,q0 run now reaches the independent ED minimum
+-2.73463474709466, full-state S=0.50662555964812, energy variance within
+roundoff and winding-purity error zero. No requested tolerance was loosened.
+The checkpoint bridge passed all 36 tests after correcting signed number-flow
+labels for library MPO links pointing In. The correction concerns the bridge
+operator, not the microscopic Hamiltonian or earlier energy optimizations.
+
+Known small-sector ED energies are now an explicit optimizer acceptance gate,
+so a stationary excited branch cannot be labeled a passed ground candidate.
+With the recorded startup noise schedule, truncation acceptance uses the last
+four zero-noise sweeps at the same 1e-10 threshold; all noisy and zero-noise
+truncation errors remain saved. The physical-filling optimization has not yet
+been certified. Additional-cycle ED resolves different subblocks, but no
+saved-state extra-cycle charge is inferred from its energy alone.
+
+The bridged armchair N2,q0 continuation reproduced its exact ED ground energy and zero energy/loop variance at every stage, but repeated density-matrix noise rotated its four-dimensional ground space. Its entropy changed by 0.0010–0.0014 between stages, so the unchanged 1e-5 entropy criterion correctly rejected convergence. This is preserved in `direct_winding_qn_bridged_fixtures_and_physical_sectors.log` and the individual result JSON, rather than labeled a converged entropy. Continuation now uses zero noise on that saved state. For subsequent new starts, expansion noise is applied only in the first stage; later stages have zero noise. This separates initialization from degenerate-state stability without relaxing acceptance thresholds. A stable chosen state is still not a proved MES.
+
+An independent eight-state matrix identity also gives a real closed form for the rotated Hamiltonian, recorded in `real_charge_hamiltonian_audit.json`. The proposed library MPO implementation is not used in production until its equivalence checks pass. All running optimizations retain their loaded implementation.

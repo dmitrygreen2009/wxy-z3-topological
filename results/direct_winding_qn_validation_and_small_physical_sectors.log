@@ -1,0 +1,61 @@
+Test Summary:                                          | Pass  Total     Time
+Direct winding QN is an exact microscopic basis change |   42     42  9m04.9s
+After sweep 1 energy=-2.6083899289417625  maxlinkdim=6 maxerr=0.00E+00 time=91.334
+After sweep 2 energy=-2.6131247529037496  maxlinkdim=6 maxerr=9.19E-14 time=9.949
+After sweep 3 energy=-2.613125923655611  maxlinkdim=5 maxerr=3.85E-15 time=5.347
+┌ Warning: MPS center bond dimension is less than requested (you requested 3, but in practice it is 1. This is likely due to technicalities of truncating quantum number sectors.
+└ @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/mps.jl:154
+┌ Warning: MPS center bond dimension is less than requested (you requested 3, but in practice it is 1. This is likely due to technicalities of truncating quantum number sectors.
+└ @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/mps.jl:154
+┌ Warning: MPS center bond dimension is less than requested (you requested 3, but in practice it is 1. This is likely due to technicalities of truncating quantum number sectors.
+└ @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/mps.jl:154
+┌ Warning: MPS center bond dimension is less than requested (you requested 3, but in practice it is 1. This is likely due to technicalities of truncating quantum number sectors.
+└ @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/mps.jl:154
+┌ Warning: MPS center bond dimension is less than requested (you requested 3, but in practice it is 1. This is likely due to technicalities of truncating quantum number sectors.
+└ @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/mps.jl:154
+┌ Warning: MPS center bond dimension is less than requested (you requested 3, but in practice it is 1. This is likely due to technicalities of truncating quantum number sectors.
+└ @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/mps.jl:154
+┌ Warning: MPS center bond dimension is less than requested (you requested 4, but in practice it is 1. This is likely due to technicalities of truncating quantum number sectors.
+└ @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/mps.jl:154
+ERROR: LAPACKException(22)
+Stacktrace:
+  [1] chklapackerror
+    @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/LinearAlgebra/src/lapack.jl:40 [inlined]
+  [2] stegr!(dv::SubArray{Float64, 1, Vector{Float64}, Tuple{UnitRange{Int64}}, true}, ev::SubArray{Float64, 1, Vector{Float64}, Tuple{UnitRange{Int64}}, true}, Z::SubArray{Float64, 2, Matrix{Float64}, Tuple{UnitRange{Int64}, UnitRange{Int64}}, false})
+    @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/dense/linalg.jl:447
+  [3] tridiageigh!(A::SymTridiagonal{Float64, SubArray{Float64, 1, Vector{Float64}, Tuple{UnitRange{Int64}}, true}}, Z::SubArray{Float64, 2, Matrix{Float64}, Tuple{UnitRange{Int64}, UnitRange{Int64}}, false})
+    @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/dense/linalg.jl:114
+  [4] eigsolve(A::ProjMPO, x₀::ITensor, howmany::Int64, which::Symbol, alg::KrylovKit.Lanczos{KrylovKit.ModifiedGramSchmidt2, Float64}; alg_rrule::KrylovKit.Arnoldi{KrylovKit.ModifiedGramSchmidt2, Float64})
+    @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/lanczos.jl:59
+  [5] eigsolve
+    @ /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/lanczos.jl:1 [inlined]
+  [6] #eigsolve#59
+    @ /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/eigsolve.jl:235 [inlined]
+  [7] eigsolve
+    @ /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/eigsolve.jl:209 [inlined]
+  [8] macro expansion
+    @ /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:238 [inlined]
+  [9] macro expansion
+    @ /private/tmp/wxy-julia-depot/packages/TimerOutputs/0Wski/src/macros.jl:257 [inlined]
+ [10] macro expansion
+    @ /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:237 [inlined]
+ [11] macro expansion
+    @ ./timing.jl:395 [inlined]
+ [12] dmrg(PH::ProjMPO, psi0::MPS, sweeps::Sweeps; which_decomp::Nothing, svd_alg::Nothing, observer::LoggedObserver, outputlevel::Int64, write_when_maxdim_exceeds::Nothing, write_path::String, eigsolve_tol::Float64, eigsolve_krylovdim::Int64, eigsolve_maxiter::Int64, eigsolve_verbosity::Int64, eigsolve_which_eigenvalue::Symbol, ishermitian::Bool)
+    @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:205
+ [13] dmrg
+    @ /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:157 [inlined]
+ [14] #dmrg#515
+    @ /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:28 [inlined]
+ [15] dmrg
+    @ /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:21 [inlined]
+ [16] #dmrg#521
+    @ /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:396 [inlined]
+ [17] dmrg
+    @ /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:386 [inlined]
+ [18] run_winding_qn(family::String, L::Int64, w::Int64, nup::Int64, charge::Int64; seed::Int64, maxcap::Int64, resume::Nothing)
+    @ Main ~/Documents/wxy-z3-topological/scripts/winding_qn_dmrg.jl:37
+ [19] run_winding_qn
+    @ ~/Documents/wxy-z3-topological/scripts/winding_qn_dmrg.jl:5 [inlined]
+ [20] top-level scope
+    @ ./none:1

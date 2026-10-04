@@ -463,3 +463,14 @@ bond cap to resume the same number and loop sector. N_up=2 here is an algebra
 and optimizer fixture, not a proposed ground filling. The driver stores
 physical-H energies and variances separately from penalized energies. No
 sector result is automatically admitted to a topological entropy fit.
+
+Direct sector preservation is now available in the exact, number-preserving eight-state matter basis; every physical site still has dimension two. See [the direct-QN audit](results/direct_winding_qn_strategy.md). The 42 basis checks and 36 checkpoint-bridge checks have passed; finite optimizations retain physical number and microscopic winding charge throughout every update. Infinite repeated-charge blocks are not yet identified with an individual winding sector.
+
+```sh
+julia --project=. test/matter_charge_basis.jl
+julia --project=. test/winding_checkpoint_bridge.jl
+julia --project=. scripts/convert_winding_checkpoint.jl PHYSICAL_RESULT.jls 0
+julia --project=. scripts/winding_qn_dmrg.jl zigzag 2 1 9 0 512 CONVERTED_CHECKPOINT.jls
+```
+
+The converter writes a new projected branch and verifies that the original checkpoint SHA is unchanged. Its JSON records projection weight, number, basis, winding weights and conversion tolerances. The optimizer records both QNs, measured loop expectation/variance, energy variance, full-state Schmidt spectrum, convergence history, launch commit and executed driver SHA. Startup noise expands the allowed QN support; subsequent stages use zero noise to avoid artificial motion within degenerate ground spaces. Low-number fixtures are excluded from phase inference and TEE fits.
