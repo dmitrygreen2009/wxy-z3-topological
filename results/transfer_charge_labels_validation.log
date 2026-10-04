@@ -1,0 +1,40 @@
+ERROR: LoadError: Some tests did not pass: 0 passed, 0 failed, 1 errored, 0 broken.
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/test/transfer_charge_labels.jl:3
+Transfer vector charge labels in the original QN basis: Error During Test at /Users/dmitrygreen/Documents/wxy-z3-topological/test/transfer_charge_labels.jl:3
+  Got exception outside of a @test
+  MethodError: no method matching dense(::Index{Vector{Pair{QN, Int64}}})
+  
+  Closest candidates are:
+    dense(!Matched::ITensor)
+     @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/itensor.jl:643
+    dense(!Matched::Type{<:NDTensors.DiagBlockSparseTensor{ElT, N, IndsT, StoreT}}) where {ElT, N, StoreT<:NDTensors.DiagBlockSparse, IndsT}
+     @ NDTensors /private/tmp/wxy-julia-depot/packages/NDTensors/9ENPn/src/blocksparse/diagblocksparse.jl:452
+    dense(!Matched::Type{<:NDTensors.DiagTensor{ElT, N, IndsT, StoreT}}) where {ElT, N, StoreT<:NDTensors.Diag, IndsT}
+     @ NDTensors /private/tmp/wxy-julia-depot/packages/NDTensors/9ENPn/src/diag/diagtensor.jl:116
+    ...
+  
+  Stacktrace:
+    [1] _broadcast_getindex_evalf
+      @ ./broadcast.jl:709 [inlined]
+    [2] _broadcast_getindex
+      @ ./broadcast.jl:682 [inlined]
+    [3] getindex
+      @ ./broadcast.jl:636 [inlined]
+    [4] copy
+      @ ./broadcast.jl:942 [inlined]
+    [5] materialize
+      @ ./broadcast.jl:903 [inlined]
+    [6] macro expansion
+      @ ~/Documents/wxy-z3-topological/test/transfer_charge_labels.jl:5 [inlined]
+    [7] macro expansion
+      @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+    [8] top-level scope
+      @ ~/Documents/wxy-z3-topological/test/transfer_charge_labels.jl:4
+    [9] include(mod::Module, _path::String)
+      @ Base ./Base.jl:495
+   [10] exec_options(opts::Base.JLOptions)
+      @ Base ./client.jl:323
+   [11] _start()
+      @ Base ./client.jl:557
+Test Summary:                                          | Error  Total  Time
+Transfer vector charge labels in the original QN basis |     1      1  4.0s

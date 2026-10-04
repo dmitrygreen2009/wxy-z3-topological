@@ -18,10 +18,14 @@ include("../scripts/infinite.jl")
     fresh()=deserialize(IOBuffer(payload))
     s=siteinds(only,p);H=InfiniteSum{MPO}(infinite_opsum("zigzag",1),s)
     Random.seed!(8131)
-    reference=tdvp(H,fresh();time_step=-Inf,maxiter=1,tol=1e-7,solver_tol=x->1e-10,outputlevel=0)
+    reference=tdvp(H,fresh();time_step=-Inf,maxiter=1,tol=1e-7,solver_tol=x->1e-10,outputlevel=0,multisite_update_alg="parallel")
     Random.seed!(8131)
     candidate=audited_vumps(H,fresh();family="zigzag",w=1,cap=2,maxiter=1,
-        tol=1e-7,solver_tol=x->1e-10,tag="_driver_regression",seed=8131)
+        tol=1e-7,solver_tol=x->1e-10,tag="_driver_parallel_local_audit",seed=8131,update_algorithm="parallel")
     @test real(sum(expect(candidate,H)))≈real(sum(expect(reference,H))) atol=1e-11
     @test maximum(abs(norm(candidate.C[j])-norm(reference.C[j])) for j=1:18)<1e-12
+    raw=JSON3.read(last(readlines("results/infinite_zigzag_w1_chi2_driver_parallel_local_audit_local_eigensolves.jsonl")),Dict{String,Any})["solves"]
+    @test length(raw)==36
+    @test all(r["requested_tolerance"]==1e-10 for r in raw)
+    @test all(haskey(r,"true_eigenpair_residual") && haskey(r,"converged_eigenpairs") for r in raw)
 end

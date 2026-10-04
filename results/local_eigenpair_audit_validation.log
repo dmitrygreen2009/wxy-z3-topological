@@ -1,0 +1,7 @@
+┌ Warning: Lanczos eigsolve stopped without convergence after 1 iterations:
+│ * 0 eigenvalues converged
+│ * norm of residuals = (5.47e+00)
+│ * number of operations = 2
+└ @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/lanczos.jl:142
+Test Summary:                                                   | Pass  Total  Time
+Local eigenpair evidence detects achieved and missed tolerances |    6      6  7.7s

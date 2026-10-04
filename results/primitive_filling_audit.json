@@ -1,0 +1,19 @@
+{
+  "validation": "passed",
+  "primitive_physical_spins": 9,
+  "half_filling_per_cell": "9/2",
+  "D_Z3_allowed_U1_fractional_charges": [
+    "0",
+    "1/3",
+    "2/3"
+  ],
+  "conditional_half_filling_incompatibility": true,
+  "assumptions": [
+    "gapped phase",
+    "unbroken physical U1",
+    "unbroken primitive translations",
+    "ordinary nonpermuting background-anyon SET formulation"
+  ],
+  "phase_conclusion": "No unconditional conclusion about the microscopic ground state.",
+  "numerical_calculations_repeated": false
+}

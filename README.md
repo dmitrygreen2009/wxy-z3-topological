@@ -369,3 +369,15 @@ QN flux therefore does not imply half filling. Output records the physical
 number background explicitly and uses `rho4of9` in checkpoint names. These
 are alternative variational candidates, not a certificate of the globally
 preferred filling or a two-dimensional phase.
+
+For an original QN infinite-state payload, transfer eigenvectors can also be
+classified by their virtual physical-number difference:
+
+```sh
+julia --project=. test/transfer_charge_labels.jl
+julia --project=. scripts/infinite_transfer_charge_audit.jl RESULT.jls
+```
+
+The dense eigenvector basis is matched to the original site and bond QN labels.
+Degenerate vectors may mix charge blocks, so the output saves all weights.
+This identifies U1 transfer channels, not microscopic CGS charges or a gap.

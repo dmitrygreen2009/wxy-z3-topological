@@ -20,6 +20,7 @@ jobs:
       - run: OPENBLAS_NUM_THREADS=1 python scripts/ed.py
       - run: python test/geometry_records.py
       - run: python test/finite_result_collection.py
+      - run: python scripts/primitive_filling_audit.py
       - run: python scripts/strategy_geometry_audit.py
       - run: python scripts/export_contractible_cycles.py
       - run: OPENBLAS_NUM_THREADS=1 python scripts/cgs_general_audit.py
@@ -35,7 +36,7 @@ jobs:
         run: OPENBLAS_NUM_THREADS=1 python scripts/torus_solver_audit.py
       - if: github.event_name == 'workflow_dispatch'
         run: python scripts/torus_gate.py
-      - run: julia --project=. -e 'include("test/runtests.jl"); include("test/entanglement.jl"); include("test/transfer.jl"); include("test/checkpoints.jl"); include("test/triplet.jl"); include("test/cgs_projection.jl"); include("test/infinite_entropy.jl"); include("test/infinite_observables.jl"); include("test/particle_hole.jl"); include("test/spatial_partition.jl"); include("test/variational_bound.jl"); include("test/cgs_operator_mpo.jl"); include("test/infinite_triplet_correlations.jl"); include("test/contractible_operator_mpo.jl"); include("test/cgs_pair_operator_mpo.jl"); include("test/infinite_block_initializer.jl"); include("test/infinite_number_background.jl")'
+      - run: julia --project=. -e 'include("test/runtests.jl"); include("test/entanglement.jl"); include("test/transfer.jl"); include("test/checkpoints.jl"); include("test/triplet.jl"); include("test/cgs_projection.jl"); include("test/infinite_entropy.jl"); include("test/infinite_observables.jl"); include("test/particle_hole.jl"); include("test/spatial_partition.jl"); include("test/variational_bound.jl"); include("test/cgs_operator_mpo.jl"); include("test/infinite_triplet_correlations.jl"); include("test/contractible_operator_mpo.jl"); include("test/cgs_pair_operator_mpo.jl"); include("test/infinite_block_initializer.jl"); include("test/infinite_number_background.jl"); include("test/transfer_charge_labels.jl"); include("test/local_eigenpair_audit.jl"); include("test/parallel_vumps.jl")'
       - if: github.event_name == 'workflow_dispatch'
         run: julia --project=. test/audit_driver.jl
       - if: github.event_name == 'workflow_dispatch'

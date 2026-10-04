@@ -1,0 +1,134 @@
+{
+  "family": "armchair",
+  "width": 2,
+  "length": 4,
+  "records": [
+    {
+      "nup": 31,
+      "source_file": "results/checkpoints/armchair_w2_L4_N76_chi256_Nup31_seed7196_v3_star_charge_complete_circumference_cycles.json",
+      "source_sha256": "738ec2cccde927db497d7b692b2b64c510377b23795ff5f2ab765c3405512c80",
+      "source_checkpoint_sha256_verified_on_load": "0b2859e574b2c0f095fc7751c187b81151692f842757685b1dda2eeddf66c81f",
+      "cycles": [
+        {
+          "label": "circumference_cycle_t0",
+          "largest_weight_charge": 0,
+          "charge_probabilities": [
+            0.9999417107287387,
+            2.9560970105387458e-05,
+            2.872830115567086e-05
+          ],
+          "purity_error": 8.743688053418843e-05,
+          "diagnostic_valid": true
+        },
+        {
+          "label": "circumference_cycle_t1",
+          "largest_weight_charge": 1,
+          "charge_probabilities": [
+            9.07909297133876e-05,
+            0.9997590280185621,
+            0.00015018105172474408
+          ],
+          "purity_error": 0.00036509896682965524,
+          "diagnostic_valid": true
+        },
+        {
+          "label": "circumference_cycle_t2",
+          "largest_weight_charge": 1,
+          "charge_probabilities": [
+            0.00013893194175477555,
+            0.9997827391747216,
+            7.832888352377054e-05
+          ],
+          "purity_error": 0.0003300903617974499,
+          "diagnostic_valid": true
+        }
+      ]
+    },
+    {
+      "nup": 33,
+      "source_file": "results/checkpoints/armchair_w2_L4_N76_chi256_Nup33_seed7198_v3_star_charge_complete_circumference_cycles.json",
+      "source_sha256": "8dfdf0829d729938e8eaf34bbcbff245c739fbe6a9877c40efe9c33d00e9a452",
+      "source_checkpoint_sha256_verified_on_load": "d899ac2bf7dc624580c1e5895020c34941542baef30d2739f743a9aaff443fa6",
+      "cycles": [
+        {
+          "label": "circumference_cycle_t0",
+          "largest_weight_charge": 1,
+          "charge_probabilities": [
+            2.586937736885157e-05,
+            0.9999463547518692,
+            2.7775870762007198e-05
+          ],
+          "purity_error": 8.04848090855139e-05,
+          "diagnostic_valid": true
+        },
+        {
+          "label": "circumference_cycle_t1",
+          "largest_weight_charge": 2,
+          "charge_probabilities": [
+            0.00010140748426449668,
+            0.00010411838216491572,
+            0.9997944741335706
+          ],
+          "purity_error": 0.000308297738739181,
+          "diagnostic_valid": true
+        },
+        {
+          "label": "circumference_cycle_t2",
+          "largest_weight_charge": 0,
+          "charge_probabilities": [
+            0.9998277161342953,
+            8.639485631889432e-05,
+            8.588900938559056e-05
+          ],
+          "purity_error": 0.0002584261698641153,
+          "diagnostic_valid": true
+        }
+      ]
+    },
+    {
+      "nup": 38,
+      "source_file": "results/armchair_L4_w2_chi256_star_circumference_cycles.json",
+      "source_sha256": "c6d2d582677d7b1c7016cc3fb53a98b7e6352b7838a0af52e9ef9048dd332641",
+      "cycles": [
+        {
+          "label": "circumference_cycle_t0",
+          "largest_weight_charge": 2,
+          "charge_probabilities": [
+            0.0002081218942060111,
+            0.00022638461452458478,
+            0.9995654934912693
+          ],
+          "purity_error": 0.0006519516347140112,
+          "diagnostic_valid": true
+        },
+        {
+          "label": "circumference_cycle_t1",
+          "largest_weight_charge": 2,
+          "charge_probabilities": [
+            0.0002906613763854852,
+            0.00027238362899647167,
+            0.9994369549946179
+          ],
+          "purity_error": 0.0008447158295724327,
+          "diagnostic_valid": true
+        },
+        {
+          "label": "circumference_cycle_t2",
+          "largest_weight_charge": 0,
+          "charge_probabilities": [
+            0.9997821058803997,
+            0.00010933624488584925,
+            0.0001085578747142731
+          ],
+          "purity_error": 0.000326841874531004,
+          "diagnostic_valid": true
+        }
+      ]
+    }
+  ],
+  "density_comparison_files": [
+    "results/armchair_L4_w2_Nup31_number_density_comparison.json",
+    "results/armchair_L4_w2_Nup33_number_density_comparison.json"
+  ],
+  "interpretation": "Different fixed-number candidates also have different approximate circumference-charge patterns; number and CGS state selection remain confounded. Charge impurities are nonzero and states are not converged. Interior density changes in L4 do not establish a thermodynamic bulk filling shift. No optimization was repeated."
+}

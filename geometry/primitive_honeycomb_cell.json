@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "description": "Primitive translational cell of the exact microscopic Hamiltonian; gauge spins owned by A, shared with translated B endpoints.",
+  "vertices": [
+    {
+      "id": "A",
+      "cell": [
+        0,
+        0
+      ],
+      "matter_spins": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "B",
+      "cell": [
+        0,
+        0
+      ],
+      "matter_spins": [
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "physical_gauge_edges": [
+    {
+      "spin": 7,
+      "owner": [
+        "A",
+        0,
+        0
+      ],
+      "endpoints": [
+        {
+          "vertex": "A",
+          "cell": [
+            0,
+            0
+          ],
+          "leg": 1
+        },
+        {
+          "vertex": "B",
+          "cell": [
+            0,
+            0
+          ],
+          "leg": 1
+        }
+      ]
+    },
+    {
+      "spin": 8,
+      "owner": [
+        "A",
+        0,
+        0
+      ],
+      "endpoints": [
+        {
+          "vertex": "A",
+          "cell": [
+            0,
+            0
+          ],
+          "leg": 2
+        },
+        {
+          "vertex": "B",
+          "cell": [
+            -1,
+            0
+          ],
+          "leg": 2
+        }
+      ]
+    },
+    {
+      "spin": 9,
+      "owner": [
+        "A",
+        0,
+        0
+      ],
+      "endpoints": [
+        {
+          "vertex": "A",
+          "cell": [
+            0,
+            0
+          ],
+          "leg": 3
+        },
+        {
+          "vertex": "B",
+          "cell": [
+            0,
+            -1
+          ],
+          "leg": 3
+        }
+      ]
+    }
+  ],
+  "B_incident_gauge_owners": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "endpoint_W_convention": "Same W column at both endpoints; no B conjugation.",
+  "physical_spins_per_primitive_cell": 9,
+  "matter_spins_per_cell": 6,
+  "gauge_spins_per_cell": 3,
+  "U1_charge": "N_up=sum(Sz+1/2), integer local charge",
+  "half_filling_charge_per_primitive_cell": "9/2",
+  "density_4of9_charge_per_primitive_cell": 4,
+  "density_5of9_charge_per_primitive_cell": 5
+}

@@ -20,5 +20,14 @@
     "results/infinite_zigzag_w1_chi128_qn_star_active_fixedpoint_sector_correlations.json",
     "results/infinite_zigzag_w1_chi128_qn_star_active_fixedpoint_physical_correlations.json"
   ],
-  "interpretation": "The measured loop decay roughly follows the fourth transfer eigenvalue rather than the leading subdominant pair. The ratio is descriptive, with no systematic error bound. Tiny triplet correlations and small sector amplitudes on this unconverged narrow state do not certify a gap, ground-state order, or a 2D phase. Transfer eigenvector quantum-number classification has not been independently extracted."
+  "interpretation": "The measured loop decay roughly follows the fourth transfer eigenvalue rather than the leading subdominant pair. The ratio is descriptive, with no systematic error bound. Tiny triplet correlations and small sector amplitudes on this unconverged narrow state do not certify a gap, ground-state order, or a 2D phase. Transfer eigenvector quantum-number classification has not been independently extracted.",
+  "number_charge_mode_audit": "results/infinite_zigzag_w1_chi128_qn_star_active_transfer_charge_audit.json",
+  "new_eigenvector_measurement_from_same_original_AL": true,
+  "leading_subdominant_number_differences": [
+    -1,
+    1
+  ],
+  "next_mode_number_difference": 0,
+  "neutral_mode_xi_slices": 6.630818715183349,
+  "number_selection_interpretation": "Leading conjugate transfer modes have virtual number differences +/-1; the next mode is neutral. Neutral winding operators and charge-three matter operators cannot couple to the +/-1 channels in this U1 ansatz. This is not a classification of microscopic CGS charge or a 2D gap certificate."
 }

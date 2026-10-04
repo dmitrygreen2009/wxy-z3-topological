@@ -273,3 +273,73 @@ this particular state is excluded as a sector ground state, despite its
 inherited 3.15e-6 solver residual. Its zero transfer length is a slice-product
 artifact, not a phase conclusion. No optimization was repeated for this audit;
 the newer QN stage continues. See `results/armchair_qn_initializer_trapping_audit.json`.
+
+A new eigenvector measurement using the original width-one QN payload resolves
+part of the transfer interpretation. The two leading subdominant eigenvectors
+at magnitude 0.8893877 have virtual physical-number differences -1 and +1,
+respectively, with flux-weight purity within rounding of one and eigenvector
+residuals below 9e-14. The next mode at 0.7396177 is neutral and has transfer
+length about 6.63 slices, compatible with the descriptive winding-correlation
+decay about 6.60 slices. Thus the full length 17.06 does not control the neutral
+winding or charge-three matter operators in this U1 ansatz. The classification
+does not identify microscopic CGS charges or turn this unconverged width-one
+state into evidence for a two-dimensional gap or phase. Ten analytic matrix
+checks validate the QN-basis flux-weight bookkeeping; all transfer contractions
+and eigensolves remain library operations. Original optimizations were reused.
+
+New saved-state armchair L4,width2 contractions show that the Nup=31,33 and
+38 candidates also differ in approximate circumference-charge patterns: their
+most-weighted charges are (0,1,1), (1,2,0) and (2,2,0), respectively. Purity
+errors remain about 1e-4--1e-3, so these are not exact sector certificates.
+Relative to Nup=38, the central half-open interval [1,3) contains about -5.034
+of the total -7 number change at Nup=31, and -3.515 of the total -5 at Nup=33.
+These short, unconverged states do not distinguish bulk filling from end and
+sector effects. See `results/armchair_L4_w2_number_and_cycle_audit.json`; the
+raw circumference probabilities and density profiles are preserved separately.
+
+
+A primitive translational cell contains two stars, six matter spins and three
+owned shared gauge spins: nine physical spins. The explicit record is
+`geometry/primitive_honeycomb_cell.json`. Thus physical half filling has
+U1 number 9/2 per primitive cell, whereas densities 4/9 and 5/9 have integer
+numbers 4 and 5. This is a substantive constraint on interpreting a fixed
+half-filled calculation, not a reason to change its measured results.
+
+For a gapped phase preserving U1 and primitive translations, the usual
+background-anyon formulation requires fractional anyon charge equal to the
+filling modulo one. See Cheng et al.,
+[Translational symmetry and microscopic constraints](https://arxiv.org/html/1511.02263v3),
+section VI.2, and Zaletel and Vishwanath,
+[Constraints on topological order](https://arxiv.org/abs/1410.2894).
+Applying this formulation to ordinary D(Z3) is our inference: all its anyons
+have fusion order dividing three, so charge additivity permits only 0, 1/3
+or 2/3 modulo one, never 1/2. Under the formulation's symmetry assumptions,
+a symmetry-preserving gapped half-filled D(Z3) candidate is incompatible with
+this constraint. This conditional argument does not exclude the model's
+realizing Z3 order at another filling, with broken translations/U1, or with
+additional order. Exotic translation actions permuting anyon types have not
+been independently audited here; no blanket exclusion is asserted.
+
+The two-slice infinite ansatz is also a restriction. Translation can permute
+minimally entangled sectors without breaking local bulk translation symmetry;
+a three-sector cycle may require a three-slice representation. A six-slice
+cell can accommodate both periods two and three. Current two-slice fixed points
+therefore do not exhaust possible minimally entangled states, and variation
+among slice observables must be tested before inferring physical symmetry
+breaking. Larger-cell implementation and comparisons remain required.
+
+Local eigensolver tolerances were previously requested without saving all
+achieved local eigenpair residuals. New VUMPS logging saves ConvergenceInfo
+and independently evaluates norm(M*v-lambda*v)/norm(v). The stopping condition
+now also requires every local solve to meet its unchanged requested tolerance.
+Six analytic solver checks and five comparisons against the official parallel
+one-iteration driver pass; the latter reproduces the same tensors and records
+36 local solves. Existing independent benchmark validations remain valid.
+The official simultaneous-update VUMPS branch is additionally checked on an
+exact two-site ferromagnetic Ising state (six checks). Its environments are
+reused within an iteration; it is not a new tensor-network implementation.
+An initial onsite-only probe exposed an unsupported range-one MPO interface;
+its failed log is preserved and is not scientific evidence. Existing WXY
+calculations contain the supported two-site exchange terms. Active original
+jobs continue unchanged; new continuations use the stronger achieved-residual
+audit. A converged local solve still does not certify the global ground state.
