@@ -1,5 +1,5 @@
 """Export explicit physical-site and endpoint tables from checked pair records."""
-import json,pathlib
+import json,pathlib,math
 
 def decode(index,w,ordering):
  t,k=divmod(index-1,9*w);k+=1
@@ -28,6 +28,6 @@ for path in sorted(pathlib.Path('geometry').glob('infinite_*_w*.json')):
   vertices[(m['t'],m['j'],m['sublattice'])]['incident_gauge_sites'].append(dict(leg=p['i'],site_in_cell=(g-1)%n+1,cell_translation=(g-1)//n))
  assert len(vertices)==2*w*r['cell_slices'] and len(edges)==3*w*r['cell_slices']
  assert all(len(v['matter_sites'])==3 and sorted(x['leg'] for x in v['incident_gauge_sites'])==[1,2,3] for v in vertices.values())
- r.update(physical_sites=sites,vertices=list(vertices.values()),physical_shared_gauge_edges=edges,periodic_identifications=dict(circumference_primitive_translation=[0,w] if family=='zigzag' else [w,w],axial_slice_coordinate='x' if family=='zigzag' else 'x-y',cell_translation_slices=r['cell_slices']))
+ r.update(cell_translation_primitive_xy=[r['cell_slices'],0],cell_translation_physical_xy=[math.sqrt(3)/2*r['cell_slices'],1.5*r['cell_slices']],cell_translation_axial_projection=r['cell_slices']*(1.5 if family=='zigzag' else math.sqrt(3)/2),cell_translation_circumferential_projection=r['cell_slices']*(math.sqrt(3)/2 if family=='zigzag' else 1.5),translation_interpretation='Primitive-a1 cell translation includes a circumferential shift; xi_physical_axial uses its perpendicular projection, not the Euclidean vector length.',physical_sites=sites,vertices=list(vertices.values()),physical_shared_gauge_edges=edges,periodic_identifications=dict(circumference_primitive_translation=[0,w] if family=='zigzag' else [w,w],axial_slice_coordinate='x' if family=='zigzag' else 'x-y',cell_translation_slices=r['cell_slices']))
  path.write_text(json.dumps(r,indent=2)+'\n')
 print('Expanded physical-site, vertex and shared-edge records for all saved infinite cells')

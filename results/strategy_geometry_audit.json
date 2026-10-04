@@ -739,7 +739,7 @@
     "settings": {},
     "initialization": "Committed machine-readable physical lattice definitions",
     "conserved_quantum_numbers": [],
-    "git_commit": "86e1afb124632ff76f191d04c6181a15818905cd",
+    "git_commit": "b025ea83bc1d3572e050cde2bd663fc6e6cd862c",
     "code_worktree_dirty": true,
     "source_sha256": {
       "src/canonical_analysis.jl": "05575e5a3c24524745be51c360e83d0af19897303c3e12b943b391b969901e90",
@@ -768,7 +768,7 @@
       "scripts/primitive_filling_audit.py": "d99a61e0d15c9e1c150596a4f1b9e1fcf35a860fc98652caf61898e81b65b202",
       "scripts/refine_number_candidate.jl": "c9933bd93a6192214301bbfe48ae4a0e27313d62861001adb74fa3f9b9efef48",
       "scripts/export_geometry.jl": "2e4ba5416680134b3e40d29c133321b1efc55a44cdb253b97479c1b02671ebb9",
-      "scripts/expand_infinite_site_records.py": "b9c05060d0a615cdc47ff5a31ffe9e6d8da53be2dd5abe2090f4585074305b70",
+      "scripts/expand_infinite_site_records.py": "f5610514918dad335925f841b4579297c9cd5425981b1e749c86afd921d65699",
       "scripts/infinite_transfer_charge_audit.jl": "90ac2a872b6f62a8b3b5c5711d59351f50b907fb88a48aa8cf59a38c647ec095",
       "scripts/infinite_parallel_checkpoint.jl": "9f5e822b4480a2d273a850f4f648bc2c479cc75dbb1fc40d8094fedbbadbdf91",
       "scripts/cylinder_number_search.jl": "b0e4e40e1f810f19d6507bca9c7f85617552a062a62436f93c9b81638fc70089",
@@ -869,6 +869,6 @@
       "test/particle_hole.jl": "35d0fd0df7b301770e4946b8a8147c4428be0c6b4f30dc613966d71ffc99b952"
     },
     "python_version": "3.14.0",
-    "started_utc": "2026-10-04T18:42:58.591853+00:00"
+    "started_utc": "2026-10-04T18:48:37.433663+00:00"
   }
 }

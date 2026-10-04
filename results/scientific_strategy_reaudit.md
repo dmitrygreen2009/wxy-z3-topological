@@ -370,3 +370,14 @@ candidate, without changing the validity of its energy as a variational bound.
 The continuation interface now records configurable Krylov iteration controls;
 the historical defaults remain unchanged and requested tolerances are not
 loosened. Ground-state and entropy convergence still require separate tests.
+
+
+The infinite cell translator advances primitive a1 by the recorded number of
+slices. It generally also shifts around the circumference; it is not always
+a pure perpendicular axial displacement. New geometry metadata records both
+components explicitly. The saved physical axial transfer length correctly
+uses the perpendicular projection (1.5 per zigzag slice, sqrt(3)/2 per armchair
+slice), whereas a complex transfer phase can also contain transverse momentum.
+Fixed-site correlations across cells follow this helical displacement. This
+clarifies the convention without changing existing numerical transfer lengths
+or treating them as a two-dimensional spectral-gap certificate.

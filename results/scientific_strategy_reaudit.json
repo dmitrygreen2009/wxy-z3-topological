@@ -18,7 +18,8 @@
     "half_filled_symmetry_preserving_D_Z3": "Conditionally incompatible with ordinary nonpermuting background-anyon U1 SET constraints; actual filling and symmetry are unresolved.",
     "two_slice_cell_exhausts_MES": "Not established: a three-sector translation cycle may require a larger cell.",
     "local_requested_eigensolver_tol_is_achieved": "Not inferred: new continuations save true residuals and ConvergenceInfo.",
-    "armchair_Nup31_chi256_central_stationarity": "New retained-basis residuals 0.0030--0.0041 confirm underconvergence; stored variational energy preserved."
+    "armchair_Nup31_chi256_central_stationarity": "New retained-basis residuals 0.0030--0.0041 confirm underconvergence; stored variational energy preserved.",
+    "infinite_cell_translation": "Generally helical primitive-a1 translation; physical axial xi uses its perpendicular projection."
   },
   "concrete_findings": [
     "Width-one parallel cycles have circumference winding, despite local support on the quotient",
@@ -41,7 +42,7 @@
   "accepted_topological_fits": [],
   "report": "results/scientific_strategy_reaudit.md",
   "evidence_sha256": {
-    "results/strategy_geometry_audit.json": "cd312e71319dcf974c27d0acb85b6c324ec601fce83f0f35607bc78bdeab7baf",
+    "results/strategy_geometry_audit.json": "f01632229da76806f3d6ffbfd9e5f78d4a0b4e6559969efcd0bc464436e7445f",
     "results/cgs_general_audit.json": "da60ff842d31d63f3dae7245042339dc7060b8847a75be600880de664ae5d746",
     "results/torus_hard_gate_audit.md": "298be88dc5af3b26db861bfcb348a3d54e2518da6b93a038b26ce222049a1a67",
     "results/number_sector_cylinder_audit.md": "cfb667c4fb1021bd896c6372384a23fee673b254fff833c0a0030779668ed31c",

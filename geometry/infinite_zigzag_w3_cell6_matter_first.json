@@ -5380,5 +5380,16 @@
     ],
     "axial_slice_coordinate": "x",
     "cell_translation_slices": 6
-  }
+  },
+  "cell_translation_primitive_xy": [
+    6,
+    0
+  ],
+  "cell_translation_physical_xy": [
+    5.196152422706632,
+    9.0
+  ],
+  "cell_translation_axial_projection": 9.0,
+  "cell_translation_circumferential_projection": 5.196152422706632,
+  "translation_interpretation": "Primitive-a1 cell translation includes a circumferential shift; xi_physical_axial uses its perpendicular projection, not the Euclidean vector length."
 }
