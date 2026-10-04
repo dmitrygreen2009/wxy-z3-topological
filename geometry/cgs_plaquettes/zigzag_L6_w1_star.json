@@ -1,0 +1,590 @@
+{
+  "parent_geometry": "geometry/zigzag_L6_w1_star.json",
+  "parent_sha256": "5d7abd5aa8954e5d525990379d91bcd2662ae2e3b116e9ae213c8a7236d0d61c",
+  "family": "zigzag",
+  "L": 6,
+  "width": 1,
+  "index_base": 1,
+  "plaquettes": [
+    {
+      "label": "contractible_hexagon_t1_j0",
+      "edge_exponents": [
+        2,
+        0,
+        1,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "walk": [
+        {
+          "edge_id": 5,
+          "local_leg": 1,
+          "from_unwrapped": [
+            1,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            1,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 6,
+          "local_leg": 3,
+          "from_unwrapped": [
+            1,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            1,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 4,
+          "local_leg": 2,
+          "from_unwrapped": [
+            1,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            0,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 1,
+          "local_leg": 1,
+          "from_unwrapped": [
+            0,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            0,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 3,
+          "local_leg": 3,
+          "from_unwrapped": [
+            0,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            0,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 4,
+          "local_leg": 2,
+          "from_unwrapped": [
+            0,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            1,
+            0,
+            "A"
+          ]
+        }
+      ],
+      "winding_number": 0,
+      "unwrapped_displacement": [
+        0,
+        0
+      ],
+      "contractible": true
+    },
+    {
+      "label": "contractible_hexagon_t2_j0",
+      "edge_exponents": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "walk": [
+        {
+          "edge_id": 8,
+          "local_leg": 1,
+          "from_unwrapped": [
+            2,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            2,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 9,
+          "local_leg": 3,
+          "from_unwrapped": [
+            2,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            2,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 7,
+          "local_leg": 2,
+          "from_unwrapped": [
+            2,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            1,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 5,
+          "local_leg": 1,
+          "from_unwrapped": [
+            1,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            1,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 6,
+          "local_leg": 3,
+          "from_unwrapped": [
+            1,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            1,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 7,
+          "local_leg": 2,
+          "from_unwrapped": [
+            1,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            2,
+            0,
+            "A"
+          ]
+        }
+      ],
+      "winding_number": 0,
+      "unwrapped_displacement": [
+        0,
+        0
+      ],
+      "contractible": true
+    },
+    {
+      "label": "contractible_hexagon_t3_j0",
+      "edge_exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "walk": [
+        {
+          "edge_id": 11,
+          "local_leg": 1,
+          "from_unwrapped": [
+            3,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            3,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 12,
+          "local_leg": 3,
+          "from_unwrapped": [
+            3,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            3,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 10,
+          "local_leg": 2,
+          "from_unwrapped": [
+            3,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            2,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 8,
+          "local_leg": 1,
+          "from_unwrapped": [
+            2,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            2,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 9,
+          "local_leg": 3,
+          "from_unwrapped": [
+            2,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            2,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 10,
+          "local_leg": 2,
+          "from_unwrapped": [
+            2,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            3,
+            0,
+            "A"
+          ]
+        }
+      ],
+      "winding_number": 0,
+      "unwrapped_displacement": [
+        0,
+        0
+      ],
+      "contractible": true
+    },
+    {
+      "label": "contractible_hexagon_t4_j0",
+      "edge_exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "walk": [
+        {
+          "edge_id": 14,
+          "local_leg": 1,
+          "from_unwrapped": [
+            4,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            4,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 15,
+          "local_leg": 3,
+          "from_unwrapped": [
+            4,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            4,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 13,
+          "local_leg": 2,
+          "from_unwrapped": [
+            4,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            3,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 11,
+          "local_leg": 1,
+          "from_unwrapped": [
+            3,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            3,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 12,
+          "local_leg": 3,
+          "from_unwrapped": [
+            3,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            3,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 13,
+          "local_leg": 2,
+          "from_unwrapped": [
+            3,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            4,
+            0,
+            "A"
+          ]
+        }
+      ],
+      "winding_number": 0,
+      "unwrapped_displacement": [
+        0,
+        0
+      ],
+      "contractible": true
+    },
+    {
+      "label": "contractible_hexagon_t5_j0",
+      "edge_exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0
+      ],
+      "walk": [
+        {
+          "edge_id": 17,
+          "local_leg": 1,
+          "from_unwrapped": [
+            5,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            5,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 18,
+          "local_leg": 3,
+          "from_unwrapped": [
+            5,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            5,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 16,
+          "local_leg": 2,
+          "from_unwrapped": [
+            5,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            4,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 14,
+          "local_leg": 1,
+          "from_unwrapped": [
+            4,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            4,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 15,
+          "local_leg": 3,
+          "from_unwrapped": [
+            4,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            4,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 16,
+          "local_leg": 2,
+          "from_unwrapped": [
+            4,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            5,
+            0,
+            "A"
+          ]
+        }
+      ],
+      "winding_number": 0,
+      "unwrapped_displacement": [
+        0,
+        0
+      ],
+      "contractible": true
+    }
+  ]
+}

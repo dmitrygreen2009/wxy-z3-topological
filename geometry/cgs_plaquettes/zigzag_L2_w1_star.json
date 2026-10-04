@@ -1,0 +1,114 @@
+{
+  "parent_geometry": "geometry/zigzag_L2_w1_star.json",
+  "parent_sha256": "13105e4c2f155315603de02c0018f7bb1e3cf67caa217715f2d2ffdc93154410",
+  "family": "zigzag",
+  "L": 2,
+  "width": 1,
+  "index_base": 1,
+  "plaquettes": [
+    {
+      "label": "contractible_hexagon_t1_j0",
+      "edge_exponents": [
+        2,
+        0,
+        1,
+        0,
+        1,
+        2,
+        0
+      ],
+      "walk": [
+        {
+          "edge_id": 5,
+          "local_leg": 1,
+          "from_unwrapped": [
+            1,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            1,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 6,
+          "local_leg": 3,
+          "from_unwrapped": [
+            1,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            1,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 4,
+          "local_leg": 2,
+          "from_unwrapped": [
+            1,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            0,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 1,
+          "local_leg": 1,
+          "from_unwrapped": [
+            0,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            0,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 3,
+          "local_leg": 3,
+          "from_unwrapped": [
+            0,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            0,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 4,
+          "local_leg": 2,
+          "from_unwrapped": [
+            0,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            1,
+            0,
+            "A"
+          ]
+        }
+      ],
+      "winding_number": 0,
+      "unwrapped_displacement": [
+        0,
+        0
+      ],
+      "contractible": true
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "family": "armchair",
+  "length": 4,
+  "width": 1,
+  "neutral_source": "results/snapshots/armchair_L4_w1_chi512_neutral_number_audit_circumference_cycles.json",
+  "charged_source": "results/armchair_L4_w1_chi512_star_seed7202_Nup18_circumference_cycles.json",
+  "source_sha256": {
+    "results/snapshots/armchair_L4_w1_chi512_neutral_number_audit_circumference_cycles.json": "089e420f70ad96ab69cdf02383b54e7c8df2c4a105bb87373b77bbd27e99ea76",
+    "results/armchair_L4_w1_chi512_star_seed7202_Nup18_circumference_cycles.json": "3b71423b9cecc8c71777b7ec42f524f2874f1edd4fe8ffcf93626b9d8b50a984"
+  },
+  "git_commit": "c474872d38af3ce6e20cd92e3ab9ec0372824c24",
+  "density_difference_sum": -1.0000000000000064,
+  "central_half_open_interval": [
+    1.0,
+    3.0
+  ],
+  "central_region_number_difference": -0.5777138109605513,
+  "complement_number_difference": -0.42228618903945514,
+  "physical_spin_profiles": [
+    {
+      "physical_spin_id": 1,
+      "physical_axial_slice_coordinate": 0,
+      "neutral_sz": 0.13708401069897658,
+      "charged_sz": 0.07990159853055978,
+      "difference_charged_minus_neutral": -0.057182412168416796
+    },
+    {
+      "physical_spin_id": 2,
+      "physical_axial_slice_coordinate": 0,
+      "neutral_sz": 0.13708401068895673,
+      "charged_sz": 0.07990159853057133,
+      "difference_charged_minus_neutral": -0.057182412158385404
+    },
+    {
+      "physical_spin_id": 3,
+      "physical_axial_slice_coordinate": 0,
+      "neutral_sz": 0.13708401069964904,
+      "charged_sz": 0.07990159853056042,
+      "difference_charged_minus_neutral": -0.05718241216908862
+    },
+    {
+      "physical_spin_id": 4,
+      "physical_axial_slice_coordinate": 0,
+      "neutral_sz": 0.13666981089858557,
+      "charged_sz": 0.07990153170542935,
+      "difference_charged_minus_neutral": -0.05676827919315622
+    },
+    {
+      "physical_spin_id": 5,
+      "physical_axial_slice_coordinate": 0,
+      "neutral_sz": 0.13666981084596916,
+      "charged_sz": 0.0799015317388966,
+      "difference_charged_minus_neutral": -0.056768279107072564
+    },
+    {
+      "physical_spin_id": 6,
+      "physical_axial_slice_coordinate": 0,
+      "neutral_sz": 0.1366698109001753,
+      "charged_sz": 0.0799015317212229,
+      "difference_charged_minus_neutral": -0.0567682791789524
+    },
+    {
+      "physical_spin_id": 7,
+      "physical_axial_slice_coordinate": 1,
+      "neutral_sz": 0.04142464409475634,
+      "charged_sz": -0.005118253441994972,
+      "difference_charged_minus_neutral": -0.04654289753675131
+    },
+    {
+      "physical_spin_id": 8,
+      "physical_axial_slice_coordinate": 1,
+      "neutral_sz": 0.04142457690813751,
+      "charged_sz": -0.005118252386103354,
+      "difference_charged_minus_neutral": -0.04654282929424086
+    },
+    {
+      "physical_spin_id": 9,
+      "physical_axial_slice_coordinate": 1,
+      "neutral_sz": 0.04142468633871232,
+      "charged_sz": -0.005118262403174913,
+      "difference_charged_minus_neutral": -0.04654294874188723
+    },
+    {
+      "physical_spin_id": 10,
+      "physical_axial_slice_coordinate": 1,
+      "neutral_sz": 0.03688344528573448,
+      "charged_sz": -0.00511814974199455,
+      "difference_charged_minus_neutral": -0.04200159502772903
+    },
+    {
+      "physical_spin_id": 11,
+      "physical_axial_slice_coordinate": 1,
+      "neutral_sz": 0.036883536514880313,
+      "charged_sz": -0.005118171725982249,
+      "difference_charged_minus_neutral": -0.042001708240862565
+    },
+    {
+      "physical_spin_id": 12,
+      "physical_axial_slice_coordinate": 1,
+      "neutral_sz": 0.03688352181168837,
+      "charged_sz": -0.005118168202931821,
+      "difference_charged_minus_neutral": -0.042001690014620195
+    },
+    {
+      "physical_spin_id": 13,
+      "physical_axial_slice_coordinate": 2,
+      "neutral_sz": -0.04142468217905202,
+      "charged_sz": -0.1066814880713996,
+      "difference_charged_minus_neutral": -0.06525680589234759
+    },
+    {
+      "physical_spin_id": 14,
+      "physical_axial_slice_coordinate": 2,
+      "neutral_sz": -0.04142468046959084,
+      "charged_sz": -0.10668149037631842,
+      "difference_charged_minus_neutral": -0.06525680990672758
+    },
+    {
+      "physical_spin_id": 15,
+      "physical_axial_slice_coordinate": 2,
+      "neutral_sz": -0.04142465993407869,
+      "charged_sz": -0.10668147697531578,
+      "difference_charged_minus_neutral": -0.06525681704123709
+    },
+    {
+      "physical_spin_id": 16,
+      "physical_axial_slice_coordinate": 2,
+      "neutral_sz": -0.0368834963239255,
+      "charged_sz": -0.10668152727288746,
+      "difference_charged_minus_neutral": -0.06979803094896196
+    },
+    {
+      "physical_spin_id": 17,
+      "physical_axial_slice_coordinate": 2,
+      "neutral_sz": -0.0368834824239535,
+      "charged_sz": -0.10668152231911371,
+      "difference_charged_minus_neutral": -0.0697980398951602
+    },
+    {
+      "physical_spin_id": 18,
+      "physical_axial_slice_coordinate": 2,
+      "neutral_sz": -0.03688347015906061,
+      "charged_sz": -0.10668152237915059,
+      "difference_charged_minus_neutral": -0.06979805222008997
+    },
+    {
+      "physical_spin_id": 19,
+      "physical_axial_slice_coordinate": 3,
+      "neutral_sz": -0.13708396596508415,
+      "charged_sz": -0.1629227520403278,
+      "difference_charged_minus_neutral": -0.025838786075243647
+    },
+    {
+      "physical_spin_id": 20,
+      "physical_axial_slice_coordinate": 3,
+      "neutral_sz": -0.13708396596578612,
+      "charged_sz": -0.16292275204318787,
+      "difference_charged_minus_neutral": -0.025838786077401754
+    },
+    {
+      "physical_spin_id": 21,
+      "physical_axial_slice_coordinate": 3,
+      "neutral_sz": -0.13708396596648234,
+      "charged_sz": -0.16292275204310067,
+      "difference_charged_minus_neutral": -0.025838786076618325
+    },
+    {
+      "physical_spin_id": 22,
+      "physical_axial_slice_coordinate": 3,
+      "neutral_sz": -0.136669766546923,
+      "charged_sz": -0.16292274778087823,
+      "difference_charged_minus_neutral": -0.026252981233955225
+    },
+    {
+      "physical_spin_id": 23,
+      "physical_axial_slice_coordinate": 3,
+      "neutral_sz": -0.13666976654697094,
+      "charged_sz": -0.16292274778087673,
+      "difference_charged_minus_neutral": -0.026252981233905792
+    },
+    {
+      "physical_spin_id": 24,
+      "physical_axial_slice_coordinate": 3,
+      "neutral_sz": -0.13666976654694815,
+      "charged_sz": -0.16292274778088192,
+      "difference_charged_minus_neutral": -0.02625298123393377
+    },
+    {
+      "physical_spin_id": 25,
+      "physical_axial_slice_coordinate": 0,
+      "neutral_sz": -0.006640559414041457,
+      "charged_sz": 0.012483709355259396,
+      "difference_charged_minus_neutral": 0.019124268769300852
+    },
+    {
+      "physical_spin_id": 26,
+      "physical_axial_slice_coordinate": -0.5,
+      "neutral_sz": -0.04570979140552489,
+      "charged_sz": -0.026612489090261468,
+      "difference_charged_minus_neutral": 0.019097302315263423
+    },
+    {
+      "physical_spin_id": 27,
+      "physical_axial_slice_coordinate": 0.5,
+      "neutral_sz": -0.01654372502877504,
+      "charged_sz": -0.021896131025717174,
+      "difference_charged_minus_neutral": -0.005352405996942134
+    },
+    {
+      "physical_spin_id": 28,
+      "physical_axial_slice_coordinate": 0.5,
+      "neutral_sz": -0.01744709044273703,
+      "charged_sz": -0.021896122013324075,
+      "difference_charged_minus_neutral": -0.0044490315705870455
+    },
+    {
+      "physical_spin_id": 29,
+      "physical_axial_slice_coordinate": -0.5,
+      "neutral_sz": -0.04563793276087867,
+      "charged_sz": -0.026612487535722346,
+      "difference_charged_minus_neutral": 0.019025445225156326
+    },
+    {
+      "physical_spin_id": 30,
+      "physical_axial_slice_coordinate": 1,
+      "neutral_sz": -0.01697060857071917,
+      "charged_sz": 0.014086087918696756,
+      "difference_charged_minus_neutral": 0.031056696489415926
+    },
+    {
+      "physical_spin_id": 31,
+      "physical_axial_slice_coordinate": 1.5,
+      "neutral_sz": 0.0007193122172969789,
+      "charged_sz": 0.02066221671624058,
+      "difference_charged_minus_neutral": 0.019942904498943603
+    },
+    {
+      "physical_spin_id": 32,
+      "physical_axial_slice_coordinate": 1.5,
+      "neutral_sz": -0.0007193252318560527,
+      "charged_sz": 0.02066220077336128,
+      "difference_charged_minus_neutral": 0.02138152600521733
+    },
+    {
+      "physical_spin_id": 33,
+      "physical_axial_slice_coordinate": 2,
+      "neutral_sz": 0.016970573894354413,
+      "charged_sz": 0.02431466589833663,
+      "difference_charged_minus_neutral": 0.007344092003982217
+    },
+    {
+      "physical_spin_id": 34,
+      "physical_axial_slice_coordinate": 2.5,
+      "neutral_sz": 0.01744704961487622,
+      "charged_sz": 0.023675010245131717,
+      "difference_charged_minus_neutral": 0.006227960630255498
+    },
+    {
+      "physical_spin_id": 35,
+      "physical_axial_slice_coordinate": 2.5,
+      "neutral_sz": 0.016543698434045264,
+      "charged_sz": 0.023674932606294923,
+      "difference_charged_minus_neutral": 0.007131234172249659
+    },
+    {
+      "physical_spin_id": 36,
+      "physical_axial_slice_coordinate": 3,
+      "neutral_sz": 0.006640534610610904,
+      "charged_sz": 0.016390759286036963,
+      "difference_charged_minus_neutral": 0.009750224675426059
+    },
+    {
+      "physical_spin_id": 37,
+      "physical_axial_slice_coordinate": 3.5,
+      "neutral_sz": 0.04570970468791564,
+      "charged_sz": 0.05499651717051914,
+      "difference_charged_minus_neutral": 0.009286812482603504
+    },
+    {
+      "physical_spin_id": 38,
+      "physical_axial_slice_coordinate": 3.5,
+      "neutral_sz": 0.045637952737069734,
+      "charged_sz": 0.05499652370352428,
+      "difference_charged_minus_neutral": 0.009358570966454545
+    }
+  ],
+  "interpretation": "Finite-state density differences and region sums only. Number and loop sectors can both differ. A short cylinder cannot certify whether a thermodynamic filling shift is a boundary or bulk effect; length and circumference convergence are still required."
+}

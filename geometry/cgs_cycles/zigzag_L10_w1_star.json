@@ -1,6 +1,7 @@
 {
   "parent_geometry": "geometry/zigzag_L10_w1_star.json",
-  "parent_sha256": "4360c4122794f427f13531450bd2806d33f49494351695fbf33f48cb927760aa",
+  "parent_sha256": "503df55bafa00375fb05845c68fe565a6adf4889e6dac3645bf4e4e4a75ff7f8",
+  "parent_semantic_sha256": "bf7d77703e5fe0a73806aeee8fc7f0b8a0910c10b2b3042eabc1f207a34ff1d7",
   "family": "zigzag",
   "L": 10,
   "width": 1,
@@ -737,6 +738,5 @@
       "interpretation": "Exact microscopic CGS cycle; its eigencharge is not by itself a proof of topological order or of a minimally entangled ground state."
     }
   ],
-  "narrow_zigzag_note": "At width one this noncontractible circumference cycle is a two-edge parallel cycle; it has extra local S3 symmetry.",
-  "parent_semantic_sha256": "7b001da790499a7a75ef326e223d7a7541f7a70f3a77bbce785c763eb82e892a"
+  "narrow_zigzag_note": "At width one this noncontractible circumference cycle is a two-edge parallel cycle; it has extra local S3 symmetry."
 }

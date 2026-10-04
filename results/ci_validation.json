@@ -26,5 +26,49 @@
     "conclusion": "success",
     "html_url": "https://github.com/dmitrygreen2009/wxy-z3-topological/actions/runs/37177585677",
     "updated_at": "2026-10-04T04:47:05Z"
-  }
+  },
+  "latest_observed_runs": [
+    {
+      "head_sha": "c474872d38af3ce6e20cd92e3ab9ec0372824c24",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/dmitrygreen2009/wxy-z3-topological/actions/runs/37209942917",
+      "run_started_at": "2026-10-04T14:37:29Z"
+    },
+    {
+      "head_sha": "671e6570f47c4b3ca99ae78ddb1c5528ee352274",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/dmitrygreen2009/wxy-z3-topological/actions/runs/37207970805",
+      "run_started_at": "2026-10-04T14:05:20Z"
+    },
+    {
+      "head_sha": "82a3a5fd18d39a5fac6a7d28a7311581be63736e",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/dmitrygreen2009/wxy-z3-topological/actions/runs/37200537641",
+      "run_started_at": "2026-10-04T11:58:56Z"
+    },
+    {
+      "head_sha": "e13c75052b389f2d2329f050181c3d954ac9c1fa",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/dmitrygreen2009/wxy-z3-topological/actions/runs/37177585677",
+      "run_started_at": "2026-10-04T04:38:23Z"
+    },
+    {
+      "head_sha": "65be10c16df0daa9513663752014201f0ba3f5fc",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/dmitrygreen2009/wxy-z3-topological/actions/runs/37170530993",
+      "run_started_at": "2026-10-04T02:16:05Z"
+    },
+    {
+      "head_sha": "1d42ac91958e03799d374fe87969a00be79e2ac3",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/dmitrygreen2009/wxy-z3-topological/actions/runs/37170117344",
+      "run_started_at": "2026-10-04T02:08:05Z"
+    }
+  ]
 }

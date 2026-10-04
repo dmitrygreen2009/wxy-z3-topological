@@ -9,6 +9,10 @@ for path in sorted(pathlib.Path('geometry').glob('*_L*_w*_*.json')):
     family=c.get('family')
     if family not in ('zigzag','armchair'):continue
     L=c['length_slices'];w=c['width_cells'];nv=len(graph['vertices']);edges=graph['shared_gauge_edges']
+    expected_matter=[0,1/3] if family=='zigzag' else [0,0]
+    expected_gauge=[1/6,-1/3,1/6] if family=='zigzag' else [0,-.5,.5]
+    assert c['physical_axial_matter_offsets_A_B']==expected_matter
+    assert c['physical_axial_gauge_offsets_from_owner_A_by_leg']==expected_gauge
     assert nv==2*L*w and len(edges)==3*L*w+(w if family=='zigzag' else 2*w)
     vertices={v['id']:v for v in graph['vertices']};expected=set()
     for matter in graph['matter_spins']:

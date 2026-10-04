@@ -307,3 +307,33 @@ python scripts/preserve_result_snapshot.py results/RESULT.json descriptive_label
 This verifies the input checksum and copies bytes without repeating any
 calculation. Large payloads remain git-ignored; snapshot JSON records are kept
 under `results/snapshots/`.
+
+Contractible hexagons are stored separately, with explicitly closed unwrapped
+walks and zero winding. Their operator and saved-state measurements use:
+
+```sh
+python scripts/export_contractible_cycles.py
+julia --project=. test/contractible_operator_mpo.jl
+julia --project=. scripts/infinite_contractible_cycles.jl RESULT.jls
+python scripts/summarize_infinite_microscopic_observables.py
+```
+
+Both contractible and circumference charge probabilities need convergence
+checks. The two kinds of cycle have separate machine-readable definitions
+under `geometry/cgs_plaquettes/` and `geometry/cgs_cycles/`. Physical axial
+coordinates are recorded explicitly; the ordering tie-break keys are not
+physical distances. `scripts/compare_number_density_profiles.py` compares
+saved neutral/charged density measurements using these physical coordinates.
+
+Legacy in-flight drivers may still emit the older ordering-key description.
+At their next completed checkpoint, annotate those metadata fields and rerun
+only the static geometry checks before exporting cycle definitions:
+
+```sh
+python scripts/normalize_geometry_metadata.py
+python scripts/strategy_geometry_audit.py
+python scripts/export_contractible_cycles.py
+```
+
+This changes descriptive metadata only; physical edges, endpoint legs, spin
+ordering, and spatial cuts are checked independently and remain preserved.

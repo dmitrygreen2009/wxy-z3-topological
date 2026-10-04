@@ -30,7 +30,7 @@
   "accepted_topological_fits": [],
   "report": "results/scientific_strategy_reaudit.md",
   "evidence_sha256": {
-    "results/strategy_geometry_audit.json": "8bf493230fa8496688e8eef903a64cb30465366270b337b5a27a92a4cd2f15ba",
+    "results/strategy_geometry_audit.json": "8440827baaaf4c497459876932acdb036f2fa0f9ccd01574c0c58e900d7cfb69",
     "results/cgs_general_audit.json": "da60ff842d31d63f3dae7245042339dc7060b8847a75be600880de664ae5d746",
     "results/torus_hard_gate_audit.md": "298be88dc5af3b26db861bfcb348a3d54e2518da6b93a038b26ce222049a1a67",
     "results/number_sector_cylinder_audit.md": "cfb667c4fb1021bd896c6372384a23fee673b254fff833c0a0030779668ed31c",
@@ -39,5 +39,7 @@
     "results/zigzag_L4_w1_chi256_star_projected1_seed7214_loops.json": "6b87d83a978074d0d45ea950a027a886a64c846714576d351307a36c0358bd06",
     "results/zigzag_L4_w2_chi256_star_circumference_cycles.json": "2aad476ae436c8744f1fdb0ebaee0227ef94bac12514e204a2dbfa367b3e74d4",
     "results/armchair_L4_w2_chi256_star_circumference_cycles.json": "c6d2d582677d7b1c7016cc3fb53a98b7e6352b7838a0af52e9ef9048dd332641"
-  }
+  },
+  "geometry_metadata_followup": "Explicit physical axial offsets distinguish actual coordinates from the legacy ordering proxy. All 41 finite partitions and 16 infinite incidence tables remain unchanged and pass static checks. No numerical optimization or benchmark was repeated.",
+  "contractible_cycle_definitions": "geometry/cgs_plaquettes"
 }

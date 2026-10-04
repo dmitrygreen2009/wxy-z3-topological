@@ -35,7 +35,10 @@ function export_cylinder_geometry(family,L,w;ordering="star")
         "periodic_translation_xy"=>family=="zigzag" ? [0,w] : [w,w],"open_axis"=>true,
         "A_leg_displacements_to_B"=>[[0,0],[-1,0],[0,-1]],"B_endpoint_uses_same_leg"=>true,
         "dangling_boundary_gauge_spins_retained"=>true,"ordering"=>ordering,
-        "spatial_partition_rule"=>"matter: t < L/2; gauge: endpoint midpoint t plus 0.1 < L/2")
+        "spatial_partition_rule"=>"Half-open physical axial coordinate u < L/2, in spatial-slice units",
+        "physical_axial_matter_offsets_A_B"=>family=="zigzag" ? [0,1/3] : [0,0],
+        "physical_axial_gauge_offsets_from_owner_A_by_leg"=>family=="zigzag" ? [1/6,-1/3,1/6] : [0,-1/2,1/2],
+        "ordering_partition_proxy"=>"Matter key t+0.01a; gauge key (owner_A_t+target_B_t)/2+0.1. For integer L these keys give the same half-open partition as the physical coordinates; they are not physical length coordinates.")
     graph=explicit_spin_graph("$(family)_L$(L)_w$(w)",lat.legs;vertices,conventions=convention,order=lat.order,cut=lat.cut)
     open("geometry/$(family)_L$(L)_w$(w)_$(ordering).json","w") do io;JSON3.write(io,graph);end
 end

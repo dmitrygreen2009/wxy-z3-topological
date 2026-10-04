@@ -1,0 +1,9 @@
+{
+  "parent_geometry": "geometry/armchair_L2_w2_star.json",
+  "parent_sha256": "6e707d993b390defb968089ec0a72cb6076a4512e0cb08660818d3cd6324bf45",
+  "family": "armchair",
+  "L": 2,
+  "width": 2,
+  "index_base": 1,
+  "plaquettes": []
+}

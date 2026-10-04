@@ -1,0 +1,57 @@
+{
+  "family": "armchair",
+  "length": 4,
+  "width": 1,
+  "physical_spins": 38,
+  "neutral_nup": 19,
+  "charged_nup": 18,
+  "neutral_energy": -15.34530743538934,
+  "charged_energy": -15.345428885380793,
+  "neutral_entropy": 2.1949203117244993,
+  "charged_entropy": 2.183249996832878,
+  "energy_difference_charged_minus_neutral": -0.0001214499914521383,
+  "charged_refinement_entropy_drift": -9.294178315855106e-09,
+  "neutral_refinement_entropy_drift": -3.877361045123706e-06,
+  "charged_last_sweep_energy_drift": 2.5579538487363607e-13,
+  "neutral_last_sweep_energy_drift": -2.184918912462308e-13,
+  "charged_max_truncation_error": 1.2960561694554644e-08,
+  "neutral_max_truncation_error": 1.9691088859978462e-08,
+  "neutral_snapshot": "results/snapshots/armchair_L4_w1_chi512_neutral_number_audit.json",
+  "charged_snapshot": "results/snapshots/armchair_L4_w1_chi512_charged_number_audit_20261004T143827922021Z.json",
+  "scope": "Variational fixed-number candidates only. Difference survives same-cap refinement; no rigorous per-sector lower bounds or global ground-state certificate. Width one does not diagnose the 2D phase. Truncation errors remain above the strict 1e-8 acceptance target.",
+  "neutral_circumference_charge_probabilities": [
+    [
+      0.9999999848036029,
+      7.4976284440235e-09,
+      7.698768585602997e-09
+    ],
+    [
+      0.999999976602188,
+      1.1768433672010303e-08,
+      1.1629378090146266e-08
+    ],
+    [
+      0.9999999917081818,
+      4.176747244362862e-09,
+      4.115070728616388e-09
+    ]
+  ],
+  "charged_circumference_charge_probabilities": [
+    [
+      5.447771308138745e-09,
+      0.9999999888110622,
+      5.741166727209664e-09
+    ],
+    [
+      0.9999999855807785,
+      7.064016297834523e-09,
+      7.35520507462913e-09
+    ],
+    [
+      0.9999999967243914,
+      1.637724437545766e-09,
+      1.6378839395869704e-09
+    ]
+  ],
+  "additional_scope": "The number candidates also differ in the first winding-loop charge (neutral q0, charged q1). This is not a comparison holding every flux sector fixed. The central-region density difference is -0.578 of the total -1 on this short cylinder; localization in the infinite-length limit remains unestablished."
+}

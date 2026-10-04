@@ -1,0 +1,51 @@
+{
+  "recorded_utc": "2026-10-04T15:04:28.171380+00:00",
+  "git_commit": "c474872d38af3ce6e20cd92e3ab9ec0372824c24",
+  "disk_total_bytes": 245107195904,
+  "disk_free_bytes": 18134347776,
+  "local_payload_files": 373,
+  "logical_payload_bytes": 3980077461,
+  "largest_payloads": [
+    {
+      "path": "results/checkpoints/zigzag_w3_Ly5.19615_L4_N111_chi512_Nup56_seed7103_v3_star_continuation_pass2_complete.jls",
+      "bytes": 138311148
+    },
+    {
+      "path": "results/checkpoints/zigzag_w3_L4_N111_chi512_Nup56_seed7103_v3_star_continuation_pass2_latest.jls",
+      "bytes": 138311140
+    },
+    {
+      "path": "results/checkpoints/zigzag_w3_L4_N111_chi512_Nup56_seed7103_v3_star_continuation_pass1_latest.jls.previous",
+      "bytes": 137485972
+    },
+    {
+      "path": "results/checkpoints/zigzag_w3_L4_N111_chi512_Nup56_seed7103_v3_star_continuation_pass2_latest.jls.previous",
+      "bytes": 137455268
+    },
+    {
+      "path": "results/checkpoints/zigzag_w3_Ly5.19615_L4_N111_chi512_Nup56_seed7103_v3_star_continuation_pass1_complete.jls",
+      "bytes": 136669900
+    },
+    {
+      "path": "results/checkpoints/zigzag_w3_L4_N111_chi512_Nup56_seed7103_v3_star_continuation_pass1_latest.jls",
+      "bytes": 136669892
+    },
+    {
+      "path": "results/checkpoints/zigzag_w1_L10_N91_chi512_Nup46_seed7112_v3_star_projected0_cap512_latest.jls.previous",
+      "bytes": 72683740
+    },
+    {
+      "path": "results/checkpoints/zigzag_w1_Ly1.73205_L10_N91_chi512_Nup46_seed7112_v3_star_projected0_complete.jls",
+      "bytes": 72674068
+    },
+    {
+      "path": "results/checkpoints/zigzag_w1_L10_N91_chi512_Nup46_seed7112_v3_star_projected0_cap512_latest.jls",
+      "bytes": 72674060
+    },
+    {
+      "path": "results/checkpoints/armchair_w4_Ly12.0_L4_N152_chi256_Nup76_seed7103_v3_star_refined_complete.jls",
+      "bytes": 53039394
+    }
+  ],
+  "interpretation": "Storage inventory only. Payload logical bytes may differ from allocated filesystem blocks. Existing validated checkpoints are preserved; future stages must account for atomic temporary writes and completed snapshots."
+}

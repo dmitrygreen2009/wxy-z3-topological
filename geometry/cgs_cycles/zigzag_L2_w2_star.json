@@ -1,6 +1,7 @@
 {
   "parent_geometry": "geometry/zigzag_L2_w2_star.json",
-  "parent_sha256": "3b6f0e2220b7b51a77659786b4bb0de91fe8e9486c3a915a2df3c03d647e1f6b",
+  "parent_sha256": "23460b88c63bda833d964ac6be2463bd0c07d41b6608c015ed0973951eba74c6",
+  "parent_semantic_sha256": "05e001c5e4ab540e56bdf49ae5abd86d6f9c223527588976d613779524bb38b2",
   "family": "zigzag",
   "L": 2,
   "width": 2,
@@ -175,6 +176,5 @@
       "interpretation": "Exact microscopic CGS cycle; its eigencharge is not by itself a proof of topological order or of a minimally entangled ground state."
     }
   ],
-  "narrow_zigzag_note": null,
-  "parent_semantic_sha256": "9480b183d0971f0df687893d0615e9c45386a1eca0faed867933985bd7d4f4d2"
+  "narrow_zigzag_note": null
 }

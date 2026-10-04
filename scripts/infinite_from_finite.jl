@@ -41,6 +41,7 @@ function infinite_from_finite(path;initial_chi=16,target_chi=64,tag="_finite_see
         cache_metadata["fit_source_checkpoint_sha256"]=source_sha
     end
     cache_metadata["requested_finite_result"]=path
+    cache_metadata["requested_source_nup"]=get(meta,"nup",nothing)
     cache_metadata["requested_source_checkpoint_sha256"]=source_sha
     cache_metadata["fit_payload_sha256"]=open(io->bytes2hex(sha256(io)),fit_path)
     cache_metadata["fit_payload_bytes"]=filesize(fit_path)
@@ -86,6 +87,8 @@ function infinite_from_finite(path;initial_chi=16,target_chi=64,tag="_finite_see
             initialization="Official infinite-state fit cache $fit_path; requested finite input $path",conserved_quantum_numbers=String[])
         stage_audit["warm_start_cache_audit"]=cache_metadata
         stage_audit["warm_start_source_projection_records"]=get(meta,"projection_records",nothing)
+        stage_audit["warm_start_source_nup"]=get(meta,"nup",nothing)
+        stage_audit["infinite_number_density_enforced"]=false
         stage_audit["infinite_CGS_charge_enforced"]=false
         psi=audited_vumps(H,psi;family,w,cap,tag,ordering="star",tol=1e-7,maxiter=40,audit=stage_audit,seed=stage_seed,
             solver_tol=x->1e-10)

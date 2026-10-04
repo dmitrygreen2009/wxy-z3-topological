@@ -1,0 +1,9 @@
+{
+  "parent_geometry": "geometry/zigzag_L1_w1_star.json",
+  "parent_sha256": "48265c1c3cc6a00826d1ed0cf70eb4ea820df174590dedf316325621165c8062",
+  "family": "zigzag",
+  "L": 1,
+  "width": 1,
+  "index_base": 1,
+  "plaquettes": []
+}

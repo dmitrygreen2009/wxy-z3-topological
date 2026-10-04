@@ -1,5 +1,5 @@
 """Measured full-state Schmidt spectra; numerical clustering is descriptive."""
-import glob,json,pathlib
+import glob,json,pathlib,re
 import numpy as np
 from provenance import provenance
 
@@ -29,6 +29,7 @@ for path in sorted(glob.glob('results/*_L*_w*_chi*.json')):
         value=summarize(q['schmidt_probabilities'])
         assert abs(value['entropy']-q['entropy'])<1e-8
         states.append(dict(source_file=path,record_index=k,family=r['family'],length=r['length'],width=r['width'],
+            initialization_branch=re.sub(r'_chi\d+','',pathlib.Path(path).stem).removesuffix('_refined'),seed=r.get('seed'),
             circumference=r['physical_circumference'],nup=r.get('nup',(r['spins']+1)//2),number_sector_scope='Global minimum requires independent number-sector search',ordering=r.get('ordering','axial'),cap=q['cap'],
             bond_dimension=q['maxlinkdim'],energy=q['energy'],spectrum=value))
 output=dict(states=states,audit=provenance(None,'Analysis of saved full-state Schmidt probabilities',{},'Saved microscopic MPS spatial-cut spectra',[]),

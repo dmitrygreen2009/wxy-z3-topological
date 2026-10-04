@@ -1,6 +1,7 @@
 {
   "parent_geometry": "geometry/armchair_L10_w4_star.json",
-  "parent_sha256": "e5eabbc7dbfc4f8f3719c20253bedb67c77de4ee12aab3cbcc25499dd9efcce1",
+  "parent_sha256": "2a3a8bc03dd61e5a021cbb9fa23a50ac16924a759ee24e0fa6de1208506148b6",
+  "parent_semantic_sha256": "c3faa8c1ecce72a2910cea97c91109b400908de9d034e433c268a2400a21aa05",
   "family": "armchair",
   "L": 10,
   "width": 4,
@@ -3301,6 +3302,5 @@
       "interpretation": "Exact microscopic CGS cycle; its eigencharge is not by itself a proof of topological order or of a minimally entangled ground state."
     }
   ],
-  "narrow_zigzag_note": null,
-  "parent_semantic_sha256": "36dbbb3e6edeaaa042f46296340ec249f31174b435055c2f36904c6368e04992"
+  "narrow_zigzag_note": null
 }
