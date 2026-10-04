@@ -33,7 +33,7 @@
   "accepted_topological_fits": [],
   "report": "results/scientific_strategy_reaudit.md",
   "evidence_sha256": {
-    "results/strategy_geometry_audit.json": "8440827baaaf4c497459876932acdb036f2fa0f9ccd01574c0c58e900d7cfb69",
+    "results/strategy_geometry_audit.json": "aced4d970fdba044efa9009861875518714381241c17372218114ebea210ca9b",
     "results/cgs_general_audit.json": "da60ff842d31d63f3dae7245042339dc7060b8847a75be600880de664ae5d746",
     "results/torus_hard_gate_audit.md": "298be88dc5af3b26db861bfcb348a3d54e2518da6b93a038b26ce222049a1a67",
     "results/number_sector_cylinder_audit.md": "cfb667c4fb1021bd896c6372384a23fee673b254fff833c0a0030779668ed31c",
