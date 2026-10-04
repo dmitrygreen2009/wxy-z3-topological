@@ -36,3 +36,11 @@ validation logs are preserved.
 These tests validate the measurement pipeline, not WXY topological order.
 That claim still requires ground-state, bond-dimension, length, circumference,
 and sector convergence for both cylinder families.
+
+The independent matter-triplet test gives exactly 1/2 for the correlated
+six-spin state and zero for its product component (two tests pass). Exact CGS
+sector initialization is separately checked on the 19-spin open zigzag cell:
+U^3=I, energy invariance under U, unit projected cycle expectation, and
+projector idempotence all pass without relaxing tolerances. The projector acts
+on physical spins using library gates and MPS sums; it does not replace H by
+an effective model.

@@ -174,3 +174,11 @@ widths one through four and longer wide cylinders. Resource estimates can skip
 a point while preserving all completed smaller states; a resource skip is
 recorded separately from numerical convergence. Independent seed checks use
 `julia --project=. scripts/multiple_seeds.jl`.
+
+To audit seed-dependent loop trapping, use `julia --project=.
+scripts/cylinder_loops.jl RESULT.jls` and `scripts/check_finite.jl RESULT.jls`.
+`test/cgs_projection.jl` validates exact microscopic cycle projection.
+`julia --project=. scripts/projected_zigzag.jl 4 6 10` tests trivial-cycle
+initializations for zigzag width one through chi=512. This selected sector
+must be compared against unrestricted runs; no global optimality at other
+widths or lengths is assumed.
