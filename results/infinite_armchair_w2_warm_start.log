@@ -1,1 +1,50 @@
 INFINITE FIT physical bulk slices 2:3 MPS range 41:76
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.6713796240525816, 0.6726754049310523)
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.7318197791932947, 0.7239774594983367)
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.7545392145818253, 0.7382506743747583)
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.7568395609464893, 0.7551381078161997)
+Norm of the imaginary part 0.6107659666239642 is larger than the tolerance value 1e-15. Keeping as complex.
+norm(v₁ᴿᴺ - swapinds(dag(v₁ᴿᴺ), reverse(Pair(inds(v₁ᴿᴺ)...)))) = 3.3743498268571933e-15
+Norm of the imaginary part 0.6107659666239644 is larger than the tolerance value 1e-15. Keeping as complex.
+norm(v₁ᴿᴺ - swapinds(dag(v₁ᴿᴺ), reverse(Pair(inds(v₁ᴿᴺ)...)))) = 5.690195735351615e-16
+Current bond dimension at bond (1, 2) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (1, 2)
+Current bond dimension at bond (2, 3) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (2, 3)
+Current bond dimension at bond (3, 4) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (3, 4)
+Current bond dimension at bond (4, 5) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (4, 5)
+Current bond dimension at bond (5, 6) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (5, 6)
+Current bond dimension at bond (6, 7) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (6, 7)
+Current bond dimension at bond (7, 8) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (7, 8)
+Current bond dimension at bond (8, 9) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (8, 9)
+Current bond dimension at bond (9, 10) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (9, 10)
+Current bond dimension at bond (10, 11) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (10, 11)
+Current bond dimension at bond (11, 12) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (11, 12)
+Current bond dimension at bond (12, 13) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (12, 13)
+Current bond dimension at bond (13, 14) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (13, 14)
+Current bond dimension at bond (14, 15) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (14, 15)
+Current bond dimension at bond (15, 16) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (15, 16)
+Current bond dimension at bond (16, 17) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (16, 17)
+Current bond dimension at bond (17, 18) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (17, 18)
+Current bond dimension at bond (18, 19) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (18, 19)
+Current bond dimension at bond (19, 20) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (19, 20)
+Current bond dimension at bond (20, 21) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (20, 21)
+Current bond dimension at bond (21, 22) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (21, 22)
+Current bond dimension at bond (22, 23) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (22, 23)
+Current bond dimension at bond (23, 24) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (23, 24)
+Current bond dimension at bond (24, 25) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (24, 25)
+Current bond dimension at bond (25, 26) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (25, 26)
+Current bond dimension at bond (26, 27) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (26, 27)
+Current bond dimension at bond (27, 28) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (27, 28)
+Current bond dimension at bond (28, 29) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (28, 29)
+Current bond dimension at bond (29, 30) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (29, 30)
+Current bond dimension at bond (30, 31) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (30, 31)
+Current bond dimension at bond (31, 32) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (31, 32)
+Current bond dimension at bond (32, 33) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (32, 33)
+Current bond dimension at bond (33, 34) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (33, 34)
+Current bond dimension at bond (34, 35) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (34, 35)
+Current bond dimension at bond (35, 36) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (35, 36)
+Current bond dimension at bond (36, 37) is 8 while desired maximum dimension is 8, skipping bond dimension increase at (36, 37)
+AUDITED VUMPS iteration=1 chi=8 residual=0.6585439378823924 seconds=4240.454410958
+AUDITED VUMPS iteration=2 chi=8 residual=0.2769349912674426 seconds=1072.971976541
+AUDITED VUMPS iteration=3 chi=8 residual=0.16633347915507807 seconds=738.878857875
+AUDITED VUMPS iteration=4 chi=8 residual=0.055759586136839207 seconds=672.905686084
+AUDITED VUMPS iteration=5 chi=8 residual=0.03303380806468159 seconds=664.943018834

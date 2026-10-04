@@ -128,7 +128,9 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
       "smallest_removed_gamma_change": -0.6147466376927153
     },
     {
@@ -258,7 +260,9 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
       "smallest_removed_gamma_change": -0.04999110292017739
     },
     {
@@ -388,7 +392,9 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
       "smallest_removed_gamma_change": 0.3743934700866467
     },
     {
@@ -552,7 +558,9 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
       "smallest_removed_gamma_change": -0.899115637399126
     },
     {
@@ -716,7 +724,9 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
       "smallest_removed_gamma_change": -0.198512317045616
     },
     {
@@ -880,7 +890,9 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
       "smallest_removed_gamma_change": -0.01024610826058403
     },
     {
@@ -896,36 +908,36 @@
         3,
         4
       ],
-      "alpha": 0.10933637049428745,
-      "gamma": -1.962756320005061,
-      "gamma_apparent": -1.962756320005061,
-      "gamma_minus_ln3": -3.061368608673171,
-      "gamma_standard_error": 0.15739656399933724,
-      "alpha_standard_error": 0.019157699683609454,
+      "alpha": 0.11015868080569721,
+      "gamma": -1.9545332168909637,
+      "gamma_apparent": -1.9545332168909637,
+      "gamma_minus_ln3": -3.0531455055590735,
+      "gamma_standard_error": 0.161296443931362,
+      "alpha_standard_error": 0.019632377952572052,
       "covariance": [
         [
-          0.0003670174571673698,
-          0.002752630928755273
+          0.00038543026407263716,
+          0.0028907269805447783
         ],
         [
-          0.0027526309287552735,
-          0.02477367835879746
+          0.0028907269805447788,
+          0.026016542824903007
         ]
       ],
       "residuals": [
-        -0.09952853389497696,
-        0.13410754317068596,
-        0.03037051534356161,
-        -0.06494952461926706
+        -0.1019954648292054,
+        0.13739678441632508,
+        0.031192825654970946,
+        -0.06659414524208662
       ],
-      "residual_rms": 0.0908729485945395,
+      "residual_rms": 0.09312454532310122,
       "degrees_of_freedom": 2,
-      "fixed_ln3_alpha": 0.44948843812463984,
+      "fixed_ln3_alpha": 0.44939707031226106,
       "fixed_ln3_residuals": [
-        1.9413838718871368,
-        1.1545637460617424,
-        0.030370515343560944,
-        -1.0854057275103253
+        1.9334348722101768,
+        1.1551119529360154,
+        0.031192825654969836,
+        -1.0843093137617792
       ],
       "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval.",
       "family": "armchair",
@@ -934,21 +946,21 @@
       "chi": 256,
       "raw_points": [
         {
-          "source_file": "results/armchair_L4_w1_chi256_star_seed7105.json",
-          "record_index": 4,
+          "source_file": "results/armchair_L4_w1_chi256_star_number_candidate_Nup18.json",
+          "record_index": 0,
           "family": "armchair",
           "length": 4,
           "width": 1,
           "ordering": "star",
-          "nup": 19,
+          "nup": 18,
           "number_sector_scope": "Global cylinder minimum requires an independent sector search",
           "chi": 256,
           "actual_chi": 256,
-          "energy": -15.34527497686739,
-          "entropy": 2.1912368975929466,
-          "circumference": 3.0,
-          "seed": 7105,
-          "truncation_error": 7.390282043093308e-07
+          "energy": -15.345406227612273,
+          "entropy": 2.18301379447885,
+          "circumference": 3,
+          "seed": 7202,
+          "truncation_error": null
         },
         {
           "source_file": "results/armchair_L4_w2_chi256_star.json",
@@ -1044,8 +1056,10 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
-      "smallest_removed_gamma_change": -0.3317617796499228
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
+      "smallest_removed_gamma_change": -0.33998488276402017
     },
     {
       "circumferences": [
@@ -1174,7 +1188,9 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
       "smallest_removed_gamma_change": -0.44074585183682863
     },
     {
@@ -1304,7 +1320,9 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
       "smallest_removed_gamma_change": -0.35001612431538304
     },
     {
@@ -1434,7 +1452,9 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
       "smallest_removed_gamma_change": -0.32970986090132604
     },
     {
@@ -1598,7 +1618,9 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
       "smallest_removed_gamma_change": -0.6774704593306444
     },
     {
@@ -1762,7 +1784,9 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
       "smallest_removed_gamma_change": 0.42207508602260013
     },
     {
@@ -1778,36 +1802,36 @@
         3,
         4
       ],
-      "alpha": -0.02744733016697701,
-      "gamma": -1.82562374839099,
-      "gamma_apparent": -1.82562374839099,
-      "gamma_minus_ln3": -2.9242360370591,
-      "gamma_standard_error": 0.1721647700100219,
-      "alpha_standard_error": 0.036295520404714614,
+      "alpha": -0.02744676907893879,
+      "gamma": -1.8256205089476907,
+      "gamma_apparent": -1.8256205089476907,
+      "gamma_minus_ln3": -2.9242327976158005,
+      "gamma_standard_error": 0.17216345767120458,
+      "alpha_standard_error": 0.036295243739399644,
       "covariance": [
         [
-          0.0013173648014490548,
-          0.005704356920531622
+          0.0013173447181024289,
+          0.0057042699570897665
         ],
         [
-          0.005704356920531622,
-          0.029640708032603734
+          0.0057042699570897665,
+          0.02964025615730465
         ]
       ],
       "residuals": [
-        0.09299492095799211,
-        -0.1662111012591465,
-        0.053437439644314244,
-        0.019778740656839267
+        0.09299394912500314,
+        -0.16620980548182662,
+        0.053437763588644493,
+        0.019778092768179878
       ],
-      "residual_rms": 0.09939937631025621,
+      "residual_rms": 0.09939861863108675,
       "degrees_of_freedom": 2,
-      "fixed_ln3_alpha": 0.5353221575563816,
+      "fixed_ln3_alpha": 0.5353220952132661,
       "fixed_ln3_residuals": [
-        2.0424856123307253,
-        0.8085342444272201,
-        0.05343743964431402,
-        -0.9549666050295269
+        2.04248248086887,
+        0.808534460390107,
+        0.053437763588644493,
+        -0.9549661731037535
       ],
       "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval.",
       "family": "zigzag",
@@ -1816,7 +1840,7 @@
       "chi": 128,
       "raw_points": [
         {
-          "source_file": "results/zigzag_L4_w1_chi512_star_projected0_seed7112.json",
+          "source_file": "results/zigzag_L4_w1_chi256_star_projected1_seed7214.json",
           "record_index": 2,
           "family": "zigzag",
           "length": 4,
@@ -1826,11 +1850,11 @@
           "number_sector_scope": "Global cylinder minimum requires an independent sector search",
           "chi": 128,
           "actual_chi": 128,
-          "energy": -15.03285181064536,
-          "entropy": 1.87107849896766,
+          "energy": -15.032851811342729,
+          "entropy": 1.8710752595243614,
           "circumference": 1.7320508075688772,
-          "seed": 7112,
-          "truncation_error": 1.9936418572341137e-07
+          "seed": 7214,
+          "truncation_error": 1.9936414164212956e-07
         },
         {
           "source_file": "results/zigzag_L4_w2_chi256_star.json",
@@ -1926,8 +1950,10 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
-      "smallest_removed_gamma_change": 0.3099830698599775
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
+      "smallest_removed_gamma_change": 0.3099798304166781
     },
     {
       "circumferences": [
@@ -2090,8 +2116,12 @@
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
-      "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
+      "eligible_for_topological_inference": false,
+      "selection_rule": "Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.",
+      "status": "Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.",
       "smallest_removed_gamma_change": 0.4120746108567406
     }
-  ]
+  ],
+  "accepted_topological_fits": [],
+  "scientific_strategy_reaudit": "results/scientific_strategy_reaudit.md"
 }

@@ -1,0 +1,43 @@
+{
+  "scientific_status": "2D phase unresolved; no accepted thermodynamic gamma",
+  "production_calculations_restarted": false,
+  "validated_physical_results_preserved": true,
+  "claims": {
+    "exact_microscopic_benchmarks": "validated",
+    "corrected_torus_multiplicities": "validated 4,1,1,4",
+    "finite_and_infinite_embedded_geometry": "static audit passed",
+    "global_cylinder_half_filling": "not generally valid; small armchair counterexample is established",
+    "projected_initializer_guarantees_final_CGS_charge": "false; observed q1 to q0 migration",
+    "local_loop_eigencharge_identifies_MES": "not established",
+    "measured_transfer_xi_is_2D_gap": "not established",
+    "Z3_topological_order": "not established",
+    "Z3_topological_order_excluded": "not established",
+    "2D_gaplessness": "not established",
+    "physical_U1_order": "not established"
+  },
+  "concrete_findings": [
+    "Width-one parallel cycles have circumference winding, despite local support on the quotient",
+    "The q1 initialized DMRG state ended in q0; its energy is valid but the claimed conditional comparison failed",
+    "Infinite analysis had insufficient initializer-branch separation; corrected without restarting states",
+    "Charged input alias inherited an unrelated source checksum; metadata corrected, physical payload unchanged",
+    "Legacy finite-to-infinite cache origin fingerprints are incomplete; future caches are fingerprinted"
+  ],
+  "geometry_counts": {
+    "finite": 41,
+    "infinite": 16,
+    "circumference_cycles": 221
+  },
+  "accepted_topological_fits": [],
+  "report": "results/scientific_strategy_reaudit.md",
+  "evidence_sha256": {
+    "results/strategy_geometry_audit.json": "8bf493230fa8496688e8eef903a64cb30465366270b337b5a27a92a4cd2f15ba",
+    "results/cgs_general_audit.json": "da60ff842d31d63f3dae7245042339dc7060b8847a75be600880de664ae5d746",
+    "results/torus_hard_gate_audit.md": "298be88dc5af3b26db861bfcb348a3d54e2518da6b93a038b26ce222049a1a67",
+    "results/number_sector_cylinder_audit.md": "cfb667c4fb1021bd896c6372384a23fee673b254fff833c0a0030779668ed31c",
+    "results/infinite_sector_audit.md": "6caa3539dd3f0758fa5a136dd85234713ca2694a6df2c025a7001d1565bc94f5",
+    "results/zigzag_L4_w1_chi256_star_projected1_seed7214.json": "ce8490ca6cb65e41180b6733a3a704c14ab0342a68df688c9f1534fd9a2c0b6a",
+    "results/zigzag_L4_w1_chi256_star_projected1_seed7214_loops.json": "6b87d83a978074d0d45ea950a027a886a64c846714576d351307a36c0358bd06",
+    "results/zigzag_L4_w2_chi256_star_circumference_cycles.json": "2aad476ae436c8744f1fdb0ebaee0227ef94bac12514e204a2dbfa367b3e74d4",
+    "results/armchair_L4_w2_chi256_star_circumference_cycles.json": "c6d2d582677d7b1c7016cc3fb53a98b7e6352b7838a0af52e9ef9048dd332641"
+  }
+}

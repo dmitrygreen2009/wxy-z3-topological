@@ -51,7 +51,7 @@ function loop_expectation(path)
         end
         rotated=apply(gates,psi;cutoff=1e-13,maxdim=4maxlinkdim(psi))
         z=inner(psi,rotated)/inner(psi,psi)
-        push!(results,Dict("cycle_label"=>label,"nonzero_edge_count"=>count(!iszero,p),"edge_exponents"=>p,"expectation_real"=>real(z),"expectation_imag"=>imag(z),
+        push!(results,Dict("cycle_label"=>label,"unwrapped_winding_number"=>(family=="zigzag" && w==1 ? 1 : 0),"cycle_classification"=>(family=="zigzag" && w==1 ? "Noncontractible circumference cycle on the narrow quotient" : "Folded contractible hexagon"),"nonzero_edge_count"=>count(!iszero,p),"edge_exponents"=>p,"expectation_real"=>real(z),"expectation_imag"=>imag(z),
             "magnitude"=>abs(z),"rotated_norm"=>norm(rotated),"maxlinkdim_after_apply"=>maxlinkdim(rotated)))
     end
     open(replace(path,".jls"=>"_loops.json"),"w") do io;JSON3.write(io,Dict("source"=>path,"measurement_git_commit"=>LAUNCH_REVISION,"runtime_seconds"=>time()-started,"audit"=>run_provenance(solver="ITensorMPS exact CGS gate application",settings=Dict("cutoff"=>1e-13,"maxdim"=>4maxlinkdim(psi)),initialization=path,conserved_quantum_numbers=["total Sz"]),"plaquette_symmetry_expectations"=>results,"interpretation"=>"Exact CGS cycle charges and purity, not a topological-order verdict. Zigzag width one uses actual parallel-edge two-cycles."));end

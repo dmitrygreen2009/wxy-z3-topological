@@ -16,13 +16,38 @@ function infinite_from_finite(path;initial_chi=16,target_chi=64,tag="_finite_see
     println("INFINITE FIT physical bulk slices ",t,":",t+1," MPS range ",middle);flush(stdout)
     # Official library variational fitting; unrelated finite bonds are not identified.
     fit_path=replace(path,".jls"=>"_infinite_fit_chi$(initial_chi).jls")
-    if isfile(fit_path)
+    source_payload=resolve_checkpoint(path)
+    source_sha=open(io->bytes2hex(sha256(io)),source_payload)
+    cache_metadata_path=replace(fit_path,".jls"=>"_cache_audit.json")
+    cache_metadata=isfile(cache_metadata_path) ? JSON3.read(read(cache_metadata_path,String),Dict{String,Any}) : Dict{String,Any}()
+    if isfile(fit_path) && get(cache_metadata,"fit_source_checkpoint_sha256",nothing)!==nothing && cache_metadata["fit_source_checkpoint_sha256"]!=source_sha
+        # This cache is demonstrably from another physical input. Preserve it,
+        # and use a distinct cache for the changed source instead of overwriting.
+        fit_path=replace(fit_path,".jls"=>"_source$(source_sha[1:12]).jls")
+        cache_metadata_path=replace(fit_path,".jls"=>"_cache_audit.json")
+        cache_metadata=isfile(cache_metadata_path) ? JSON3.read(read(cache_metadata_path,String),Dict{String,Any}) : Dict{String,Any}()
+    end
+    @assert get(cache_metadata,"fit_source_checkpoint_sha256",source_sha) in (nothing,source_sha) "Fitting cache input fingerprint mismatch"
+    cached=isfile(fit_path)
+    if cached
+        if haskey(cache_metadata,"fit_payload_sha256")
+            @assert open(io->bytes2hex(sha256(io)),fit_path)==cache_metadata["fit_payload_sha256"] "Fitting cache checksum mismatch; preserve the payload and diagnose it"
+        end
         psi=load_state(fit_path)
     else
         Random.seed!(7103)
         psi=infinitemps_approx(finite;nsites=n,nrange=middle,nsweeps=4,outputlevel=1)
-        serialize(fit_path,psi)
+        serialize(fit_path*".tmp",psi);mv(fit_path*".tmp",fit_path;force=true)
+        cache_metadata["fit_source_checkpoint_sha256"]=source_sha
     end
+    cache_metadata["requested_finite_result"]=path
+    cache_metadata["requested_source_checkpoint_sha256"]=source_sha
+    cache_metadata["fit_payload_sha256"]=open(io->bytes2hex(sha256(io)),fit_path)
+    cache_metadata["fit_payload_bytes"]=filesize(fit_path)
+    cache_metadata["fit_source_status"]=get(cache_metadata,"fit_source_checkpoint_sha256",nothing)===nothing ? "Legacy origin unverified; reusable trial initialization, not claimed to originate from the latest requested finite state" : "Source fingerprint recorded"
+    cache_metadata["requested_fit_settings"]=Dict("initial_chi"=>initial_chi,"finite_truncation_cutoff"=>1e-10,"fit_sweeps"=>4,"random_seed"=>7103,"bulk_range"=>collect(middle))
+    cache_metadata["recorded_git_commit"]=LAUNCH_REVISION
+    atomic_json(cache_metadata_path,cache_metadata)
     # mixed_canonical's current wrapper does not forward its tol keyword.
     # Call the official right/left canonicalization routines with stricter tol.
     trials=Dict{String,Any}[]
@@ -49,10 +74,20 @@ function infinite_from_finite(path;initial_chi=16,target_chi=64,tag="_finite_see
     @assert abs(lambda-1)<1e-10
     psi=InfiniteCanonicalMPS(left,center,right)
     ss=siteinds(only,psi);H=InfiniteSum{MPO}(infinite_opsum(family,w;ordering="star"),ss)
-    for (iteration,cap) in enumerate(unique([initial_chi,min(32,target_chi),target_chi]))
+    @assert 1<=initial_chi<=target_chi
+    caps=sort(unique(vcat(initial_chi,[c for c in [16,32,64,128,256,512] if initial_chi<c<target_chi],target_chi)))
+    for (iteration,cap) in enumerate(caps)
+        stage_seed=7103+iteration;Random.seed!(stage_seed)
         estimate_memory(psi,cap;label="$(family) infinite w$(w) expansion")
         psi=subspace_expansion(psi,H;cutoff=1e-10,maxdim=cap)
-        psi=audited_vumps(H,psi;family,w,cap,tag,ordering="star",tol=1e-7,maxiter=40,
+        stage_audit=run_provenance(;seed=stage_seed,solver="ITensorInfiniteMPS VUMPS from finite-state fit",
+            settings=Dict("tol"=>1e-7,"maxiter"=>40,"local_solver_tolerance_rule"=>"fixed","local_eigensolver_tolerance_at_initial_residual"=>1e-10,
+                "time_step"=>"-Inf","multisite_update_algorithm"=>"sequential","subspace_expansion_cutoff"=>1e-10),
+            initialization="Official infinite-state fit cache $fit_path; requested finite input $path",conserved_quantum_numbers=String[])
+        stage_audit["warm_start_cache_audit"]=cache_metadata
+        stage_audit["warm_start_source_projection_records"]=get(meta,"projection_records",nothing)
+        stage_audit["infinite_CGS_charge_enforced"]=false
+        psi=audited_vumps(H,psi;family,w,cap,tag,ordering="star",tol=1e-7,maxiter=40,audit=stage_audit,seed=stage_seed,
             solver_tol=x->1e-10)
         measure_infinite(psi,H,family,w,cap,iteration;tag,ordering="star")
     end

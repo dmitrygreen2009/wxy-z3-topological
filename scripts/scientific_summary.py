@@ -43,7 +43,7 @@ for path in sorted(glob.glob('results/infinite_*_chi*.json')):
     if 'spatial_entropy' not in r:continue
     r['file']=path;infinite.append(r)
 output=dict(ln3=ln3,finite_states=finite,best_finite_states=best,entropy_fits=fits,infinite_states=infinite,
-    status='Study in progress; transfer lengths describe the measured variational infinite states, and apparent gamma values are not converged thermodynamic estimates.')
+    scientific_strategy_reaudit='results/scientific_strategy_reaudit.md',phase_claims=dict(Z3_topological_order='not established',Z3_topological_order_excluded='not established',two_dimensional_gaplessness='not established',physical_U1_order='not established'),status='Study in progress; transfer lengths describe the measured variational infinite states, and apparent gamma values are not converged thermodynamic estimates.')
 pathlib.Path('results/scientific_summary.json').write_text(json.dumps(output,indent=2))
 print('Finite states:',len(finite),'Infinite states:',len(infinite),'Descriptive fits:',len(fits))
 for r in best:print(r['family'],r['L'],r['w'],r['ordering'],r['chi'],r['E'],r['S'])

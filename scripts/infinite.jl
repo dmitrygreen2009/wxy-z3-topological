@@ -35,12 +35,13 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
         push!(right_isometry_errors,norm(dense(psi.AR[j]*dag(prime(psi.AR[j],l)))-dense(delta(l,dag(prime(l)))))/sqrt(dim(l)))
         push!(center_norm_errors,abs(norm(psi.C[j])-1))
     end
+    sz_profile=[real(expect(psi,"Sz",j)) for j=1:n]
     r=Dict("family"=>family,"width"=>w,"chi"=>maxlinkdim(psi),"cap"=>cap,"iteration"=>iteration,"cell_spins"=>n,
         "energy_cell"=>real(sum(energies)),"entropy_bonds"=>entropies,"spatial_entropy"=>entropies[end],
         "spatial_entropies_at_slice_cuts"=>[entropies[9w],entropies[end]],
         "slice_cut_entropy_modulation"=>abs(entropies[9w]-entropies[end]),
         "spatial_entropy_slice_mean"=>(entropies[9w]+entropies[end])/2,
-        "mean_sz"=>real(sum(expect(psi,"Sz",j) for j=1:n)/n),"ordering_version"=>2,
+        "mean_sz"=>sum(sz_profile)/n,"site_sz_profile_infinite_order"=>sz_profile,"ordering_version"=>2,
         "mean_abs_splus"=>is_qn ? 0.0 : sum(abs(expect(psi,"S+",j)) for j=1:n)/n,
         "u1_conserving_ansatz"=>is_qn,"measurement_tag"=>tag,"infinite_ordering"=>ordering,
         "transfer_converged_eigenpairs"=>spectrum["converged"],"transfer_eigenvalue_magnitudes"=>abs.(vals),
@@ -70,6 +71,11 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
     r["energy_above_known_trial_state"]=r["energy_cell"]>-4.8061842w+1e-9
     r["variational_bound_interpretation"]="Energy above the explicit trial state excludes a ground-state candidate irrespective of projected solver residual; satisfying this bound does not certify convergence."
     r["kind"]="infinite"
+    r["translation_period_restriction"]="two axial slices"
+    r["topological_flux_or_MES_identified"]=false
+    r["bulk_ground_filling_certified"]=false
+    r["physical_bulk_gap_certified"]=false
+    r["fixed_point_detection_scope"]="Detected multiplicity is a lower bound from two independent starts, not a complete peripheral-spectrum certificate."
     r["physical_circumference"]=family=="zigzag" ? sqrt(3)*w : 3.0w
     r["cell_slices"]=2;r["physical_spins"]=n;r["energy_per_vertex"]=r["energy_cell"]/(4w)
     r["measurement_runtime_seconds"]=time()-measurement_started

@@ -17,6 +17,11 @@ include("../src/cgs.jl")
     audit["edge_exponents"]=p
     @test audit["edge_exponents"]==p
     @test audit["purity_error"]<1e-11
+    for charge in [1,2]
+        charged,record=cgs_project(psi,lat,p;charge,maxdim=256,cutoff=1e-14)
+        @test record["purity_error"]<1e-11
+        @test abs(inner(projected,charged))<1e-11
+    end
     second,_=cgs_project(projected,lat,p;maxdim=256,cutoff=1e-14)
     @test abs(inner(second,projected))≈1 atol=1e-11
 end

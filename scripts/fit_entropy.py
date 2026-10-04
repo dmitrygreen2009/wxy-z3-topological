@@ -37,10 +37,10 @@ def main():
         result=fit(selected)
         result.update(family=family,ordering=ordering,length=L,chi=cap,raw_points=selected,
             smallest_circumference_removed=fit(selected[1:]),
-            status='Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.')
+            eligible_for_topological_inference=False,selection_rule='Lowest recorded variational energy at each width; a common MES branch and global ground-sector selection are not certified.',status='Descriptive finite-size intercept only; current data do not supply a topological gamma confidence interval.')
         result['smallest_removed_gamma_change']=result['smallest_circumference_removed']['gamma']-result['gamma']
         fits.append(result)
-    pathlib.Path('results/entropy_fits.json').write_text(json.dumps(dict(ln3=LN3,fits=fits),indent=2))
+    pathlib.Path('results/entropy_fits.json').write_text(json.dumps(dict(ln3=LN3,fits=fits,accepted_topological_fits=[],scientific_strategy_reaudit="results/scientific_strategy_reaudit.md"),indent=2))
     print('Wrote',len(fits),'fits with residuals, OLS errors and smallest-circumference sensitivity.')
 
 if __name__=="__main__":main()

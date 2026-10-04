@@ -1,0 +1,972 @@
+{
+  "parent_geometry": "geometry/zigzag_L8_w2_star.json",
+  "parent_sha256": "850e8d3aa5c7a4f08346ff164674da20b04b40f0cdf0c541c92345bf9d5faadf",
+  "family": "zigzag",
+  "L": 8,
+  "width": 2,
+  "index_base": 1,
+  "cycles": [
+    {
+      "label": "circumference_cycle_t0",
+      "edge_exponents": [
+        1,
+        0,
+        2,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "winding_number": 1,
+      "unwrapped_displacement": [
+        0,
+        2
+      ],
+      "walk": [
+        {
+          "edge_id": 1,
+          "local_leg": 1,
+          "from_unwrapped": [
+            0,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            0,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 5,
+          "local_leg": 3,
+          "from_unwrapped": [
+            0,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            0,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 6,
+          "local_leg": 1,
+          "from_unwrapped": [
+            0,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            0,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 3,
+          "local_leg": 3,
+          "from_unwrapped": [
+            0,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            0,
+            2,
+            "A"
+          ]
+        }
+      ],
+      "contractible": false,
+      "interpretation": "Exact microscopic CGS cycle; its eigencharge is not by itself a proof of topological order or of a minimally entangled ground state."
+    },
+    {
+      "label": "circumference_cycle_t1",
+      "edge_exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "winding_number": 1,
+      "unwrapped_displacement": [
+        0,
+        2
+      ],
+      "walk": [
+        {
+          "edge_id": 9,
+          "local_leg": 1,
+          "from_unwrapped": [
+            1,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            1,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 12,
+          "local_leg": 3,
+          "from_unwrapped": [
+            1,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            1,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 13,
+          "local_leg": 1,
+          "from_unwrapped": [
+            1,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            1,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 10,
+          "local_leg": 3,
+          "from_unwrapped": [
+            1,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            1,
+            2,
+            "A"
+          ]
+        }
+      ],
+      "contractible": false,
+      "interpretation": "Exact microscopic CGS cycle; its eigencharge is not by itself a proof of topological order or of a minimally entangled ground state."
+    },
+    {
+      "label": "circumference_cycle_t2",
+      "edge_exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "winding_number": 1,
+      "unwrapped_displacement": [
+        0,
+        2
+      ],
+      "walk": [
+        {
+          "edge_id": 15,
+          "local_leg": 1,
+          "from_unwrapped": [
+            2,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            2,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 18,
+          "local_leg": 3,
+          "from_unwrapped": [
+            2,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            2,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 19,
+          "local_leg": 1,
+          "from_unwrapped": [
+            2,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            2,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 16,
+          "local_leg": 3,
+          "from_unwrapped": [
+            2,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            2,
+            2,
+            "A"
+          ]
+        }
+      ],
+      "contractible": false,
+      "interpretation": "Exact microscopic CGS cycle; its eigencharge is not by itself a proof of topological order or of a minimally entangled ground state."
+    },
+    {
+      "label": "circumference_cycle_t3",
+      "edge_exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "winding_number": 1,
+      "unwrapped_displacement": [
+        0,
+        2
+      ],
+      "walk": [
+        {
+          "edge_id": 21,
+          "local_leg": 1,
+          "from_unwrapped": [
+            3,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            3,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 24,
+          "local_leg": 3,
+          "from_unwrapped": [
+            3,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            3,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 25,
+          "local_leg": 1,
+          "from_unwrapped": [
+            3,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            3,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 22,
+          "local_leg": 3,
+          "from_unwrapped": [
+            3,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            3,
+            2,
+            "A"
+          ]
+        }
+      ],
+      "contractible": false,
+      "interpretation": "Exact microscopic CGS cycle; its eigencharge is not by itself a proof of topological order or of a minimally entangled ground state."
+    },
+    {
+      "label": "circumference_cycle_t4",
+      "edge_exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "winding_number": 1,
+      "unwrapped_displacement": [
+        0,
+        2
+      ],
+      "walk": [
+        {
+          "edge_id": 27,
+          "local_leg": 1,
+          "from_unwrapped": [
+            4,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            4,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 30,
+          "local_leg": 3,
+          "from_unwrapped": [
+            4,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            4,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 31,
+          "local_leg": 1,
+          "from_unwrapped": [
+            4,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            4,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 28,
+          "local_leg": 3,
+          "from_unwrapped": [
+            4,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            4,
+            2,
+            "A"
+          ]
+        }
+      ],
+      "contractible": false,
+      "interpretation": "Exact microscopic CGS cycle; its eigencharge is not by itself a proof of topological order or of a minimally entangled ground state."
+    },
+    {
+      "label": "circumference_cycle_t5",
+      "edge_exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "winding_number": 1,
+      "unwrapped_displacement": [
+        0,
+        2
+      ],
+      "walk": [
+        {
+          "edge_id": 33,
+          "local_leg": 1,
+          "from_unwrapped": [
+            5,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            5,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 36,
+          "local_leg": 3,
+          "from_unwrapped": [
+            5,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            5,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 37,
+          "local_leg": 1,
+          "from_unwrapped": [
+            5,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            5,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 34,
+          "local_leg": 3,
+          "from_unwrapped": [
+            5,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            5,
+            2,
+            "A"
+          ]
+        }
+      ],
+      "contractible": false,
+      "interpretation": "Exact microscopic CGS cycle; its eigencharge is not by itself a proof of topological order or of a minimally entangled ground state."
+    },
+    {
+      "label": "circumference_cycle_t6",
+      "edge_exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "winding_number": 1,
+      "unwrapped_displacement": [
+        0,
+        2
+      ],
+      "walk": [
+        {
+          "edge_id": 39,
+          "local_leg": 1,
+          "from_unwrapped": [
+            6,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            6,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 42,
+          "local_leg": 3,
+          "from_unwrapped": [
+            6,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            6,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 43,
+          "local_leg": 1,
+          "from_unwrapped": [
+            6,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            6,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 40,
+          "local_leg": 3,
+          "from_unwrapped": [
+            6,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            6,
+            2,
+            "A"
+          ]
+        }
+      ],
+      "contractible": false,
+      "interpretation": "Exact microscopic CGS cycle; its eigencharge is not by itself a proof of topological order or of a minimally entangled ground state."
+    },
+    {
+      "label": "circumference_cycle_t7",
+      "edge_exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        2,
+        1,
+        0
+      ],
+      "winding_number": 1,
+      "unwrapped_displacement": [
+        0,
+        2
+      ],
+      "walk": [
+        {
+          "edge_id": 45,
+          "local_leg": 1,
+          "from_unwrapped": [
+            7,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            7,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 48,
+          "local_leg": 3,
+          "from_unwrapped": [
+            7,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            7,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 49,
+          "local_leg": 1,
+          "from_unwrapped": [
+            7,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            7,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 46,
+          "local_leg": 3,
+          "from_unwrapped": [
+            7,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            7,
+            2,
+            "A"
+          ]
+        }
+      ],
+      "contractible": false,
+      "interpretation": "Exact microscopic CGS cycle; its eigencharge is not by itself a proof of topological order or of a minimally entangled ground state."
+    }
+  ],
+  "narrow_zigzag_note": null,
+  "parent_semantic_sha256": "f41dcf704a92f7fba9ee49a5cae89cbcf24f0b21c8c2fb11a8ce6d61371f0dce"
+}

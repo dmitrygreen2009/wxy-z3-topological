@@ -19,6 +19,8 @@ jobs:
       - run: mkdir -p results
       - run: OPENBLAS_NUM_THREADS=1 python scripts/ed.py
       - run: python test/geometry_records.py
+      - run: python scripts/strategy_geometry_audit.py
+      - run: OPENBLAS_NUM_THREADS=1 python scripts/cgs_general_audit.py
       - run: python scripts/flatband_audit.py
       - run: OPENBLAS_NUM_THREADS=1 python scripts/parallel_edge_symmetry.py
       - run: OPENBLAS_NUM_THREADS=1 python scripts/star_trial_bound.py

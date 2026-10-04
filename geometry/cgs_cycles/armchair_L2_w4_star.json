@@ -1,0 +1,282 @@
+{
+  "parent_geometry": "geometry/armchair_L2_w4_star.json",
+  "parent_sha256": "ca7315c450a2968ad50f58618e9d0894002023b9608ab3964f43575a789a9a5e",
+  "family": "armchair",
+  "L": 2,
+  "width": 4,
+  "index_base": 1,
+  "cycles": [
+    {
+      "label": "circumference_cycle_t0",
+      "edge_exponents": [
+        1,
+        0,
+        2,
+        2,
+        0,
+        1,
+        0,
+        2,
+        2,
+        0,
+        1,
+        0,
+        2,
+        2,
+        0,
+        1,
+        0,
+        2,
+        2,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "winding_number": 1,
+      "unwrapped_displacement": [
+        4,
+        4
+      ],
+      "walk": [
+        {
+          "edge_id": 1,
+          "local_leg": 1,
+          "from_unwrapped": [
+            0,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            0,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 4,
+          "local_leg": 2,
+          "from_unwrapped": [
+            0,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            1,
+            0,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 21,
+          "local_leg": 1,
+          "from_unwrapped": [
+            1,
+            0,
+            "A"
+          ],
+          "to_unwrapped": [
+            1,
+            0,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 8,
+          "local_leg": 3,
+          "from_unwrapped": [
+            1,
+            0,
+            "B"
+          ],
+          "to_unwrapped": [
+            1,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 6,
+          "local_leg": 1,
+          "from_unwrapped": [
+            1,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            1,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 9,
+          "local_leg": 2,
+          "from_unwrapped": [
+            1,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            2,
+            1,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 24,
+          "local_leg": 1,
+          "from_unwrapped": [
+            2,
+            1,
+            "A"
+          ],
+          "to_unwrapped": [
+            2,
+            1,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 13,
+          "local_leg": 3,
+          "from_unwrapped": [
+            2,
+            1,
+            "B"
+          ],
+          "to_unwrapped": [
+            2,
+            2,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 11,
+          "local_leg": 1,
+          "from_unwrapped": [
+            2,
+            2,
+            "A"
+          ],
+          "to_unwrapped": [
+            2,
+            2,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 14,
+          "local_leg": 2,
+          "from_unwrapped": [
+            2,
+            2,
+            "B"
+          ],
+          "to_unwrapped": [
+            3,
+            2,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 27,
+          "local_leg": 1,
+          "from_unwrapped": [
+            3,
+            2,
+            "A"
+          ],
+          "to_unwrapped": [
+            3,
+            2,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 18,
+          "local_leg": 3,
+          "from_unwrapped": [
+            3,
+            2,
+            "B"
+          ],
+          "to_unwrapped": [
+            3,
+            3,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 16,
+          "local_leg": 1,
+          "from_unwrapped": [
+            3,
+            3,
+            "A"
+          ],
+          "to_unwrapped": [
+            3,
+            3,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 19,
+          "local_leg": 2,
+          "from_unwrapped": [
+            3,
+            3,
+            "B"
+          ],
+          "to_unwrapped": [
+            4,
+            3,
+            "A"
+          ]
+        },
+        {
+          "edge_id": 30,
+          "local_leg": 1,
+          "from_unwrapped": [
+            4,
+            3,
+            "A"
+          ],
+          "to_unwrapped": [
+            4,
+            3,
+            "B"
+          ]
+        },
+        {
+          "edge_id": 3,
+          "local_leg": 3,
+          "from_unwrapped": [
+            4,
+            3,
+            "B"
+          ],
+          "to_unwrapped": [
+            4,
+            4,
+            "A"
+          ]
+        }
+      ],
+      "contractible": false,
+      "interpretation": "Exact microscopic CGS cycle; its eigencharge is not by itself a proof of topological order or of a minimally entangled ground state."
+    }
+  ],
+  "narrow_zigzag_note": null,
+  "parent_semantic_sha256": "b0e65e4a540596a587bca614365c66a491c4c2aee1393b0cf3d8dd2d1228f2d6"
+}

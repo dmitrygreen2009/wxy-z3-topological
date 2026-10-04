@@ -27,7 +27,7 @@ function transfer_spectrum(AL;tol=1e-9,seed=7103)
     ratio=length(values)>=2 ? abs(values[2]/values[1]) : 0.0
     xi=ratio==0 ? 0.0 : abs(ratio-1)<1e-12 ? Inf : -1/log(ratio)
     Dict("values"=>values,"residuals"=>residuals,"xi_cells"=>xi,"converged"=>info.converged,
-        "fixed_point_rank_detected"=>length(fixed_vectors),"fixed_point_gram_eigenvalues"=>eigvals(Hermitian(gram)),
+        "fixed_point_rank_detected"=>length(fixed_vectors),"fixed_point_rank_is_detected_lower_bound"=>true,"fixed_point_uniqueness_certified"=>false,"fixed_point_gram_eigenvalues"=>eigvals(Hermitian(gram)),
         "fixed_point_residuals"=>fixed_residuals,"subleading_ratio"=>ratio,
         "ratio_gap_above_residual_scale"=>length(values)>=2 && abs(1-ratio)>10maximum(residuals[1:2]))
 end

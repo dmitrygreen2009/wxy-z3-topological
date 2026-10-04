@@ -13,6 +13,8 @@ The corrected first ten levels, including four ground states and four states
 at -7.296046028855, are now the regression benchmark. Cylinder scaling resumed
 after the hard gate was resolved; the audit remains the historical record.
 
+**Current scientific status:** topology, a 2D gap, and physical U(1) order remain unresolved. Read [the strategy re-audit](results/scientific_strategy_reaudit.md) before interpreting any apparent intercept or transfer length. Static geometry/cut checks passed; a projected initializer was also found to change its CGS sector during DMRG. Existing numerical states are preserved, and none of the current gamma fits is accepted as a thermodynamic topological estimate.
+
 ## Reproduce
 
 Use Julia 1.10.10 and the committed Project/Manifest. Python ED is independent.
@@ -263,3 +265,13 @@ Checksummed manifests are verified on state loads and continuations; explicit
 manifest. Legacy unmanifested fitting caches remain explicitly identifiable.
 
 Completed finite checkpoints now have unique completion identifiers; rolling latest checkpoints still rotate a previous payload. `scripts/star_trial_bound.py` independently validates the isolated-A-star variational trial state. Its conservative two-slice bound is `E0 <= -4.8061842 * width` for either wrapping. An infinite solver point above that trial energy cannot represent the ground state even if its projected residual is tiny. `test/variational_bound.jl` additionally checks the disjoint-dimer trial state directly with ITensor.
+
+Re-audit geometry and cycle winding without rerunning the numerical solvers:
+
+```sh
+python scripts/strategy_geometry_audit.py
+OPENBLAS_NUM_THREADS=1 python scripts/cgs_general_audit.py
+julia --project=. scripts/noncontractible_cycles.jl results/zigzag_L4_w2_chi256_star.jls
+```
+
+The last command measures new circumference-cycle charges and density profiles on an existing state. CGS projection labels specify initialization; verify actual charges after optimization. A winding-operator eigenstate has not automatically been identified as a topological MES. Future finite-to-infinite fit caches carry source and payload fingerprints; legacy caches with unknown input fingerprints remain explicitly labeled reusable trial states with incomplete initializer provenance.
