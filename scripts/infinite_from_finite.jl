@@ -24,7 +24,26 @@ function infinite_from_finite(path;initial_chi=16,target_chi=64)
     end
     # mixed_canonical's current wrapper does not forward its tol keyword.
     # Call the official right/left canonicalization routines with stricter tol.
-    _,right,_=ITensorInfiniteMPS.right_orthogonalize(psi.AL;left_tags=ts"Left",right_tags=ts"Right",tol=1e-14)
+    trials=Dict{String,Any}[]
+    right=nothing
+    # The package rejects a positive imaginary eigenvalue component >1e-15,
+    # even when the eigensolver converges at 1e-14. Retry its random start;
+    # preserve the fitted state and every tolerance, and record each attempt.
+    for attempt=1:8
+        canonical_seed=7102+attempt;Random.seed!(canonical_seed)
+        try
+            _,right,_=ITensorInfiniteMPS.right_orthogonalize(psi.AL;left_tags=ts"Left",right_tags=ts"Right",tol=1e-14)
+            push!(trials,Dict("seed"=>canonical_seed,"status"=>"success"));break
+        catch error
+            message=sprint(showerror,error)
+            push!(trials,Dict("seed"=>canonical_seed,"status"=>"failure","error"=>message))
+            atomic_json(replace(fit_path,".jls"=>"_canonicalization.json"),Dict("trials"=>trials,"tolerance"=>1e-14))
+            occursin("Imaginary part of eigenvalue is large",message) || rethrow()
+            attempt==8 && rethrow()
+            println("Retry official canonicalization with a new seeded Krylov start: ",message);flush(stdout)
+        end
+    end
+    atomic_json(replace(fit_path,".jls"=>"_canonicalization.json"),Dict("trials"=>trials,"tolerance"=>1e-14))
     left,center,lambda=ITensorInfiniteMPS.left_orthogonalize(right;tol=1e-14)
     @assert abs(lambda-1)<1e-10
     psi=InfiniteCanonicalMPS(left,center,right)

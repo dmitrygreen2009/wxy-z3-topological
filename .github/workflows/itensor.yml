@@ -19,6 +19,7 @@ jobs:
       - run: mkdir -p results
       - run: OPENBLAS_NUM_THREADS=1 python scripts/ed.py
       - run: python test/geometry_records.py
+      - run: python scripts/flatband_audit.py
       - if: github.event_name == 'workflow_dispatch'
         run: julia --project=. scripts/torus_independent.jl
       - if: github.event_name == 'workflow_dispatch'

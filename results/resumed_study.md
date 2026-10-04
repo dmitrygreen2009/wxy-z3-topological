@@ -111,3 +111,10 @@ L10 remains limited by truncation. These lengths cannot yet establish an
 asymptotic entropy. Both width-four L4 chi256 points completed, but truncation
 and refinement changes make them exploratory fit inputs only. Raw data and
 fits remain separate; fitted intercepts are not topological conclusions.
+
+Independent eight-vector block ED on the open L2 width-one cylinders finds
+one ground state for zigzag (fixed-sector gap 0.04434958718) and four for
+armchair (gap 0.01252816539). Maximum residuals are 2.61e-13 and 5.24e-13.
+This again shows why a scalar low-eigenvalue list cannot certify degeneracies:
+the latest armchair scalar run returned only two of the four ground states.
+These tiny open-cylinder gaps are not thermodynamic gap estimates.

@@ -1,0 +1,18 @@
+INFINITE FIT physical bulk slices 2:3 MPS range 39:74
+ERROR: Imaginary part of eigenvalue is large: imag(λ₁ᴿᴺ) / norm(λ₁ᴿᴺ) = 2.6182452977214024e-15
+Stacktrace:
+ [1] error(s::String)
+   @ Base ./error.jl:35
+ [2] right_orthogonalize(ψ::InfiniteMPS; left_tags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, right_tags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, tol::Float64, eager::Bool, ishermitian_kwargs::@NamedTuple{rtol::Float64})
+   @ ITensorInfiniteMPS /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/orthogonalize.jl:37
+ [3] right_orthogonalize
+   @ /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/orthogonalize.jl:4 [inlined]
+ [4] infinite_from_finite(path::String; initial_chi::Int64, target_chi::Int64)
+   @ Main ~/Documents/wxy-z3-topological/scripts/infinite_from_finite.jl:27
+ [5] top-level scope
+   @ none:1
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.6751725639066528, 0.6695698178891382)
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.7958649979499093, 0.7958647828644894)
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.7572338133257549, 0.7635811455938414)
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.7572767791036529, 0.7571514691235182)
+λ₁ᴿᴺ = 1.0000000000000016 + 2.6182452977214064e-15im

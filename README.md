@@ -191,3 +191,23 @@ inherited variational errors, and skips nonunique dominant fixed points to
 preserve sector weights. It does not certify ground-state convergence.
 `python scripts/benchmark_number_sectors.py` scans all particle-number sectors
 of the small exact benchmarks, independently of the torus multiplicity test.
+
+Additional independent finite checks:
+```sh
+python scripts/benchmark_number_sectors.py
+python scripts/flatband_audit.py
+python scripts/small_cylinders_ed.py
+julia --project=. scripts/cylinder_block_ed.jl zigzag armchair
+```
+The last command uses eight-vector block Lanczos on the explicit L2 width-one
+geometry records to retain low-energy multiplicities. Scalar-ARPACK results
+certify their returned eigenpairs, rather than complete degeneracy counts.
+Small-cylinder ED eigenvector entropy can depend on the chosen degenerate
+ground-state combination. These open-cylinder spectra do not establish a
+thermodynamic phase.
+
+For a finite-to-infinite warm start, the library canonicalization can reject
+a positive imaginary transfer eigenvalue component above 1e-15 even when
+the eigensolver converges at 1e-14. The driver retries seeded library Krylov
+starts on the same cached fitted state, preserving all tolerances. Every
+attempt and exact error is saved in the fit's canonicalization JSON.
