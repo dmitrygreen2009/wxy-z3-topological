@@ -66,6 +66,18 @@ infinite=[]
 for path in sorted(pathlib.Path('geometry').glob('infinite_*_w*.json')):
     table=json.loads(path.read_text());family=table['family'];w=table['width'];ordering=table['ordering'];slices=table.get('cell_slices',2);n=9*w*slices
     assert table['cell_spins']==n and len(table['pairs'])==18*w*slices
+    if 'physical_sites' in table:
+        assert len(table['physical_sites'])==n
+        byedge={e['physical_site']:e for e in table['physical_shared_gauge_edges']}
+        assert len(byedge)==3*w*slices and len(table['vertices'])==2*w*slices
+        for v in table['vertices']:
+            assert len(v['matter_sites'])==3
+            assert sorted(x['leg'] for x in v['incident_gauge_sites'])==[1,2,3]
+            for x in v['incident_gauge_sites']:
+                e=byedge[x['site_in_cell']]
+                endpoint=next(z for z in e['endpoints'] if z['sublattice']==v['sublattice'])
+                assert endpoint['leg']==x['leg']
+                assert endpoint['t']+x['cell_translation']*slices==v['t'] and endpoint['j']==v['j']
     signatures=collections.Counter()
     for pair in table['pairs']:
         m=decode(pair['m'],w,ordering);g=decode(pair['g'],w,ordering)

@@ -739,8 +739,8 @@
     "settings": {},
     "initialization": "Committed machine-readable physical lattice definitions",
     "conserved_quantum_numbers": [],
-    "git_commit": "27e8156db4149145014e78ab681315c2c191bcfa",
-    "code_worktree_dirty": false,
+    "git_commit": "86e1afb124632ff76f191d04c6181a15818905cd",
+    "code_worktree_dirty": true,
     "source_sha256": {
       "src/canonical_analysis.jl": "05575e5a3c24524745be51c360e83d0af19897303c3e12b943b391b969901e90",
       "src/infinite_observables.jl": "e712d6ae4253944702abbd05a33f3c0328e6f836850e743843dc0dbf8316f3fd",
@@ -768,6 +768,7 @@
       "scripts/primitive_filling_audit.py": "d99a61e0d15c9e1c150596a4f1b9e1fcf35a860fc98652caf61898e81b65b202",
       "scripts/refine_number_candidate.jl": "c9933bd93a6192214301bbfe48ae4a0e27313d62861001adb74fa3f9b9efef48",
       "scripts/export_geometry.jl": "2e4ba5416680134b3e40d29c133321b1efc55a44cdb253b97479c1b02671ebb9",
+      "scripts/expand_infinite_site_records.py": "b9c05060d0a615cdc47ff5a31ffe9e6d8da53be2dd5abe2090f4585074305b70",
       "scripts/infinite_transfer_charge_audit.jl": "90ac2a872b6f62a8b3b5c5711d59351f50b907fb88a48aa8cf59a38c647ec095",
       "scripts/infinite_parallel_checkpoint.jl": "9f5e822b4480a2d273a850f4f648bc2c479cc75dbb1fc40d8094fedbbadbdf91",
       "scripts/cylinder_number_search.jl": "b0e4e40e1f810f19d6507bca9c7f85617552a062a62436f93c9b81638fc70089",
@@ -793,7 +794,7 @@
       "scripts/cgs_general_audit.py": "1da785843d9aad7c68553bb35270d38ebe22a86c8e39249ddb3355bacef59d00",
       "scripts/resume_infinite.jl": "001f022ece1d02e637f977fa7f42f1fb6a97da9d8cb2e6a0cc5b5cc591718a43",
       "scripts/finite_stationarity_audit.jl": "1da95e7ce884be9c678adffc9ba697754f515e4c270e6dec519c26e236eb0835",
-      "scripts/strategy_geometry_audit.py": "2c095d50c471d027564be14d74dcbc16dd47f5d4d7ac8064b1b56558b4430ee8",
+      "scripts/strategy_geometry_audit.py": "cb6ae120b4d30eef50c671ce4d16d0873b7cf0e6853b5dfa07855b2d2cc11cb3",
       "scripts/torus_solver_audit.py": "a2f58e3b28872d48f00ec498b8d098f1eb3b0c7d836512237dd609e9ac116dce",
       "scripts/infinite_physical_correlations.jl": "fd239b8abfa1d6c9e552bb4c3eb0039d69135dce7e60af62de995bdd37eab893",
       "scripts/validate_small_cylinders.jl": "041fb0c1c980677f7d00d9331cde92e6973361faf4f476b371d60bce7a30366f",
@@ -868,6 +869,6 @@
       "test/particle_hole.jl": "35d0fd0df7b301770e4946b8a8147c4428be0c6b4f30dc613966d71ffc99b952"
     },
     "python_version": "3.14.0",
-    "started_utc": "2026-10-04T18:34:07.576161+00:00"
+    "started_utc": "2026-10-04T18:42:58.591853+00:00"
   }
 }

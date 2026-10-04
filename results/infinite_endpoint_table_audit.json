@@ -1,0 +1,326 @@
+{
+  "physical_interactions_unchanged": true,
+  "numerical_optimizations_repeated": false,
+  "tables": [
+    {
+      "file": "geometry/infinite_armchair_w1_cell3_matter_first.json",
+      "physical_pairs_sha256_before": "e0189cf8bb735dae08928c66fe8808abbc6a1badbe12e5bd3996a5fd772f3ca9",
+      "physical_pairs_sha256_after": "e0189cf8bb735dae08928c66fe8808abbc6a1badbe12e5bd3996a5fd772f3ca9",
+      "vertices": 6,
+      "physical_gauges": 9,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w1_cell3_star.json",
+      "physical_pairs_sha256_before": "85f37a9c529ac3bab41e31c4d7b708031baf2bab7b17d41c3b1f25f2624d42b5",
+      "physical_pairs_sha256_after": "85f37a9c529ac3bab41e31c4d7b708031baf2bab7b17d41c3b1f25f2624d42b5",
+      "vertices": 6,
+      "physical_gauges": 9,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w1_cell6_matter_first.json",
+      "physical_pairs_sha256_before": "71b3e7a6ea03c4a876bf964990c610749e64c6d5c8c136e043f5b8f1a4d8bd96",
+      "physical_pairs_sha256_after": "71b3e7a6ea03c4a876bf964990c610749e64c6d5c8c136e043f5b8f1a4d8bd96",
+      "vertices": 12,
+      "physical_gauges": 18,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w1_cell6_star.json",
+      "physical_pairs_sha256_before": "90bac06961beac1ed2d175e9dfdb2bd08f724a449504cea5d509994fc527ecb5",
+      "physical_pairs_sha256_after": "90bac06961beac1ed2d175e9dfdb2bd08f724a449504cea5d509994fc527ecb5",
+      "vertices": 12,
+      "physical_gauges": 18,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w1_matter_first.json",
+      "physical_pairs_sha256_before": "4e3bb17ef979a42aaa28fcc3677f44e7462e8c1772be653ea5ba71a1fc607995",
+      "physical_pairs_sha256_after": "4e3bb17ef979a42aaa28fcc3677f44e7462e8c1772be653ea5ba71a1fc607995",
+      "vertices": 4,
+      "physical_gauges": 6,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w1_star.json",
+      "physical_pairs_sha256_before": "ce5bbadbf5d3bf41db797e64f452b5c8647ed7bde0287c11319723c35e18d1da",
+      "physical_pairs_sha256_after": "ce5bbadbf5d3bf41db797e64f452b5c8647ed7bde0287c11319723c35e18d1da",
+      "vertices": 4,
+      "physical_gauges": 6,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w2_cell3_matter_first.json",
+      "physical_pairs_sha256_before": "f7e80fa8ca606032daa09eeff7ca008a48bb5c2b9bf46cce4e98d3b7455d1548",
+      "physical_pairs_sha256_after": "f7e80fa8ca606032daa09eeff7ca008a48bb5c2b9bf46cce4e98d3b7455d1548",
+      "vertices": 12,
+      "physical_gauges": 18,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w2_cell3_star.json",
+      "physical_pairs_sha256_before": "2e58cabb50663168c2123d1d42679e6150c7bffe017140ad20cb29c1df70ab07",
+      "physical_pairs_sha256_after": "2e58cabb50663168c2123d1d42679e6150c7bffe017140ad20cb29c1df70ab07",
+      "vertices": 12,
+      "physical_gauges": 18,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w2_cell6_matter_first.json",
+      "physical_pairs_sha256_before": "f2e0bb331c4fbd0015fc09fe5d7e661d05916e4a93ed93f680012c6faccc6c80",
+      "physical_pairs_sha256_after": "f2e0bb331c4fbd0015fc09fe5d7e661d05916e4a93ed93f680012c6faccc6c80",
+      "vertices": 24,
+      "physical_gauges": 36,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w2_cell6_star.json",
+      "physical_pairs_sha256_before": "430d8825fbd933ed2682e34876c0b7c248388caf127398c8bedf331bfcd23818",
+      "physical_pairs_sha256_after": "430d8825fbd933ed2682e34876c0b7c248388caf127398c8bedf331bfcd23818",
+      "vertices": 24,
+      "physical_gauges": 36,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w2_matter_first.json",
+      "physical_pairs_sha256_before": "020c5832a5d9fa7b4f0946edfcac663ddf9e8ccc2a52629d6f75c6ce0225babf",
+      "physical_pairs_sha256_after": "020c5832a5d9fa7b4f0946edfcac663ddf9e8ccc2a52629d6f75c6ce0225babf",
+      "vertices": 8,
+      "physical_gauges": 12,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w2_star.json",
+      "physical_pairs_sha256_before": "37645bb9ae6c48435df4a27bc127e1c1097f17c4602d26ce59b8090d7a734fb6",
+      "physical_pairs_sha256_after": "37645bb9ae6c48435df4a27bc127e1c1097f17c4602d26ce59b8090d7a734fb6",
+      "vertices": 8,
+      "physical_gauges": 12,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w3_cell3_matter_first.json",
+      "physical_pairs_sha256_before": "128fa80ae4749f1de3ce37540db4e0f9c53aa23b8b4721eb7f7d22a903f24522",
+      "physical_pairs_sha256_after": "128fa80ae4749f1de3ce37540db4e0f9c53aa23b8b4721eb7f7d22a903f24522",
+      "vertices": 18,
+      "physical_gauges": 27,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w3_cell3_star.json",
+      "physical_pairs_sha256_before": "45694dd2e0b87b754e8a25b3f9142da754d071fbde758e338a53c328aacef7a9",
+      "physical_pairs_sha256_after": "45694dd2e0b87b754e8a25b3f9142da754d071fbde758e338a53c328aacef7a9",
+      "vertices": 18,
+      "physical_gauges": 27,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w3_cell6_matter_first.json",
+      "physical_pairs_sha256_before": "4f01c3147f704195c25f68c6007c29e3391d350e2a537e88ce8c176581bab71d",
+      "physical_pairs_sha256_after": "4f01c3147f704195c25f68c6007c29e3391d350e2a537e88ce8c176581bab71d",
+      "vertices": 36,
+      "physical_gauges": 54,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w3_cell6_star.json",
+      "physical_pairs_sha256_before": "478eacd5860f87373898f850be69a8c2de52fa6eb88b8ac986dbb53ea3d3233d",
+      "physical_pairs_sha256_after": "478eacd5860f87373898f850be69a8c2de52fa6eb88b8ac986dbb53ea3d3233d",
+      "vertices": 36,
+      "physical_gauges": 54,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w3_matter_first.json",
+      "physical_pairs_sha256_before": "ce189a1c7645ab31949859d5d37d7b85a7f54c4b5407cee6b96bca1c9b196ce9",
+      "physical_pairs_sha256_after": "ce189a1c7645ab31949859d5d37d7b85a7f54c4b5407cee6b96bca1c9b196ce9",
+      "vertices": 12,
+      "physical_gauges": 18,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w3_star.json",
+      "physical_pairs_sha256_before": "5b5fb2e72bceebdd229b92eaad4ce0ca6a9d76fd6afd0e33cea25884f455f7d8",
+      "physical_pairs_sha256_after": "5b5fb2e72bceebdd229b92eaad4ce0ca6a9d76fd6afd0e33cea25884f455f7d8",
+      "vertices": 12,
+      "physical_gauges": 18,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w4_matter_first.json",
+      "physical_pairs_sha256_before": "99a3f17d4bb0e4c1d146166bf83a87506b21692de59a355463d22cabc0f529fe",
+      "physical_pairs_sha256_after": "99a3f17d4bb0e4c1d146166bf83a87506b21692de59a355463d22cabc0f529fe",
+      "vertices": 16,
+      "physical_gauges": 24,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_armchair_w4_star.json",
+      "physical_pairs_sha256_before": "8542bbde7ece1c8314b5ab984f47973a785bc5b51df26e5f705d6268696a1325",
+      "physical_pairs_sha256_after": "8542bbde7ece1c8314b5ab984f47973a785bc5b51df26e5f705d6268696a1325",
+      "vertices": 16,
+      "physical_gauges": 24,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w1_cell3_matter_first.json",
+      "physical_pairs_sha256_before": "5e92b3ce07cfaa00de3aba83aea4b6dd713f26c3d6ab11488320d39a01dc2af4",
+      "physical_pairs_sha256_after": "5e92b3ce07cfaa00de3aba83aea4b6dd713f26c3d6ab11488320d39a01dc2af4",
+      "vertices": 6,
+      "physical_gauges": 9,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w1_cell3_star.json",
+      "physical_pairs_sha256_before": "095fe0e5e7322b6bb5b87692380f69c1818c182064fa242a89086958bf1393a0",
+      "physical_pairs_sha256_after": "095fe0e5e7322b6bb5b87692380f69c1818c182064fa242a89086958bf1393a0",
+      "vertices": 6,
+      "physical_gauges": 9,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w1_cell6_matter_first.json",
+      "physical_pairs_sha256_before": "f504890b3bffe4580d27314be17f27fb20ba81b3ad9893ed2760d0de663b997c",
+      "physical_pairs_sha256_after": "f504890b3bffe4580d27314be17f27fb20ba81b3ad9893ed2760d0de663b997c",
+      "vertices": 12,
+      "physical_gauges": 18,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w1_cell6_star.json",
+      "physical_pairs_sha256_before": "82cf63d4e484cf5afa185878b9e60f66be04a4ae79dc362eba27eaeb7eaf7d3e",
+      "physical_pairs_sha256_after": "82cf63d4e484cf5afa185878b9e60f66be04a4ae79dc362eba27eaeb7eaf7d3e",
+      "vertices": 12,
+      "physical_gauges": 18,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w1_matter_first.json",
+      "physical_pairs_sha256_before": "9b933768a7a083879d9647f5a22da3cb3aa3bfb3f4bb49304797356cdd873cd1",
+      "physical_pairs_sha256_after": "9b933768a7a083879d9647f5a22da3cb3aa3bfb3f4bb49304797356cdd873cd1",
+      "vertices": 4,
+      "physical_gauges": 6,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w1_star.json",
+      "physical_pairs_sha256_before": "a26349a9ec3e6449aa8be4f31683a37e0a69eba0396d44daeb49ea16cc5140cf",
+      "physical_pairs_sha256_after": "a26349a9ec3e6449aa8be4f31683a37e0a69eba0396d44daeb49ea16cc5140cf",
+      "vertices": 4,
+      "physical_gauges": 6,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w2_cell3_matter_first.json",
+      "physical_pairs_sha256_before": "3f46c028bb1651cb847879076b599e32bc454351fe44cb007ead3dbad13b00cf",
+      "physical_pairs_sha256_after": "3f46c028bb1651cb847879076b599e32bc454351fe44cb007ead3dbad13b00cf",
+      "vertices": 12,
+      "physical_gauges": 18,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w2_cell3_star.json",
+      "physical_pairs_sha256_before": "90477f91ed2e5d6ae43320d3116c8a7ed979e0f327718bf4bc514eae08c6a9fb",
+      "physical_pairs_sha256_after": "90477f91ed2e5d6ae43320d3116c8a7ed979e0f327718bf4bc514eae08c6a9fb",
+      "vertices": 12,
+      "physical_gauges": 18,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w2_cell6_matter_first.json",
+      "physical_pairs_sha256_before": "49c48049f706a959e05d48bd7efa9c4aacd272a57a5d0dad9ab69558f657e251",
+      "physical_pairs_sha256_after": "49c48049f706a959e05d48bd7efa9c4aacd272a57a5d0dad9ab69558f657e251",
+      "vertices": 24,
+      "physical_gauges": 36,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w2_cell6_star.json",
+      "physical_pairs_sha256_before": "5478d88b3ccacb54bcd60ab4ca104c35141f4d33b532ff9e9dcfedc8f126f4f0",
+      "physical_pairs_sha256_after": "5478d88b3ccacb54bcd60ab4ca104c35141f4d33b532ff9e9dcfedc8f126f4f0",
+      "vertices": 24,
+      "physical_gauges": 36,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w2_matter_first.json",
+      "physical_pairs_sha256_before": "abc28979741ff80274f9c2cce771ebf5f8266eed70c16ac34999d6b9ced8a9de",
+      "physical_pairs_sha256_after": "abc28979741ff80274f9c2cce771ebf5f8266eed70c16ac34999d6b9ced8a9de",
+      "vertices": 8,
+      "physical_gauges": 12,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w2_star.json",
+      "physical_pairs_sha256_before": "b362fbdca4d99fa002d9ed5a465d83519146db10229a64f1895850c2033a17d4",
+      "physical_pairs_sha256_after": "b362fbdca4d99fa002d9ed5a465d83519146db10229a64f1895850c2033a17d4",
+      "vertices": 8,
+      "physical_gauges": 12,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w3_cell3_matter_first.json",
+      "physical_pairs_sha256_before": "4929eeac7e799684875ff5d446489f6e8b140e7993d150262289981faf5557df",
+      "physical_pairs_sha256_after": "4929eeac7e799684875ff5d446489f6e8b140e7993d150262289981faf5557df",
+      "vertices": 18,
+      "physical_gauges": 27,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w3_cell3_star.json",
+      "physical_pairs_sha256_before": "c465f1c2bd1ac2562eeaab925348581e118941d3ae37ece77f16df2d1e7ae179",
+      "physical_pairs_sha256_after": "c465f1c2bd1ac2562eeaab925348581e118941d3ae37ece77f16df2d1e7ae179",
+      "vertices": 18,
+      "physical_gauges": 27,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w3_cell6_matter_first.json",
+      "physical_pairs_sha256_before": "ce7477fc671a035a87aac86e3ca9e1cda60ef06e6979cc0025bd49f2e0ce8eae",
+      "physical_pairs_sha256_after": "ce7477fc671a035a87aac86e3ca9e1cda60ef06e6979cc0025bd49f2e0ce8eae",
+      "vertices": 36,
+      "physical_gauges": 54,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w3_cell6_star.json",
+      "physical_pairs_sha256_before": "9c12b3d16f16d22be37ac2a3377b21c1bc24ec1f1f029b378e38c439a7ddd823",
+      "physical_pairs_sha256_after": "9c12b3d16f16d22be37ac2a3377b21c1bc24ec1f1f029b378e38c439a7ddd823",
+      "vertices": 36,
+      "physical_gauges": 54,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w3_matter_first.json",
+      "physical_pairs_sha256_before": "c554d99d4d754e05304c49e2f743939ac0622f78a1b95a04b3c99c8f8a294336",
+      "physical_pairs_sha256_after": "c554d99d4d754e05304c49e2f743939ac0622f78a1b95a04b3c99c8f8a294336",
+      "vertices": 12,
+      "physical_gauges": 18,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w3_star.json",
+      "physical_pairs_sha256_before": "e0f310a0172f80bb78a51927950533e821a28b1847700ec2810b2412341e2ac5",
+      "physical_pairs_sha256_after": "e0f310a0172f80bb78a51927950533e821a28b1847700ec2810b2412341e2ac5",
+      "vertices": 12,
+      "physical_gauges": 18,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w4_matter_first.json",
+      "physical_pairs_sha256_before": "832a8b9e2b6c5b626a0bb117148f040ff5a2e50765fa6fe9bfeb56a30ffd77c0",
+      "physical_pairs_sha256_after": "832a8b9e2b6c5b626a0bb117148f040ff5a2e50765fa6fe9bfeb56a30ffd77c0",
+      "vertices": 16,
+      "physical_gauges": 24,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    },
+    {
+      "file": "geometry/infinite_zigzag_w4_star.json",
+      "physical_pairs_sha256_before": "9e4fee7bdad96f1d53626411aa5469a6fd605e3d6af3d26fba974601e4a5e936",
+      "physical_pairs_sha256_after": "9e4fee7bdad96f1d53626411aa5469a6fd605e3d6af3d26fba974601e4a5e936",
+      "vertices": 16,
+      "physical_gauges": 24,
+      "endpoint_consistency": "passed independent embedded-coordinate and reciprocal endpoint checks"
+    }
+  ]
+}

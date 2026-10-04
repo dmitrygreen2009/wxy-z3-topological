@@ -386,7 +386,9 @@ This identifies U1 transfer channels, not microscopic CGS charges or a gap.
 Infinite unit cells now support an explicit `cell_slices` parameter; the
 historical default remains two. The checked three- and six-slice definitions
 are saved in `geometry/infinite_*_cell{3,6}_*.json`, regenerated with
-`julia --project=. scripts/export_infinite_periods.jl`. They use individual
+`julia --project=. scripts/export_infinite_periods.jl`, followed by
+`python scripts/expand_infinite_site_records.py` and
+`python scripts/strategy_geometry_audit.py`. They use individual
 physical spin sites and the same exact endpoint exchange coefficients.
 For example, a separate six-slice density-4/9 armchair width-two candidate is
 `julia --project=. scripts/infinite_random_cell.jl armchair 2 48 64 6 parallel`.
