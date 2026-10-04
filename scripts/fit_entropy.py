@@ -1,6 +1,7 @@
 """Fit recorded full-state entropies. Raw states and conclusions stay separate."""
 import glob,json,pathlib,itertools
 import numpy as np
+from finite_results import finite_groups
 LN3=float(np.log(3))
 
 def fit(points):
@@ -21,11 +22,9 @@ def fit(points):
 
 def main():
     points=[]
-    for path in sorted(glob.glob('results/*_L*_w*_chi*.json')):
-        r=json.load(open(path))
-        if 'records' not in r or 'family' not in r or 'length' not in r:continue
-        for cap in sorted(set(q['cap'] for q in r['records'])):
-            index=max(i for i,q in enumerate(r['records']) if q['cap']==cap);q=r['records'][index]
+    for path,r,stages in finite_groups():
+        for cap in sorted(set(q['cap'] for k,q in stages)):
+            index,q=[(k,q) for k,q in stages if q['cap']==cap][-1]
             points.append(dict(source_file=path,record_index=index,family=r['family'],length=r['length'],width=r['width'],
                 ordering=r.get('ordering','axial'),nup=r.get('nup',(r['spins']+1)//2),number_sector_scope='Global cylinder minimum requires an independent sector search',chi=cap,actual_chi=q['maxlinkdim'],energy=q['energy'],entropy=q['entropy'],
                 circumference=r['physical_circumference'],seed=r.get('seed'),truncation_error=q.get('sweep_max_truncation_errors',[None])[-1]))

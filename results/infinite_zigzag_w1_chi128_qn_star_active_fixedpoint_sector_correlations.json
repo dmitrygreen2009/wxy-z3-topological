@@ -1,13 +1,14 @@
 {
-  "previous_one_point_sha256": "27ef2833aad489bc1f2ee2e110d01bda2ea84e01419ebba5116ad29c5fa9864c",
   "family": "zigzag",
   "audit": {
     "solver_settings": {
+      "operator_cutoff": 1e-14,
       "distances_cells": [
         1,
         2,
         4,
-        8
+        8,
+        16
       ]
     },
     "source_sha256": {
@@ -18,9 +19,11 @@
       "test/transfer.jl": "7a391037b9f34f83d8e0d7eeb01a61233c1df9f10a0b886f2e0a7cb4cacc22d5",
       "scripts/cylinder_number_search.jl": "b0e4e40e1f810f19d6507bca9c7f85617552a062a62436f93c9b81638fc70089",
       "scripts/export_small_cylinders.jl": "66d03fb085295d15061d2bf550d639c3728e7d49afb91efe60a01644b65d8ea8",
+      "scripts/infinite_sector_correlations.jl": "20b572de9312ae9df68bac3d0e8217bd16297d74ee78fb13ccafe139c5e1a52f",
       "src/model.jl": "fb9382c80a92d1069f7be22e94482bc4c42fb426ee64dc47c7ccc0c2e5420614",
       "scripts/infinite_qn.jl": "7e3d83db5d03b7453654b0dd61d01e5be65588184f058a3bcd5ea919a3c64bb4",
       "scripts/extended_batch.jl": "26bd4cf37c68a77b1749db161647ec5fb067c121206ce0d5ce529bd39568212c",
+      "scripts/normalize_geometry_metadata.py": "63594243dcb7670df400b7ee2387fc9f4ea1ec127c8dbe9c2256ba25ac51718e",
       "scripts/infinite.jl": "809e76f78c8e11a279f9cf8132a19daf6d353077323d598531e19ebc3ce61ae1",
       "scripts/recover_legacy_checkpoint.jl": "372b0fdde4fe82ca40bf0b789ce66c90ab271df5438ecff35fd868ff057008c2",
       "scripts/check_infinite.jl": "339034f8709b26c836de228b20e942a2f6128027f4032fedc950667a004237ad",
@@ -54,14 +57,14 @@
       "scripts/ed.py": "df1912873027b4abafcf200f8413c83978f0126554ee4dc826a57a149429d670",
       "scripts/scaling_batch.jl": "b07cba17b3b28eca32416f1406c846599e4dd86d34d8f49e7b2eb430e3790136",
       "scripts/infinite_physical_correlations.jl": "d14b883dfb71b2bb1546c1a94db111ffe642de9e065ff7f2a79b26f4666d558c",
-      "scripts/plot_study.py": "98f46f48422314a4bbdf40d8c96fa6ebfa22bfe5e4d47377cbd60d683ea9fd19",
+      "scripts/plot_study.py": "bcb11433f76f4c844add1ff385d0400501528b2fd38c0b2d9d68e1c71c3a93b5",
       "test/cylinder_number_sectors.py": "f505c24f3d5f6c4594993c892d852f14142066fb118c9f44d438f21aea9578e9",
       "scripts/batch.jl": "9fc2e8544f481b867a94e02dc7994eab1b52e2a6ca592c5bc2e2771a883f926c",
-      "scripts/entanglement_spectra.py": "c91de820ac81223f64027aab6f3e5e6a96af2c898b86a102cb32127b1bf91f41",
+      "scripts/entanglement_spectra.py": "5bee6d9b9915c415d57f5d9228e16cdd9ef552d9bf4cb26ce524f57bff6beb9b",
       "test/triplet.jl": "7d88b826f46f64f3e0b31838ce663c368da251733deddeb9a0cef7b58b892476",
       "scripts/provenance.py": "bcc3f797c448c371d5d2809d6e6043bb7aa6930252891bc99e5f48f1f41f43e7",
       "test/entanglement.jl": "1631b310cc882ba05f9c4364bc5da907becfe9c1311c127d2bc71b19fd349aa5",
-      "src/cgs_operator_mpo.jl": "61c3e48003bf9286d93ef22a35cff21d9ecb69f1cbe7ce26564e668e064a1e23",
+      "src/cgs_operator_mpo.jl": "81f71300907fe0934e36ab0ddaa46eeb8caf2e34b82859c0ab52529662876191",
       "scripts/infinite_observables.jl": "43b80611d764f66d46ae193383589293f300cd3377eb86d8bb469349cdbefb89",
       "scripts/resume_checkpoint.jl": "3b9bd8053a6a20a75f0c4ebde61f61edb820ad3002a113a6f906524deca0480f",
       "test/geometry_records.py": "b80ba8ee594620434a83101a6350f3f3629435fd66337235fe1eb4583ce6511c",
@@ -100,6 +103,7 @@
       "test/infinite_triplet_correlations.jl": "ee8c6c8a8228fbfea62d4dcab35025cb63ca171674b0d8a9503530148578e3d6",
       "test/spatial_partition.jl": "38ac8bc464ee51566d000ac43d57b8df739ffdd732d4ae28d0c625e0a6ab100d",
       "scripts/resume_diagnostics.jl": "89bb8b67b8e484175dbd1343a57dc092e36a35a095193515ae399b2f6ca504f4",
+      "test/cgs_pair_operator_mpo.jl": "f9e9bb5683acab7cc8933a4e19536e3d6c01a626de72b375e49f69a877d370c3",
       "scripts/scientific_summary.py": "0109bb939850b0696e5c20d51cf578437d9312b8dfe64b61c5d0832ed503ba80",
       "scripts/export_geometry.jl": "2e4ba5416680134b3e40d29c133321b1efc55a44cdb253b97479c1b02671ebb9",
       "scripts/resume_finite.jl": "bc2d9d7acf7d571b4a0af03461c421d8a70f811022ffa37881ea7ad1d862ce0f",
@@ -112,105 +116,67 @@
     "code_worktree_dirty": true,
     "julia_version": "1.10.10",
     "provenance_snapshot": "process launch",
-    "started_utc": "2026-10-04T14:58:52.968",
-    "solver": "ITensorInfiniteMPS CGS-invariant charge-three two-point contractions",
+    "started_utc": "2026-10-04T15:13:41.876",
+    "solver": "ITensorInfiniteMPS winding-loop adjoint-pair contractions",
     "run_version": 3,
     "random_seed": null,
-    "process_started_utc": "2026-10-04T14:57:31.845",
-    "git_commit": "c474872d38af3ce6e20cd92e3ab9ec0372824c24",
+    "process_started_utc": "2026-10-04T15:12:08.092",
+    "git_commit": "f69b77a414a35f8f2017c51ac930003873257f80",
     "initialization": "results/infinite_zigzag_w1_chi128_qn_star_active_fixedpoint.jls",
     "conserved_quantum_numbers": []
   },
+  "previous_one_point_json_sha256": "27ef2833aad489bc1f2ee2e110d01bda2ea84e01419ebba5116ad29c5fa9864c",
   "source_payload_sha256": "2872373f668cb630d78952c3e5527f1679d8ba95f30e173e769cc129bd4e84d5",
   "source_canonical_error": 5.5261650708402247e-11,
   "previous_one_point_data": "results/infinite_zigzag_w1_chi128_qn_star_active_fixedpoint_observables.json",
-  "runtime_seconds": 78.25595808029175,
+  "runtime_seconds": 91.46092200279236,
+  "source_xi_cells": 8.530821869044127,
   "source_checkpoint": "results/checkpoints/infinite_zigzag_w1_Ly1.73205_cell2_N18_chi128_Sz0_seed7114_v3_qn_star_active_fixedpoint_stage1382_complete.jls",
   "source_solver_residual": 3.256613509768276e-05,
-  "width": 1,
-  "matter_charge_three_correlations": [
+  "loop_connected_correlations": [
     {
-      "connected_real": 4.932145237129651e-10,
       "distance_cells": 1,
-      "correlation_imag": 1.332976409037141e-10,
-      "one_point_imag": -4.46354278798346e-17,
-      "connected_imag": 1.332976409037141e-10,
-      "one_point_real": -9.107420366909189e-17,
-      "correlation_real": 4.932145237129651e-10,
-      "first_matter_site": 1
+      "correlation_imag": 3.6350866271627465e-10,
+      "distance_slices": 2,
+      "connected_imag": 3.6350866271627465e-10,
+      "correlation_real": 0.2514876365750048,
+      "connected_real": 7.011949719026855e-06
     },
     {
-      "connected_real": 4.496975996102237e-10,
       "distance_cells": 2,
-      "correlation_imag": -2.240265933269564e-11,
-      "one_point_imag": -4.46354278798346e-17,
-      "connected_imag": -2.240265933269564e-11,
-      "one_point_real": -9.107420366909189e-17,
-      "correlation_real": 4.496975996102237e-10,
-      "first_matter_site": 1
+      "correlation_imag": -2.5590481768934125e-10,
+      "distance_slices": 4,
+      "connected_imag": -2.5590481768934125e-10,
+      "correlation_real": 0.25148503051464777,
+      "connected_real": 4.405889362013582e-06
     },
     {
-      "connected_real": 1.1996461396404803e-11,
       "distance_cells": 4,
-      "correlation_imag": -2.7661982456989333e-13,
-      "one_point_imag": -4.46354278798346e-17,
-      "connected_imag": -2.7661982456989333e-13,
-      "one_point_real": -9.107420366909189e-17,
-      "correlation_real": 1.1996461396404803e-11,
-      "first_matter_site": 1
+      "correlation_imag": -1.4512128920761786e-10,
+      "distance_slices": 8,
+      "connected_imag": -1.4512128920761786e-10,
+      "correlation_real": 0.25148275764981715,
+      "connected_real": 2.1330245313921914e-06
     },
     {
-      "connected_real": 2.3481297840666152e-15,
       "distance_cells": 8,
-      "correlation_imag": -5.139992059502715e-17,
-      "one_point_imag": -4.46354278798346e-17,
-      "connected_imag": -5.139992059502715e-17,
-      "one_point_real": -9.107420366909189e-17,
-      "correlation_real": 2.3481297840666152e-15,
-      "first_matter_site": 1
+      "correlation_imag": -3.3981832419467056e-11,
+      "distance_slices": 16,
+      "connected_imag": -3.3981832419467056e-11,
+      "correlation_real": 0.2514812225696438,
+      "connected_real": 5.979443580272914e-07
     },
     {
-      "connected_real": -5.564559489687235e-10,
-      "distance_cells": 1,
-      "correlation_imag": -2.0774497399661012e-11,
-      "one_point_imag": 4.237508897178984e-17,
-      "connected_imag": -2.0774497399661012e-11,
-      "one_point_real": 3.094066297504059e-17,
-      "correlation_real": -5.564559489687235e-10,
-      "first_matter_site": 6
-    },
-    {
-      "connected_real": 3.769870390758229e-10,
-      "distance_cells": 2,
-      "correlation_imag": -2.230723110832409e-12,
-      "one_point_imag": 4.237508897178984e-17,
-      "connected_imag": -2.230723110832409e-12,
-      "one_point_real": 3.094066297504059e-17,
-      "correlation_real": 3.769870390758229e-10,
-      "first_matter_site": 6
-    },
-    {
-      "connected_real": 1.0977868850289368e-11,
-      "distance_cells": 4,
-      "correlation_imag": -5.720169030634889e-14,
-      "one_point_imag": 4.237508897178984e-17,
-      "connected_imag": -5.720169030634889e-14,
-      "one_point_real": 3.094066297504059e-17,
-      "correlation_real": 1.0977868850289368e-11,
-      "first_matter_site": 6
-    },
-    {
-      "connected_real": 2.149094969376995e-15,
-      "distance_cells": 8,
-      "correlation_imag": -8.845753356644646e-18,
-      "one_point_imag": 4.237508897178984e-17,
-      "connected_imag": -8.845753356644646e-18,
-      "one_point_real": 3.094066297504059e-17,
-      "correlation_real": 2.149094969376995e-15,
-      "first_matter_site": 6
+      "distance_cells": 16,
+      "correlation_imag": -2.8523273109328246e-12,
+      "distance_slices": 32,
+      "connected_imag": -2.8523273109328246e-12,
+      "correlation_real": 0.2514806774761136,
+      "connected_real": 5.285082782524597e-08
     }
   ],
-  "interpretation": "Physical invariant connected correlations of this variational state; compared with its full transfer length without interpreting either as a 2D spectral gap. Previously validated one-point contractions are reused.",
+  "width": 1,
+  "interpretation": "New connected loop-sector correlations on the saved narrow-quotient variational state, reusing its existing one-point contraction. Winding operators have local support only on this special width-one quotient. No 2D gap, order, or topology conclusion follows.",
   "previous_one_point_payload_fingerprint_available": false,
   "previous_one_point_origin_scope": "Legacy record lacks an original payload fingerprint. Source path matched the stable completed state; the new contraction payload and reused one-point JSON are fingerprinted. No retrospective original payload hash is asserted."
 }

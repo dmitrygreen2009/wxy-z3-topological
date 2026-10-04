@@ -73,6 +73,7 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
     r["kind"]="infinite"
     r["translation_period_restriction"]="two axial slices"
     r["topological_flux_or_MES_identified"]=false
+    r["number_background"]=infinite_number_background(psi)
     r["bulk_ground_filling_certified"]=false
     r["physical_bulk_gap_certified"]=false
     r["fixed_point_detection_scope"]="Detected multiplicity is a lower bound from two independent starts, not a complete peripheral-spectrum certificate."
@@ -83,10 +84,14 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
     if isfile(audit_path)
         a=JSON3.read(read(audit_path,String),Dict{String,Any})
         r["audit"]=a;r["git_commit"]=a["git_commit"]
+        r["number_background"]=get(a,"number_background",r["number_background"])
         r["measurement_tensors_have_qns"]=is_qn
         r["u1_conserving_ansatz"]=get(a,"optimization_u1_conserving_ansatz",is_qn)
         r["runtime_seconds"]=a["runtime_seconds"]+r["measurement_runtime_seconds"]
         r["solver_residual"]=a["canonical_solver_residual"]
+        if r["u1_conserving_ansatz"] && r["number_background"]["label"]=="unrestricted"
+            r["number_background"]=Dict("label"=>"U1_background_unrecorded","density_enforced"=>nothing,"interpretation"=>"Original U1 ansatz was recorded, but legacy dense measurement tensors do not retain the physical QN background. Do not infer half filling from zero flux.")
+        end
         if haskey(a,"source_spatial_entropy")
             r["entropy_change_recanonicalization"]=r["spatial_entropy"]-a["source_spatial_entropy"]
             r["energy_change_recanonicalization"]=r["energy_cell"]-a["source_energy_cell"]
@@ -95,7 +100,9 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
         r["git_commit"]=nothing
         r["historical_audit_gap"]="Original run predates launch provenance; measurement and legacy logs are preserved."
     end
-    sector=r["u1_conserving_ansatz"] ? "Sz0" : "unrestricted"
+    target_density=get(r["number_background"],"physical_number_density",nothing)
+    r["number_density_error_vs_background"]=target_density===nothing ? nothing : abs(r["mean_sz"]+.5-target_density)
+    sector=r["number_background"]["label"]
     Ly=round(r["physical_circumference"];digits=5)
     measurement_seed=get(get(r,"audit",Dict()),"random_seed",7103)
     final_path="results/checkpoints/infinite_$(family)_w$(w)_Ly$(Ly)_cell2_N$(n)_chi$(maxlinkdim(psi))_$(sector)_seed$(measurement_seed)_v$(RUN_FORMAT_VERSION)$(tag)_stage$(iteration)_complete.jls"

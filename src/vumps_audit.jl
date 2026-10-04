@@ -1,3 +1,4 @@
+include("infinite_number_background.jl")
 # A logging/checkpoint driver around the package's own VUMPS iteration.
 # Tensor contractions, environments, expansion, and eigensolves remain library code.
 function audited_vumps(H,psi;family,w,cap,maxiter=30,tol=1e-7,
@@ -9,7 +10,8 @@ function audited_vumps(H,psi;family,w,cap,maxiter=30,tol=1e-7,
     epsL=fill(tol,n);epsR=fill(tol,n)
     started=time();iterations=[]
     base="results/infinite_$(family)_w$(w)_chi$(cap)$(tag)"
-    sector=hasqns(siteind(psi.AL,1)) ? "Sz0" : "unrestricted"
+    number_background=infinite_number_background(psi);audit["number_background"]=number_background
+    sector=number_background["label"]
     checkpoint="results/checkpoints/infinite_$(family)_w$(w)_cell2_N$(n)_chi$(cap)_$(sector)_seed$(seed)_v$(RUN_FORMAT_VERSION)$(tag)_latest.jls"
     for iteration=1:maxiter
         requested_local_tolerance=solver_tol(max(maximum(epsL),maximum(epsR)))

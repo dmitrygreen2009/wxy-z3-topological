@@ -18,6 +18,17 @@ function cgs_circumference_spec(family,w;offset=0)
     first_site=minimum(first.(triplets));last_site=maximum(vcat([j+2 for (j,c,q) in triplets],first.(gauges)))
     (;family,w,offset,triplets,gauges,first_site,last_site)
 end
+
+function cgs_disjoint_pair_spec(first,second)
+    # The second loop is adjointed. These disjoint-support products use the
+    # exact Abelian microscopic representation U(c,q)^dagger=U(-c,-q).
+    support_first=Set(vcat([j+k for (j,c,q) in first.triplets for k=0:2],[j for (j,p) in first.gauges]))
+    support_second=Set(vcat([j+k for (j,c,q) in second.triplets for k=0:2],[j for (j,p) in second.gauges]))
+    @assert isempty(intersect(support_first,support_second))
+    triplets=vcat(first.triplets,[(j,mod(-c,3),mod(-q,3)) for (j,c,q) in second.triplets])
+    gauges=vcat(first.gauges,[(j,mod(-p,3)) for (j,p) in second.gauges])
+    (;triplets,gauges,first_site=min(first.first_site,second.first_site),last_site=max(first.last_site,second.last_site))
+end
 function cgs_product_mpo(s,spec;cutoff=1e-14)
     # CelledVector translates scalar indices beyond its stored unit cell, but
     # generic range indexing applies finite-array bounds checks.

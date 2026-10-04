@@ -1,15 +1,15 @@
 """Summarize measured states without promoting unconverged fits to topology."""
 import glob,json,pathlib,itertools
 import numpy as np
+from finite_results import finite_groups
+from fit_entropy import fit as entropy_fit
 ln3=float(np.log(3))
 finite=[]
-for path in sorted(glob.glob('results/*_L*_w*_chi*.json')):
-    r=json.load(open(path))
-    if 'records' not in r or 'family' not in r or 'length' not in r:continue
-    stages=r['records'];q=stages[-1]
+for path,r,indexed_stages in finite_groups():
+    stages=[q for k,q in indexed_stages];index,q=indexed_stages[-1]
     energies=q.get('sweep_energies',[])
     prior=[v for v in stages if v['cap']<q['cap']]
-    finite.append(dict(file=path,family=r['family'],L=r['length'],w=r['width'],Ly=r['physical_circumference'],
+    finite.append(dict(file=path,record_index=index,family=r['family'],L=r['length'],w=r['width'],Ly=r['physical_circumference'],
         ordering=r.get('ordering','axial'),nup=r.get('nup',(r['spins']+1)//2),ground_state_scope='Fixed number sector; global cylinder minimum not certified',spins=r['spins'],chi=q['cap'],actual_chi=q['maxlinkdim'],E=q['energy'],S=q['entropy'],
         last_sweep_energy_change=energies[-1]-energies[-2] if len(energies)>1 else None,
         last_truncation_error=q.get('sweep_max_truncation_errors',[None])[-1],
@@ -26,17 +26,15 @@ fits=[]
 for family,ordering,L in sorted(set((r['family'],r['ordering'],r['L']) for r in best)):
     group=[r for r in best if r['family']==family and r['ordering']==ordering and r['L']==L]
     if len(group)<3:continue
-    group=sorted(group,key=lambda r:r['Ly']);x=np.array([r['Ly'] for r in group]);y=np.array([r['S'] for r in group])
-    alpha,b=np.polyfit(x,y,1);res=y-alpha*x-b
-    alpha_fixed=float(x@(y+ln3)/(x@x));res_fixed=y-alpha_fixed*x+ln3
-    pair_gammas=[]
-    for i,j in itertools.combinations(range(len(x)),2):
-        slope=(y[j]-y[i])/(x[j]-x[i]);pair_gammas.append(float(slope*x[i]-y[i]))
-    fits.append(dict(family=family,ordering=ordering,L=L,widths=[r['w'] for r in group],chis=[r['chi'] for r in group],
-        alpha=float(alpha),gamma_apparent=float(-b),gamma_minus_ln3=float(-b-ln3),
-        residual_rms=float(np.sqrt(np.mean(res**2))),ln3_fixed_slope=alpha_fixed,
-        ln3_fixed_residual_rms=float(np.sqrt(np.mean(res_fixed**2))),pairwise_gamma_range=[min(pair_gammas),max(pair_gammas)],
-        interpretation='Descriptive finite-size fit. Bond, length, circumference and state-sector convergence must all hold before testing a topological constant.'))
+    group=sorted(group,key=lambda r:r['Ly'])
+    points=[dict(circumference=r['Ly'],entropy=r['S'],width=r['w']) for r in group]
+    estimate=entropy_fit(points)
+    estimate.update(family=family,ordering=ordering,L=L,widths=[r['w'] for r in group],chis=[r['chi'] for r in group],
+        raw_points=group,smallest_circumference_removed=entropy_fit(points[1:]),
+        eligible_for_topological_inference=False,
+        interpretation='Descriptive lowest-energy envelope across recorded caps and number/flux branches. No common MES or global-ground selection is certified; no thermodynamic gamma confidence interval.')
+    fits.append(estimate)
+
 infinite=[]
 for path in sorted(glob.glob('results/infinite_*_chi*.json')):
     r=json.load(open(path))

@@ -91,3 +91,21 @@ legacy 0.01/0.1 ordering keys. All physical cuts are unchanged, and all 41
 finite and 16 infinite static geometry checks pass. No validated energy,
 Schmidt spectrum, or production optimization was repeated for this metadata
 clarification.
+
+## Separated loop products and transfer-length interpretation
+
+Twelve further checks validate disjoint products U(first) U(second)^dagger
+against independent finite physical-spin gates, normalization, and translated
+infinite product expectations for both wrappings at widths one and two.
+The adjoint uses the exact Abelian representation (c,q,p) -> (-c,-q,-p) mod 3.
+No whole-circumference dense tensor or custom contraction kernel is introduced.
+
+New charge-three connected contractions on the saved, consistently canonical
+zigzag width-one QN cap128 state are only about 1e-10 at one/two cells, 1e-11
+at four cells, and 2e-15 at eight cells. These are observables of the approximate
+state; their small amplitudes are not a physical-ground-state correlation error
+bound, and the inherited solver residual remains 3.26e-5. They do not demonstrate
+long charge-three correlations even though the full transfer length is about
+17 axial slices. Additional winding-loop pair contractions test whether that
+full transfer mode instead couples to narrow-quotient sector fluctuations.
+Existing validated one-point contractions are reused rather than repeated.

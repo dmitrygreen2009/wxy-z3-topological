@@ -13,14 +13,17 @@
     "Z3_topological_order": "not established",
     "Z3_topological_order_excluded": "not established",
     "2D_gaplessness": "not established",
-    "physical_U1_order": "not established"
+    "physical_U1_order": "not established",
+    "one_unrestricted_variational_ansatz_breaks_physical_U1": "Measured nonzero CGS-invariant charge-three matter expectation; no thermodynamic ground-state order certificate."
   },
   "concrete_findings": [
     "Width-one parallel cycles have circumference winding, despite local support on the quotient",
     "The q1 initialized DMRG state ended in q0; its energy is valid but the claimed conditional comparison failed",
     "Infinite analysis had insufficient initializer-branch separation; corrected without restarting states",
     "Charged input alias inherited an unrelated source checksum; metadata corrected, physical payload unchanged",
-    "Legacy finite-to-infinite cache origin fingerprints are incomplete; future caches are fingerprinted"
+    "Legacy finite-to-infinite cache origin fingerprints are incomplete; future caches are fingerprinted",
+    "Plotting had still joined distinct initializer/number branches after the numerical analysis separated them; corrected plot grouping without recomputing states.",
+    "Finite summaries omitted completed number-scan candidates because their metadata were nested inside each record. A shared record reader now includes those candidates and their PH-transformed states."
   ],
   "geometry_counts": {
     "finite": 41,

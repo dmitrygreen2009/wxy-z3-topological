@@ -11,6 +11,8 @@ for path in sorted(glob.glob('results/infinite_*_chi*.json')):
         circumference_source='saved measurement' if 'physical_circumference' in r else 'derived from the explicit validated lattice convention',
         cap=r['cap'],actual_chi=r['chi'],ordering=r.get('infinite_ordering','matter_first'),
         conserving_ansatz=r.get('u1_conserving_ansatz'),energy_cell=r['energy_cell'],
+        number_background=r.get('number_background'),observed_number_density=r.get('mean_sz',0)+.5 if 'mean_sz' in r else None,
+        number_density_error_vs_background=r.get('number_density_error_vs_background'),
         disjoint_dimer_variational_upper_bound_cell=-4*r['width']/np.sqrt(3),
         isolated_A_star_variational_upper_bound_cell=-4.8061842*r['width'],
         energy_above_known_trial_state=bool(r['energy_cell']>-4.8061842*r['width']+1e-9),

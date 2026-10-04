@@ -1,0 +1,24 @@
+{
+  "state": "infinite_zigzag_w1_chi128_qn_star_active_fixedpoint",
+  "source_transfer_magnitudes": [
+    1.0000000000000073,
+    0.8893877272882031,
+    0.8893877272881845,
+    0.73961767701852
+  ],
+  "full_transfer_xi_slices": 17.061643738088254,
+  "loop_decay_ratio_last_two_distances": 0.7384122242552712,
+  "loop_descriptive_decay_length_slices": 6.5951523330137425,
+  "loop_ratio_distances_cells": [
+    8,
+    16
+  ],
+  "source_canonical_error": 5.5261650708402247e-11,
+  "source_solver_residual": 3.256613509768276e-05,
+  "maximum_measured_matter_triplet_connected_magnitude": 5.568436072048337e-10,
+  "raw_sources": [
+    "results/infinite_zigzag_w1_chi128_qn_star_active_fixedpoint_sector_correlations.json",
+    "results/infinite_zigzag_w1_chi128_qn_star_active_fixedpoint_physical_correlations.json"
+  ],
+  "interpretation": "The measured loop decay roughly follows the fourth transfer eigenvalue rather than the leading subdominant pair. The ratio is descriptive, with no systematic error bound. Tiny triplet correlations and small sector amplitudes on this unconverged narrow state do not certify a gap, ground-state order, or a 2D phase. Transfer eigenvector quantum-number classification has not been independently extracted."
+}

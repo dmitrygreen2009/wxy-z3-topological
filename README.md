@@ -337,3 +337,35 @@ python scripts/export_contractible_cycles.py
 
 This changes descriptive metadata only; physical edges, endpoint legs, spin
 ordering, and spatial cuts are checked independently and remain preserved.
+
+To compare the full transfer length with new physical or narrow-sector
+correlations while reusing previously measured one-point data:
+
+```sh
+julia --project=. test/cgs_pair_operator_mpo.jl
+julia --project=. scripts/infinite_physical_correlations.jl RESULT.jls RESULT_observables.json
+julia --project=. scripts/infinite_sector_correlations.jl RESULT.jls RESULT_observables.json
+```
+
+The last command is specifically for the zigzag width-one quotient. Its
+winding operators have unusually local support, so these sector correlations
+must not be interpreted as evidence for the two-dimensional phase.
+
+An independent infinite-state initializer tests fixed filling without relying
+on the product-state expansion or a finite-cylinder warm start:
+
+```sh
+julia --project=. test/infinite_block_initializer.jl
+julia --project=. test/infinite_number_background.jl
+julia --project=. scripts/infinite_random_cell.jl armchair 2 16 64
+```
+
+This example fixes mean physical density to 16/36 = 4/9. A normalized library
+`random_mps` supplies an entangled finite cell; deliberate unit-dimensional
+boundary bonds repeat independent cells before official VUMPS expansion.
+Every physical spin remains an individual MPS site. Shifted/scaled site QNs
+encode the filling and leave physical spin matrices unchanged. Zero virtual
+QN flux therefore does not imply half filling. Output records the physical
+number background explicitly and uses `rho4of9` in checkpoint names. These
+are alternative variational candidates, not a certificate of the globally
+preferred filling or a two-dimensional phase.

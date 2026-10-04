@@ -2,6 +2,7 @@
 import glob,json,pathlib,re
 import numpy as np
 from provenance import provenance
+from finite_results import finite_groups
 
 def summarize(probabilities):
     p=np.sort(np.asarray(probabilities,dtype=float))[::-1]
@@ -21,15 +22,13 @@ def summarize(probabilities):
         numerical_clusters=clusters,weight_outside_leading30=float(sum(p[30:])))
 
 states=[]
-for path in sorted(glob.glob('results/*_L*_w*_chi*.json')):
-    r=json.load(open(path))
-    if 'family' not in r or 'length' not in r:continue
-    for k,q in enumerate(r.get('records',[])):
+for path,r,stages in finite_groups():
+    for k,q in stages:
         if 'schmidt_probabilities' not in q:continue
         value=summarize(q['schmidt_probabilities'])
         assert abs(value['entropy']-q['entropy'])<1e-8
         states.append(dict(source_file=path,record_index=k,family=r['family'],length=r['length'],width=r['width'],
-            initialization_branch=re.sub(r'_chi\d+','',pathlib.Path(path).stem).removesuffix('_refined'),seed=r.get('seed'),
+            initialization_branch=r.get('initialization_branch',re.sub(r'_chi\d+','',pathlib.Path(path).stem).removesuffix('_refined')),seed=r.get('seed'),
             circumference=r['physical_circumference'],nup=r.get('nup',(r['spins']+1)//2),number_sector_scope='Global minimum requires independent number-sector search',ordering=r.get('ordering','axial'),cap=q['cap'],
             bond_dimension=q['maxlinkdim'],energy=q['energy'],spectrum=value))
 output=dict(states=states,audit=provenance(None,'Analysis of saved full-state Schmidt probabilities',{},'Saved microscopic MPS spatial-cut spectra',[]),

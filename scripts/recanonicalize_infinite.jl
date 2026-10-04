@@ -16,6 +16,7 @@ for path in ARGS
     canonical,lambda=canonicalize_left(psi.AL)
     audit=run_provenance(;seed=7114,solver="Official ITensorInfiniteMPS transfer-fixed-point canonicalization",
         settings=Dict("canonicalization_tolerance"=>1e-14),initialization=path,conserved_quantum_numbers=hasqns(siteind(psi.AL,1)) ? ["total Sz"] : String[])
+    audit["number_background"]=get(meta,"number_background",infinite_number_background(psi))
     audit["optimization_u1_conserving_ansatz"]=hasqns(siteind(psi.AL,1))
     audit["measurement_densification_only"]=hasqns(siteind(psi.AL,1))
     audit["source_variational_audit"]=get(meta,"audit",nothing)

@@ -218,3 +218,40 @@ This is a reproducibility gap to correct for future caches, not evidence that th
 validated Hamiltonian energies should be discarded or recomputed.
 
 The new width-two circumference measurements show different nearly pure charges at different axial rings: zigzag probabilities are predominantly q=2 at t0 and q=0 at t1–t3; armchair is predominantly q=2 at t0,t1 and q=0 at t2. Operator-application norm errors are below 1e-12. This is useful evidence about saved-state and boundary/flux structure, not proof of a homogeneous topological MES. The small residual charge admixtures and bond/length dependence still require convergence. Density profiles are saved alongside these new observables.
+
+## Follow-up audit of analysis coverage and physical correlations
+
+The finite analysis readers had omitted completed number-scan candidates whose
+metadata were stored inside each record, rather than at the outer file level.
+This biased the displayed lowest-energy envelope toward the reference filling.
+A shared reader now includes those candidates, PH-transformed states, and exact
+preserved result snapshots; a permanent fixture regression checks the omission.
+No production state or validated benchmark was recomputed. Entropy fits remain
+descriptive and ineligible for topological inference. The plotting code also
+separates initializer and number-sector branches instead of joining unrelated
+points into apparent convergence curves.
+
+For the consistently canonical width-one QN cap128 state, the leading full
+transfer magnitudes are 1, 0.8893877 (twice), and 0.7396177. New winding-loop
+connected contractions at 8 and 16 cells give a descriptive per-cell decay
+ratio about 0.7384, roughly following the fourth eigenvalue rather than the
+leading subdominant pair. Charge-three matter contractions are much smaller.
+Neither operator measurement identifies the leading eigenvectors' quantum
+numbers, and neither certifies a physical gap or ground-state order. Raw
+contractions and a separate comparison are saved in
+`results/transfer_operator_coupling_audit.json`. Existing validated one-point
+values were reused; legacy records lack an original payload fingerprint, which
+is distinguished from the checksummed payload and one-point JSON used by these
+new contractions. Future one-point measurements fingerprint their payloads.
+
+The filling audit also tests an independent fixed-density infinite initializer.
+Ten exact-state checks validate repeating an entangled finite cell with an
+explicit one-dimensional boundary bond and official library canonicalization.
+Twenty-one checks validate the physical density encoded by shifted/scaled site
+QNs, including importing both KrylovKit and ITensors and verifying that `Sz`,
+`S+`, and `S-` retain their physical spin matrices. A zero shifted virtual flux
+is not a statement of physical half filling. New output records the background
+explicitly; legacy dense measurement tensors without that provenance remain
+unclassified rather than being assigned a density retrospectively. The new
+armchair width-two density-4/9 run is an independent candidate, motivated by
+the finite number scans, and provides no preferred-filling certificate yet.

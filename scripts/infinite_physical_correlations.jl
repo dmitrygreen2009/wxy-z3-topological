@@ -5,6 +5,10 @@ path=ARGS[1];onepoint_path=ARGS[2];started=time()
 meta=JSON3.read(read(replace(path,".jls"=>".json"),String),Dict{String,Any})
 @assert get(meta,"infinite_ordering","matter_first")=="star"
 old=JSON3.read(read(onepoint_path,String),Dict{String,Any})
+if haskey(old,"source_payload_sha256")
+    @assert open(io->bytes2hex(sha256(io)),resolve_checkpoint(path))==old["source_payload_sha256"] "Stored one-point source differs from this checkpoint"
+end
+
 @assert old["source_file"]==path "One-point data must describe this same saved state"
 psi=load_state(path);psi=InfiniteCanonicalMPS(dense(psi.AL),dense(psi.C),dense(psi.AR))
 sites=siteinds(only,psi);w=meta["width"];records=[]
@@ -22,7 +26,8 @@ end
 actual=resolve_checkpoint(path)
 result=Dict("family"=>meta["family"],"width"=>w,"source_checkpoint"=>actual,
     "source_payload_sha256"=>open(io->bytes2hex(sha256(io)),actual),
-    "previous_one_point_data"=>onepoint_path,"previous_one_point_sha256"=>bytes2hex(sha256(read(onepoint_path))),
+    "previous_one_point_data"=>onepoint_path,
+    "previous_one_point_payload_fingerprint_available"=>haskey(old,"source_payload_sha256"),"previous_one_point_sha256"=>bytes2hex(sha256(read(onepoint_path))),
     "source_canonical_error"=>meta["canonical_error"],"source_solver_residual"=>get(meta,"solver_residual",nothing),
     "matter_charge_three_correlations"=>records,"runtime_seconds"=>time()-started,
     "audit"=>run_provenance(solver="ITensorInfiniteMPS CGS-invariant charge-three two-point contractions",
