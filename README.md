@@ -261,3 +261,5 @@ compares both orderings and physical spatial membership on 24 geometries.
 Checksummed manifests are verified on state loads and continuations; explicit
 `.previous` payloads retain their own state instead of following a newer
 manifest. Legacy unmanifested fitting caches remain explicitly identifiable.
+
+Completed finite checkpoints now have unique completion identifiers; rolling latest checkpoints still rotate a previous payload. `scripts/star_trial_bound.py` independently validates the isolated-A-star variational trial state. Its conservative two-slice bound is `E0 <= -4.8061842 * width` for either wrapping. An infinite solver point above that trial energy cannot represent the ground state even if its projected residual is tiny. `test/variational_bound.jl` additionally checks the disjoint-dimer trial state directly with ITensor.

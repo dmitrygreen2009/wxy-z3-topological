@@ -28,6 +28,13 @@ isdefined(Main,:cylinder) || include("../src/model.jl")
         cp(replace(path,".jls"=>".json"),replace(corrupt,".jls"=>".json"))
         @test_throws AssertionError load_valid_checkpoint(corrupt)
     end
+    result=Dict("family"=>"star_benchmark","length"=>1,"width"=>0,"spins"=>6,
+        "physical_circumference"=>0.0,"seed"=>8131,"nup"=>3,"ordering"=>"matter_first")
+    first_saved=completed_finite_checkpoint(psi,result,8,"immutable_regression")
+    second_saved=completed_finite_checkpoint(psi,result,8,"immutable_regression")
+    @test first_saved["checkpoint_file"]!=second_saved["checkpoint_file"]
+    @test isfile(first_saved["checkpoint_file"]) && isfile(second_saved["checkpoint_file"])
+    @test abs(inner(load_state(first_saved["checkpoint_file"]),psi)-1)<1e-12
     resumed,_=dmrg(H,loaded;nsweeps=2,maxdim=8,cutoff=1e-13,noise=0,outputlevel=0)
     @test resumed≈candidate atol=1e-12
 end

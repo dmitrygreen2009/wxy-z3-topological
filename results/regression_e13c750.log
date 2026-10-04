@@ -1,0 +1,210 @@
+Test Summary:                  | Pass  Total  Time
+Microscopic lattice regression |   97     97  4.4s
+Test Summary:                           | Pass  Total  Time
+Infinite Hamiltonian physical incidence |   55     55  1.0s
+Test Summary:   | Pass  Total     Time
+MPO Hermiticity |    3      3  1m32.3s
+Test Summary:                     | Pass  Total   Time
+Independent exact Schmidt spectra |    4      4  22.1s
+Test Summary:                                 | Pass  Total   Time
+Analytically known infinite transfer spectrum |    4      4  11.1s
+Test Summary:                                           | Pass  Total  Time
+Degenerate fixed points are not hidden by scalar Krylov |    3      3  2.1s
+┌ Warning: Invariant subspace of dimension 3 (up to requested tolerance `tol = 1.0e-12`), which is smaller than the number of requested eigenvalues (i.e. `howmany == 4`).
+└ @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/arnoldi.jl:384
+┌ Warning: Arnoldi eigsolve stopped without convergence after 1 iterations:
+│ * 3 eigenvalues converged
+│ * norm of residuals = (1.15e-16, 2.05e-16, 3.76e-17)
+│ * number of operations = 3
+└ @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/arnoldi.jl:172
+┌ Warning: Invariant subspace of dimension 2 (up to requested tolerance `tol = 1.0e-12`), which is smaller than the number of requested eigenvalues (i.e. `howmany == 4`).
+└ @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/arnoldi.jl:384
+┌ Warning: Arnoldi eigsolve stopped without convergence after 1 iterations:
+│ * 2 eigenvalues converged
+│ * norm of residuals = (9.44e-18, 1.70e-17)
+│ * number of operations = 2
+└ @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/arnoldi.jl:172
+┌ Warning: MPS center bond dimension is less than requested (you requested 8, but in practice it is 5. This is likely due to technicalities of truncating quantum number sectors.
+└ @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/mps.jl:154
+Test Summary:                                         | Pass  Total     Time
+Finite checkpoint observer preserves DMRG and resumes |   10     10  1m29.4s
+Test Summary:             | Pass  Total   Time
+Matter triplet correlator |    2      2  13.9s
+Test Summary:                                   | Pass  Total   Time
+Exact CGS projector and Hamiltonian commutation |    5      5  21.8s
+Test Summary:                                                 | Pass  Total   Time
+Infinite Schmidt entropy from independently known fixed point |    4      4  25.5s
+Test Summary:                                                      | Pass  Total  Time
+Conserved-spin infinite entropy via measurement-only densification |    3      3  4.2s
+Contraction resulted in ITensor with 14 indices, which is greater
+        than or equal to the ITensor order warning threshold 14.
+        You can modify the threshold with macros like `@set_warn_order N`,
+        `@reset_warn_order`, and `@disable_warn_order` or functions like
+        `ITensors.set_warn_order(N::Int)`, `ITensors.reset_warn_order()`, and
+        `ITensors.disable_warn_order()`.
+
+Stacktrace:
+  [1] backtrace()
+    @ Base ./error.jl:114
+  [2] _contract(A::ITensor, B::ITensor)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/tensor_algebra.jl:20
+  [3] contract(A::ITensor, B::ITensor)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/tensor_algebra.jl:76
+  [4] *
+    @ /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/tensor_algebra.jl:63 [inlined]
+  [5] infinite_twocycle_mpo(s::Vector{Index{Int64}}, offset::Int64)
+    @ Main ~/Documents/wxy-z3-topological/src/infinite_observables.jl:13
+  [6] infinite_twocycle_mpo(s::Vector{Index{Int64}})
+    @ Main ~/Documents/wxy-z3-topological/src/infinite_observables.jl:3
+  [7] macro expansion
+    @ ~/Documents/wxy-z3-topological/test/infinite_observables.jl:6 [inlined]
+  [8] macro expansion
+    @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+  [9] top-level scope
+    @ ~/Documents/wxy-z3-topological/test/infinite_observables.jl:4
+ [10] include(fname::String)
+    @ Base.MainInclude ./client.jl:494
+ [11] top-level scope
+    @ none:1
+ [12] eval
+    @ ./boot.jl:385 [inlined]
+ [13] exec_options(opts::Base.JLOptions)
+    @ Base ./client.jl:296
+ [14] _start()
+    @ Base ./client.jl:557
+Contraction resulted in ITensor with 16 indices, which is greater
+        than or equal to the ITensor order warning threshold 14.
+        You can modify the threshold with macros like `@set_warn_order N`,
+        `@reset_warn_order`, and `@disable_warn_order` or functions like
+        `ITensors.set_warn_order(N::Int)`, `ITensors.reset_warn_order()`, and
+        `ITensors.disable_warn_order()`.
+
+Stacktrace:
+  [1] _contract(A::ITensor, B::ITensor)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/tensor_algebra.jl:20
+  [2] contract(A::ITensor, B::ITensor)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/tensor_algebra.jl:76
+  [3] *
+    @ /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/tensor_algebra.jl:63 [inlined]
+  [4] infinite_twocycle_mpo(s::Vector{Index{Int64}}, offset::Int64)
+    @ Main ~/Documents/wxy-z3-topological/src/infinite_observables.jl:13
+  [5] infinite_twocycle_mpo(s::Vector{Index{Int64}})
+    @ Main ~/Documents/wxy-z3-topological/src/infinite_observables.jl:3
+  [6] macro expansion
+    @ ~/Documents/wxy-z3-topological/test/infinite_observables.jl:6 [inlined]
+  [7] macro expansion
+    @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+  [8] top-level scope
+    @ ~/Documents/wxy-z3-topological/test/infinite_observables.jl:4
+  [9] include(fname::String)
+    @ Base.MainInclude ./client.jl:494
+ [10] top-level scope
+    @ none:1
+ [11] eval
+    @ ./boot.jl:385 [inlined]
+ [12] exec_options(opts::Base.JLOptions)
+    @ Base ./client.jl:296
+ [13] _start()
+    @ Base ./client.jl:557
+Contraction resulted in ITensor with 15 indices, which is greater
+        than or equal to the ITensor order warning threshold 14.
+        You can modify the threshold with macros like `@set_warn_order N`,
+        `@reset_warn_order`, and `@disable_warn_order` or functions like
+        `ITensors.set_warn_order(N::Int)`, `ITensors.reset_warn_order()`, and
+        `ITensors.disable_warn_order()`.
+
+Stacktrace:
+  [1] _contract(A::ITensor, B::ITensor)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/tensor_algebra.jl:20
+  [2] contract(A::ITensor, B::ITensor)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/tensor_algebra.jl:76
+  [3] *(A::ITensor, B::ITensor)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/tensor_algebra.jl:63
+  [4] svd(A::ITensor, Linds::Vector{Index{Int64}}; leftdir::Nothing, rightdir::Nothing, lefttags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, righttags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, mindim::Nothing, maxdim::Int64, cutoff::Float64, alg::Nothing, use_absolute_cutoff::Nothing, use_relative_cutoff::Nothing, min_blockdim::Nothing, utags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, vtags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4})
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/matrix_decomposition.jl:182
+  [5] svd
+    @ /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/matrix_decomposition.jl:110 [inlined]
+  [6] factorize_svd(A::ITensor, Linds::Vector{Index{Int64}}; singular_values!::Nothing, ortho::String, alg::Nothing, dir::Nothing, mindim::Nothing, maxdim::Int64, cutoff::Float64, tags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, use_absolute_cutoff::Nothing, use_relative_cutoff::Nothing, min_blockdim::Nothing)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/matrix_decomposition.jl:629
+  [7] factorize(A::ITensor, Linds::Vector{Index{Int64}}; mindim::Nothing, maxdim::Nothing, cutoff::Float64, ortho::String, tags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, plev::Nothing, which_decomp::Nothing, eigen_perturbation::Nothing, svd_alg::Nothing, use_absolute_cutoff::Nothing, use_relative_cutoff::Nothing, min_blockdim::Nothing, singular_values!::Nothing, dir::Nothing)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/matrix_decomposition.jl:825
+  [8] MPO(A::ITensor, sites::Vector{Vector{Index{Int64}}}; leftinds::Nothing, orthocenter::Int64, tags::Vector{ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}}, kwargs::@Kwargs{cutoff::Float64})
+    @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/abstractmps.jl:2002
+  [9] AbstractMPS
+    @ /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/abstractmps.jl:1975 [inlined]
+ [10] MPO(A::ITensor, sites::Vector{Index{Int64}}; kwargs::@Kwargs{cutoff::Float64})
+    @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/mpo.jl:146
+ [11] MPO
+    @ /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/mpo.jl:145 [inlined]
+ [12] infinite_twocycle_mpo(s::Vector{Index{Int64}}, offset::Int64)
+    @ Main ~/Documents/wxy-z3-topological/src/infinite_observables.jl:15
+ [13] infinite_twocycle_mpo(s::Vector{Index{Int64}})
+    @ Main ~/Documents/wxy-z3-topological/src/infinite_observables.jl:3
+ [14] macro expansion
+    @ ~/Documents/wxy-z3-topological/test/infinite_observables.jl:6 [inlined]
+ [15] macro expansion
+    @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [16] top-level scope
+    @ ~/Documents/wxy-z3-topological/test/infinite_observables.jl:4
+ [17] include(fname::String)
+    @ Base.MainInclude ./client.jl:494
+ [18] top-level scope
+    @ none:1
+ [19] eval
+    @ ./boot.jl:385 [inlined]
+ [20] exec_options(opts::Base.JLOptions)
+    @ Base ./client.jl:296
+ [21] _start()
+    @ Base ./client.jl:557
+Contraction resulted in ITensor with 15 indices, which is greater
+        than or equal to the ITensor order warning threshold 14.
+        You can modify the threshold with macros like `@set_warn_order N`,
+        `@reset_warn_order`, and `@disable_warn_order` or functions like
+        `ITensors.set_warn_order(N::Int)`, `ITensors.reset_warn_order()`, and
+        `ITensors.disable_warn_order()`.
+
+Stacktrace:
+  [1] _contract(A::ITensor, B::ITensor)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/tensor_algebra.jl:20
+  [2] contract(A::ITensor, B::ITensor)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/tensor_algebra.jl:76
+  [3] *
+    @ /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/tensor_algebra.jl:63 [inlined]
+  [4] factorize_svd(A::ITensor, Linds::Vector{Index{Int64}}; singular_values!::Nothing, ortho::String, alg::Nothing, dir::Nothing, mindim::Nothing, maxdim::Int64, cutoff::Float64, tags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, use_absolute_cutoff::Nothing, use_relative_cutoff::Nothing, min_blockdim::Nothing)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/matrix_decomposition.jl:649
+  [5] factorize(A::ITensor, Linds::Vector{Index{Int64}}; mindim::Nothing, maxdim::Nothing, cutoff::Float64, ortho::String, tags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, plev::Nothing, which_decomp::Nothing, eigen_perturbation::Nothing, svd_alg::Nothing, use_absolute_cutoff::Nothing, use_relative_cutoff::Nothing, min_blockdim::Nothing, singular_values!::Nothing, dir::Nothing)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/matrix_decomposition.jl:825
+  [6] MPO(A::ITensor, sites::Vector{Vector{Index{Int64}}}; leftinds::Nothing, orthocenter::Int64, tags::Vector{ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}}, kwargs::@Kwargs{cutoff::Float64})
+    @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/abstractmps.jl:2002
+  [7] AbstractMPS
+    @ /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/abstractmps.jl:1975 [inlined]
+  [8] MPO(A::ITensor, sites::Vector{Index{Int64}}; kwargs::@Kwargs{cutoff::Float64})
+    @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/mpo.jl:146
+  [9] MPO
+    @ /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/mpo.jl:145 [inlined]
+ [10] infinite_twocycle_mpo(s::Vector{Index{Int64}}, offset::Int64)
+    @ Main ~/Documents/wxy-z3-topological/src/infinite_observables.jl:15
+ [11] infinite_twocycle_mpo(s::Vector{Index{Int64}})
+    @ Main ~/Documents/wxy-z3-topological/src/infinite_observables.jl:3
+ [12] macro expansion
+    @ ~/Documents/wxy-z3-topological/test/infinite_observables.jl:6 [inlined]
+ [13] macro expansion
+    @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+ [14] top-level scope
+    @ ~/Documents/wxy-z3-topological/test/infinite_observables.jl:4
+ [15] include(fname::String)
+    @ Base.MainInclude ./client.jl:494
+ [16] top-level scope
+    @ none:1
+ [17] eval
+    @ ./boot.jl:385 [inlined]
+ [18] exec_options(opts::Base.JLOptions)
+    @ Base ./client.jl:296
+ [19] _start()
+    @ Base ./client.jl:557
+Test Summary:                                             | Pass  Total     Time
+Independent local-loop and matter-triplet operator checks |    4      4  2m10.2s
+Test Summary:                                             | Pass  Total  Time
+Exact particle-hole state mapping retains QNs and entropy |    5      5  1.9s
+Test Summary:                                                         | Pass  Total  Time
+Individual-site star ordering realizes the declared spatial partition |   36     36  0.2s

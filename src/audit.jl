@@ -107,7 +107,12 @@ function completed_finite_checkpoint(psi,result,cap,phase)
     family=result["family"];L=result["length"];w=result["width"];n=result["spins"]
     seed=get(result,"seed",7103);nup=get(result,"nup",cld(n,2));Ly=round(result["physical_circumference"];digits=5)
     order=get(result,"ordering","axial")
-    path="results/checkpoints/$(family)_w$(w)_Ly$(Ly)_L$(L)_N$(n)_chi$(cap)_Nup$(nup)_seed$(seed)_v$(RUN_FORMAT_VERSION)_$(order)_$(phase)_complete.jls"
+    completion_id=replace(string(now(UTC)),r"[^0-9]"=>"")
+    path="results/checkpoints/$(family)_w$(w)_Ly$(Ly)_L$(L)_N$(n)_chi$(cap)_Nup$(nup)_seed$(seed)_v$(RUN_FORMAT_VERSION)_$(order)_$(phase)_complete_$(completion_id).jls"
+    basepath=path;collision=1
+    while isfile(path)
+        path=replace(basepath,".jls"=>"_$(collision).jls");collision+=1
+    end
     metadata=merge(copy(result),Dict("kind"=>"finite","physical_spins"=>n,"cap"=>cap,"phase"=>phase))
     save_checkpoint(path,psi,metadata)
 end

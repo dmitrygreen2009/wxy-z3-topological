@@ -59,6 +59,16 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
         "left_isometry_error"=>maximum(left_isometry_errors),"right_isometry_error"=>maximum(right_isometry_errors),
         "center_normalization_error"=>maximum(center_norm_errors),
         "process_peak_rss_bytes"=>Sys.maxrss())
+    # Species-one Bell dimers use leg one on A and leg two on B,
+    # all distinct physical gauges. Each contributes -1/sqrt(3), all
+    # other exchanges average to zero, and half filling is possible.
+    r["disjoint_dimer_variational_upper_bound_cell"]=-4w/sqrt(3)
+    # Alternatively every A star and its three physical gauges form a
+    # disjoint validated six-spin cluster. Fixed-number B matter gives
+    # zero mean to the remaining exchanges. Round the trial bound upward.
+    r["isolated_A_star_variational_upper_bound_cell"]=-4.8061842w
+    r["energy_above_known_trial_state"]=r["energy_cell"]>-4.8061842w+1e-9
+    r["variational_bound_interpretation"]="Energy above the explicit trial state excludes a ground-state candidate irrespective of projected solver residual; satisfying this bound does not certify convergence."
     r["kind"]="infinite"
     r["physical_circumference"]=family=="zigzag" ? sqrt(3)*w : 3.0w
     r["cell_slices"]=2;r["physical_spins"]=n;r["energy_per_vertex"]=r["energy_cell"]/(4w)
