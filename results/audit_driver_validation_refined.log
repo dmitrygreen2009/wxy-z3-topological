@@ -1,0 +1,4 @@
+Using VUMPS solver with time step -Inf
+AUDITED VUMPS iteration=1 chi=2 residual=0.0004552156104282094 seconds=2.1160415
+Test Summary:                                | Pass  Total      Time
+Audited driver uses official VUMPS iteration |    2      2  19m50.8s

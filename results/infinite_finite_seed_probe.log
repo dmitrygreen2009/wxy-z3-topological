@@ -1,0 +1,12 @@
+WARNING: both KrylovKit and ITensorMPS export "orthogonalize"; uses of it in module Main must be qualified
+INFINITE FIT physical bulk slices 1:2 MPS range 11:28
+ERROR: UndefVarError: `orthogonalize` not defined
+Stacktrace:
+ [1] infinite_from_finite(path::String; initial_chi::Int64, target_chi::Int64)
+   @ Main ~/Documents/wxy-z3-topological/scripts/infinite_from_finite.jl:17
+ [2] top-level scope
+   @ none:1
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.6978772158205879, 0.6827875057665296)
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.8302383633599124, 0.8302383633599124)
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.8795034246997318, 0.8795034246997318)
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.8430000232619556, 0.8430000232619557)

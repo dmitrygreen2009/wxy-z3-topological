@@ -1,0 +1,26 @@
+ERROR: LoadError: Some tests did not pass: 0 passed, 0 failed, 1 errored, 0 broken.
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/test/audit_driver.jl:3
+Audited driver uses official VUMPS iteration: Error During Test at /Users/dmitrygreen/Documents/wxy-z3-topological/test/audit_driver.jl:3
+  Got exception outside of a @test
+  type InfiniteCanonicalMPS has no field llim
+  Stacktrace:
+   [1] getproperty
+     @ ./Base.jl:37 [inlined]
+   [2] leftlim(m::InfiniteCanonicalMPS)
+     @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/abstractmps.jl:92
+   [3] deepcopy(m::InfiniteCanonicalMPS)
+     @ ITensorMPS /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/abstractmps.jl:336
+   [4] macro expansion
+     @ ~/Documents/wxy-z3-topological/test/audit_driver.jl:7 [inlined]
+   [5] macro expansion
+     @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+   [6] top-level scope
+     @ ~/Documents/wxy-z3-topological/test/audit_driver.jl:4
+   [7] include(mod::Module, _path::String)
+     @ Base ./Base.jl:495
+   [8] exec_options(opts::Base.JLOptions)
+     @ Base ./client.jl:323
+   [9] _start()
+     @ Base ./client.jl:557
+Test Summary:                                | Error  Total   Time
+Audited driver uses official VUMPS iteration |     1      1  11.1s

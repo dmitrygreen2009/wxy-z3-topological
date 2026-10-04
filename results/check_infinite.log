@@ -1,0 +1,8 @@
+MEASURED: {"mean_abs_splus":0.47219654038487024,"family":"zigzag","canonical_error_raw":1.9999999979343988,"spatial_entropy":0.1037994946986943,"process_peak_rss_bytes":608190464,"entropy_bonds":[-0.0,-0.0,-0.0,-0.0,-0.0,0.24398367719254646,0.17127969219066358,0.08615592537597053,0.35595228463354467,0.25541309909662824,0.2331817636609561,-0.0,-0.0,-0.0,0.18392605790083877,0.18257197278090057,0.11910230318673404,0.1037994946986943],"chi":2,"iteration":1,"xi_slices":0.05247230776659225,"ordering_version":2,"transfer_residuals":[3.5033684396185453e-16,5.640266013688563e-16],"cap":2,"transfer_converged_eigenpairs":2,"transfer_eigenvalue_magnitudes":[1.000000000000001,2.797157557069881e-17],"width":1,"mean_sz":-6.644767094631769e-17,"energy_cell":-6.294575578408574,"cell_spins":18,"transfer_normalization_error":1.1102230246251565e-15,"canonical_error":0.0004685502462557427,"xi_cells":0.026236153883296125}
+┌ Warning: Invariant subspace of dimension 2 (up to requested tolerance `tol = 1.0e-9`), which is smaller than the number of requested eigenvalues (i.e. `howmany == 4`).
+└ @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/arnoldi.jl:384
+┌ Warning: Arnoldi eigsolve stopped without convergence after 1 iterations:
+│ * 2 eigenvalues converged
+│ * norm of residuals = (4.90e-17, 2.57e-17)
+│ * number of operations = 2
+└ @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/arnoldi.jl:172

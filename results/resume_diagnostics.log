@@ -1,0 +1,22 @@
+MEASURED: {"mean_abs_splus":0.279523102190648,"family":"zigzag","canonical_error_raw":0.0019744746460377658,"spatial_entropy":0.43335302984133833,"right_isometry_error":2.902575038578715e-15,"left_isometry_error":2.74564985135528e-15,"process_peak_rss_bytes":600260608,"entropy_bonds":[0.525792759328365,0.6662029101923582,0.9766716880637933,1.2641460077089057,1.4572595547274192,1.4653025855122963,0.9909245148279106,0.43189867928623754,0.43282717735277293,0.41979395969443467,0.9608810550470946,1.01522034855054,1.3289586225350887,1.4614891472292701,1.495385530566158,1.0054901944971752,0.43353899990171096,0.43335302984133833],"chi":32,"iteration":5,"xi_slices":0.4196803711143681,"ordering_version":2,"transfer_residuals":[1.2571573237969114e-15,1.2701152438261647e-16,1.508705850805881e-15,1.3999629162699314e-16,8.559662835845142e-17,3.776623323413167e-16,1.926963207180482e-16,3.562483046021934e-15,4.4278150910238095e-11,1.5363304592362936e-10,1.4131141678004072e-11,1.0174509345955614e-10,4.850593951230065e-11,7.043866354775701e-11],"cap":32,"transfer_converged_eigenpairs":14,"transfer_eigenvalue_magnitudes":[0.9999999999999996,0.00851836010892077,8.268980619018286e-5,2.2461191992313426e-5,2.246119199230408e-5,4.290530949197739e-6,3.7318597160789953e-6,9.946799398202135e-7,3.573726403217583e-7,3.2017373438554873e-7,2.7945472936029667e-7,1.8342623780795824e-8,1.8306945110252084e-8,7.546791154572342e-11],"width":1,"center_normalization_error":2.220446049250313e-16,"mean_sz":-1.284755316448486e-7,"energy_cell":-7.298818040327167,"cell_spins":18,"transfer_normalization_error":4.440892098500626e-16,"canonical_error":0.0019744746460377757,"xi_cells":0.20984018555718406}
+ERROR: LoadError: SystemError: opening file "results/armchair_L4_w1_chi128.jls": No such file or directory
+Stacktrace:
+ [1] systemerror(p::String, errno::Int32; extrainfo::Nothing)
+   @ Base ./error.jl:176
+ [2] systemerror
+   @ ./error.jl:175 [inlined]
+ [3] open(fname::String; lock::Bool, read::Nothing, write::Nothing, create::Nothing, truncate::Nothing, append::Nothing)
+   @ Base ./iostream.jl:293
+ [4] open
+   @ ./iostream.jl:275 [inlined]
+ [5] open(f::typeof(deserialize), args::String; kwargs::@Kwargs{})
+   @ Base ./io.jl:394
+ [6] open
+   @ ./io.jl:393 [inlined]
+ [7] deserialize
+   @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Serialization/src/Serialization.jl:811 [inlined]
+ [8] measure_file(path::String)
+   @ Main ~/Documents/wxy-z3-topological/scripts/observables.jl:4
+ [9] top-level scope
+   @ ~/Documents/wxy-z3-topological/scripts/resume_diagnostics.jl:10
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/resume_diagnostics.jl:9

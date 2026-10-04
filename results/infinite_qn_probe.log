@@ -1,0 +1,56 @@
+The two-site subspace expansion produced a zero-norm expansion at (1, 2). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (2, 3). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (3, 4). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (4, 5). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (5, 6). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (7, 8). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (8, 9). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (9, 10). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (10, 11). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (11, 12). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (12, 13). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (13, 14). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (14, 15). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (15, 16). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (16, 17). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (17, 18). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+Using VUMPS solver with time step -Inf
+Running VUMPS with multisite_update_alg = sequential
+VUMPS iteration 1 (out of maximum 30). Bond dimension = 2, energy = (ComplexF64[0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, -0.5773502691896256 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, -0.5773502691896257 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im], ComplexF64[0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, -0.5773502691896257 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im]), ϵᵖʳᵉˢ = 1.5700924586837752e-16, tol = 1.0e-7, iteration time = 22.092069541 seconds
+Precision error 1.5700924586837752e-16 reached tolerance 1.0e-7, stopping VUMPS after 1 iterations (of a maximum 30).
+┌ Warning: Invariant subspace of dimension 2 (up to requested tolerance `tol = 1.0e-9`), which is smaller than the number of requested eigenvalues (i.e. `howmany == 4`).
+└ @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/arnoldi.jl:384
+┌ Warning: Arnoldi eigsolve stopped without convergence after 1 iterations:
+│ * 2 eigenvalues converged
+│ * norm of residuals = (1.41e-17, 1.78e-17)
+│ * number of operations = 2
+└ @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/arnoldi.jl:172
+ERROR: LoadError: `permutedims!(output_tensor::Tensor, tensor::Tensor, perm, f::Function` not implemented for `typeof(output_tensor) = NDTensors.BlockSparseTensor{ComplexF64, 2, Tuple{Index{Vector{Pair{QN, Int64}}}, Index{Vector{Pair{QN, Int64}}}}, NDTensors.BlockSparse{ComplexF64, Vector{ComplexF64}, 2}}`, `typeof(tensor) = NDTensors.DiagBlockSparseTensor{Float64, 2, Tuple{Index{Vector{Pair{QN, Int64}}}, Index{Vector{Pair{QN, Int64}}}}, NDTensors.DiagBlockSparse{Float64, Float64, 2}}`, `perm = (1, 2)`, and `f = -`.
+Stacktrace:
+  [1] error(s::String)
+    @ Base ./error.jl:35
+  [2] permutedims!(output_tensor::NDTensors.BlockSparseTensor{ComplexF64, 2, Tuple{Index{Vector{Pair{QN, Int64}}}, Index{Vector{Pair{QN, Int64}}}}, NDTensors.BlockSparse{ComplexF64, Vector{ComplexF64}, 2}}, tensor::NDTensors.DiagBlockSparseTensor{Float64, 2, Tuple{Index{Vector{Pair{QN, Int64}}}, Index{Vector{Pair{QN, Int64}}}}, NDTensors.DiagBlockSparse{Float64, Float64, 2}}, perm::Tuple{Int64, Int64}, f::Function)
+    @ NDTensors /private/tmp/wxy-julia-depot/packages/NDTensors/9ENPn/src/tensoroperations/generic_tensor_operations.jl:27
+  [3] permutedims!!(output_tensor::NDTensors.BlockSparseTensor{ComplexF64, 2, Tuple{Index{Vector{Pair{QN, Int64}}}, Index{Vector{Pair{QN, Int64}}}}, NDTensors.BlockSparse{ComplexF64, Vector{ComplexF64}, 2}}, tensor::NDTensors.DiagBlockSparseTensor{Float64, 2, Tuple{Index{Vector{Pair{QN, Int64}}}, Index{Vector{Pair{QN, Int64}}}}, NDTensors.DiagBlockSparse{Float64, Float64, 2}}, perm::Tuple{Int64, Int64}, f::Function)
+    @ NDTensors /private/tmp/wxy-julia-depot/packages/NDTensors/9ENPn/src/tensoroperations/generic_tensor_operations.jl:14
+  [4] _map!!(f::Function, R::NDTensors.BlockSparseTensor{ComplexF64, 2, Tuple{Index{Vector{Pair{QN, Int64}}}, Index{Vector{Pair{QN, Int64}}}}, NDTensors.BlockSparse{ComplexF64, Vector{ComplexF64}, 2}}, T1::NDTensors.BlockSparseTensor{ComplexF64, 2, Tuple{Index{Vector{Pair{QN, Int64}}}, Index{Vector{Pair{QN, Int64}}}}, NDTensors.BlockSparse{ComplexF64, Vector{ComplexF64}, 2}}, T2::NDTensors.DiagBlockSparseTensor{Float64, 2, Tuple{Index{Vector{Pair{QN, Int64}}}, Index{Vector{Pair{QN, Int64}}}}, NDTensors.DiagBlockSparse{Float64, Float64, 2}})
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/itensor.jl:1978
+  [5] map!(f::Function, R::ITensor, T1::ITensor, T2::ITensor)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/itensor.jl:1983
+  [6] copyto!
+    @ /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/broadcast.jl:336 [inlined]
+  [7] materialize!
+    @ ./broadcast.jl:914 [inlined]
+  [8] materialize!
+    @ ./broadcast.jl:911 [inlined]
+  [9] -(A::ITensor, B::ITensor)
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/itensor.jl:1895
+ [10] measure_infinite(psi::InfiniteCanonicalMPS, H::InfiniteSum{MPO}, family::String, w::Int64, cap::Int64, iteration::Int64; tag::String)
+    @ Main ~/Documents/wxy-z3-topological/scripts/infinite.jl:35
+ [11] measure_infinite
+    @ ~/Documents/wxy-z3-topological/scripts/infinite.jl:7 [inlined]
+ [12] run_infinite_qn(family::String, w::Int64, chi::Int64)
+    @ Main ~/Documents/wxy-z3-topological/scripts/infinite_qn.jl:16
+ [13] top-level scope
+    @ ~/Documents/wxy-z3-topological/scripts/infinite_qn.jl:19
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/infinite_qn.jl:19

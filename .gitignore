@@ -1,0 +1,20 @@
+results/*.jls
+__pycache__/
+.DS_Store
+# Regenerate large ED eigenvector arrays from the independent solver.
+results/*.npz
+# Machine-local runtimes, package caches, and scratch directories.
+.venv/
+.julia/
+.cache/
+scratch/
+*.tmp
+results/checkpoints/*.jls
+results/checkpoints/*.jls.previous
+# Disposable canonicalization debug output; scientific audits remain tracked.
+results/*debug*.log
+*.swp
+*.swo
+.vscode/
+.idea/
+results/*.jls.previous

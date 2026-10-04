@@ -1,0 +1,38 @@
+ERROR: LoadError: Some tests did not pass: 0 passed, 0 failed, 1 errored, 0 broken.
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/test/transfer.jl:4
+Test Summary:                     | Pass  Total   Time
+Independent exact Schmidt spectra |    4      4  18.7s
+Analytically known infinite transfer spectrum: Error During Test at /Users/dmitrygreen/Documents/wxy-z3-topological/test/transfer.jl:4
+  Got exception outside of a @test
+  MethodError: no method matching shift_flux_to_zero(::Vector{Index{Int64}}, ::Nothing)
+  
+  Closest candidates are:
+    shift_flux_to_zero(::Vector{Index{Int64}}, !Matched::QN)
+     @ ITensorInfiniteMPS /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/infinitecanonicalmps.jl:66
+    shift_flux_to_zero(::Vector{<:Index}, !Matched::QN)
+     @ ITensorInfiniteMPS /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/infinitecanonicalmps.jl:116
+    shift_flux_to_zero(::Vector{Index{Int64}}, !Matched::Function)
+     @ ITensorInfiniteMPS /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/infinitecanonicalmps.jl:65
+    ...
+  
+  Stacktrace:
+   [1] infsiteinds(site_tag::String, n::Int64; translator::Function, initstate::Nothing, kwargs::@Kwargs{conserve_qns::Bool})
+     @ ITensorInfiniteMPS /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/infinitecanonicalmps.jl:165
+   [2] macro expansion
+     @ ~/Documents/wxy-z3-topological/test/transfer.jl:7 [inlined]
+   [3] macro expansion
+     @ /private/tmp/julia-1.10.10/share/julia/stdlib/v1.10/Test/src/Test.jl:1577 [inlined]
+   [4] top-level scope
+     @ ~/Documents/wxy-z3-topological/test/transfer.jl:7
+   [5] include(fname::String)
+     @ Base.MainInclude ./client.jl:494
+   [6] top-level scope
+     @ none:1
+   [7] eval
+     @ ./boot.jl:385 [inlined]
+   [8] exec_options(opts::Base.JLOptions)
+     @ Base ./client.jl:296
+   [9] _start()
+     @ Base ./client.jl:557
+Test Summary:                                 | Error  Total  Time
+Analytically known infinite transfer spectrum |     1      1  1.2s

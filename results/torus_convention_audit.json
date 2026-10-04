@@ -1,0 +1,590 @@
+{
+  "endpoint_choices": [
+    {
+      "conjugate_W": false,
+      "column_permutation": [
+        0,
+        1,
+        2
+      ],
+      "matter_row_permutation": [
+        0,
+        1,
+        2
+      ],
+      "matter_row_phase_exponents": [
+        0,
+        0,
+        0
+      ],
+      "identity_error": 2.222106062626894e-16
+    },
+    {
+      "conjugate_W": false,
+      "column_permutation": [
+        0,
+        2,
+        1
+      ],
+      "matter_row_permutation": [
+        0,
+        2,
+        1
+      ],
+      "matter_row_phase_exponents": [
+        0,
+        0,
+        0
+      ],
+      "identity_error": 2.222106062626894e-16
+    },
+    {
+      "conjugate_W": false,
+      "column_permutation": [
+        1,
+        0,
+        2
+      ],
+      "matter_row_permutation": [
+        0,
+        2,
+        1
+      ],
+      "matter_row_phase_exponents": [
+        0,
+        1,
+        2
+      ],
+      "identity_error": 2.7755575615628914e-16
+    },
+    {
+      "conjugate_W": false,
+      "column_permutation": [
+        1,
+        2,
+        0
+      ],
+      "matter_row_permutation": [
+        0,
+        1,
+        2
+      ],
+      "matter_row_phase_exponents": [
+        0,
+        1,
+        2
+      ],
+      "identity_error": 2.7755575615628914e-16
+    },
+    {
+      "conjugate_W": false,
+      "column_permutation": [
+        2,
+        0,
+        1
+      ],
+      "matter_row_permutation": [
+        0,
+        1,
+        2
+      ],
+      "matter_row_phase_exponents": [
+        0,
+        2,
+        1
+      ],
+      "identity_error": 2.7755575615628914e-16
+    },
+    {
+      "conjugate_W": false,
+      "column_permutation": [
+        2,
+        1,
+        0
+      ],
+      "matter_row_permutation": [
+        0,
+        2,
+        1
+      ],
+      "matter_row_phase_exponents": [
+        0,
+        2,
+        1
+      ],
+      "identity_error": 2.7755575615628914e-16
+    },
+    {
+      "conjugate_W": true,
+      "column_permutation": [
+        0,
+        1,
+        2
+      ],
+      "matter_row_permutation": [
+        0,
+        2,
+        1
+      ],
+      "matter_row_phase_exponents": [
+        0,
+        0,
+        0
+      ],
+      "identity_error": 2.222106062626894e-16
+    },
+    {
+      "conjugate_W": true,
+      "column_permutation": [
+        0,
+        2,
+        1
+      ],
+      "matter_row_permutation": [
+        0,
+        1,
+        2
+      ],
+      "matter_row_phase_exponents": [
+        0,
+        0,
+        0
+      ],
+      "identity_error": 2.222106062626894e-16
+    },
+    {
+      "conjugate_W": true,
+      "column_permutation": [
+        1,
+        0,
+        2
+      ],
+      "matter_row_permutation": [
+        0,
+        1,
+        2
+      ],
+      "matter_row_phase_exponents": [
+        0,
+        2,
+        1
+      ],
+      "identity_error": 2.7755575615628914e-16
+    },
+    {
+      "conjugate_W": true,
+      "column_permutation": [
+        1,
+        2,
+        0
+      ],
+      "matter_row_permutation": [
+        0,
+        2,
+        1
+      ],
+      "matter_row_phase_exponents": [
+        0,
+        2,
+        1
+      ],
+      "identity_error": 2.7755575615628914e-16
+    },
+    {
+      "conjugate_W": true,
+      "column_permutation": [
+        2,
+        0,
+        1
+      ],
+      "matter_row_permutation": [
+        0,
+        2,
+        1
+      ],
+      "matter_row_phase_exponents": [
+        0,
+        1,
+        2
+      ],
+      "identity_error": 2.7755575615628914e-16
+    },
+    {
+      "conjugate_W": true,
+      "column_permutation": [
+        2,
+        1,
+        0
+      ],
+      "matter_row_permutation": [
+        0,
+        1,
+        2
+      ],
+      "matter_row_phase_exponents": [
+        0,
+        1,
+        2
+      ],
+      "identity_error": 2.7755575615628914e-16
+    }
+  ],
+  "translation_quotients": [
+    {
+      "parity": [
+        1,
+        0
+      ],
+      "legs": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          3,
+          1,
+          5
+        ]
+      ],
+      "edges": [
+        {
+          "edge": 0,
+          "A_vertex": 0,
+          "A_leg": 0,
+          "B_vertex": 1,
+          "B_leg": 0
+        },
+        {
+          "edge": 1,
+          "A_vertex": 0,
+          "A_leg": 1,
+          "B_vertex": 3,
+          "B_leg": 1
+        },
+        {
+          "edge": 2,
+          "A_vertex": 0,
+          "A_leg": 2,
+          "B_vertex": 1,
+          "B_leg": 2
+        },
+        {
+          "edge": 3,
+          "A_vertex": 2,
+          "A_leg": 0,
+          "B_vertex": 3,
+          "B_leg": 0
+        },
+        {
+          "edge": 4,
+          "A_vertex": 2,
+          "A_leg": 1,
+          "B_vertex": 1,
+          "B_leg": 1
+        },
+        {
+          "edge": 5,
+          "A_vertex": 2,
+          "A_leg": 2,
+          "B_vertex": 3,
+          "B_leg": 2
+        }
+      ],
+      "hermiticity_error": 0,
+      "basis_dimension": 48620,
+      "all_basis_popcounts_are_9": true,
+      "energies": [
+        -7.364534839425914,
+        -7.364534839425857,
+        -7.364534839425824,
+        -7.364534839425812,
+        -7.342883075943945,
+        -7.33728847247278,
+        -7.296046028854805,
+        -7.296046028854739,
+        -7.296046028854706,
+        -7.296046028854675,
+        -7.2899700270363486,
+        -7.289970027036259,
+        -7.289970027036233,
+        -7.289970027036147,
+        -7.227804904306046,
+        -7.136881951622969
+      ],
+      "residuals": [
+        1.4873633822403442e-13,
+        9.169343493523984e-14,
+        5.92430814798282e-14,
+        4.871786797870987e-14,
+        4.724858993505175e-14,
+        3.389076885673319e-14,
+        1.5280970607444908e-13,
+        1.0428141576168288e-13,
+        6.847250724481608e-14,
+        4.629857853015817e-14,
+        2.2093880793018973e-13,
+        1.4340018818559026e-13,
+        1.1048770549305093e-13,
+        4.458592660905332e-14,
+        2.4003642103156604e-13,
+        2.5000398928912247e-13
+      ],
+      "gram_error": 2.8404611304087415e-13,
+      "ground_multiplicity": 4,
+      "first8_error_vs_supplied": 0.046837047088945205
+    },
+    {
+      "parity": [
+        0,
+        1
+      ],
+      "legs": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "edges": [
+        {
+          "edge": 0,
+          "A_vertex": 0,
+          "A_leg": 0,
+          "B_vertex": 1,
+          "B_leg": 0
+        },
+        {
+          "edge": 1,
+          "A_vertex": 0,
+          "A_leg": 1,
+          "B_vertex": 1,
+          "B_leg": 1
+        },
+        {
+          "edge": 2,
+          "A_vertex": 0,
+          "A_leg": 2,
+          "B_vertex": 3,
+          "B_leg": 2
+        },
+        {
+          "edge": 3,
+          "A_vertex": 2,
+          "A_leg": 0,
+          "B_vertex": 3,
+          "B_leg": 0
+        },
+        {
+          "edge": 4,
+          "A_vertex": 2,
+          "A_leg": 1,
+          "B_vertex": 3,
+          "B_leg": 1
+        },
+        {
+          "edge": 5,
+          "A_vertex": 2,
+          "A_leg": 2,
+          "B_vertex": 1,
+          "B_leg": 2
+        }
+      ],
+      "hermiticity_error": 0,
+      "basis_dimension": 48620,
+      "all_basis_popcounts_are_9": true,
+      "energies": [
+        -7.364534839425987,
+        -7.364534839425867,
+        -7.364534839425857,
+        -7.364534839425846,
+        -7.342883075944026,
+        -7.337288472472767,
+        -7.2960460288547395,
+        -7.296046028854722,
+        -7.296046028854715,
+        -7.296046028854689,
+        -7.289970027036333,
+        -7.289970027036282,
+        -7.28997002703628,
+        -7.289970027036228,
+        -7.227804904305984,
+        -7.13688195162298
+      ],
+      "residuals": [
+        2.2197312239110582e-13,
+        1.0201935318015964e-13,
+        9.330731213527097e-14,
+        8.112512133592531e-14,
+        1.2684162270515705e-13,
+        2.922886245405477e-14,
+        8.756518395014529e-14,
+        7.421490936946983e-14,
+        5.86181465326307e-14,
+        5.460147797589751e-14,
+        2.041378971770294e-13,
+        1.5345309573027628e-13,
+        1.5581779389916209e-13,
+        9.769729751704472e-14,
+        1.784087947521182e-13,
+        2.628651783698013e-13
+      ],
+      "gram_error": 2.581035745349025e-13,
+      "ground_multiplicity": 4,
+      "first8_error_vs_supplied": 0.04683704708902603
+    },
+    {
+      "parity": [
+        1,
+        1
+      ],
+      "legs": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          4,
+          5
+        ],
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          3,
+          1,
+          2
+        ]
+      ],
+      "edges": [
+        {
+          "edge": 0,
+          "A_vertex": 0,
+          "A_leg": 0,
+          "B_vertex": 1,
+          "B_leg": 0
+        },
+        {
+          "edge": 1,
+          "A_vertex": 0,
+          "A_leg": 1,
+          "B_vertex": 3,
+          "B_leg": 1
+        },
+        {
+          "edge": 2,
+          "A_vertex": 0,
+          "A_leg": 2,
+          "B_vertex": 3,
+          "B_leg": 2
+        },
+        {
+          "edge": 3,
+          "A_vertex": 2,
+          "A_leg": 0,
+          "B_vertex": 3,
+          "B_leg": 0
+        },
+        {
+          "edge": 4,
+          "A_vertex": 2,
+          "A_leg": 1,
+          "B_vertex": 1,
+          "B_leg": 1
+        },
+        {
+          "edge": 5,
+          "A_vertex": 2,
+          "A_leg": 2,
+          "B_vertex": 1,
+          "B_leg": 2
+        }
+      ],
+      "hermiticity_error": 0,
+      "basis_dimension": 48620,
+      "all_basis_popcounts_are_9": true,
+      "energies": [
+        -7.364534839425976,
+        -7.3645348394258665,
+        -7.364534839425865,
+        -7.3645348394258265,
+        -7.342883075943941,
+        -7.337288472472794,
+        -7.296046028854744,
+        -7.296046028854738,
+        -7.296046028854667,
+        -7.296046028854667,
+        -7.2899700270363,
+        -7.289970027036272,
+        -7.289970027036263,
+        -7.289970027036198,
+        -7.22780490430608,
+        -7.136881951622924
+      ],
+      "residuals": [
+        2.1013286815111715e-13,
+        1.0095137175919364e-13,
+        1.0235578534937611e-13,
+        6.256552064495488e-14,
+        4.517541115847398e-14,
+        4.520858294843556e-14,
+        9.299776012800378e-14,
+        7.974751396323957e-14,
+        8.250018384278491e-14,
+        3.283424185059599e-14,
+        1.7153873685327615e-13,
+        1.6115284549437462e-13,
+        1.3116769560781019e-13,
+        7.187757467003422e-14,
+        2.734442287052574e-13,
+        2.0636214025919448e-13
+      ],
+      "gram_error": 2.495385410238017e-13,
+      "ground_multiplicity": 4,
+      "first8_error_vs_supplied": 0.04683704708894165
+    }
+  ],
+  "enumerated_patterns": 62208,
+  "supplied_first8": [
+    -7.364534839426,
+    -7.364534839426,
+    -7.342883075944,
+    -7.337288472473,
+    -7.296046028855,
+    -7.296046028855,
+    -7.289970027036,
+    -7.289970027036
+  ],
+  "matching_patterns": 0,
+  "scope": "All ordinary periodic honeycomb cells with four vertices (two primitive cells), all local leg permutations and W/conj(W) choices independently at all four endpoints. W transpose equals W. Independent matter-label permutations are trivial basis relabelings.",
+  "proof": "For any permutation of three columns, p(i)=s*i+t mod 3 with s=\u00b11. W[a,p(i)]=omega**(a*t)*W[s*a,i]. Conjugation maps a to -a. These changes are implemented by number-preserving local matter permutations and spin z rotations, so they cannot change any eigenvalue or multiplicity."
+}

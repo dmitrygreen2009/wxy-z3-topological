@@ -1,0 +1,66 @@
+After sweep 1 energy=-7.653580933359898  maxlinkdim=32 maxerr=1.46E-06 time=38.150
+After sweep 2 energy=-7.6957632535728155  maxlinkdim=32 maxerr=1.38E-05 time=0.576
+After sweep 3 energy=-7.696029116512227  maxlinkdim=32 maxerr=4.65E-06 time=0.358
+After sweep 4 energy=-7.696030795968497  maxlinkdim=32 maxerr=4.60E-06 time=0.680
+After sweep 5 energy=-7.696030836642793  maxlinkdim=32 maxerr=4.58E-06 time=0.323
+After sweep 6 energy=-7.696030837127712  maxlinkdim=32 maxerr=4.58E-06 time=0.372
+After sweep 7 energy=-7.696030837098386  maxlinkdim=32 maxerr=4.58E-06 time=0.328
+After sweep 8 energy=-7.696030837109074  maxlinkdim=32 maxerr=4.58E-06 time=0.335
+After sweep 1 energy=-7.696107751834848  maxlinkdim=64 maxerr=1.08E-07 time=0.758
+After sweep 2 energy=-7.696107866505238  maxlinkdim=64 maxerr=2.64E-08 time=0.560
+After sweep 3 energy=-7.696107901701661  maxlinkdim=64 maxerr=1.05E-08 time=0.647
+After sweep 4 energy=-7.69610791193015  maxlinkdim=64 maxerr=5.10E-09 time=0.414
+After sweep 5 energy=-7.696107911726416  maxlinkdim=64 maxerr=4.99E-09 time=0.394
+After sweep 6 energy=-7.696107911240996  maxlinkdim=64 maxerr=4.99E-09 time=0.484
+After sweep 7 energy=-7.696107911201926  maxlinkdim=64 maxerr=4.99E-09 time=0.468
+After sweep 8 energy=-7.696107911195605  maxlinkdim=64 maxerr=4.99E-09 time=0.389
+After sweep 1 energy=-7.69610797640454  maxlinkdim=120 maxerr=9.98E-11 time=0.617
+After sweep 2 energy=-7.696107976107931  maxlinkdim=113 maxerr=9.92E-11 time=0.797
+After sweep 3 energy=-7.696107974915336  maxlinkdim=104 maxerr=9.99E-11 time=0.620
+After sweep 4 energy=-7.696107973858749  maxlinkdim=91 maxerr=9.65E-11 time=0.466
+After sweep 5 energy=-7.696107973775492  maxlinkdim=90 maxerr=9.89E-11 time=0.426
+After sweep 6 energy=-7.69610797377738  maxlinkdim=90 maxerr=9.31E-11 time=0.545
+After sweep 7 energy=-7.696107973777318  maxlinkdim=90 maxerr=9.31E-11 time=0.526
+After sweep 8 energy=-7.696107973777314  maxlinkdim=90 maxerr=9.31E-11 time=0.376
+After sweep 1 energy=-7.696107978198691  maxlinkdim=103 maxerr=9.83E-12 time=0.729
+After sweep 2 energy=-7.69610797829943  maxlinkdim=103 maxerr=9.96E-12 time=0.712
+After sweep 3 energy=-7.69610797831377  maxlinkdim=103 maxerr=9.35E-12 time=0.675
+After sweep 4 energy=-7.696107978313755  maxlinkdim=103 maxerr=9.35E-12 time=0.580
+After sweep 5 energy=-7.696107978313744  maxlinkdim=103 maxerr=9.35E-12 time=0.581
+After sweep 6 energy=-7.696107978313739  maxlinkdim=103 maxerr=9.35E-12 time=0.598
+VALIDATED SMALL CYLINDER zigzag error=5.012905646140098e-10 variance=3.5526284136722097e-9
+After sweep 1 energy=-7.9655097784180775  maxlinkdim=32 maxerr=3.04E-04 time=0.294
+After sweep 2 energy=-7.991312455407254  maxlinkdim=32 maxerr=5.38E-04 time=0.334
+After sweep 3 energy=-7.99218255647445  maxlinkdim=32 maxerr=1.97E-04 time=0.332
+After sweep 4 energy=-7.9922705755244605  maxlinkdim=32 maxerr=1.72E-04 time=0.434
+After sweep 5 energy=-7.992287093191497  maxlinkdim=32 maxerr=1.74E-04 time=0.370
+After sweep 6 energy=-7.9923186896060106  maxlinkdim=32 maxerr=1.74E-04 time=0.337
+After sweep 7 energy=-7.992323893808545  maxlinkdim=32 maxerr=1.73E-04 time=0.336
+After sweep 8 energy=-7.9923260950858905  maxlinkdim=32 maxerr=1.72E-04 time=0.469
+After sweep 1 energy=-7.993856565664144  maxlinkdim=64 maxerr=4.76E-06 time=0.827
+After sweep 2 energy=-7.993949110352712  maxlinkdim=64 maxerr=4.76E-06 time=1.174
+After sweep 3 energy=-7.99395264662367  maxlinkdim=64 maxerr=4.84E-06 time=0.784
+After sweep 4 energy=-7.993953255297056  maxlinkdim=64 maxerr=4.84E-06 time=0.543
+After sweep 5 energy=-7.993953519007488  maxlinkdim=64 maxerr=4.83E-06 time=0.636
+After sweep 6 energy=-7.993950028085934  maxlinkdim=64 maxerr=4.83E-06 time=0.642
+After sweep 7 energy=-7.9939549168321795  maxlinkdim=64 maxerr=4.75E-06 time=0.672
+After sweep 8 energy=-7.993954963519632  maxlinkdim=64 maxerr=4.75E-06 time=0.827
+After sweep 1 energy=-7.994296002573664  maxlinkdim=128 maxerr=1.81E-07 time=1.989
+After sweep 2 energy=-7.994300579627621  maxlinkdim=128 maxerr=1.01E-07 time=1.189
+After sweep 3 energy=-7.994300687841201  maxlinkdim=128 maxerr=8.11E-08 time=5.585
+After sweep 4 energy=-7.9943007072176195  maxlinkdim=128 maxerr=7.82E-08 time=0.925
+After sweep 5 energy=-7.9943007099582335  maxlinkdim=128 maxerr=7.81E-08 time=0.953
+After sweep 6 energy=-7.994300710785436  maxlinkdim=128 maxerr=7.81E-08 time=0.940
+After sweep 7 energy=-7.994300711065653  maxlinkdim=128 maxerr=7.81E-08 time=0.978
+After sweep 8 energy=-7.99430071118201  maxlinkdim=128 maxerr=7.81E-08 time=1.104
+After sweep 1 energy=-7.994300712619774  maxlinkdim=128 maxerr=7.89E-08 time=1.264
+After sweep 2 energy=-7.9943007126238355  maxlinkdim=128 maxerr=7.89E-08 time=1.240
+After sweep 3 energy=-7.994300712626154  maxlinkdim=128 maxerr=7.89E-08 time=1.943
+After sweep 4 energy=-7.994300712626754  maxlinkdim=128 maxerr=7.89E-08 time=1.315
+After sweep 5 energy=-7.994300712627035  maxlinkdim=128 maxerr=7.89E-08 time=1.565
+After sweep 6 energy=-7.994300712627229  maxlinkdim=128 maxerr=7.89E-08 time=3.418
+ERROR: LoadError: AssertionError: error < 1.0e-7
+Stacktrace:
+ [1] top-level scope
+   @ ~/Documents/wxy-z3-topological/scripts/validate_small_cylinders.jl:13
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/validate_small_cylinders.jl:3

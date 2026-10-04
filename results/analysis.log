@@ -1,0 +1,62 @@
+
+Fontconfig error: No writable cache directories
+	/opt/homebrew/var/cache/fontconfig
+	/Users/dmitrygreen/.cache/fontconfig
+	/Users/dmitrygreen/.fontconfig
+Matplotlib is building the font cache; this may take a moment.
+[
+  {
+    "family": "zigzag",
+    "length": 4,
+    "chi": 32,
+    "alpha": 0.2609796842366407,
+    "gamma_apparent": -0.3887070056508815,
+    "residual_rms": 0.077913595153416,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "zigzag",
+    "length": 4,
+    "chi": 64,
+    "alpha": 0.25170882535743366,
+    "gamma_apparent": -0.44987789545445317,
+    "residual_rms": 0.06187469375701039,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "zigzag",
+    "length": 4,
+    "chi": 128,
+    "alpha": 0.27622758968003397,
+    "gamma_apparent": -0.41346462738213824,
+    "residual_rms": 0.05828501961685041,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "armchair",
+    "length": 4,
+    "chi": 32,
+    "alpha": 0.11379496698653793,
+    "gamma_apparent": -1.04033201162116,
+    "residual_rms": 0.10867287905603727,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "armchair",
+    "length": 4,
+    "chi": 64,
+    "alpha": 0.07235855825055257,
+    "gamma_apparent": -1.6335180927434583,
+    "residual_rms": 0.008837261968463366,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "armchair",
+    "length": 4,
+    "chi": 128,
+    "alpha": 0.060478009847565746,
+    "gamma_apparent": -1.941274895786257,
+    "residual_rms": 0.06618404038255749,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "star": {
+    "spins": 6,
+    "nup_sectors": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ground_energies": [
+      0.0,
+      -1.0000000000000004,
+      -1.776147667954231,
+      -2.40309212754018
+    ],
+    "charge_gap_at_half_filling": 0.6269444595859492,
+    "upper_sectors": "Related by spin flip plus complex conjugation"
+  },
+  "pair": {
+    "spins": 11,
+    "nup_sectors": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ground_energies": [
+      0.0,
+      -1.4142135623730954,
+      -2.2546171856581627,
+      -3.0738620276272095,
+      -3.73982187676557,
+      -4.396765543513652
+    ],
+    "charge_gap_at_half_filling": 0.6569436667480821,
+    "upper_sectors": "Related by spin flip plus complex conjugation"
+  },
+  "torus": {
+    "spins": 18,
+    "nup_sectors": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "ground_energies": [
+      0.0,
+      -1.4142135623730963,
+      -2.828427124746191,
+      -4.052373244092025,
+      -5.235000483259799,
+      -6.294411564814205,
+      -7.292627573041366,
+      -7.315020304735806,
+      -7.355873138044393,
+      -7.364534839425772
+    ],
+    "charge_gap_at_half_filling": 0.008661701381379672,
+    "upper_sectors": "Related by spin flip plus complex conjugation"
+  }
+}

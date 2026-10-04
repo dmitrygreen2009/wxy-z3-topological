@@ -1,0 +1,121 @@
+     Cloning git-repo `https://github.com/ITensor/ITensorInfiniteMPS.jl.git`
+    Updating git-repo `https://github.com/ITensor/ITensorInfiniteMPS.jl.git`
+    Updating registry at `/private/tmp/wxy-julia-depot/registries/General.toml`
+   Resolving package versions...
+   Installed MPICH_jll ───────────── v5.0.2+0
+   Installed MPIABI_jll ──────────── v1.0.1+0
+   Installed XML2_jll ────────────── v2.15.4+0
+   Installed libaec_jll ──────────── v1.1.7+0
+   Installed dlfcn_win32_jll ─────── v1.4.2+0
+   Installed IterTools ───────────── v1.10.0
+   Installed aws_c_auth_jll ──────── v0.9.6+0
+   Installed OffsetArrays ────────── v1.17.0
+   Installed Xorg_libpciaccess_jll ─ v0.19.0+0
+   Installed aws_c_common_jll ────── v0.12.6+0
+   Installed OpenSSL_jll ─────────── v3.5.9+0
+   Installed OpenMPI_jll ─────────── v5.0.13+0
+   Installed aws_c_compression_jll ─ v0.3.2+0
+   Installed aws_c_http_jll ──────── v0.10.15+0
+   Installed Hwloc_jll ───────────── v2.14.1+0
+   Installed MicrosoftMPI_jll ────── v10.1.4+3
+   Installed aws_c_io_jll ────────── v0.26.3+0
+   Installed Libiconv_jll ────────── v1.18.0+0
+   Installed JLLWrappers ─────────── v1.8.0
+   Installed mpif_jll ────────────── v1.0.0+0
+   Installed QuadGK ──────────────── v2.11.3
+   Installed Infinities ──────────── v0.1.13
+   Installed aws_checksums_jll ───── v0.2.10+0
+   Installed MPIPreferences ──────── v0.1.12
+   Installed aws_c_sdkutils_jll ──── v0.2.4+1
+   Installed MPItrampoline_jll ───── v5.5.6+0
+   Installed HDF5_jll ────────────── v2.2.2+0
+   Installed DataStructures ──────── v0.19.6
+   Installed aws_c_cal_jll ───────── v0.9.13+0
+   Installed HDF5 ────────────────── v0.17.4
+   Installed aws_c_s3_jll ────────── v0.11.5+0
+   Installed ITensorMPS ──────────── v0.3.45
+   Installed s2n_tls_jll ─────────── v1.7.10+0
+    Updating `~/Documents/wxy-z3-topological/Project.toml`
+  [1dc1fb26] + ITensorInfiniteMPS v0.2.2 `https://github.com/ITensor/ITensorInfiniteMPS.jl.git#main`
+⌃ [0d1a4710] ↓ ITensorMPS v0.4.2 ⇒ v0.3.45
+    Updating `~/Documents/wxy-z3-topological/Manifest.toml`
+  [864edb3b] + DataStructures v0.19.6
+  [f67ccb44] + HDF5 v0.17.4
+  [1dc1fb26] + ITensorInfiniteMPS v0.2.2 `https://github.com/ITensor/ITensorInfiniteMPS.jl.git#main`
+⌃ [0d1a4710] ↓ ITensorMPS v0.4.2 ⇒ v0.3.45
+  [e1ba4f0e] + Infinities v0.1.13
+  [c8e1da08] + IterTools v1.10.0
+  [692b3bcd] + JLLWrappers v1.8.0
+  [3da0fdf6] + MPIPreferences v0.1.12
+  [6fe1bfb0] + OffsetArrays v1.17.0
+  [1fd47b50] + QuadGK v2.11.3
+  [0234f1f7] + HDF5_jll v2.2.2+0
+  [e33a78d0] + Hwloc_jll v2.14.1+0
+  [94ce4f54] + Libiconv_jll v1.18.0+0
+  [b5ada748] + MPIABI_jll v1.0.1+0
+  [7cb0a576] + MPICH_jll v5.0.2+0
+  [f1f71cc9] + MPItrampoline_jll v5.5.6+0
+  [9237b28f] + MicrosoftMPI_jll v10.1.4+3
+  [fe0851c0] + OpenMPI_jll v5.0.13+0
+  [458c3c95] + OpenSSL_jll v3.5.9+0
+  [02c8fc9c] + XML2_jll v2.15.4+0
+  [a65dc6b1] + Xorg_libpciaccess_jll v0.19.0+0
+⌅ [2b3700d1] + aws_c_auth_jll v0.9.6+0
+⌅ [70f11efc] + aws_c_cal_jll v0.9.13+0
+⌅ [73048d1d] + aws_c_common_jll v0.12.6+0
+⌅ [73a04cd5] + aws_c_compression_jll v0.3.2+0
+⌅ [3254fc65] + aws_c_http_jll v0.10.15+0
+⌅ [13c41daa] + aws_c_io_jll v0.26.3+0
+⌅ [bd1f34fb] + aws_c_s3_jll v0.11.5+0
+⌅ [1282aa60] + aws_c_sdkutils_jll v0.2.4+1
+⌅ [b2a88e68] + aws_checksums_jll v0.2.10+0
+  [c4b69c83] + dlfcn_win32_jll v1.4.2+0
+  [477f73a3] + libaec_jll v1.1.7+0
+  [9aeb927a] + mpif_jll v1.0.0+0
+  [cddc5d3d] + s2n_tls_jll v1.7.10+0
+  [4af54fe1] + LazyArtifacts
+        Info Packages marked with ⌃ and ⌅ have new versions available. Those with ⌃ may be upgradable, but those with ⌅ are restricted by compatibility constraints from upgrading. To see why use `status --outdated -m`
+Precompiling packages...
+    557.3 ms  ✓ LazyArtifacts
+    656.0 ms  ✓ Zlib_jll
+    571.7 ms  ✓ CompilerSupportLibraries_jll
+    676.2 ms  ✓ Infinities
+    682.5 ms  ✓ IterTools
+    375.5 ms  ✓ MPIPreferences
+    336.0 ms  ✓ JLLWrappers
+    635.5 ms  ✓ OffsetArrays
+    592.9 ms  ✓ MicrosoftMPI_jll
+    438.4 ms  ✓ dlfcn_win32_jll
+    648.5 ms  ✓ OpenSSL_jll
+   1190.2 ms  ✓ DataStructures
+    365.7 ms  ✓ aws_c_common_jll
+    340.7 ms  ✓ Xorg_libpciaccess_jll
+    369.0 ms  ✓ Libiconv_jll
+    381.8 ms  ✓ libaec_jll
+    304.4 ms  ✓ s2n_tls_jll
+    519.0 ms  ✓ OffsetArrays → OffsetArraysAdaptExt
+    866.8 ms  ✓ MPItrampoline_jll
+    922.9 ms  ✓ QuadGK
+    802.4 ms  ✓ aws_checksums_jll
+    553.8 ms  ✓ aws_c_cal_jll
+    440.0 ms  ✓ aws_c_sdkutils_jll
+    357.5 ms  ✓ aws_c_compression_jll
+   2746.9 ms  ✓ ITensorMPS
+    782.0 ms  ✓ aws_c_io_jll
+   1022.9 ms  ✓ XML2_jll
+    700.8 ms  ✓ Hwloc_jll
+   1203.3 ms  ✓ aws_c_http_jll
+   1674.5 ms  ✓ ITensorMPS → ITensorMPSChainRulesCoreExt
+    358.8 ms  ✓ MPIABI_jll
+    376.8 ms  ✓ OpenMPI_jll
+   1030.6 ms  ✓ aws_c_auth_jll
+   1414.8 ms  ✓ MPICH_jll
+    330.3 ms  ✓ mpif_jll
+    828.8 ms  ✓ aws_c_s3_jll
+   1895.0 ms  ✓ HDF5_jll
+   3727.8 ms  ✓ HDF5
+   1188.5 ms  ✓ NDTensors → NDTensorsHDF5Ext
+   1334.8 ms  ✓ ITensors → ITensorsHDF5Ext
+   1434.9 ms  ✓ ITensorMPS → ITensorMPSHDF5Ext
+   2427.6 ms  ✓ ITensorInfiniteMPS
+  42 dependencies successfully precompiled in 19 seconds. 102 already precompiled.

@@ -1,0 +1,20 @@
+{
+  "gate_condition_satisfied": 2,
+  "supplied_full_first8_reproduced_as_complete_spectrum": false,
+  "supplied_full_first8_independently_refuted": true,
+  "corrected_first8": [
+    -7.364534839425767,
+    -7.364534839425767,
+    -7.364534839425767,
+    -7.364534839425767,
+    -7.342883075944,
+    -7.337288472473,
+    -7.296046028855,
+    -7.296046028855
+  ],
+  "ground_multiplicity": 4,
+  "independent_solver": "Julia eight-vector BlockLanczos",
+  "endpoint_cases_checked": 62208,
+  "scalar_arpack_can_return_supplied_incomplete_list": true,
+  "larger_system_scientific_conclusions": "Not established; original scaling study resumed after user acceptance of corrected benchmark."
+}

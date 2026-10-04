@@ -1,0 +1,24 @@
+INFINITE FIT physical bulk slices 1:2 MPS range 11:28
+ERROR: Imaginary part of eigenvalue is large: imag(λ₁ᴿᴺ) / norm(λ₁ᴿᴺ) = 9.180454790466839e-15
+Stacktrace:
+ [1] error(s::String)
+   @ Base ./error.jl:35
+ [2] right_orthogonalize(ψ::InfiniteMPS; left_tags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, right_tags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, tol::Float64, eager::Bool, ishermitian_kwargs::@NamedTuple{rtol::Float64})
+   @ ITensorInfiniteMPS /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/orthogonalize.jl:37
+ [3] right_orthogonalize
+   @ /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/orthogonalize.jl:4 [inlined]
+ [4] mixed_canonical(ψ::InfiniteMPS; left_tags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, right_tags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, tol::Float64)
+   @ ITensorInfiniteMPS /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/orthogonalize.jl:123
+ [5] mixed_canonical
+   @ /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/orthogonalize.jl:120 [inlined]
+ [6] orthogonalize
+   @ /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/orthogonalize.jl:131 [inlined]
+ [7] infinite_from_finite(path::String; initial_chi::Int64, target_chi::Int64)
+   @ Main ~/Documents/wxy-z3-topological/scripts/infinite_from_finite.jl:17
+ [8] top-level scope
+   @ none:1
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.690559882645884, 0.6820609332318941)
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.8424942839254806, 0.8424942839254808)
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.8889867579937323, 0.8889867579937324)
+(abs(λL0) ^ (1 / N), abs(λRN) ^ (1 / N)) = (0.8883138326660516, 0.8883138326660516)
+λ₁ᴿᴺ = 0.9999999999999845 + 9.180454790466697e-15im

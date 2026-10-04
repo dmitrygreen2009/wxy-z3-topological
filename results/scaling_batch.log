@@ -1,0 +1,24 @@
+WARNING: You are enabling block sparse multithreading, but your BLAS configuration LBTConfig([ILP64] libopenblas64_.dylib) is currently set to use 4 threads. When using block sparse multithreading, we recommend setting BLAS to use only a single thread, otherwise you may see suboptimal performance. You can set it with `using LinearAlgebra; BLAS.set_num_threads(1)`.
+
+WARNING: You are enabling block sparse multithreading, but Strided.jl is currently set to use 4 threads for performing dense tensor permutations. When using block sparse multithreading, we recommend setting Strided.jl to use only a single thread, otherwise you may see suboptimal performance. You can set it with `NDTensors.Strided.disable_threads()` and see the current number of threads it is using with `NDTensors.Strided.get_num_threads()`.
+
+After sweep 1 energy=-15.015495629656913  maxlinkdim=32 maxerr=2.36E-05 time=131.063
+After sweep 2 energy=-15.024254997901867  maxlinkdim=32 maxerr=4.47E-05 time=2.651
+After sweep 3 energy=-15.02455481490672  maxlinkdim=32 maxerr=9.21E-05 time=3.132
+After sweep 4 energy=-15.024706617182321  maxlinkdim=32 maxerr=8.55E-05 time=8.111
+After sweep 5 energy=-15.024850736521753  maxlinkdim=32 maxerr=7.53E-05 time=3.601
+After sweep 6 energy=-15.024938315586219  maxlinkdim=32 maxerr=6.74E-05 time=4.068
+
+[87385] signal (2): Interrupt: 2
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/scaling_batch.jl:2
+__psynch_cvwait at /usr/lib/system/libsystem_kernel.dylib (unknown line)
+unknown function (ip: 0x0)
+__psynch_cvwait at /usr/lib/system/libsystem_kernel.dylib (unknown line)
+unknown function (ip: 0x0)
+__psynch_cvwait at /usr/lib/system/libsystem_kernel.dylib (unknown line)
+unknown function (ip: 0x0)
+__psynch_cvwait at /usr/lib/system/libsystem_kernel.dylib (unknown line)
+unknown function (ip: 0x0)
+kevent at /usr/lib/system/libsystem_kernel.dylib (unknown line)
+unknown function (ip: 0x0)
+Allocations: 239502634 (Pool: 238738350; Big: 764284); GC: 306

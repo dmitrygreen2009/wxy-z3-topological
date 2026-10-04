@@ -1,0 +1,109 @@
+After sweep 1 energy=-36.811613439894664  maxlinkdim=32 maxerr=8.84E-04 time=71.252
+After sweep 2 energy=-36.93684256409867  maxlinkdim=32 maxerr=1.48E-03 time=3.180
+After sweep 3 energy=-36.96135482072938  maxlinkdim=32 maxerr=1.28E-03 time=2.495
+After sweep 4 energy=-36.96739104180642  maxlinkdim=32 maxerr=1.14E-03 time=3.059
+After sweep 5 energy=-36.97003557929015  maxlinkdim=32 maxerr=1.07E-03 time=2.466
+After sweep 6 energy=-36.97177711865811  maxlinkdim=32 maxerr=1.01E-03 time=2.601
+After sweep 7 energy=-36.97327748876323  maxlinkdim=32 maxerr=9.62E-04 time=2.707
+After sweep 8 energy=-36.97426156484173  maxlinkdim=32 maxerr=9.17E-04 time=2.528
+After sweep 1 energy=-37.01133677364081  maxlinkdim=64 maxerr=9.44E-05 time=6.066
+After sweep 2 energy=-37.01197061217961  maxlinkdim=64 maxerr=1.78E-04 time=6.094
+After sweep 3 energy=-37.012051263867065  maxlinkdim=64 maxerr=1.83E-04 time=5.249
+After sweep 4 energy=-37.012086855133205  maxlinkdim=64 maxerr=1.82E-04 time=5.265
+After sweep 5 energy=-37.01211585658262  maxlinkdim=64 maxerr=1.82E-04 time=6.542
+After sweep 6 energy=-37.01213501392845  maxlinkdim=64 maxerr=1.81E-04 time=6.030
+After sweep 7 energy=-37.01214884073267  maxlinkdim=64 maxerr=1.81E-04 time=4.475
+After sweep 8 energy=-37.01216008685288  maxlinkdim=64 maxerr=1.80E-04 time=4.441
+After sweep 1 energy=-37.01558851622441  maxlinkdim=128 maxerr=4.03E-06 time=11.776
+After sweep 2 energy=-37.01660602534123  maxlinkdim=128 maxerr=6.46E-06 time=10.878
+After sweep 3 energy=-37.01800505328276  maxlinkdim=128 maxerr=6.52E-06 time=12.292
+After sweep 4 energy=-37.019068712207435  maxlinkdim=128 maxerr=6.42E-06 time=17.660
+After sweep 5 energy=-37.01956763374177  maxlinkdim=128 maxerr=6.02E-06 time=10.620
+After sweep 6 energy=-37.01974259438716  maxlinkdim=128 maxerr=5.98E-06 time=11.619
+After sweep 7 energy=-37.01980506672385  maxlinkdim=128 maxerr=5.97E-06 time=12.908
+After sweep 8 energy=-37.01982881497037  maxlinkdim=128 maxerr=5.96E-06 time=9.214
+After sweep 1 energy=-37.01999032950194  maxlinkdim=256 maxerr=1.71E-07 time=39.167
+After sweep 2 energy=-37.020039119426656  maxlinkdim=256 maxerr=2.80E-07 time=45.525
+After sweep 3 energy=-37.02006238797532  maxlinkdim=256 maxerr=4.81E-07 time=40.040
+After sweep 4 energy=-37.020235571905104  maxlinkdim=256 maxerr=5.90E-07 time=43.708
+After sweep 5 energy=-37.036521288785394  maxlinkdim=256 maxerr=9.47E-07 time=52.079
+After sweep 6 energy=-37.03766306336723  maxlinkdim=256 maxerr=1.17E-06 time=58.677
+After sweep 7 energy=-37.037946966370214  maxlinkdim=256 maxerr=9.42E-07 time=37.728
+After sweep 8 energy=-37.04000399931747  maxlinkdim=256 maxerr=8.16E-07 time=37.445
+After sweep 1 energy=-37.0478773877281  maxlinkdim=512 maxerr=2.07E-08 time=143.687
+After sweep 2 energy=-37.04892166713597  maxlinkdim=512 maxerr=1.54E-08 time=189.694
+
+[81769] signal (2): Interrupt: 2
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/extended_batch.jl:2
+- at ./float.jl:407 [inlined]
+conj at ./complex.jl:282 [inlined]
+_broadcast_getindex_evalf at ./broadcast.jl:709 [inlined]
+_broadcast_getindex at ./broadcast.jl:682 [inlined]
+getindex at ./broadcast.jl:636 [inlined]
+macro expansion at ./broadcast.jl:1004 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:1003 [inlined]
+copyto! at ./broadcast.jl:956 [inlined]
+copy at ./broadcast.jl:928 [inlined]
+materialize at ./broadcast.jl:903 [inlined]
+broadcast_preserving_zero_d at ./broadcast.jl:892 [inlined]
+conj at ./abstractarraymath.jl:145
+conj at /private/tmp/wxy-julia-depot/packages/NDTensors/9ENPn/src/tensorstorage/tensorstorage.jl:52 [inlined]
+conj at /private/tmp/wxy-julia-depot/packages/NDTensors/9ENPn/src/tensor/tensor.jl:250 [inlined]
+dag at /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/itensor.jl:1815
+unknown function (ip: 0x32410cc93)
+_jl_invoke at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/gf.c:0 [inlined]
+ijl_apply_generic at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/gf.c:3077
+dag at /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/itensor.jl:1819
+#dag#197 at /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/itensor.jl:1845 [inlined]
+dag at /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/itensor.jl:1834 [inlined]
+inner at /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/itensor.jl:1921
+inner at /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/ext/ITensorsVectorInterfaceExt/ITensorsVectorInterfaceExt.jl:54 [inlined]
+_orthogonalize!! at /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/orthonormal.jl:461
+orthogonalize!! at /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/orthonormal.jl:455 [inlined]
+lanczosrecurrence at /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/factorizations/lanczos.jl:333
+#expand!#31 at /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/factorizations/lanczos.jl:258
+expand! at /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/factorizations/lanczos.jl:250
+unknown function (ip: 0x323b4c067)
+_jl_invoke at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/gf.c:0 [inlined]
+ijl_apply_generic at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/gf.c:3077
+#eigsolve#62 at /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/lanczos.jl:78
+eigsolve at /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/lanczos.jl:1 [inlined]
+#eigsolve#59 at /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/eigsolve.jl:235 [inlined]
+eigsolve at /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/eigsolve.jl:209 [inlined]
+macro expansion at /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:238 [inlined]
+macro expansion at /private/tmp/wxy-julia-depot/packages/TimerOutputs/0Wski/src/macros.jl:257 [inlined]
+macro expansion at /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:237 [inlined]
+macro expansion at ./timing.jl:395 [inlined]
+#dmrg#518 at /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:205
+dmrg at /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:157 [inlined]
+#dmrg#515 at /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:28 [inlined]
+dmrg at /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:21 [inlined]
+#dmrg#521 at /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:396 [inlined]
+dmrg at /private/tmp/wxy-julia-depot/packages/ITensorMPS/fZDBz/src/dmrg.jl:386 [inlined]
+#run_cylinder#23 at /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/cylinders.jl:14
+run_cylinder at /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/cylinders.jl:4 [inlined]
+top-level scope at /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/extended_batch.jl:3
+jl_toplevel_eval_flex at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/toplevel.c:925
+jl_toplevel_eval_flex at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/toplevel.c:877
+ijl_toplevel_eval at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/toplevel.c:943 [inlined]
+ijl_toplevel_eval_in at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+include_string at ./loading.jl:2146
+_jl_invoke at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/gf.c:0 [inlined]
+ijl_apply_generic at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/gf.c:3077
+_include at ./loading.jl:2206
+include at ./Base.jl:495
+jfptr_include_46577.1 at /private/tmp/julia-1.10.10/lib/julia/sys.dylib (unknown line)
+_jl_invoke at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/gf.c:0 [inlined]
+ijl_apply_generic at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/gf.c:3077
+exec_options at ./client.jl:323
+_start at ./client.jl:557
+jfptr__start_83057.1 at /private/tmp/julia-1.10.10/lib/julia/sys.dylib (unknown line)
+_jl_invoke at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/gf.c:0 [inlined]
+ijl_apply_generic at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/gf.c:3077
+jl_apply at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/./julia.h:1982 [inlined]
+true_main at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/jlapi.c:582
+jl_repl_entrypoint at /Users/julia/.julia/scratchspaces/a66863c6-20e8-4ff4-8a62-49f30b1f605e/agent-cache/default-honeycrisp-XC9YQX9HH2.0/build/default-honeycrisp-XC9YQX9HH2-0/julialang/julia-release-1-dot-10/src/jlapi.c:731
+unknown function (ip: 0x0)
+Allocations: 1010045487 (Pool: 1002777124; Big: 7268363); GC: 5386

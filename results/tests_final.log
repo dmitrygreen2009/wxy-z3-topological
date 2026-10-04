@@ -1,0 +1,6 @@
+Test Summary:                  | Pass  Total  Time
+Microscopic lattice regression |   97     97  5.5s
+Test Summary:                           | Pass  Total  Time
+Infinite Hamiltonian physical incidence |   43     43  0.8s
+Test Summary:   | Pass  Total     Time
+MPO Hermiticity |    3      3  1m39.6s
