@@ -1,0 +1,12 @@
+The two-site subspace expansion produced a zero-norm expansion at (1, 2). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (2, 3). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (3, 4). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (4, 5). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (5, 6). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (12, 13). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (13, 14). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+The two-site subspace expansion produced a zero-norm expansion at (14, 15). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+Using VUMPS solver with time step -Inf
+AUDITED VUMPS iteration=1 chi=2 residual=0.6925348371817264 seconds=3.190138167
+Test Summary:                                | Pass  Total   Time
+Audited driver uses official VUMPS iteration |    2      2  54.5s

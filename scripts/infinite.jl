@@ -43,6 +43,8 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
         "transfer_converged_eigenpairs"=>spectrum["converged"],"transfer_eigenvalue_magnitudes"=>abs.(vals),
         "transfer_eigenvalues_real"=>real.(vals),"transfer_eigenvalues_imag"=>imag.(vals),
         "xi_cells"=>isfinite(xi) ? xi : "Inf","xi_slices"=>isfinite(xi) ? 2xi : "Inf",
+        "xi_physical_axial"=>isfinite(xi) ? 2xi*(family=="zigzag" ? 1.5 : sqrt(3)/2) : "Inf",
+        "correlation_length_units"=>"Cells have two spatial slices; physical axial lengths use nearest-neighbor honeycomb distance one",
         "transfer_residuals"=>spectrum["residuals"],
         "fixed_point_rank_detected"=>spectrum["fixed_point_rank_detected"],
         "fixed_point_gram_eigenvalues"=>spectrum["fixed_point_gram_eigenvalues"],

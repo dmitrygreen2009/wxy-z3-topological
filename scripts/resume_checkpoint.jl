@@ -23,8 +23,18 @@ function resume_checkpoint(path,target=nothing)
     if meta["kind"]=="infinite"
         ordering=meta["infinite_ordering"];tag=get(meta,"measurement_tag","")
         H=InfiniteSum{MPO}(infinite_opsum(family,w;ordering),siteinds(only,psi))
-        psi=audited_vumps(H,psi;family,w,cap,maxiter=max(1,get(meta,"stage_maxiter",40)-meta["iteration"]),ordering,tag)
+        local_tol=get(get(meta,"solver_settings",Dict()),"local_eigensolver_tolerance_at_initial_residual",1e-10)
+        psi=audited_vumps(H,psi;family,w,cap,maxiter=max(1,get(meta,"stage_maxiter",40)-meta["iteration"]),
+            tol=get(meta,"tol",1e-7),solver_tol=x->local_tol,ordering,tag)
         measure_infinite(psi,H,family,w,cap,meta["iteration"]+1;ordering,tag)
+        target===nothing && return
+        for nextcap in [32,64,128,256,512]
+            cap<nextcap<=target || continue
+            estimate_memory(psi,nextcap;label="$(family) infinite resumed w$(w) expansion")
+            psi=subspace_expansion(psi,H;cutoff=1e-10,maxdim=nextcap)
+            psi=audited_vumps(H,psi;family,w,cap=nextcap,maxiter=40,tol=get(meta,"tol",1e-7),solver_tol=x->local_tol,ordering,tag)
+            measure_infinite(psi,H,family,w,nextcap,100+nextcap;ordering,tag)
+        end
         return
     end
     L=meta["length"];seed=get(meta,"random_seed",7103);ordering=meta["ordering"]

@@ -4,7 +4,7 @@ function audited_vumps(H,psi;family,w,cap,maxiter=30,tol=1e-7,
         solver_tol=x->1e-10,ordering="matter_first",tag="",seed=7103,audit=nothing)
     n=18w
     audit===nothing && (audit=run_provenance(;seed,solver="ITensorInfiniteMPS VUMPS",
-        settings=Dict("tol"=>tol,"local_eigensolver_tolerance"=>"caller solver_tol","maxiter"=>maxiter),
+        settings=Dict("tol"=>tol,"local_eigensolver_tolerance_at_initial_residual"=>solver_tol(tol),"multisite_update_algorithm"=>"sequential","time_step"=>"-Inf","subspace_expansion_cutoff"=>1e-10,"maxiter"=>maxiter),
         initialization="input canonical infinite MPS",conserved_quantum_numbers=hasqns(siteind(psi.AL,1)) ? ["total Sz"] : String[]))
     epsL=fill(tol,n);epsR=fill(tol,n)
     started=time();iterations=[]
@@ -12,6 +12,7 @@ function audited_vumps(H,psi;family,w,cap,maxiter=30,tol=1e-7,
     sector=hasqns(siteind(psi.AL,1)) ? "Sz0" : "unrestricted"
     checkpoint="results/checkpoints/infinite_$(family)_w$(w)_cell2_N$(n)_chi$(cap)_$(sector)_seed$(seed)_v$(RUN_FORMAT_VERSION)$(tag)_latest.jls"
     for iteration=1:maxiter
+        requested_local_tolerance=solver_tol(max(maximum(epsL),maximum(epsR)))
         elapsed=@elapsed psi,(left_energy,right_energy)=ITensorInfiniteMPS.tdvp_iteration(
             ITensorInfiniteMPS.vumps_solver,H,psi; (ϵᴸ!)=epsL,(ϵᴿ!)=epsR,
             multisite_update_alg="sequential",solver_tol,time_step=-Inf,eager=true)
@@ -19,7 +20,7 @@ function audited_vumps(H,psi;family,w,cap,maxiter=30,tol=1e-7,
         record=Dict("iteration"=>iteration,"bond_dimension"=>maxlinkdim(psi),"canonical_solver_residual"=>residual,
             "runtime_seconds"=>elapsed,"left_energy_real"=>real.(left_energy),"left_energy_imag"=>imag.(left_energy),
             "right_energy_real"=>real.(right_energy),"right_energy_imag"=>imag.(right_energy),"tol"=>tol,
-            "git_commit"=>audit["git_commit"],"run_version"=>RUN_FORMAT_VERSION)
+            "local_eigensolver_tolerance_evaluated"=>requested_local_tolerance,"git_commit"=>audit["git_commit"],"run_version"=>RUN_FORMAT_VERSION)
         push!(iterations,record)
         open(base*"_iterations.jsonl","a") do io;println(io,JSON3.write(record));end
         println("AUDITED VUMPS iteration=",iteration," chi=",maxlinkdim(psi)," residual=",residual," seconds=",elapsed);flush(stdout)

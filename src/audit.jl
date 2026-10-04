@@ -1,15 +1,21 @@
 using Dates, SHA, Serialization
 const RUN_FORMAT_VERSION=3
-function run_provenance(;seed=nothing,solver,settings=Dict(),initialization,conserved_quantum_numbers)
-    revision=try readchomp(`git rev-parse HEAD`) catch; "unknown" end
-    dirty=try !isempty(readchomp(`git status --porcelain -- src scripts test Project.toml Manifest.toml requirements.txt`)) catch; true end
-    fingerprints=Dict()
+# Capture once when this process loads the project, not after files are edited
+# while a long calculation is running.
+const LAUNCH_REVISION=try readchomp(`git rev-parse HEAD`) catch; "unknown" end
+const LAUNCH_CODE_DIRTY=try !isempty(readchomp(`git status --porcelain -- src scripts test Project.toml Manifest.toml requirements.txt`)) catch; true end
+const LAUNCH_SOURCE_HASHES=let fingerprints=Dict()
     for root in ["src","scripts","test"],file in readdir(root;join=true)
         isfile(file) || continue
         fingerprints[file]=bytes2hex(sha256(read(file)))
     end
+    fingerprints
+end
+const PROCESS_STARTED_UTC=string(now(UTC))
+function run_provenance(;seed=nothing,solver,settings=Dict(),initialization,conserved_quantum_numbers)
+    revision=LAUNCH_REVISION;dirty=LAUNCH_CODE_DIRTY;fingerprints=copy(LAUNCH_SOURCE_HASHES)
     Dict("run_version"=>RUN_FORMAT_VERSION,"git_commit"=>revision,"code_worktree_dirty"=>dirty,
-        "source_sha256"=>fingerprints,"julia_version"=>string(VERSION),"started_utc"=>string(now(UTC)),
+        "source_sha256"=>fingerprints,"process_started_utc"=>PROCESS_STARTED_UTC,"provenance_snapshot"=>"process launch","julia_version"=>string(VERSION),"started_utc"=>string(now(UTC)),
         "random_seed"=>seed,"solver"=>solver,"solver_settings"=>settings,"initialization"=>initialization,
         "conserved_quantum_numbers"=>conserved_quantum_numbers)
 end

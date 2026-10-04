@@ -162,3 +162,15 @@ memory budget is half of system RAM; existing smaller checkpoints survive a
 rejected larger request. Large payloads and caches remain local. Validated
 milestones are committed and pushed to the current branch at natural
 checkpoints. A push failure is recorded and never discards local work.
+
+Historical iteration data can be recovered with
+`python scripts/archive_legacy_logs.py`. Its CSV preserves log line identities
+and runtime lower bounds; the accompanying audit states missing provenance.
+New jobs capture source fingerprints once at process launch.
+
+After `scripts/extend_study.jl` finishes, `julia --project=.
+scripts/additional_convergence.jl` checks a common bond dimension of 512 for
+widths one through four and longer wide cylinders. Resource estimates can skip
+a point while preserving all completed smaller states; a resource skip is
+recorded separately from numerical convergence. Independent seed checks use
+`julia --project=. scripts/multiple_seeds.jl`.

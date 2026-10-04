@@ -61,3 +61,17 @@ stars. An independent alternative uses the official infinitemps_approx
 variational fit of a finite DMRG state, followed by canonicalization and
 VUMPS. Transfer matrices are never formed by arbitrary identification of
 unrelated finite bond spaces.
+
+Repository synchronization checkpoint: validated source, corrected benchmark
+regressions, full geometry records, environments, pipeline validation, and the
+first resumed finite grid were committed and pushed to `main` at
+`5dfb1876638f8a38032c27f821174fc069849070`. This is a reproducibility milestone,
+not a scientific endpoint. Legacy provenance limitations are explicit in
+`legacy_provenance_audit.json`; recoverable iteration values are in
+`recorded_iterations.csv`.
+
+The self-contained audited VUMPS driver regression passes both tests without
+requiring an untracked MPS. The active finite batch adds width four, then checks
+higher bond dimensions and longer cylinders. Independent seed runs test the
+large width-one entropy change accompanying a lower variational energy. No
+thermodynamic intercept is claimed from the current short, unconverged grid.

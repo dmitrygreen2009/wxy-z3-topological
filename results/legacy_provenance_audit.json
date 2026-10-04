@@ -1,0 +1,27 @@
+{
+  "interpretation": "Recorded log values, not reconstructed launch settings. Runtime excludes compilation, setup and measurements.",
+  "iteration_count": 874,
+  "original_parent_commit": "80e59690c220e93b3241a9bf61d3eb1628da3956",
+  "first_reproducible_source_commit": "5dfb1876638f8a38032c27f821174fc069849070",
+  "limitations": [
+    "Historical calculations preceded launch provenance. Original parent commit does not contain their uncommitted source.",
+    "Seeds and settings must be read from preserved original scripts where known; missing values remain unknown.",
+    "Original logs contain repeated stage counters; CSV identifies each value by log and line rather than asserting a unique run mapping.",
+    "New version-3 jobs record source fingerprints and launch metadata in checkpoint sidecars."
+  ],
+  "log_runtime_lower_bounds_seconds": {
+    "results/audit_driver_validation_refined.log": 2.1160415,
+    "results/batch.log": 780.444,
+    "results/extended_batch.log": 919.167,
+    "results/infinite_qn_continuation_audited_refined.log": 1321.588252579,
+    "results/ordered_batch.log": 927.942,
+    "results/refined_batch.log": 1168.837,
+    "results/resume_finite.log": 8113.624,
+    "results/scaling_batch.log": 152.62599999999998,
+    "results/validate_small_cylinders.log": 86.903,
+    "results/validate_small_cylinders_refined.log": 67.133,
+    "results/validation.log": 72.674,
+    "results/validation_pinned.log": 214.264,
+    "results/zigzag_L6_w2_chi256_star.log": 279.955
+  }
+}
