@@ -52,9 +52,8 @@ function load_valid_checkpoint(path)
     end
     psi,metadata
 end
-function finite_checkpoint_observer(lat;family,L,w,cap,seed,stage,ordering,audit,cutoff,noise)
+function finite_checkpoint_observer(lat;family,L,w,cap,seed,stage,ordering,audit,cutoff,noise,nup=cld(lat.n,2))
     started=time();holder=Ref{Any}()
-    nup=cld(lat.n,2)
     stem="results/checkpoints/$(family)_w$(w)_L$(L)_N$(lat.n)_chi$(cap)_Nup$(nup)_seed$(seed)_v$(RUN_FORMAT_VERSION)_$(ordering)_$(stage)_latest.jls"
     callback=function(kwargs)
         sweep=kwargs[:sweep]
@@ -89,9 +88,9 @@ end
 load_state(path)=deserialize(resolve_checkpoint(path))
 function completed_finite_checkpoint(psi,result,cap,phase)
     family=result["family"];L=result["length"];w=result["width"];n=result["spins"]
-    seed=get(result,"seed",7103);Ly=round(result["physical_circumference"];digits=5)
+    seed=get(result,"seed",7103);nup=get(result,"nup",cld(n,2));Ly=round(result["physical_circumference"];digits=5)
     order=get(result,"ordering","axial")
-    path="results/checkpoints/$(family)_w$(w)_Ly$(Ly)_L$(L)_N$(n)_chi$(cap)_Nup$(cld(n,2))_seed$(seed)_v$(RUN_FORMAT_VERSION)_$(order)_$(phase)_complete.jls"
+    path="results/checkpoints/$(family)_w$(w)_Ly$(Ly)_L$(L)_N$(n)_chi$(cap)_Nup$(nup)_seed$(seed)_v$(RUN_FORMAT_VERSION)_$(order)_$(phase)_complete.jls"
     metadata=merge(copy(result),Dict("kind"=>"finite","physical_spins"=>n,"cap"=>cap,"phase"=>phase))
     save_checkpoint(path,psi,metadata)
 end

@@ -75,3 +75,14 @@ requiring an untracked MPS. The active finite batch adds width four, then checks
 higher bond dimensions and longer cylinders. Independent seed runs test the
 large width-one entropy change accompanying a lower variational energy. No
 thermodynamic intercept is claimed from the current short, unconverged grid.
+
+Independent seed audit on the star-ordered zigzag L4 width-one cylinder at
+chi=256: seeds 7103 and 7104 reproduce E=-15.0328573108151 and
+S=1.871319507. All four parallel-edge two-cycle expectations are nearly one.
+Seed 7105 instead reaches E=-15.0098845261812, S=0.850744667, with nontrivial
+loop content in the last two cycles. Direct variances are 6.53e-8 and 1.04e-8
+for seeds 7104 and 7105 respectively. The latter is a sector-selection failure
+for a ground-state entropy fit despite its small sweep drift and variance.
+Raw points and loop/variance diagnostics are retained in `seed_selection_audit.json`.
+This is finite microscopic evidence about solver state selection, not evidence
+establishing topological order.

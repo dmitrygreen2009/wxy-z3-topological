@@ -1,0 +1,12 @@
+Test Summary:                  | Pass  Total  Time
+Microscopic lattice regression |   97     97  2.9s
+Test Summary:                           | Pass  Total  Time
+Infinite Hamiltonian physical incidence |   55     55  0.6s
+Test Summary:   | Pass  Total     Time
+MPO Hermiticity |    3      3  1m08.7s
+Test Summary:                     | Pass  Total   Time
+Independent exact Schmidt spectra |    4      4  20.8s
+Test Summary:                                         | Pass  Total   Time
+Finite checkpoint observer preserves DMRG and resumes |    5      5  56.9s
+Test Summary:             | Pass  Total   Time
+Matter triplet correlator |    2      2  18.8s

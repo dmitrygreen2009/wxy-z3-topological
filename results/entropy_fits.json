@@ -384,34 +384,34 @@
         2,
         3
       ],
-      "alpha": 0.03076712475803812,
-      "gamma": -1.3484812100830093,
-      "gamma_apparent": -1.3484812100830093,
-      "gamma_minus_ln3": -2.4470934987511193,
-      "gamma_standard_error": 0.6467921235441609,
-      "alpha_standard_error": 0.09980219139195924,
+      "alpha": 0.032189937410034786,
+      "gamma": -1.337098708867035,
+      "gamma_apparent": -1.337098708867035,
+      "gamma_minus_ln3": -2.4357109975351445,
+      "gamma_standard_error": 0.6521158010134999,
+      "alpha_standard_error": 0.10062365265959597,
       "covariance": [
         [
-          0.009960477406637264,
-          0.059762864439823586
+          0.010125119474559014,
+          0.06075071684735408
         ],
         [
-          0.059762864439823586,
-          0.41834005107876515
+          0.06075071684735408,
+          0.4252550179314786
         ]
       ],
       "residuals": [
-        -0.17286246619758772,
-        0.3457249323951721,
-        -0.17286246619758838
+        -0.1742852788495841,
+        0.34857055769916623,
+        -0.1742852788495841
       ],
-      "residual_rms": 0.24446444412188784,
+      "residual_rms": 0.24647660507105765,
       "degrees_of_freedom": 1,
-      "fixed_ln3_alpha": 0.380351910293912,
+      "fixed_ln3_alpha": 0.3801486513436268,
       "fixed_ln3_residuals": [
-        1.2254766759459095,
-        0.6953097179310475,
-        -0.8720320372693344
+        1.2175495768847846,
+        0.6965292716327589,
+        -0.8702027067167675
       ],
       "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval.",
       "family": "armchair",
@@ -420,7 +420,7 @@
       "chi": 32,
       "raw_points": [
         {
-          "source_file": "results/armchair_L4_w1_chi256_star.json",
+          "source_file": "results/armchair_L4_w1_chi256_star_seed7105.json",
           "record_index": 0,
           "family": "armchair",
           "length": 4,
@@ -428,11 +428,11 @@
           "ordering": "star",
           "chi": 32,
           "actual_chi": 32,
-          "energy": -15.27716092072247,
-          "entropy": 1.2679201181595359,
+          "energy": -15.278500023494235,
+          "entropy": 1.2593832422475553,
           "circumference": 3.0,
-          "seed": 7103,
-          "truncation_error": 0.0005199335884827473
+          "seed": 7105,
+          "truncation_error": 0.0003830491177199917
         },
         {
           "source_file": "results/armchair_L4_w2_chi256_star.json",
@@ -495,7 +495,7 @@
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
       "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
-      "smallest_removed_gamma_change": -1.382899729580692
+      "smallest_removed_gamma_change": -1.3942822307966662
     },
     {
       "circumferences": [
@@ -508,34 +508,34 @@
         2,
         3
       ],
-      "alpha": 0.029003617626246203,
-      "gamma": -1.8848545456197503,
-      "gamma_apparent": -1.8848545456197503,
-      "gamma_minus_ln3": -2.98346683428786,
-      "gamma_standard_error": 0.16264784992452552,
-      "alpha_standard_error": 0.025097108107485864,
+      "alpha": 0.02828560933293891,
+      "gamma": -1.8905986119662084,
+      "gamma_apparent": -1.8905986119662084,
+      "gamma_minus_ln3": -2.989210900634318,
+      "gamma_standard_error": 0.1653343909589438,
+      "alpha_standard_error": 0.02551165038890723,
       "covariance": [
         [
-          0.0006298648353588326,
-          0.0037791890121529957
+          0.0006508443055658305,
+          0.0039050658333949833
         ],
         [
-          0.0037791890121529957,
-          0.026454323085070973
+          0.0039050658333949833,
+          0.027335460833764882
         ]
       ],
       "residuals": [
-        0.04346946636521287,
-        -0.08693893273043041,
-        0.043469466365212206
+        0.044187474658520465,
+        -0.0883749493170447,
+        0.04418747465852002
       ],
-      "residual_rms": 0.061475108882807175,
+      "residual_rms": 0.06249052594909876,
       "degrees_of_freedom": 1,
-      "fixed_ln3_alpha": 0.4552131653816545,
+      "fixed_ln3_alpha": 0.4553157379949841,
       "fixed_ln3_residuals": [
-        1.748307657386848,
-        0.3392706150249798,
-        -0.8089496291456022
+        1.752307989306703,
+        0.33865517934500255,
+        -0.809872782665569
       ],
       "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval.",
       "family": "armchair",
@@ -544,7 +544,7 @@
       "chi": 64,
       "raw_points": [
         {
-          "source_file": "results/armchair_L4_w1_chi256_star.json",
+          "source_file": "results/armchair_L4_w1_chi256_star_seed7105.json",
           "record_index": 1,
           "family": "armchair",
           "length": 4,
@@ -552,11 +552,11 @@
           "ordering": "star",
           "chi": 64,
           "actual_chi": 64,
-          "energy": -15.332175436320433,
-          "entropy": 2.0153348648637017,
+          "energy": -15.33228771477184,
+          "entropy": 2.0196429146235455,
           "circumference": 3.0,
-          "seed": 7103,
-          "truncation_error": 0.000641698121293483
+          "seed": 7105,
+          "truncation_error": 0.000642338334652406
         },
         {
           "source_file": "results/armchair_L4_w2_chi256_star.json",
@@ -619,7 +619,7 @@
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
       "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
-      "smallest_removed_gamma_change": 0.3477557309217161
+      "smallest_removed_gamma_change": 0.35349979726817415
     },
     {
       "circumferences": [
@@ -632,34 +632,34 @@
         2,
         3
       ],
-      "alpha": 0.10544055177406066,
-      "gamma": -1.7770818082857944,
-      "gamma_apparent": -1.7770818082857944,
-      "gamma_minus_ln3": -2.875694096953904,
-      "gamma_standard_error": 0.3434315071698894,
-      "alpha_standard_error": 0.05299263203884413,
+      "alpha": 0.10589093409496365,
+      "gamma": -1.7734787497185698,
+      "gamma_apparent": -1.7734787497185698,
+      "gamma_minus_ln3": -2.87209103838668,
+      "gamma_standard_error": 0.3417463308320095,
+      "alpha_standard_error": 0.0527326036846324,
       "covariance": [
         [
-          0.002808219050404329,
-          0.016849314302425974
+          0.0027807274913605067,
+          0.01668436494816304
         ],
         [
-          0.016849314302425974,
-          0.11794520011698181
+          0.01668436494816304,
+          0.11679055463714129
         ]
       ],
       "residuals": [
-        0.09178593111807976,
-        -0.18357186223616218,
-        0.09178593111807798
+        0.09133554879717654,
+        -0.1826710975943553,
+        0.09133554879717565
       ],
-      "residual_rms": 0.12980490862223193,
+      "residual_rms": 0.12916797183575754,
       "degrees_of_freedom": 1,
-      "fixed_ln3_alpha": 0.5162539941960468,
+      "fixed_ln3_alpha": 0.5161896538644891,
       "fixed_ln3_residuals": [
-        1.7350397008060254,
-        0.2272415801858252,
-        -0.7298409537258934
+        1.7325304278752796,
+        0.22762762217517118,
+        -0.7292618907418744
       ],
       "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval.",
       "family": "armchair",
@@ -668,7 +668,7 @@
       "chi": 128,
       "raw_points": [
         {
-          "source_file": "results/armchair_L4_w1_chi256_star.json",
+          "source_file": "results/armchair_L4_w1_chi256_star_seed7105.json",
           "record_index": 2,
           "family": "armchair",
           "length": 4,
@@ -676,11 +676,11 @@
           "ordering": "star",
           "chi": 128,
           "actual_chi": 128,
-          "energy": -15.344411706623168,
-          "entropy": 2.185189394726056,
+          "energy": -15.344417397709517,
+          "entropy": 2.1824871008006372,
           "circumference": 3.0,
-          "seed": 7103,
-          "truncation_error": 2.2706703311660917e-05
+          "seed": 7105,
+          "truncation_error": 2.2055839393462247e-05
         },
         {
           "source_file": "results/armchair_L4_w2_chi256_star.json",
@@ -743,7 +743,7 @@
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
       "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
-      "smallest_removed_gamma_change": 0.7342874489446427
+      "smallest_removed_gamma_change": 0.7306843903774181
     },
     {
       "circumferences": [
@@ -756,34 +756,34 @@
         2,
         3
       ],
-      "alpha": 0.13044720369102614,
-      "gamma": -1.8588191790504234,
-      "gamma_apparent": -1.8588191790504234,
-      "gamma_minus_ln3": -2.957431467718533,
-      "gamma_standard_error": 0.2083723104553071,
-      "alpha_standard_error": 0.03215254554259492,
+      "alpha": 0.13098621203404404,
+      "gamma": -1.8545071123062795,
+      "gamma_apparent": -1.8545071123062795,
+      "gamma_minus_ln3": -2.9531194009743893,
+      "gamma_standard_error": 0.21038909500349282,
+      "alpha_standard_error": 0.03246374215453175,
       "covariance": [
         [
-          0.0010337861848686402,
-          0.006202717109211841
+          0.001053894554675922,
+          0.006323367328055531
         ],
         [
-          0.006202717109211841,
-          0.04341901976448289
+          0.006323367328055531,
+          0.04426357129638872
         ]
       ],
       "residuals": [
-        -0.05568984247244746,
-        0.11137968494489181,
-        -0.05568984247244879
+        -0.05622885081546514,
+        0.11245770163092805,
+        -0.056228850815466025
       ],
-      "residual_rms": 0.07875733051095526,
+      "residual_rms": 0.07951960341988341,
       "degrees_of_freedom": 1,
-      "fixed_ln3_alpha": 0.5529374133651019,
+      "fixed_ln3_alpha": 0.5528604121732423,
       "fixed_ln3_residuals": [
-        1.6342709962238584,
-        0.5338698946189699,
-        -0.9006702618205982
+        1.6312679497413294,
+        0.5343319017701276,
+        -0.8999772510938613
       ],
       "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval.",
       "family": "armchair",
@@ -792,7 +792,7 @@
       "chi": 256,
       "raw_points": [
         {
-          "source_file": "results/armchair_L4_w1_chi256_star.json",
+          "source_file": "results/armchair_L4_w1_chi256_star_seed7105.json",
           "record_index": 4,
           "family": "armchair",
           "length": 4,
@@ -800,11 +800,11 @@
           "ordering": "star",
           "chi": 256,
           "actual_chi": 256,
-          "energy": -15.345274941738161,
-          "entropy": 2.1944709476510544,
+          "energy": -15.34527497686739,
+          "entropy": 2.1912368975929466,
           "circumference": 3.0,
-          "seed": 7103,
-          "truncation_error": 7.400389183949175e-07
+          "seed": 7105,
+          "truncation_error": 7.390282043093308e-07
         },
         {
           "source_file": "results/armchair_L4_w2_chi256_star.json",
@@ -867,7 +867,7 @@
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
       "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
-      "smallest_removed_gamma_change": -0.4455187397795708
+      "smallest_removed_gamma_change": -0.44983080652371465
     },
     {
       "circumferences": [
@@ -1245,41 +1245,45 @@
       "circumferences": [
         1.7320508075688772,
         3.4641016151377544,
-        5.196152422706632
+        5.196152422706632,
+        6.928203230275509
       ],
       "widths": [
         1,
         2,
-        3
+        3,
+        4
       ],
-      "alpha": 0.08616677444689928,
-      "gamma": -0.8277366546605525,
-      "gamma_apparent": -0.8277366546605525,
-      "gamma_minus_ln3": -1.9263489433286622,
-      "gamma_standard_error": 0.3203547078259348,
-      "alpha_standard_error": 0.0856183970660512,
+      "alpha": -0.004967837462160148,
+      "gamma": -1.06501545174558,
+      "gamma_apparent": -1.06501545174558,
+      "gamma_minus_ln3": -2.16362774041369,
+      "gamma_standard_error": 0.3525196231732585,
+      "alpha_standard_error": 0.07431766194211804,
       "covariance": [
         [
-          0.0073305099161600044,
-          0.025393631240353192
+          0.005523114876542941,
+          0.023915788955529697
         ],
         [
-          0.0253936312403532,
-          0.10262713882624006
+          0.023915788955529697,
+          0.12427008472221618
         ]
       ],
       "residuals": [
-        -0.08561839706605168,
-        0.17123679413210224,
-        -0.0856183970660509
+        -0.21665574900833573,
+        0.24965755335619977,
+        0.1506521403126091,
+        -0.1836539446604718
       ],
-      "residual_rms": 0.12108269831945438,
-      "degrees_of_freedom": 1,
-      "fixed_ln3_alpha": 0.5628145234400225,
+      "residual_rms": 0.20352729933370634,
+      "degrees_of_freedom": 2,
+      "fixed_ln3_alpha": 0.41142251532250185,
       "fixed_ln3_residuals": [
-        1.015152427693184,
-        0.4464295003219114,
-        -0.6360038094456686
+        1.2257627446007906,
+        0.9708668001607625,
+        0.15065214031260843,
+        -0.9048631914650358
       ],
       "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval.",
       "family": "zigzag",
@@ -1288,7 +1292,7 @@
       "chi": 32,
       "raw_points": [
         {
-          "source_file": "results/zigzag_L4_w1_chi256_star.json",
+          "source_file": "results/zigzag_L4_w1_chi256_star_seed7104.json",
           "record_index": 0,
           "family": "zigzag",
           "length": 4,
@@ -1296,11 +1300,11 @@
           "ordering": "star",
           "chi": 32,
           "actual_chi": 32,
-          "energy": -15.025139067859637,
-          "entropy": 0.891363488860858,
+          "energy": -15.025311684728358,
+          "entropy": 0.8397551558490389,
           "circumference": 1.7320508075688772,
-          "seed": 7103,
-          "truncation_error": 5.028051212185594e-05
+          "seed": 7104,
+          "truncation_error": 4.818251459523571e-05
         },
         {
           "source_file": "results/zigzag_L4_w2_chi256_star.json",
@@ -1331,79 +1335,111 @@
           "circumference": 5.196152422706632,
           "seed": 7103,
           "truncation_error": 0.0035414311407876782
+        },
+        {
+          "source_file": "results/zigzag_L4_w4_chi256_star.json",
+          "record_index": 0,
+          "family": "zigzag",
+          "length": 4,
+          "width": 4,
+          "ordering": "star",
+          "chi": 32,
+          "actual_chi": 32,
+          "energy": -55.97234511760284,
+          "entropy": 0.8469433195322867,
+          "circumference": 6.928203230275509,
+          "seed": 7103,
+          "truncation_error": 0.007242959646447218
         }
       ],
       "smallest_circumference_removed": {
         "circumferences": [
           3.4641016151377544,
-          5.196152422706632
+          5.196152422706632,
+          6.928203230275509
         ],
         "widths": [
           2,
-          3
+          3,
+          4
         ],
-        "alpha": -0.06212863933410708,
-        "gamma": -1.5126838311889605,
-        "gamma_apparent": -1.5126838311889605,
-        "gamma_minus_ln3": -2.6112961198570703,
-        "gamma_standard_error": null,
-        "alpha_standard_error": null,
-        "covariance": null,
+        "alpha": -0.13005409247360272,
+        "gamma": -1.7872012817733665,
+        "gamma_apparent": -1.7872012817733665,
+        "gamma_minus_ln3": -2.885813570441476,
+        "gamma_standard_error": 0.21118881626163194,
+        "alpha_standard_error": 0.03921677865491501,
+        "covariance": [
+          [
+            0.0015379557280685977,
+            0.007991452382419184
+          ],
+          [
+            0.007991452382419184,
+            0.04460071611398933
+          ]
+        ],
         "residuals": [
-          -2.220446049250313e-16,
-          -4.440892098500626e-16
+          -0.03921677865491535,
+          0.07843355730982982,
+          -0.039216778654915574
         ],
-        "residual_rms": 3.510833468576701e-16,
-        "degrees_of_freedom": 0,
-        "fixed_ln3_alpha": 0.5177300213325485,
+        "residual_rms": 0.05546090024636463,
+        "degrees_of_freedom": 1,
+        "fixed_ln3_alpha": 0.38701925840671275,
         "fixed_ln3_residuals": [
-          0.6026067968900934,
-          -0.40173786459339555
+          1.0554021618573692,
+          0.27745518285751847,
+          -0.7357924680718224
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
       "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
-      "smallest_removed_gamma_change": -0.6849471765284081
+      "smallest_removed_gamma_change": -0.7221858300277864
     },
     {
       "circumferences": [
         1.7320508075688772,
         3.4641016151377544,
-        5.196152422706632
+        5.196152422706632,
+        6.928203230275509
       ],
       "widths": [
         1,
         2,
-        3
+        3,
+        4
       ],
-      "alpha": -0.131909991752122,
-      "gamma": -1.986322928520172,
-      "gamma_apparent": -1.986322928520172,
-      "gamma_minus_ln3": -3.084935217188282,
-      "gamma_standard_error": 0.31263578199743797,
-      "alpha_standard_error": 0.08355542736289726,
+      "alpha": -0.09461279043243419,
+      "gamma": -1.8786551824104651,
+      "gamma_apparent": -1.8786551824104651,
+      "gamma_minus_ln3": -2.9772674710785747,
+      "gamma_standard_error": 0.20457248516160134,
+      "alpha_standard_error": 0.04312766664744395,
       "covariance": [
         [
-          0.006981509441796398,
-          0.024184658133426382
+          0.0018599956304530488,
+          0.008054017334501964
         ],
         [
-          0.02418465813342639,
-          0.09774113218514957
+          0.008054017334501964,
+          0.0418499016851936
         ]
       ],
       "residuals": [
-        0.0835554273628969,
-        -0.16711085472579446,
-        0.08355542736289756
+        0.12662252580677946,
+        -0.18864440394773618,
+        -0.0025787695248684628,
+        0.06460064766582407
       ],
-      "residual_rms": 0.11816521858648928,
-      "degrees_of_freedom": 1,
-      "fixed_ln3_alpha": 0.6314135131376828,
+      "residual_rms": 0.11810997937684131,
+      "degrees_of_freedom": 2,
+      "fixed_ln3_alpha": 0.4783626015264763,
       "fixed_ln3_residuals": [
-        1.8463755514704865,
-        0.27359417630110294,
-        -0.7978546346908975
+        2.1114675065258295,
+        0.8037780864117889,
+        -0.0025787695248682407,
+        -0.9278218426937006
       ],
       "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval.",
       "family": "zigzag",
@@ -1455,79 +1491,111 @@
           "circumference": 5.196152422706632,
           "seed": 7103,
           "truncation_error": 0.0013646143983213417
+        },
+        {
+          "source_file": "results/zigzag_L4_w4_chi256_star.json",
+          "record_index": 1,
+          "family": "zigzag",
+          "length": 4,
+          "width": 4,
+          "ordering": "star",
+          "chi": 64,
+          "actual_chi": 64,
+          "energy": -57.20942987481647,
+          "entropy": 1.287759189776919,
+          "circumference": 6.928203230275509,
+          "seed": 7103,
+          "truncation_error": 0.0009480498505929261
         }
       ],
       "smallest_circumference_removed": {
         "circumferences": [
           3.4641016151377544,
-          5.196152422706632
+          5.196152422706632,
+          6.928203230275509
         ],
         "widths": [
           2,
-          3
+          3,
+          4
         ],
-        "alpha": 0.01281225368854702,
-        "gamma": -1.3178795096169937,
-        "gamma_apparent": -1.3178795096169937,
-        "gamma_minus_ln3": -2.4164917982851035,
-        "gamma_standard_error": null,
-        "alpha_standard_error": null,
-        "covariance": null,
+        "alpha": -0.02150724107241929,
+        "gamma": -1.456580096387865,
+        "gamma_apparent": -1.456580096387865,
+        "gamma_minus_ln3": -2.5551923850559746,
+        "gamma_standard_error": 0.10670364551534288,
+        "alpha_standard_error": 0.01981436953869586,
+        "covariance": [
+          [
+            0.00039260924021599844,
+            0.00204005745472537
+          ],
+          [
+            0.00204005745472537,
+            0.011385667966263953
+          ]
+        ],
         "residuals": [
-          -2.220446049250313e-16,
-          -4.440892098500626e-16
+          -0.01981436953869653,
+          0.03962873907739106,
+          -0.019814369538696752
         ],
-        "residual_rms": 3.510833468576701e-16,
-        "degrees_of_freedom": 0,
-        "fixed_ln3_alpha": 0.5494130960864038,
+        "residual_rms": 0.02802175013149607,
+        "degrees_of_freedom": 1,
+        "fixed_ln3_alpha": 0.4363261762410338,
         "fixed_ln3_residuals": [
-          0.5576519534504081,
-          -0.37176796896694
+          0.9493965351377078,
+          0.21584890356400988,
+          -0.6365849452418628
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
       "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
-      "smallest_removed_gamma_change": 0.6684434189031783
+      "smallest_removed_gamma_change": 0.42207508602260013
     },
     {
       "circumferences": [
         1.7320508075688772,
         3.4641016151377544,
-        5.196152422706632
+        5.196152422706632,
+        6.928203230275509
       ],
       "widths": [
         1,
         2,
-        3
+        3,
+        4
       ],
-      "alpha": -0.038861939963487024,
-      "gamma": -1.8585668320438273,
-      "gamma_apparent": -1.8585668320438273,
-      "gamma_minus_ln3": -2.9571791207119373,
-      "gamma_standard_error": 0.29860823727674607,
-      "alpha_standard_error": 0.07980640833986305,
+      "alpha": -0.027444461652868183,
+      "gamma": -1.8256071870170603,
+      "gamma_apparent": -1.8256071870170603,
+      "gamma_minus_ln3": -2.9242194756851703,
+      "gamma_standard_error": 0.17215806083023613,
+      "alpha_standard_error": 0.03629410598542431,
       "covariance": [
         [
-          0.006369062812108963,
-          0.022063080774340466
+          0.0013172621292812127,
+          0.005703912337003557
         ],
         [
-          0.02206308077434047,
-          0.08916687936952548
+          0.005703912337003557,
+          0.029638397908827285
         ]
       ],
       "residuals": [
-        0.07980640833986219,
-        -0.15961281667972638,
-        0.0798064083398633
+        0.09298995254581377,
+        -0.16620447670957428,
+        0.05343909578170791,
+        0.01977542838205415
       ],
-      "residual_rms": 0.11286330503851959,
-      "degrees_of_freedom": 1,
-      "fixed_ln3_alpha": 0.6928501292015034,
+      "residual_rms": 0.09939550276350086,
+      "degrees_of_freedom": 2,
+      "fixed_ln3_alpha": 0.5353218388325917,
       "fixed_ln3_residuals": [
-        1.7696230487466835,
-        0.2628413434219794,
-        -0.7651019118635469
+        2.0424696030025937,
+        0.8085353485188156,
+        0.05343909578170747,
+        -0.9549643968463359
       ],
       "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval.",
       "family": "zigzag",
@@ -1536,7 +1604,7 @@
       "chi": 128,
       "raw_points": [
         {
-          "source_file": "results/zigzag_L4_w1_chi256_star.json",
+          "source_file": "results/zigzag_L4_w1_chi256_star_seed7104.json",
           "record_index": 2,
           "family": "zigzag",
           "length": 4,
@@ -1544,11 +1612,11 @@
           "ordering": "star",
           "chi": 128,
           "actual_chi": 128,
-          "energy": -15.032851783399673,
-          "entropy": 1.8710623858862385,
+          "energy": -15.03285178372851,
+          "entropy": 1.8710619375937305,
           "circumference": 1.7320508075688772,
-          "seed": 7103,
-          "truncation_error": 1.9632540188854477e-07
+          "seed": 7104,
+          "truncation_error": 1.9626295708030075e-07
         },
         {
           "source_file": "results/zigzag_L4_w2_chi256_star.json",
@@ -1579,79 +1647,111 @@
           "circumference": 5.196152422706632,
           "seed": 7103,
           "truncation_error": 0.00034540468827357914
+        },
+        {
+          "source_file": "results/zigzag_L4_w4_chi256_star.json",
+          "record_index": 2,
+          "family": "zigzag",
+          "length": 4,
+          "width": 4,
+          "ordering": "star",
+          "chi": 128,
+          "actual_chi": 128,
+          "energy": -58.23173837374561,
+          "entropy": 1.6552418075225408,
+          "circumference": 6.928203230275509,
+          "seed": 7103,
+          "truncation_error": 0.0002316046341407838
         }
       ],
       "smallest_circumference_removed": {
         "circumferences": [
           3.4641016151377544,
-          5.196152422706632
+          5.196152422706632,
+          6.928203230275509
         ],
         "widths": [
           2,
-          3
+          3,
+          4
         ],
-        "alpha": 0.09936681405074485,
-        "gamma": -1.2201155653249214,
-        "gamma_apparent": -1.2201155653249214,
-        "gamma_minus_ln3": -2.318727853993031,
-        "gamma_standard_error": null,
-        "alpha_standard_error": null,
-        "covariance": null,
+        "alpha": 0.026243312481388375,
+        "gamma": -1.5156406785310126,
+        "gamma_apparent": -1.5156406785310126,
+        "gamma_minus_ln3": -2.614252967199122,
+        "gamma_standard_error": 0.22735020560884028,
+        "alpha_standard_error": 0.04221787331515587,
+        "covariance": [
+          [
+            0.00178234882725455,
+            0.009261356176847053
+          ],
+          [
+            0.009261356176847053,
+            0.05168811599038195
+          ]
+        ],
         "residuals": [
-          -4.440892098500626e-16,
-          -6.661338147750939e-16
+          -0.042217873315155696,
+          0.08443574663031184,
+          -0.04221787331515636
         ],
-        "residual_rms": 5.661048867003676e-16,
-        "degrees_of_freedom": 0,
-        "fixed_ln3_alpha": 0.6142584104662677,
+        "residual_rms": 0.05970508901684273,
+        "degrees_of_freedom": 1,
+        "fixed_ln3_alpha": 0.49465906727724085,
         "fixed_ln3_residuals": [
-          0.5350910432291613,
-          -0.35672736215277423
+          0.9493953211396837,
+          0.26472905471300967,
+          -0.6732444516045999
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
       "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
-      "smallest_removed_gamma_change": 0.638451266718906
+      "smallest_removed_gamma_change": 0.3099665084860477
     },
     {
       "circumferences": [
         1.7320508075688772,
         3.4641016151377544,
-        5.196152422706632
+        5.196152422706632,
+        6.928203230275509
       ],
       "widths": [
         1,
         2,
-        3
+        3,
+        4
       ],
-      "alpha": 0.005130701295486205,
-      "gamma": -1.7783620864223655,
-      "gamma_apparent": -1.7783620864223655,
-      "gamma_minus_ln3": -2.8769743750904753,
-      "gamma_standard_error": 0.3145640747330138,
-      "alpha_standard_error": 0.08407078527417794,
+      "alpha": 0.040000501776598835,
+      "gamma": -1.6777016429505702,
+      "gamma_apparent": -1.6777016429505702,
+      "gamma_minus_ln3": -2.77631393161868,
+      "gamma_standard_error": 0.2022988101960083,
+      "alpha_standard_error": 0.042648333877432006,
       "covariance": [
         [
-          0.007067896936616935,
-          0.02448391319376191
+          0.0018188803825209146,
+          0.007875983088541346
         ],
         [
-          0.024483913193761912,
-          0.09895055711263709
+          0.007875983088541346,
+          0.040924808606720584
         ]
       ],
       "residuals": [
-        0.08407078527417733,
-        -0.16814157054835577,
-        0.08407078527417866
+        0.12433496266289601,
+        -0.1882736592427141,
+        0.0035424304967437426,
+        0.060396266083077244
       ],
-      "residual_rms": 0.1188940447340987,
-      "degrees_of_freedom": 1,
-      "fixed_ln3_alpha": 0.7169972426855468,
+      "residual_rms": 0.11679727252340645,
+      "degrees_of_freedom": 2,
+      "fixed_ln3_alpha": 0.5743023670349167,
       "fixed_ln3_residuals": [
-        1.7280561424687348,
-        0.24285476875028378,
-        -0.7379218933231
+        1.9752109170753491,
+        0.7371643179635123,
+        0.0035424304967430764,
+        -0.8650417111231501
       ],
       "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval.",
       "family": "zigzag",
@@ -1703,39 +1803,67 @@
           "circumference": 5.196152422706632,
           "seed": 7103,
           "truncation_error": 0.00027724309390794407
+        },
+        {
+          "source_file": "results/zigzag_L4_w4_chi256_star.json",
+          "record_index": 3,
+          "family": "zigzag",
+          "length": 4,
+          "width": 4,
+          "ordering": "star",
+          "chi": 256,
+          "actual_chi": 256,
+          "energy": -59.04812733631045,
+          "entropy": 2.0152295146549206,
+          "circumference": 6.928203230275509,
+          "seed": 7103,
+          "truncation_error": 0.00021267630946538975
         }
       ],
       "smallest_circumference_removed": {
         "circumferences": [
           3.4641016151377544,
-          5.196152422706632
+          5.196152422706632,
+          6.928203230275509
         ],
         "widths": [
           2,
-          3
+          3,
+          4
         ],
-        "alpha": 0.15074557282257622,
-        "gamma": -1.105795804228941,
-        "gamma_apparent": -1.105795804228941,
-        "gamma_minus_ln3": -2.204408092897051,
-        "gamma_standard_error": null,
-        "alpha_standard_error": null,
-        "covariance": null,
+        "alpha": 0.11178532593970385,
+        "gamma": -1.2632517674075847,
+        "gamma_apparent": -1.2632517674075847,
+        "gamma_minus_ln3": -2.3618640560756945,
+        "gamma_standard_error": 0.12113233022615752,
+        "alpha_standard_error": 0.022493709025520642,
+        "covariance": [
+          [
+            0.0005059669457247888,
+            0.002629081370837336
+          ],
+          [
+            0.002629081370837336,
+            0.014673041426018874
+          ]
+        ],
         "residuals": [
-          -6.661338147750939e-16,
-          -6.661338147750939e-16
+          -0.022493709025520392,
+          0.04498741805104145,
+          -0.022493709025520836
         ],
-        "residual_rms": 6.661338147750939e-16,
-        "degrees_of_freedom": 0,
-        "fixed_ln3_alpha": 0.640251575067923,
+        "residual_rms": 0.03181090837196545,
+        "degrees_of_freedom": 1,
+        "fixed_ln3_alpha": 0.534978623770098,
         "fixed_ln3_residuals": [
-          0.5087095598993194,
-          -0.3391397065995463
+          0.8733857605204332,
+          0.2078745943321243,
+          -0.5925988260093085
         ],
         "uncertainty_scope": "OLS scatter only; unquantified length, chi, sectors, and circumference corrections prevent a thermodynamic confidence interval."
       },
       "status": "Exploratory: validate chi, length, sectors and large-circumference stability before interpreting gamma as topological entropy.",
-      "smallest_removed_gamma_change": 0.6725662821934244
+      "smallest_removed_gamma_change": 0.4144498755429855
     }
   ]
 }

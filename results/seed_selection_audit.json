@@ -1,0 +1,317 @@
+{
+  "zigzag_L4_w1_chi256": {
+    "7103": {
+      "energy": -15.032857310815137,
+      "entropy": 1.8713195070187845,
+      "source": "results/zigzag_L4_w1_chi256_star.json",
+      "cycles": [
+        {
+          "nonzero_edge_count": 2,
+          "edge_exponents": [
+            1,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "maxlinkdim_after_apply": 256,
+          "expectation_real": 0.9999999999895706,
+          "rotated_norm": 0.9999999999999639,
+          "expectation_imag": -6.303480130086607e-16,
+          "magnitude": 0.9999999999895706,
+          "cycle_label": "parallel_edge_two_cycle_t0"
+        },
+        {
+          "nonzero_edge_count": 2,
+          "edge_exponents": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "maxlinkdim_after_apply": 423,
+          "expectation_real": 0.9999999996825979,
+          "rotated_norm": 0.9999999999998039,
+          "expectation_imag": 3.6851641125773764e-14,
+          "magnitude": 0.9999999996825979,
+          "cycle_label": "parallel_edge_two_cycle_t1"
+        },
+        {
+          "nonzero_edge_count": 2,
+          "edge_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "maxlinkdim_after_apply": 436,
+          "expectation_real": 0.999999999684512,
+          "rotated_norm": 0.999999999999791,
+          "expectation_imag": 3.4095578100466777e-13,
+          "magnitude": 0.999999999684512,
+          "cycle_label": "parallel_edge_two_cycle_t2"
+        },
+        {
+          "nonzero_edge_count": 2,
+          "edge_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0
+          ],
+          "maxlinkdim_after_apply": 256,
+          "expectation_real": 0.9999999999892717,
+          "rotated_norm": 0.9999999999999529,
+          "expectation_imag": -8.967886725492415e-16,
+          "magnitude": 0.9999999999892717,
+          "cycle_label": "parallel_edge_two_cycle_t3"
+        }
+      ]
+    },
+    "7104": {
+      "energy": -15.032857310815118,
+      "entropy": 1.871319507172978,
+      "source": "results/zigzag_L4_w1_chi256_star_seed7104.json",
+      "variance": 6.534995122819964e-08,
+      "cycles": [
+        {
+          "nonzero_edge_count": 2,
+          "edge_exponents": [
+            1,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "maxlinkdim_after_apply": 256,
+          "expectation_real": 0.9999999999895697,
+          "rotated_norm": 0.999999999999963,
+          "expectation_imag": -9.597451500304456e-16,
+          "magnitude": 0.9999999999895697,
+          "cycle_label": "parallel_edge_two_cycle_t0"
+        },
+        {
+          "nonzero_edge_count": 2,
+          "edge_exponents": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "maxlinkdim_after_apply": 423,
+          "expectation_real": 0.999999999683684,
+          "rotated_norm": 0.9999999999998066,
+          "expectation_imag": 6.962410540246142e-13,
+          "magnitude": 0.999999999683684,
+          "cycle_label": "parallel_edge_two_cycle_t1"
+        },
+        {
+          "nonzero_edge_count": 2,
+          "edge_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "maxlinkdim_after_apply": 436,
+          "expectation_real": 0.9999999996841997,
+          "rotated_norm": 0.9999999999997904,
+          "expectation_imag": -6.133726164117135e-14,
+          "magnitude": 0.9999999996841997,
+          "cycle_label": "parallel_edge_two_cycle_t2"
+        },
+        {
+          "nonzero_edge_count": 2,
+          "edge_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0
+          ],
+          "maxlinkdim_after_apply": 256,
+          "expectation_real": 0.9999999999892714,
+          "rotated_norm": 0.9999999999999537,
+          "expectation_imag": -3.0489197349359506e-16,
+          "magnitude": 0.9999999999892714,
+          "cycle_label": "parallel_edge_two_cycle_t3"
+        }
+      ]
+    },
+    "7105": {
+      "energy": -15.009884526181192,
+      "entropy": 0.8507446670917127,
+      "source": "results/zigzag_L4_w1_chi256_star_seed7105.json",
+      "variance": 1.0435428521304857e-08,
+      "cycles": [
+        {
+          "nonzero_edge_count": 2,
+          "edge_exponents": [
+            1,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "maxlinkdim_after_apply": 216,
+          "expectation_real": 0.9999999999878706,
+          "rotated_norm": 0.9999999999999137,
+          "expectation_imag": -5.963709411645776e-16,
+          "magnitude": 0.9999999999878706,
+          "cycle_label": "parallel_edge_two_cycle_t0"
+        },
+        {
+          "nonzero_edge_count": 2,
+          "edge_exponents": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "maxlinkdim_after_apply": 277,
+          "expectation_real": 0.9999999999699809,
+          "rotated_norm": 0.9999999999998218,
+          "expectation_imag": -7.8351812623268835e-16,
+          "magnitude": 0.9999999999699809,
+          "cycle_label": "parallel_edge_two_cycle_t1"
+        },
+        {
+          "nonzero_edge_count": 2,
+          "edge_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "maxlinkdim_after_apply": 284,
+          "expectation_real": -0.49999999995830424,
+          "rotated_norm": 0.9999999999998718,
+          "expectation_imag": 0.6381495613250717,
+          "magnitude": 0.8107002297876112,
+          "cycle_label": "parallel_edge_two_cycle_t2"
+        },
+        {
+          "nonzero_edge_count": 2,
+          "edge_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0
+          ],
+          "maxlinkdim_after_apply": 216,
+          "expectation_real": -0.49999999999056444,
+          "rotated_norm": 0.9999999999999778,
+          "expectation_imag": 0.6231683187982885,
+          "magnitude": 0.7989610463248191,
+          "cycle_label": "parallel_edge_two_cycle_t3"
+        }
+      ]
+    }
+  },
+  "interpretation": "Seeds 7103 and 7104 agree in energy and entropy with trivial local two-cycle charges. Seed 7105 reaches a higher-energy low-variance state containing nontrivial loop charges; its entropy must not enter a ground-state fit. Armchair seeds have nearly equal energies but small entropy differences; increase chi and audit state choice.",
+  "topological_claim": false
+}
