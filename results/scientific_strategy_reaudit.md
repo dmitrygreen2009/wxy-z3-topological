@@ -357,3 +357,16 @@ recanonicalization use the saved state cell size, and number-background and
 initializer branches remain separate in analysis. Production calculations
 with larger periods remain necessary; implementation validation is not
 variational convergence or evidence of topological order.
+
+
+New central retained-basis residuals for the unchanged armchair L4,width2,
+Nup31,chi256 state are 0.0040861, 0.0031193 and 0.0030396 on bonds 39--41.
+Each projected Rayleigh energy matches its saved -30.6119657548134 energy
+within 6e-14. Five exact two-spin tests validate the library ProjMPO diagnostic.
+These are saved-state stationarity residuals, including truncation and basis
+limitations; they are not the unrecorded pre-truncation Krylov residuals.
+They provide concrete additional grounds for continuing this underconverged
+candidate, without changing the validity of its energy as a variational bound.
+The continuation interface now records configurable Krylov iteration controls;
+the historical defaults remain unchanged and requested tolerances are not
+loosened. Ground-state and entropy convergence still require separate tests.

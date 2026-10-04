@@ -20,7 +20,7 @@ for file in sorted(glob.glob('results/*_L*_w*_chi*.json')):
             'refinement_dS':q.get('entropy_change_refinement','')})
 if rows:
     with open('results/entropy_convergence.csv','w') as f:
-        writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+        writer=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator="\n");writer.writeheader();writer.writerows(rows)
 
 fits=[]
 for family,ordering in itertools.product(['zigzag','armchair'],['axial','star']):

@@ -17,7 +17,8 @@
     "one_unrestricted_variational_ansatz_breaks_physical_U1": "Measured nonzero CGS-invariant charge-three matter expectation; no thermodynamic ground-state order certificate.",
     "half_filled_symmetry_preserving_D_Z3": "Conditionally incompatible with ordinary nonpermuting background-anyon U1 SET constraints; actual filling and symmetry are unresolved.",
     "two_slice_cell_exhausts_MES": "Not established: a three-sector translation cycle may require a larger cell.",
-    "local_requested_eigensolver_tol_is_achieved": "Not inferred: new continuations save true residuals and ConvergenceInfo."
+    "local_requested_eigensolver_tol_is_achieved": "Not inferred: new continuations save true residuals and ConvergenceInfo.",
+    "armchair_Nup31_chi256_central_stationarity": "New retained-basis residuals 0.0030--0.0041 confirm underconvergence; stored variational energy preserved."
   },
   "concrete_findings": [
     "Width-one parallel cycles have circumference winding, despite local support on the quotient",
@@ -52,7 +53,8 @@
     "results/primitive_filling_audit.json": "f201f671df4eb1682b0061fb02df92a3852a22a70c263a31499260f87707da99",
     "results/transfer_operator_coupling_audit.json": "3ed6ab701c85dac86f55d20fa8b91346baa6d6eca6160c18af7465ddc27687bb",
     "results/armchair_L4_w2_number_and_cycle_audit.json": "576fc12ecd77225895e553f1452abd17211571d3364e8328515e5d1b9729784e",
-    "results/armchair_qn_initializer_trapping_audit.json": "b4129f61199a0dee9e74184e0c95bfe8d04ce484ff586f5a782175439a4faa2e"
+    "results/armchair_qn_initializer_trapping_audit.json": "b4129f61199a0dee9e74184e0c95bfe8d04ce484ff586f5a782175439a4faa2e",
+    "results/checkpoints/armchair_w2_L4_N76_chi256_Nup31_seed7196_v3_star_charge_complete_stationarity.json": "bc34b10335cc3d485c531bd30beec4e40e7d35f73843700ad1a3e1d3b2dabec0"
   },
   "geometry_metadata_followup": "41 finite physical-cut and 40 infinite incidence records statically checked; includes new periods 3 and 6. Default period-two interactions and existing optimizations unchanged.",
   "contractible_cycle_definitions": "geometry/cgs_plaquettes"

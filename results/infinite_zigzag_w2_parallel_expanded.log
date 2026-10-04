@@ -1,0 +1,7 @@
+┌ Warning: Assignment to `psi` in soft scope is ambiguous because a global variable by the same name exists: `psi` will be treated as a new local. Disambiguate by using `local psi` to suppress this warning or `global psi` to assign to the existing global variable.
+└ @ ~/Documents/wxy-z3-topological/scripts/infinite_parallel_refine.jl:13
+ERROR: LoadError: UndefVarError: `psi` not defined
+Stacktrace:
+ [1] top-level scope
+   @ ~/Documents/wxy-z3-topological/scripts/infinite_parallel_refine.jl:12
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/infinite_parallel_refine.jl:10
