@@ -440,3 +440,17 @@ site orderings (48 checks). This validates complex coefficients, Hermiticity,
 periodic terms and local effective operators without rerunning benchmarks.
 The library pads all term MPOs to their common maximum range, satisfying its
 constant-range assumption. No Hamiltonian approximation was introduced.
+
+The completed zigzag width-two parallel state was remeasured from the same AL
+tensors with consistent centers, without optimization. Canonical error fell
+from 4.50e-5 to 6.83e-12; energy changed by 9.29e-7 per two-slice cell and
+entropy by 3.05e-6. Its full dense 841-dimensional transfer spectrum agrees
+with the Krylov correlation length (0.11767631055 cells), with eigenpair
+residuals below 1.74e-13 and one peripheral eigenvalue at tolerance 1e-9.
+This confirms this measurement pipeline, not convergence of the ground state
+or a physical 2D gap. The complete finite-dimensional transfer builder also
+passed known primitive-channel and GHZ tests, including exact multiplicity.
+
+Additional density branches remain planned rather than launched during heavy
+compressed-memory pressure. Existing expensive calculations continue, and
+smaller completed results and their local checkpoints remain preserved.
