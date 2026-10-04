@@ -1,0 +1,21 @@
+ERROR: LoadError: MethodError: Cannot `convert` an object of type Vector{Int64} to an object of type Real
+
+Closest candidates are:
+  convert(::Type{T}, !Matched::VectorInterface.One) where T<:Number
+   @ VectorInterface /private/tmp/wxy-julia-depot/packages/VectorInterface/hufzc/src/onezero.jl:81
+  convert(::Type{T}, !Matched::Zeros.Zero) where T<:Number
+   @ Zeros /private/tmp/wxy-julia-depot/packages/Zeros/MS7oi/src/Zeros.jl:26
+  convert(::Type{T}, !Matched::VectorInterface.Zero) where T<:Number
+   @ VectorInterface /private/tmp/wxy-julia-depot/packages/VectorInterface/hufzc/src/onezero.jl:83
+  ...
+
+Stacktrace:
+ [1] setindex!(h::Dict{String, Real}, v0::Vector{Int64}, key::String)
+   @ Base ./dict.jl:376
+ [2] run_projected_zigzag(L::Int64, chi::Int64; seed::Int64)
+   @ Main ~/Documents/wxy-z3-topological/scripts/projected_zigzag.jl:15
+ [3] run_projected_zigzag
+   @ ~/Documents/wxy-z3-topological/scripts/projected_zigzag.jl:3 [inlined]
+ [4] top-level scope
+   @ ~/Documents/wxy-z3-topological/scripts/projected_zigzag.jl:35
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/projected_zigzag.jl:34

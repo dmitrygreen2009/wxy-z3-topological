@@ -1,0 +1,37 @@
+ERROR: LoadError: In `isapprox(::ITensor, ::ITensor)`, the indices of the ITensors do not
+      match. The first ITensor has indices: 
+
+((dim=32|id=414|"Link,c=0,l=18")'', (dim=32|id=414|"Link,c=0,l=18")')
+
+but the second
+      ITensor has indices: 
+
+((dim=32|id=414|"Link,c=0,l=18")'', (dim=32|id=414|"Link,c=0,l=18"))
+Stacktrace:
+  [1] error(s::String)
+    @ Base ./error.jl:35
+  [2] isapprox(A::ITensor, B::ITensor; kwargs::@Kwargs{rtol::Float64})
+    @ ITensors /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/itensor.jl:1788
+  [3] isapprox
+    @ /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/itensor.jl:1786 [inlined]
+  [4] #ishermitian#264
+    @ /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/permutations.jl:103 [inlined]
+  [5] ishermitian
+    @ /private/tmp/wxy-julia-depot/packages/ITensors/rRwEF/src/tensor_operations/permutations.jl:102 [inlined]
+  [6] right_orthogonalize(ψ::InfiniteMPS; left_tags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, right_tags::ITensors.TagSets.GenericTagSet{BitIntegers.UInt256, 4}, tol::Float64, eager::Bool, ishermitian_kwargs::@NamedTuple{rtol::Float64})
+    @ ITensorInfiniteMPS /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/orthogonalize.jl:44
+  [7] right_orthogonalize
+    @ /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/orthogonalize.jl:4 [inlined]
+  [8] #left_orthogonalize#236
+    @ /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/orthogonalize.jl:106 [inlined]
+  [9] left_orthogonalize
+    @ /private/tmp/wxy-julia-depot/packages/ITensorInfiniteMPS/zxrMH/src/orthogonalize.jl:103 [inlined]
+ [10] canonicalize_left(AL::InfiniteMPS; tol::Float64)
+    @ Main ~/Documents/wxy-z3-topological/src/canonical_analysis.jl:8
+ [11] canonicalize_left(AL::InfiniteMPS)
+    @ Main ~/Documents/wxy-z3-topological/src/canonical_analysis.jl:3
+ [12] top-level scope
+    @ ~/Documents/wxy-z3-topological/scripts/recanonicalize_infinite.jl:16
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/recanonicalize_infinite.jl:3
+Norm of the imaginary part 0.11665738696997956 is larger than the tolerance value 1e-15. Keeping as complex.
+norm(v₁ᴿᴺ - swapinds(dag(v₁ᴿᴺ), reverse(Pair(inds(v₁ᴿᴺ)...)))) = 9.861690773197862e-15

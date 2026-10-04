@@ -1,10 +1,10 @@
 # A logging/checkpoint driver around the package's own VUMPS iteration.
 # Tensor contractions, environments, expansion, and eigensolves remain library code.
 function audited_vumps(H,psi;family,w,cap,maxiter=30,tol=1e-7,
-        solver_tol=x->1e-10,ordering="matter_first",tag="",seed=7103,audit=nothing)
+        solver_tol=x->1e-10,solver_tolerance_rule="fixed",ordering="matter_first",tag="",seed=7103,audit=nothing)
     n=18w
     audit===nothing && (audit=run_provenance(;seed,solver="ITensorInfiniteMPS VUMPS",
-        settings=Dict("tol"=>tol,"local_eigensolver_tolerance_at_initial_residual"=>solver_tol(tol),"multisite_update_algorithm"=>"sequential","time_step"=>"-Inf","subspace_expansion_cutoff"=>1e-10,"maxiter"=>maxiter),
+        settings=Dict("tol"=>tol,"local_eigensolver_tolerance_at_initial_residual"=>solver_tol(tol),"local_solver_tolerance_rule"=>solver_tolerance_rule,"multisite_update_algorithm"=>"sequential","time_step"=>"-Inf","subspace_expansion_cutoff"=>1e-10,"maxiter"=>maxiter),
         initialization="input canonical infinite MPS",conserved_quantum_numbers=hasqns(siteind(psi.AL,1)) ? ["total Sz"] : String[]))
     epsL=fill(tol,n);epsR=fill(tol,n)
     started=time();iterations=[]

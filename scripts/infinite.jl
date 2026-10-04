@@ -37,6 +37,9 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
     end
     r=Dict("family"=>family,"width"=>w,"chi"=>maxlinkdim(psi),"cap"=>cap,"iteration"=>iteration,"cell_spins"=>n,
         "energy_cell"=>real(sum(energies)),"entropy_bonds"=>entropies,"spatial_entropy"=>entropies[end],
+        "spatial_entropies_at_slice_cuts"=>[entropies[9w],entropies[end]],
+        "slice_cut_entropy_modulation"=>abs(entropies[9w]-entropies[end]),
+        "spatial_entropy_slice_mean"=>(entropies[9w]+entropies[end])/2,
         "mean_sz"=>real(sum(expect(psi,"Sz",j) for j=1:n)/n),"ordering_version"=>2,
         "mean_abs_splus"=>is_qn ? 0.0 : sum(abs(expect(psi,"S+",j)) for j=1:n)/n,
         "u1_conserving_ansatz"=>is_qn,"measurement_tag"=>tag,"infinite_ordering"=>ordering,
@@ -64,15 +67,22 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
     if isfile(audit_path)
         a=JSON3.read(read(audit_path,String),Dict{String,Any})
         r["audit"]=a;r["git_commit"]=a["git_commit"]
+        r["measurement_tensors_have_qns"]=is_qn
+        r["u1_conserving_ansatz"]=get(a,"optimization_u1_conserving_ansatz",is_qn)
         r["runtime_seconds"]=a["runtime_seconds"]+r["measurement_runtime_seconds"]
         r["solver_residual"]=a["canonical_solver_residual"]
+        if haskey(a,"source_spatial_entropy")
+            r["entropy_change_recanonicalization"]=r["spatial_entropy"]-a["source_spatial_entropy"]
+            r["energy_change_recanonicalization"]=r["energy_cell"]-a["source_energy_cell"]
+        end
     else
         r["git_commit"]=nothing
         r["historical_audit_gap"]="Original run predates launch provenance; measurement and legacy logs are preserved."
     end
-    sector=is_qn ? "Sz0" : "unrestricted"
+    sector=r["u1_conserving_ansatz"] ? "Sz0" : "unrestricted"
     Ly=round(r["physical_circumference"];digits=5)
-    final_path="results/checkpoints/infinite_$(family)_w$(w)_Ly$(Ly)_cell2_N$(n)_chi$(maxlinkdim(psi))_$(sector)_seed7103_v$(RUN_FORMAT_VERSION)$(tag)_stage$(iteration)_complete.jls"
+    measurement_seed=get(get(r,"audit",Dict()),"random_seed",7103)
+    final_path="results/checkpoints/infinite_$(family)_w$(w)_Ly$(Ly)_cell2_N$(n)_chi$(maxlinkdim(psi))_$(sector)_seed$(measurement_seed)_v$(RUN_FORMAT_VERSION)$(tag)_stage$(iteration)_complete.jls"
     manifest=save_checkpoint(final_path,psi,r)
     atomic_json(stem*".json",manifest)
     open("results/infinite_$(family)_w$(w)$(tag)_history.jsonl","a") do io;println(io,JSON3.write(r));end
@@ -97,11 +107,11 @@ function run_infinite(family,w,chi;ordering="matter_first",tag="")
         estimate_memory(psi,cap;label="$(family) infinite w$(w) expansion")
         psi=subspace_expansion(psi,H;cutoff=1e-9,maxdim=cap)
         psi=audited_vumps(H,psi;family,w,cap,ordering,tag,tol=1e-7,maxiter=30,
-            solver_tol=x->max(x/10,1e-10))
+            solver_tol=x->max(x/10,1e-10),solver_tolerance_rule="max(residual/10,1e-10)")
         measure_infinite(psi,H,family,w,cap,iteration;tag,ordering)
     end
     psi=audited_vumps(H,psi;family,w,cap=chi,ordering,tag,tol=1e-7,maxiter=40,
-        solver_tol=x->max(x/10,1e-10))
+        solver_tol=x->max(x/10,1e-10),solver_tolerance_rule="max(residual/10,1e-10)")
     measure_infinite(psi,H,family,w,chi,length(caps)+1;tag,ordering)
 end
 if abspath(PROGRAM_FILE)==@__FILE__

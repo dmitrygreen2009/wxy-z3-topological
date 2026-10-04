@@ -1,6 +1,6 @@
 {
   "interpretation": "Recorded log values, not reconstructed launch settings. Runtime excludes compilation, setup and measurements.",
-  "iteration_count": 874,
+  "iteration_count": 1441,
   "original_parent_commit": "80e59690c220e93b3241a9bf61d3eb1628da3956",
   "first_reproducible_source_commit": "5dfb1876638f8a38032c27f821174fc069849070",
   "limitations": [
@@ -10,11 +10,17 @@
     "New version-3 jobs record source fingerprints and launch metadata in checkpoint sidecars."
   ],
   "log_runtime_lower_bounds_seconds": {
+    "results/audit_driver_selfcontained.log": 3.190138167,
+    "results/audit_driver_tolerance_validation.log": 3.650771834,
     "results/audit_driver_validation_refined.log": 2.1160415,
     "results/batch.log": 780.444,
+    "results/extend_study.log": 6358.866,
     "results/extended_batch.log": 919.167,
-    "results/infinite_qn_continuation_audited_refined.log": 1321.588252579,
+    "results/infinite_armchair_warm_start.log": 4052.168443794,
+    "results/infinite_qn_continuation_audited_refined.log": 8074.484312123,
+    "results/multiple_seeds.log": 738.57,
     "results/ordered_batch.log": 927.942,
+    "results/projected_zigzag.log": 3870.462,
     "results/refined_batch.log": 1168.837,
     "results/resume_finite.log": 8113.624,
     "results/scaling_batch.log": 152.62599999999998,

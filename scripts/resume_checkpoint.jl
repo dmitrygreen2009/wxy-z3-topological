@@ -1,13 +1,16 @@
 include("cylinders.jl")
 include("continue.jl")
 include("infinite.jl")
-function newest_checkpoint(family,L,w)
+function newest_checkpoint(family,L,w;nup=nothing)
     candidates=[]
     for file in readdir("results/checkpoints";join=true)
         endswith(file,".json") || endswith(file,".json.previous") || continue
         meta=try JSON3.read(read(file,String),Dict{String,Any}) catch; continue end
         get(meta,"family",nothing)==family && get(meta,"length",nothing)==L && get(meta,"width",nothing)==w || continue
         get(meta,"kind",nothing)=="finite" || continue
+        neutral=cld(get(meta,"physical_spins",get(meta,"spins",0)),2)
+        requested=nup===nothing ? neutral : nup
+        get(meta,"nup",neutral)==requested || continue
         path=replace(file,".json"=>".jls");isfile(path) && push!(candidates,path)
     end
     for path in sort(candidates;by=mtime,rev=true)
@@ -23,16 +26,19 @@ function resume_checkpoint(path,target=nothing)
     if meta["kind"]=="infinite"
         ordering=meta["infinite_ordering"];tag=get(meta,"measurement_tag","")
         H=InfiniteSum{MPO}(infinite_opsum(family,w;ordering),siteinds(only,psi))
-        local_tol=get(get(meta,"solver_settings",Dict()),"local_eigensolver_tolerance_at_initial_residual",1e-10)
+        settings=get(meta,"solver_settings",Dict())
+        rule=get(settings,"local_solver_tolerance_rule","historical: use fixed 1e-10")
+        local_tol=min(get(settings,"local_eigensolver_tolerance_at_initial_residual",1e-10),1e-10)
+        local_solver=rule=="max(residual/10,1e-10)" ? (x->max(x/10,1e-10)) : (x->local_tol)
         psi=audited_vumps(H,psi;family,w,cap,maxiter=max(1,get(meta,"stage_maxiter",40)-meta["iteration"]),
-            tol=get(meta,"tol",1e-7),solver_tol=x->local_tol,ordering,tag)
+            tol=get(meta,"tol",1e-7),solver_tol=local_solver,solver_tolerance_rule=rule,ordering,tag)
         measure_infinite(psi,H,family,w,cap,meta["iteration"]+1;ordering,tag)
         target===nothing && return
         for nextcap in [32,64,128,256,512]
             cap<nextcap<=target || continue
             estimate_memory(psi,nextcap;label="$(family) infinite resumed w$(w) expansion")
             psi=subspace_expansion(psi,H;cutoff=1e-10,maxdim=nextcap)
-            psi=audited_vumps(H,psi;family,w,cap=nextcap,maxiter=40,tol=get(meta,"tol",1e-7),solver_tol=x->local_tol,ordering,tag)
+            psi=audited_vumps(H,psi;family,w,cap=nextcap,maxiter=40,tol=get(meta,"tol",1e-7),solver_tol=local_solver,solver_tolerance_rule=rule,ordering,tag)
             measure_infinite(psi,H,family,w,nextcap,100+nextcap;ordering,tag)
         end
         return
@@ -40,9 +46,10 @@ function resume_checkpoint(path,target=nothing)
     L=meta["length"];seed=get(meta,"random_seed",7103);ordering=meta["ordering"]
     lat=cylinder(family,L,w;ordering);H=MPO(lat.os,siteinds(psi))
     phase=string(get(meta,"stage",get(meta,"phase","resume")))
-    planned=occursin("refinement",phase) ? 6 : 8
+    settings=get(meta,"solver_settings",Dict())
+    planned=occursin("refinement",phase) ? 6 : get(settings,"sweeps_per_cap",get(settings,"stage_sweeps",get(settings,"sweeps_per_pass",8)))
     remaining=max(1,planned-get(meta,"sweep",0))
-    target===nothing && (target=get(get(meta,"solver_settings",Dict()),"target_chi",cap))
+    target===nothing && (target=get(settings,"target_chi",get(settings,"chi",cap)))
     audit=run_provenance(;seed,solver="ITensorMPS DMRG resume",settings=Dict("remaining_sweeps"=>remaining,"cutoff"=>get(meta,"cutoff",1e-11),"target_chi"=>target),
         initialization=path,conserved_quantum_numbers=["total Sz"])
     cutoff=get(meta,"cutoff",1e-11)

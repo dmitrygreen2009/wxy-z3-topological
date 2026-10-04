@@ -14,6 +14,8 @@ include("../src/cgs.jl")
     @test abs(inner(psi,u3)-1)<1e-11
     @test inner(psi',H,psi)≈inner(u',H,u) atol=1e-11
     projected,audit=cgs_project(psi,lat,p;maxdim=256,cutoff=1e-14)
+    audit["edge_exponents"]=p
+    @test audit["edge_exponents"]==p
     @test audit["purity_error"]<1e-11
     second,_=cgs_project(projected,lat,p;maxdim=256,cutoff=1e-14)
     @test abs(inner(second,projected))≈1 atol=1e-11

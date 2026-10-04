@@ -19,7 +19,7 @@ Use Julia 1.10.10 and the committed Project/Manifest. Python ED is independent.
 
 ```sh
 julia --project=. -e 'using Pkg; Pkg.instantiate()'
-python -m pip install -r requirements.txt
+python -m pip install -r requirements.lock.txt
 OPENBLAS_NUM_THREADS=1 python scripts/ed.py
 julia --project=. test/runtests.jl
 julia --project=. scripts/validate.jl
@@ -75,7 +75,7 @@ outside tracked scientific output. A new machine can run:
 ```sh
 julia --project=. -e 'using Pkg; Pkg.instantiate()'
 python -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m pip install -r requirements.lock.txt
 OPENBLAS_NUM_THREADS=1 .venv/bin/python scripts/ed.py
 julia --project=. test/runtests.jl
 julia --project=. test/entanglement.jl
@@ -182,3 +182,12 @@ scripts/cylinder_loops.jl RESULT.jls` and `scripts/check_finite.jl RESULT.jls`.
 initializations for zigzag width one through chi=512. This selected sector
 must be compared against unrestricted runs; no global optimality at other
 widths or lengths is assumed.
+
+Infinite entropy consistency can be audited independently with
+`julia --project=. test/infinite_entropy.jl` and
+`julia --project=. scripts/recanonicalize_infinite.jl RESULT.jls`.
+Recanonicalization uses the official transfer-fixed-point routines, records
+inherited variational errors, and skips nonunique dominant fixed points to
+preserve sector weights. It does not certify ground-state convergence.
+`python scripts/benchmark_number_sectors.py` scans all particle-number sectors
+of the small exact benchmarks, independently of the torus multiplicity test.

@@ -31,6 +31,6 @@ function cgs_project(psi,lat,p;charge=0,maxdim=256,cutoff=1e-12)
     weight>1e-14 || error("Requested CGS charge $charge has vanishing weight $weight")
     normalize!(projected)
     value=inner(projected,apply(gates,projected;cutoff,maxdim))/inner(projected,projected)
-    projected,Dict("charge"=>charge,"projection_weight"=>weight,"symmetry_expectation_real"=>real(value),
+    projected,Dict{String,Any}("charge"=>charge,"projection_weight"=>weight,"symmetry_expectation_real"=>real(value),
         "symmetry_expectation_imag"=>imag(value),"purity_error"=>abs(value-z),"cutoff"=>cutoff,"maxdim"=>maxdim)
 end

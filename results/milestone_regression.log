@@ -1,0 +1,6 @@
+Test Summary:                                   | Pass  Total     Time
+Exact CGS projector and Hamiltonian commutation |    5      5  1m16.3s
+Test Summary:                                                 | Pass  Total   Time
+Infinite Schmidt entropy from independently known fixed point |    4      4  18.8s
+Test Summary:                                                      | Pass  Total  Time
+Conserved-spin infinite entropy via measurement-only densification |    3      3  1.6s

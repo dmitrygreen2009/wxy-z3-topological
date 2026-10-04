@@ -86,3 +86,28 @@ for a ground-state entropy fit despite its small sweep drift and variance.
 Raw points and loop/variance diagnostics are retained in `seed_selection_audit.json`.
 This is finite microscopic evidence about solver state selection, not evidence
 establishing topological order.
+
+Further validation checkpoint: independent ED across every number sector confirms
+the global ground sectors [3], [5,6], and [9] for the star, pair, and torus.
+This scan does not estimate degeneracies; the separate block spectrum audit
+remains the multiplicity validation. Exact one-particle spectra on nine explicit
+geometries agree with the singular values implied by W†W=I to 3.22e-15.
+Neither observation establishes the interacting thermodynamic phase.
+
+The independent infinite fixed-point canonicalization pipeline passes analytic
+and QN entangled-state tests, including originally untagged, primed virtual
+indices. Measurement canonicalization preserves the optimized state and its
+solver residual. Zigzag width-one chi32 and chi64 yield full-state entropies
+0.9664895127 and 1.1224124645, and correlation lengths in axial slices
+2.7855843155 and 6.8977827251. The strong bond-dimension dependence precludes
+a converged finite-correlation-length claim. Leading transfer eigenvalues and
+canonicalization errors are saved in the fixedpoint JSON records.
+
+Exact local CGS projection supplies a better seed without replacing the
+microscopic Hamiltonian. Projected zigzag width-one chi512 results at L4, L6,
+and L10 have entropies 1.8713200977, 1.7446134177, and 2.1079932659. L4
+agrees with chi256 within 5.4e-7; L6 still has appreciable energy drift and
+L10 remains limited by truncation. These lengths cannot yet establish an
+asymptotic entropy. Both width-four L4 chi256 points completed, but truncation
+and refinement changes make them exploratory fit inputs only. Raw data and
+fits remain separate; fitted intercepts are not topological conclusions.

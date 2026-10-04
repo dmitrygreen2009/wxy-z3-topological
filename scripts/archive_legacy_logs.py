@@ -15,7 +15,7 @@ for path in sorted(root.glob('*.log')):
             step,chi,err,seconds=m.groups()
             rows.append(dict(log=str(path),line=line_no,solver='ITensorInfiniteMPS VUMPS',iteration=int(step),energy=None,bond_dimension=int(chi),truncation_error=None,canonical_residual=float(err),runtime_seconds=float(seconds)))
 with (root/'recorded_iterations.csv').open('w',newline='') as f:
-    writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+    writer=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator="\n");writer.writeheader();writer.writerows(rows)
 (root/'legacy_provenance_audit.json').write_text(json.dumps(dict(
     interpretation='Recorded log values, not reconstructed launch settings. Runtime excludes compilation, setup and measurements.',
     iteration_count=len(rows),

@@ -44,3 +44,12 @@ U^3=I, energy invariance under U, unit projected cycle expectation, and
 projector idempotence all pass without relaxing tolerances. The projector acts
 on physical spins using library gates and MPS sums; it does not replace H by
 an effective model.
+
+Infinite full-state entropy has an additional independent test. The analytic
+bond-two transfer channel has right fixed point diag(0.8,0.2). Official
+right/left canonicalization recovers its binary entropy, unit transfer scale,
+and consistent Schmidt centers (three tests pass at 1e-11). Completed WXY
+snapshots can be recanonicalized with `scripts/recanonicalize_infinite.jl`.
+This changes no variational state defined by AL and does not improve its inherited
+VUMPS residual. Snapshots with nonunique dominant fixed points are skipped,
+because choosing a new fixed point could change sector weights and entropy.

@@ -1,11 +1,12 @@
 isdefined(Main,:cylinder) || include("../src/model.jl")
 using Serialization
-function continue_cylinder(path,chi)
+function continue_cylinder(path,chi;cutoff=1e-11,noise_first=[1e-7,1e-8,0])
     meta=JSON3.read(read(replace(path,".jls"=>".json"),String),Dict{String,Any})
     family=meta["family"];L=meta["length"];w=meta["width"];seed=get(meta,"seed",7103)
+    Random.seed!(seed)
     started=time()
     audit=run_provenance(;seed,solver="ITensorMPS finite DMRG checkpoint continuation",
-        settings=Dict("passes"=>2,"sweeps_per_pass"=>8,"cutoff"=>1e-11,"krylovdim"=>12),
+        settings=Dict("passes"=>2,"sweeps_per_pass"=>8,"cutoff"=>cutoff,"noise_first_pass"=>noise_first,"krylovdim"=>12),
         initialization=path,conserved_quantum_numbers=["total Sz"])
     ordering=get(meta,"ordering","axial")
     lat=cylinder(family,L,w;ordering=get(meta,"ordering","axial"));psi=load_state(path)
@@ -13,9 +14,9 @@ function continue_cylinder(path,chi)
     records=meta["records"]
     estimate_memory(psi,chi;label="$(family) L$(L) w$(w) continuation")
     for pass=1:2
-        before=entropy_at(psi,lat.cut)[1];obs=finite_checkpoint_observer(lat;family,L,w,cap=chi,seed,stage="continuation_pass$(pass)",ordering,audit,cutoff=1e-11,noise=pass==1 ? [1e-7,1e-8,0] : 0)
-        e,psi=dmrg(H,psi;nsweeps=8,maxdim=chi,cutoff=1e-11,
-            noise=pass==1 ? [1e-7,1e-8,0] : 0,eigsolve_krylovdim=12,outputlevel=1,observer=obs)
+        before=entropy_at(psi,lat.cut)[1];obs=finite_checkpoint_observer(lat;family,L,w,cap=chi,seed,stage="continuation_pass$(pass)",ordering,audit,cutoff,noise=pass==1 ? noise_first : 0)
+        e,psi=dmrg(H,psi;nsweeps=8,maxdim=chi,cutoff,
+            noise=pass==1 ? noise_first : 0,eigsolve_krylovdim=12,outputlevel=1,observer=obs)
         S,p=entropy_at(psi,lat.cut)
         push!(records,Dict("cap"=>chi,"energy"=>e,"entropy"=>S,"maxlinkdim"=>maxlinkdim(psi),
             "schmidt_probabilities"=>p,"sweep_energies"=>energies(obs),"sweep_max_truncation_errors"=>truncerrors(obs),

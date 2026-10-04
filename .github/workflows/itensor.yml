@@ -2,7 +2,7 @@ name: Exact microscopic WXY validation
 on:
   workflow_dispatch:
   push:
-    paths: ['src/**', 'scripts/**', 'geometry/**', 'test/**', 'Project.toml', 'Manifest.toml', 'requirements.txt', '.github/workflows/itensor.yml']
+    paths: ['src/**', 'scripts/**', 'geometry/**', 'test/**', 'Project.toml', 'Manifest.toml', 'requirements.txt', 'requirements.lock.txt', '.github/workflows/itensor.yml']
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.14.0'
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements.lock.txt
       - run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
       - run: mkdir -p results
       - run: OPENBLAS_NUM_THREADS=1 python scripts/ed.py
@@ -27,7 +27,7 @@ jobs:
         run: OPENBLAS_NUM_THREADS=1 python scripts/torus_solver_audit.py
       - if: github.event_name == 'workflow_dispatch'
         run: python scripts/torus_gate.py
-      - run: julia --project=. -e 'include("test/runtests.jl"); include("test/entanglement.jl"); include("test/transfer.jl"); include("test/checkpoints.jl"); include("test/triplet.jl"); include("test/cgs_projection.jl")'
+      - run: julia --project=. -e 'include("test/runtests.jl"); include("test/entanglement.jl"); include("test/transfer.jl"); include("test/checkpoints.jl"); include("test/triplet.jl"); include("test/cgs_projection.jl"); include("test/infinite_entropy.jl")'
       - if: github.event_name == 'workflow_dispatch'
         run: julia --project=. test/audit_driver.jl
       - if: github.event_name == 'workflow_dispatch'

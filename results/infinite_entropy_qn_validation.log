@@ -1,0 +1,4 @@
+Test Summary:                                                 | Pass  Total   Time
+Infinite Schmidt entropy from independently known fixed point |    3      3  35.9s
+Test Summary:                                                      | Pass  Total  Time
+Conserved-spin infinite entropy via measurement-only densification |    3      3  7.0s
