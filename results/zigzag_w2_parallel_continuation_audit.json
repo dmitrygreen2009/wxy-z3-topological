@@ -1,0 +1,18 @@
+{
+  "source_result": "results/infinite_zigzag_w2_chi32_finite_seed_star_parallel.json",
+  "source_payload": "results/checkpoints/infinite_zigzag_w2_Ly3.4641_cell2_N36_chi16_unrestricted_seed7232_v3_finite_seed_star_parallel_stage1_complete.jls",
+  "source_sha256": "7d6e798d13ba7d2e5ce0661cd271a859b463421ea5ce68342cda4aaf8c0d3e61",
+  "cap": 32,
+  "actual_chi": 16,
+  "cell_slices": 2,
+  "energy_cell": -14.330911781734915,
+  "spatial_entropy_slice_mean": 0.5799938956539656,
+  "slice_cut_entropy_modulation": 0.0006073082390598561,
+  "xi_cells": 0.11767631054938556,
+  "xi_slices": 0.23535262109877111,
+  "canonical_error": 4.500929164793342e-05,
+  "solver_residual": 4.499832881365904e-05,
+  "local_achieved_residuals_recorded": false,
+  "converged_for_topological_fit": false,
+  "interpretation": "Official parallel branch reduces canonical residual, but exceeds fixed tolerance and lacks newer achieved-local-solve audit. Reused checkpoint then expanded bond space. No phase claim."
+}

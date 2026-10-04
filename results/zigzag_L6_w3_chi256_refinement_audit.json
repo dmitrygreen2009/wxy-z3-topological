@@ -1,0 +1,20 @@
+{
+  "source_result": "results/zigzag_L6_w3_chi256_star.json",
+  "source_result_sha256": "e69f46116d26dfaea6adec5e2d4940e7d8b1ebd3aed40c9275e82eba5b26b9f8",
+  "checkpoint_file": "results/checkpoints/zigzag_w3_Ly5.19615_L6_N165_chi256_Nup83_seed7103_v3_star_refined_complete.jls",
+  "checkpoint_sha256": "dd3fdaf1832e0b45b82e4c93728dcb41b8761b580f15452337edb5587f985ff7",
+  "physical_spins": 165,
+  "vertices": 36,
+  "family": "zigzag",
+  "width": 3,
+  "length": 6,
+  "cap": 256,
+  "energy": -66.46386091913702,
+  "full_state_spatial_entropy": 1.874589666840344,
+  "entropy_change_refinement": 0.0023419321984370356,
+  "last_sweep_energy_change": -0.00042748160751671094,
+  "maximum_last_sweep_truncation_error": 0.00037867873513702544,
+  "git_commit_of_calculation": "c474872d38af3ce6e20cd92e3ab9ec0372824c24",
+  "converged_for_topological_fit": false,
+  "interpretation": "Completed refinement from existing checkpoint; energy and full-state entropy preserved, convergence criteria not met. No numerical rerun."
+}

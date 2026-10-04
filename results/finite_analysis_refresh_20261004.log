@@ -1,0 +1,142 @@
+[
+  {
+    "family": "zigzag",
+    "ordering": "axial",
+    "length": 4,
+    "chi": 32,
+    "alpha": 0.2609796842366407,
+    "gamma_apparent": -0.3887070056508815,
+    "residual_rms": 0.077913595153416,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "zigzag",
+    "ordering": "axial",
+    "length": 4,
+    "chi": 64,
+    "alpha": 0.25170882535743366,
+    "gamma_apparent": -0.44987789545445317,
+    "residual_rms": 0.06187469375701039,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "zigzag",
+    "ordering": "axial",
+    "length": 4,
+    "chi": 128,
+    "alpha": 0.27622758968003397,
+    "gamma_apparent": -0.41346462738213824,
+    "residual_rms": 0.05828501961685041,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "zigzag",
+    "ordering": "star",
+    "length": 4,
+    "chi": 32,
+    "alpha": 0.08815660127084587,
+    "gamma_apparent": -0.8185460382409822,
+    "residual_rms": 0.12270738511784487,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "zigzag",
+    "ordering": "star",
+    "length": 4,
+    "chi": 64,
+    "alpha": 0.1350218593688878,
+    "gamma_apparent": -0.7534175197201715,
+    "residual_rms": 0.09978372519452396,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "zigzag",
+    "ordering": "star",
+    "length": 4,
+    "chi": 128,
+    "alpha": -0.038866591409435,
+    "gamma_apparent": -1.8585883161523888,
+    "residual_rms": 0.1128671029282326,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "zigzag",
+    "ordering": "star",
+    "length": 4,
+    "chi": 256,
+    "alpha": 0.005130687235373797,
+    "gamma_apparent": -1.7783621513632433,
+    "residual_rms": 0.11889405621413267,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "armchair",
+    "ordering": "axial",
+    "length": 4,
+    "chi": 32,
+    "alpha": 0.11379496698653793,
+    "gamma_apparent": -1.04033201162116,
+    "residual_rms": 0.10867287905603727,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "armchair",
+    "ordering": "axial",
+    "length": 4,
+    "chi": 64,
+    "alpha": 0.07235855825055257,
+    "gamma_apparent": -1.6335180927434583,
+    "residual_rms": 0.008837261968463366,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "armchair",
+    "ordering": "axial",
+    "length": 4,
+    "chi": 128,
+    "alpha": 0.060478009847565746,
+    "gamma_apparent": -1.941274895786257,
+    "residual_rms": 0.06618404038255749,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "armchair",
+    "ordering": "star",
+    "length": 4,
+    "chi": 32,
+    "alpha": 0.030767124758038063,
+    "gamma_apparent": -1.3484812100830084,
+    "residual_rms": 0.2444644441218878,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "armchair",
+    "ordering": "star",
+    "length": 4,
+    "chi": 64,
+    "alpha": 0.02900361762624624,
+    "gamma_apparent": -1.884854545619748,
+    "residual_rms": 0.061475108882807064,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "armchair",
+    "ordering": "star",
+    "length": 4,
+    "chi": 128,
+    "alpha": 0.10544055177406045,
+    "gamma_apparent": -1.777081808285794,
+    "residual_rms": 0.12980490862223187,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  },
+  {
+    "family": "armchair",
+    "ordering": "star",
+    "length": 4,
+    "chi": 256,
+    "alpha": 0.13235672921972666,
+    "gamma_apparent": -1.843542974820818,
+    "residual_rms": 0.08145780741134137,
+    "status": "Descriptive only: narrow circumference, unconverged chi, untested length and sectors"
+  }
+]
