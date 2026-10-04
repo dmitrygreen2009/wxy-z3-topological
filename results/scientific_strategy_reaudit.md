@@ -343,3 +343,17 @@ its failed log is preserved and is not scientific evidence. Existing WXY
 calculations contain the supported two-site exchange terms. Active original
 jobs continue unchanged; new continuations use the stronger achieved-residual
 audit. A converged local solve still does not certify the global ground state.
+
+
+Periods three and six now have explicit microscopic pair tables in the
+repository, with the historical two-slice default preserved. Independent
+embedded-coordinate checks pass for all 40 infinite tables. The generic
+factory passes 216 spin-incidence checks, 12 coherent-spin exchange-energy
+checks and nine analytic transfer-period tests. Seven end-to-end six-slice
+product-state measurement checks verify all six spatial cuts, energy per
+vertex, trial-bound normalization, transfer-length units and checkpoint names.
+The known product fixture is excluded from scientific fit input. Resume and
+recanonicalization use the saved state cell size, and number-background and
+initializer branches remain separate in analysis. Production calculations
+with larger periods remain necessary; implementation validation is not
+variational convergence or evidence of topological order.

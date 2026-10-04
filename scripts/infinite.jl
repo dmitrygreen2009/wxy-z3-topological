@@ -8,7 +8,9 @@ include("../src/transfer_analysis.jl")
 
 function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_first")
     measurement_started=time()
-    n=18w
+    n=length(psi.AL);@assert n%(9w)==0
+    cell_slices=n÷(9w)
+    slice_cuts=collect(9w:9w:n)
     stem="results/infinite_$(family)_w$(w)_chi$(cap)"*tag
     energies=expect(psi,H)
     # Densify only for measuring all transfer charge sectors, not optimizing.
@@ -38,17 +40,17 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
     sz_profile=[real(expect(psi,"Sz",j)) for j=1:n]
     r=Dict("family"=>family,"width"=>w,"chi"=>maxlinkdim(psi),"cap"=>cap,"iteration"=>iteration,"cell_spins"=>n,
         "energy_cell"=>real(sum(energies)),"entropy_bonds"=>entropies,"spatial_entropy"=>entropies[end],
-        "spatial_entropies_at_slice_cuts"=>[entropies[9w],entropies[end]],
-        "slice_cut_entropy_modulation"=>abs(entropies[9w]-entropies[end]),
-        "spatial_entropy_slice_mean"=>(entropies[9w]+entropies[end])/2,
+        "spatial_entropies_at_slice_cuts"=>entropies[slice_cuts],
+        "slice_cut_entropy_modulation"=>maximum(entropies[slice_cuts])-minimum(entropies[slice_cuts]),
+        "spatial_entropy_slice_mean"=>sum(entropies[slice_cuts])/cell_slices,
         "mean_sz"=>sum(sz_profile)/n,"site_sz_profile_infinite_order"=>sz_profile,"ordering_version"=>2,
         "mean_abs_splus"=>is_qn ? 0.0 : sum(abs(expect(psi,"S+",j)) for j=1:n)/n,
         "u1_conserving_ansatz"=>is_qn,"measurement_tag"=>tag,"infinite_ordering"=>ordering,
         "transfer_converged_eigenpairs"=>spectrum["converged"],"transfer_eigenvalue_magnitudes"=>abs.(vals),
         "transfer_eigenvalues_real"=>real.(vals),"transfer_eigenvalues_imag"=>imag.(vals),
-        "xi_cells"=>isfinite(xi) ? xi : "Inf","xi_slices"=>isfinite(xi) ? 2xi : "Inf",
-        "xi_physical_axial"=>isfinite(xi) ? 2xi*(family=="zigzag" ? 1.5 : sqrt(3)/2) : "Inf",
-        "correlation_length_units"=>"Cells have two spatial slices; physical axial lengths use nearest-neighbor honeycomb distance one",
+        "xi_cells"=>isfinite(xi) ? xi : "Inf","xi_slices"=>isfinite(xi) ? cell_slices*xi : "Inf",
+        "xi_physical_axial"=>isfinite(xi) ? cell_slices*xi*(family=="zigzag" ? 1.5 : sqrt(3)/2) : "Inf",
+        "correlation_length_units"=>"Cell size is recorded in cell_slices; physical axial lengths use nearest-neighbor honeycomb distance one",
         "transfer_residuals"=>spectrum["residuals"],
         "fixed_point_rank_detected"=>spectrum["fixed_point_rank_detected"],
         "fixed_point_gram_eigenvalues"=>spectrum["fixed_point_gram_eigenvalues"],
@@ -63,22 +65,23 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
     # Species-one Bell dimers use leg one on A and leg two on B,
     # all distinct physical gauges. Each contributes -1/sqrt(3), all
     # other exchanges average to zero, and half filling is possible.
-    r["disjoint_dimer_variational_upper_bound_cell"]=-4w/sqrt(3)
+    r["disjoint_dimer_variational_upper_bound_cell"]=-2cell_slices*w/sqrt(3)
     # Alternatively every A star and its three physical gauges form a
     # disjoint validated six-spin cluster. Fixed-number B matter gives
     # zero mean to the remaining exchanges. Round the trial bound upward.
-    r["isolated_A_star_variational_upper_bound_cell"]=-4.8061842w
-    r["energy_above_known_trial_state"]=r["energy_cell"]>-4.8061842w+1e-9
+    r["isolated_A_star_variational_upper_bound_cell"]=-2.4030921cell_slices*w
+    r["energy_above_known_trial_state"]=r["energy_cell"]>-2.4030921cell_slices*w+1e-9
     r["variational_bound_interpretation"]="Energy above the explicit trial state excludes a ground-state candidate irrespective of projected solver residual; satisfying this bound does not certify convergence."
     r["kind"]="infinite"
-    r["translation_period_restriction"]="two axial slices"
+    r["validation_fixture"]=occursin("_measurement_validation",tag)
+    r["translation_period_restriction"]="$(cell_slices) axial slices"
     r["topological_flux_or_MES_identified"]=false
     r["number_background"]=infinite_number_background(psi)
     r["bulk_ground_filling_certified"]=false
     r["physical_bulk_gap_certified"]=false
     r["fixed_point_detection_scope"]="Detected multiplicity is a lower bound from two independent starts, not a complete peripheral-spectrum certificate."
     r["physical_circumference"]=family=="zigzag" ? sqrt(3)*w : 3.0w
-    r["cell_slices"]=2;r["physical_spins"]=n;r["energy_per_vertex"]=r["energy_cell"]/(4w)
+    r["cell_slices"]=cell_slices;r["physical_spins"]=n;r["energy_per_vertex"]=r["energy_cell"]/(2cell_slices*w)
     r["measurement_runtime_seconds"]=time()-measurement_started
     audit_path=stem*"_solver_audit.json"
     if isfile(audit_path)
@@ -105,7 +108,7 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
     sector=r["number_background"]["label"]
     Ly=round(r["physical_circumference"];digits=5)
     measurement_seed=get(get(r,"audit",Dict()),"random_seed",7103)
-    final_path="results/checkpoints/infinite_$(family)_w$(w)_Ly$(Ly)_cell2_N$(n)_chi$(maxlinkdim(psi))_$(sector)_seed$(measurement_seed)_v$(RUN_FORMAT_VERSION)$(tag)_stage$(iteration)_complete.jls"
+    final_path="results/checkpoints/infinite_$(family)_w$(w)_Ly$(Ly)_cell$(cell_slices)_N$(n)_chi$(maxlinkdim(psi))_$(sector)_seed$(measurement_seed)_v$(RUN_FORMAT_VERSION)$(tag)_stage$(iteration)_complete.jls"
     manifest=save_checkpoint(final_path,psi,r)
     atomic_json(stem*".json",manifest)
     open("results/infinite_$(family)_w$(w)$(tag)_history.jsonl","a") do io;println(io,JSON3.write(r));end

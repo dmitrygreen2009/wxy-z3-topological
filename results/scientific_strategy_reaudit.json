@@ -14,7 +14,10 @@
     "Z3_topological_order_excluded": "not established",
     "2D_gaplessness": "not established",
     "physical_U1_order": "not established",
-    "one_unrestricted_variational_ansatz_breaks_physical_U1": "Measured nonzero CGS-invariant charge-three matter expectation; no thermodynamic ground-state order certificate."
+    "one_unrestricted_variational_ansatz_breaks_physical_U1": "Measured nonzero CGS-invariant charge-three matter expectation; no thermodynamic ground-state order certificate.",
+    "half_filled_symmetry_preserving_D_Z3": "Conditionally incompatible with ordinary nonpermuting background-anyon U1 SET constraints; actual filling and symmetry are unresolved.",
+    "two_slice_cell_exhausts_MES": "Not established: a three-sector translation cycle may require a larger cell.",
+    "local_requested_eigensolver_tol_is_achieved": "Not inferred: new continuations save true residuals and ConvergenceInfo."
   },
   "concrete_findings": [
     "Width-one parallel cycles have circumference winding, despite local support on the quotient",
@@ -23,17 +26,21 @@
     "Charged input alias inherited an unrelated source checksum; metadata corrected, physical payload unchanged",
     "Legacy finite-to-infinite cache origin fingerprints are incomplete; future caches are fingerprinted",
     "Plotting had still joined distinct initializer/number branches after the numerical analysis separated them; corrected plot grouping without recomputing states.",
-    "Finite summaries omitted completed number-scan candidates because their metadata were nested inside each record. A shared record reader now includes those candidates and their PH-transformed states."
+    "Finite summaries omitted completed number-scan candidates because their metadata were nested inside each record. A shared record reader now includes those candidates and their PH-transformed states.",
+    "Original width-one QN leading subdominant transfer modes carry physical number differences -1 and +1; neutral winding correlators follow a shorter mode.",
+    "Completed armchair Nup31/33 and neutral candidates differ in approximate circumference charges and central density; short unconverged comparisons do not isolate bulk filling.",
+    "An armchair QN cap16 state is excluded as a sector ground candidate by a compatible explicit trial upper bound; its tiny canonical residual is insufficient.",
+    "Additional periods 3 and 6 are implemented without changing default period 2; 216 incidence checks, 12 coherent-state energy checks, and 9 transfer-unit checks pass."
   ],
   "geometry_counts": {
     "finite": 41,
-    "infinite": 16,
+    "infinite": 40,
     "circumference_cycles": 221
   },
   "accepted_topological_fits": [],
   "report": "results/scientific_strategy_reaudit.md",
   "evidence_sha256": {
-    "results/strategy_geometry_audit.json": "aced4d970fdba044efa9009861875518714381241c17372218114ebea210ca9b",
+    "results/strategy_geometry_audit.json": "3bffc3faef5c926480892570d35a19ccdc167a32492c072529b882d16a089e08",
     "results/cgs_general_audit.json": "da60ff842d31d63f3dae7245042339dc7060b8847a75be600880de664ae5d746",
     "results/torus_hard_gate_audit.md": "298be88dc5af3b26db861bfcb348a3d54e2518da6b93a038b26ce222049a1a67",
     "results/number_sector_cylinder_audit.md": "cfb667c4fb1021bd896c6372384a23fee673b254fff833c0a0030779668ed31c",
@@ -41,8 +48,12 @@
     "results/zigzag_L4_w1_chi256_star_projected1_seed7214.json": "ce8490ca6cb65e41180b6733a3a704c14ab0342a68df688c9f1534fd9a2c0b6a",
     "results/zigzag_L4_w1_chi256_star_projected1_seed7214_loops.json": "6b87d83a978074d0d45ea950a027a886a64c846714576d351307a36c0358bd06",
     "results/zigzag_L4_w2_chi256_star_circumference_cycles.json": "2aad476ae436c8744f1fdb0ebaee0227ef94bac12514e204a2dbfa367b3e74d4",
-    "results/armchair_L4_w2_chi256_star_circumference_cycles.json": "c6d2d582677d7b1c7016cc3fb53a98b7e6352b7838a0af52e9ef9048dd332641"
+    "results/armchair_L4_w2_chi256_star_circumference_cycles.json": "c6d2d582677d7b1c7016cc3fb53a98b7e6352b7838a0af52e9ef9048dd332641",
+    "results/primitive_filling_audit.json": "f201f671df4eb1682b0061fb02df92a3852a22a70c263a31499260f87707da99",
+    "results/transfer_operator_coupling_audit.json": "3ed6ab701c85dac86f55d20fa8b91346baa6d6eca6160c18af7465ddc27687bb",
+    "results/armchair_L4_w2_number_and_cycle_audit.json": "576fc12ecd77225895e553f1452abd17211571d3364e8328515e5d1b9729784e",
+    "results/armchair_qn_initializer_trapping_audit.json": "b4129f61199a0dee9e74184e0c95bfe8d04ce484ff586f5a782175439a4faa2e"
   },
-  "geometry_metadata_followup": "Explicit physical axial offsets distinguish actual coordinates from the legacy ordering proxy. All 41 finite partitions and 16 infinite incidence tables remain unchanged and pass static checks. No numerical optimization or benchmark was repeated.",
+  "geometry_metadata_followup": "41 finite physical-cut and 40 infinite incidence records statically checked; includes new periods 3 and 6. Default period-two interactions and existing optimizations unchanged.",
   "contractible_cycle_definitions": "geometry/cgs_plaquettes"
 }

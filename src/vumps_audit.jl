@@ -5,7 +5,8 @@ include("local_eigenpair_audit.jl")
 function audited_vumps(H,psi;family,w,cap,maxiter=30,tol=1e-7,
         solver_tol=x->1e-10,solver_tolerance_rule="fixed",ordering="matter_first",tag="",seed=7103,audit=nothing,update_algorithm="sequential")
     @assert update_algorithm in ["sequential","parallel"]
-    n=18w
+    n=length(psi.AL);@assert n%(9w)==0
+    cell_slices=n÷(9w)
     audit===nothing && (audit=run_provenance(;seed,solver="ITensorInfiniteMPS VUMPS",
         settings=Dict("tol"=>tol,"local_eigensolver_tolerance_at_initial_residual"=>solver_tol(tol),"local_solver_tolerance_rule"=>solver_tolerance_rule,"multisite_update_algorithm"=>"sequential","time_step"=>"-Inf","subspace_expansion_cutoff"=>1e-10,"maxiter"=>maxiter),
         initialization="input canonical infinite MPS",conserved_quantum_numbers=hasqns(siteind(psi.AL,1)) ? ["total Sz"] : String[]))
@@ -16,7 +17,7 @@ function audited_vumps(H,psi;family,w,cap,maxiter=30,tol=1e-7,
     base="results/infinite_$(family)_w$(w)_chi$(cap)$(tag)"
     number_background=infinite_number_background(psi);audit["number_background"]=number_background
     sector=number_background["label"]
-    checkpoint="results/checkpoints/infinite_$(family)_w$(w)_cell2_N$(n)_chi$(cap)_$(sector)_seed$(seed)_v$(RUN_FORMAT_VERSION)$(tag)_latest.jls"
+    checkpoint="results/checkpoints/infinite_$(family)_w$(w)_cell$(cell_slices)_N$(n)_chi$(cap)_$(sector)_seed$(seed)_v$(RUN_FORMAT_VERSION)$(tag)_latest.jls"
     audit["local_solver_evidence"]="Library ConvergenceInfo and independently evaluated normalized eigenpair residuals; prior records without these fields remain unaudited locally."
     for iteration=1:maxiter
         requested_local_tolerance=solver_tol(max(maximum(epsL),maximum(epsR)))
@@ -47,7 +48,7 @@ function audited_vumps(H,psi;family,w,cap,maxiter=30,tol=1e-7,
         if iseven(iteration) || (residual<tol && local_passed) || iteration==maxiter
             metadata=merge(copy(audit),Dict("kind"=>"infinite","family"=>family,"width"=>w,
                 "physical_circumference"=>family=="zigzag" ? sqrt(3)*w : 3.0w,
-                "cell_slices"=>2,"cell_spins"=>n,"cap"=>cap,"bond_dimension"=>maxlinkdim(psi),
+                "cell_slices"=>cell_slices,"cell_spins"=>n,"cap"=>cap,"bond_dimension"=>maxlinkdim(psi),
                 "infinite_ordering"=>ordering,"measurement_tag"=>tag,"iteration"=>iteration,
                 "stage_maxiter"=>maxiter,"tol"=>tol,"canonical_solver_residual"=>residual,
                 "runtime_seconds"=>time()-started,"iterations"=>iterations,

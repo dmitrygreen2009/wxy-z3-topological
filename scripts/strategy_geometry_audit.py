@@ -64,8 +64,8 @@ def decode(index,w,ordering):
     j,r=divmod(k-6*w-1,3);return ('gauge',t+(r==2),j,[1,3,2][r])
 infinite=[]
 for path in sorted(pathlib.Path('geometry').glob('infinite_*_w*.json')):
-    table=json.loads(path.read_text());family=table['family'];w=table['width'];ordering=table['ordering'];n=18*w
-    assert table['cell_spins']==n and len(table['pairs'])==36*w
+    table=json.loads(path.read_text());family=table['family'];w=table['width'];ordering=table['ordering'];slices=table.get('cell_slices',2);n=9*w*slices
+    assert table['cell_spins']==n and len(table['pairs'])==18*w*slices
     signatures=collections.Counter()
     for pair in table['pairs']:
         m=decode(pair['m'],w,ordering);g=decode(pair['g'],w,ordering)
@@ -74,15 +74,15 @@ for path in sorted(pathlib.Path('geometry').glob('infinite_*_w*.json')):
         if s=='B':x+=pair['i']==2;y+=pair['i']==3
         at,aj=(x,y%w) if family=='zigzag' else (x-y,y%w)
         assert g[1:]==(at,aj,pair['i'])
-        signatures[(t%2,j,s,a,pair['i'])]+=1
-    assert len(signatures)==36*w and set(signatures.values())=={1}
-    for boundary in [9*w,18*w]:
+        signatures[(t%slices,j,s,a,pair['i'])]+=1
+    assert len(signatures)==18*w*slices and set(signatures.values())=={1}
+    for boundary in range(9*w,n+1,9*w):
         for index in range(-n+1,2*n+1):
             spin=decode(index,w,ordering)
             if spin[0]=='matter':u6=6*spin[1]+(2 if family=='zigzag' and spin[3]=='B' else 0)
             else:u6=6*spin[1]+({1:1,2:-2,3:1} if family=='zigzag' else {1:0,2:-3,3:3})[spin[3]]
             assert (index<=boundary)==(u6<6*(boundary//(9*w)))
-    infinite.append(dict(file=str(path),family=family,width=w,ordering=ordering,incidence_passed=True,spatial_slice_cuts_passed=True))
+    infinite.append(dict(file=str(path),family=family,width=w,ordering=ordering,cell_slices=slices,incidence_passed=True,spatial_slice_cuts_passed=True))
 output=dict(finite_geometry_checks=reports,infinite_geometry_checks=infinite,
     interpretation='Static coordinate, edge-identification, spatial-cut and winding audit. No validated numerical calculation was rerun.',
     audit=provenance(None,'Independent embedded-geometry and homology audit',{},'Committed machine-readable physical lattice definitions',[]))

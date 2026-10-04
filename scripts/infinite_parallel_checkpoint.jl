@@ -6,7 +6,7 @@ for path in ARGS
     tag=replace(get(meta,"measurement_tag",""),"_fixedpoint"=>"")*"_parallel"
     seed=7232;Random.seed!(seed)
     estimate_memory(psi,cap;label="Parallel VUMPS continuation from immutable checkpoint")
-    H=InfiniteSum{MPO}(infinite_opsum(family,w;ordering),siteinds(only,psi))
+    H=InfiniteSum{MPO}(infinite_opsum(family,w;ordering,cell_slices=length(psi.AL)÷(9w)),siteinds(only,psi))
     audit=run_provenance(seed=seed,solver="Official ITensorInfiniteMPS parallel VUMPS continuation",
         settings=Dict("tol"=>1e-7,"maxiter"=>40,"local_eigensolver_tolerance"=>1e-10,"multisite_update_algorithm"=>"parallel","bond_dimension_expanded"=>false),
         initialization=actual,conserved_quantum_numbers=hasqns(siteind(psi.AL,1)) ? ["U1 mean physical density"] : String[])

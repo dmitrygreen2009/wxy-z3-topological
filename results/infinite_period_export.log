@@ -1,0 +1,9 @@
+ERROR: LoadError: ParseError:
+# Error @ /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/export_infinite_periods.jl:9:59
+ "spatial_slice_cut_bonds"=>collect(9w:9w:n),"primitive_vertices_per_cell"=>2w*slices,
+ "physical_circumference"=>family=="zigzag" ? sqrt(3)*w : 3.w,
+#                                                         └┘ ── numeric constant cannot be implicitly multiplied because it ends with `.`
+Stacktrace:
+ [1] top-level scope
+   @ ~/Documents/wxy-z3-topological/scripts/export_infinite_periods.jl:9
+in expression starting at /Users/dmitrygreen/Documents/wxy-z3-topological/scripts/export_infinite_periods.jl:9

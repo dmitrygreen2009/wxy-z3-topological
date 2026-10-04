@@ -6,7 +6,7 @@ for path in ARGS
     psi=load_state(path);family=meta["family"];w=meta["width"];cap=meta["cap"]
     tag=get(meta,"measurement_tag","")*"_fixedpoint";ordering=get(meta,"infinite_ordering","matter_first")
     Random.seed!(7114)
-    A=hasqns(siteind(psi.AL,1)) ? InfiniteMPS([dense(psi.AL[j]) for j=1:18w],translator(psi.AL)) : psi.AL
+    A=hasqns(siteind(psi.AL,1)) ? InfiniteMPS([dense(psi.AL[j]) for j=1:length(psi.AL)],translator(psi.AL)) : psi.AL
     spectrum=transfer_spectrum(A)
     if spectrum["fixed_point_rank_detected"]!=1
         atomic_json("results/infinite_$(family)_w$(w)_chi$(cap)$(tag)_ambiguity.json",
@@ -30,7 +30,7 @@ for path in ARGS
     audit["runtime_seconds"]=time()-started
     audit["interpretation"]="No variational improvement. Recanonicalize the same AL state; inherited VUMPS residual still controls variational convergence. Nonunique fixed points are skipped to avoid changing sector weights."
     atomic_json("results/infinite_$(family)_w$(w)_chi$(cap)$(tag)_solver_audit.json",audit)
-    H=InfiniteSum{MPO}(infinite_opsum(family,w;ordering),siteinds(only,canonical))
+    H=InfiniteSum{MPO}(infinite_opsum(family,w;ordering,cell_slices=length(canonical.AL)÷(9w)),siteinds(only,canonical))
     @assert open(io->bytes2hex(sha256(io)),actual)==source_sha "Source checkpoint changed during canonicalization"
     measure_infinite(canonical,H,family,w,cap,meta["iteration"];tag,ordering)
 end

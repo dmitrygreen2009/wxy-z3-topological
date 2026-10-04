@@ -381,3 +381,18 @@ julia --project=. scripts/infinite_transfer_charge_audit.jl RESULT.jls
 The dense eigenvector basis is matched to the original site and bond QN labels.
 Degenerate vectors may mix charge blocks, so the output saves all weights.
 This identifies U1 transfer channels, not microscopic CGS charges or a gap.
+
+
+Infinite unit cells now support an explicit `cell_slices` parameter; the
+historical default remains two. The checked three- and six-slice definitions
+are saved in `geometry/infinite_*_cell{3,6}_*.json`, regenerated with
+`julia --project=. scripts/export_infinite_periods.jl`. They use individual
+physical spin sites and the same exact endpoint exchange coefficients.
+For example, a separate six-slice density-4/9 armchair width-two candidate is
+`julia --project=. scripts/infinite_random_cell.jl armchair 2 48 64 6 parallel`.
+This command starts a new branch; existing two-slice checkpoints are preserved.
+Local solver residuals are audited, and larger cells have unique tags and
+checkpoint names. Mean slice entropy is descriptive: inspect every cut and
+modulation before fitting. Transfer lengths in slices equal `cell_slices`
+times the cell transfer length; energy per vertex uses `2*w*cell_slices`.
+These alternatives have not yet supplied a converged 2D phase diagnosis.

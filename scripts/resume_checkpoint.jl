@@ -25,20 +25,21 @@ function resume_checkpoint(path,target=nothing)
     family=meta["family"];w=meta["width"];cap=meta["cap"]
     if meta["kind"]=="infinite"
         ordering=meta["infinite_ordering"];tag=get(meta,"measurement_tag","")
-        H=InfiniteSum{MPO}(infinite_opsum(family,w;ordering),siteinds(only,psi))
+        H=InfiniteSum{MPO}(infinite_opsum(family,w;ordering,cell_slices=length(psi.AL)÷(9w)),siteinds(only,psi))
         settings=get(meta,"solver_settings",Dict())
         rule=get(settings,"local_solver_tolerance_rule","historical: use fixed 1e-10")
+        algorithm=get(settings,"multisite_update_algorithm","sequential")
         local_tol=min(get(settings,"local_eigensolver_tolerance_at_initial_residual",1e-10),1e-10)
         local_solver=rule=="max(residual/10,1e-10)" ? (x->max(x/10,1e-10)) : (x->local_tol)
         psi=audited_vumps(H,psi;family,w,cap,maxiter=max(1,get(meta,"stage_maxiter",40)-meta["iteration"]),
-            tol=get(meta,"tol",1e-7),solver_tol=local_solver,solver_tolerance_rule=rule,ordering,tag)
+            tol=get(meta,"tol",1e-7),solver_tol=local_solver,solver_tolerance_rule=rule,ordering,tag,update_algorithm=algorithm)
         measure_infinite(psi,H,family,w,cap,meta["iteration"]+1;ordering,tag)
         target===nothing && return
-        for nextcap in [32,64,128,256,512]
+        for nextcap in [16,32,64,128,256,512]
             cap<nextcap<=target || continue
             estimate_memory(psi,nextcap;label="$(family) infinite resumed w$(w) expansion")
             psi=subspace_expansion(psi,H;cutoff=1e-10,maxdim=nextcap)
-            psi=audited_vumps(H,psi;family,w,cap=nextcap,maxiter=40,tol=get(meta,"tol",1e-7),solver_tol=local_solver,solver_tolerance_rule=rule,ordering,tag)
+            psi=audited_vumps(H,psi;family,w,cap=nextcap,maxiter=40,tol=get(meta,"tol",1e-7),solver_tol=local_solver,solver_tolerance_rule=rule,ordering,tag,update_algorithm=algorithm)
             measure_infinite(psi,H,family,w,nextcap,100+nextcap;ordering,tag)
         end
         return

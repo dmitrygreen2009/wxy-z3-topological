@@ -15,7 +15,7 @@ sites=siteinds(only,psi);w=meta["width"];records=[]
 for (k,first) in enumerate([1,6])
     onepoint=complex(old["matter_triplet_expectations_real"][k],old["matter_triplet_expectations_imag"][k])
     for cells in [1,2,4,8]
-        raw=expect(psi,infinite_triplet_pair_mpo(sites,first,first+18w*cells))
+        raw=expect(psi,infinite_triplet_pair_mpo(sites,first,first+length(psi.AL)*cells))
         connected=raw-abs2(onepoint)
         push!(records,Dict("first_matter_site"=>first,"distance_cells"=>cells,
             "one_point_real"=>real(onepoint),"one_point_imag"=>imag(onepoint),
@@ -24,7 +24,7 @@ for (k,first) in enumerate([1,6])
     end
 end
 actual=resolve_checkpoint(path)
-result=Dict("family"=>meta["family"],"width"=>w,"source_checkpoint"=>actual,
+result=Dict("family"=>meta["family"],"width"=>w,"cell_slices"=>length(psi.AL)÷(9w),"source_checkpoint"=>actual,
     "source_payload_sha256"=>open(io->bytes2hex(sha256(io)),actual),
     "previous_one_point_data"=>onepoint_path,
     "previous_one_point_payload_fingerprint_available"=>haskey(old,"source_payload_sha256"),"previous_one_point_sha256"=>bytes2hex(sha256(read(onepoint_path))),
