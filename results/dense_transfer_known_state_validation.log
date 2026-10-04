@@ -1,0 +1,18 @@
+┌ Warning: Invariant subspace of dimension 3 (up to requested tolerance `tol = 1.0e-12`), which is smaller than the number of requested eigenvalues (i.e. `howmany == 4`).
+└ @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/arnoldi.jl:384
+┌ Warning: Arnoldi eigsolve stopped without convergence after 1 iterations:
+│ * 3 eigenvalues converged
+│ * norm of residuals = (1.26e-16, 9.55e-17, 1.92e-17)
+│ * number of operations = 3
+└ @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/arnoldi.jl:172
+┌ Warning: Invariant subspace of dimension 2 (up to requested tolerance `tol = 1.0e-12`), which is smaller than the number of requested eigenvalues (i.e. `howmany == 4`).
+└ @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/arnoldi.jl:384
+┌ Warning: Arnoldi eigsolve stopped without convergence after 1 iterations:
+│ * 2 eigenvalues converged
+│ * norm of residuals = (9.44e-18, 1.70e-17)
+│ * number of operations = 2
+└ @ KrylovKit /private/tmp/wxy-julia-depot/packages/KrylovKit/bEE7W/src/eigsolve/arnoldi.jl:172
+Test Summary:                                 | Pass  Total   Time
+Analytically known infinite transfer spectrum |    5      5  54.9s
+Test Summary:                                           | Pass  Total  Time
+Degenerate fixed points are not hidden by scalar Krylov |    4      4  7.7s

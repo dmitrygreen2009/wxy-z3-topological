@@ -16,6 +16,11 @@ allowed=[Fraction(i,3) for i in range(3)]
 assert all((3*q)%1==0 for q in allowed)
 assert Fraction(1,2) not in allowed
 assert 9*Fraction(4,9)==4 and 9*Fraction(5,9)==5
-r={'validation':'passed','primitive_physical_spins':9,'half_filling_per_cell':'9/2','D_Z3_allowed_U1_fractional_charges':[str(q) for q in allowed],'conditional_half_filling_incompatibility':True,'assumptions':['gapped phase','unbroken physical U1','unbroken primitive translations','ordinary nonpermuting background-anyon SET formulation'],'phase_conclusion':'No unconditional conclusion about the microscopic ground state.','numerical_calculations_repeated':False}
+density_grid=[Fraction(k,27) for k in range(28)]
+nearest=sorted(density_grid,key=lambda q:abs(q-Fraction(1,2)))[:2]
+assert set(nearest)=={Fraction(13,27),Fraction(14,27)}
+assert Fraction(1,2) not in density_grid
+cell_access=[dict(width=w,cell_slices=s,physical_spins=9*w*s,density=str(q),target_number=str(9*w*s*q),integral_cell_product_initializer=(9*w*s*q).denominator==1) for w in range(1,5) for s in [2,3,6] for q in nearest]
+r={'validation':'passed','primitive_physical_spins':9,'half_filling_per_cell':'9/2','D_Z3_allowed_U1_fractional_charges':[str(q) for q in allowed],'conditional_half_filling_incompatibility':True,'assumptions':['gapped phase','unbroken physical U1','unbroken primitive translations','ordinary nonpermuting background-anyon SET formulation'],'phase_conclusion':'No unconditional conclusion about the microscopic ground state.','ordinary_D_Z3_symmetric_gapped_density_grid':[str(q) for q in density_grid],'closest_allowed_densities_to_half_filling':[str(q) for q in nearest],'cell_product_initializer_accessibility':cell_access,'numerical_calculations_repeated':False}
 (p/'results/primitive_filling_audit.json').write_text(json.dumps(r,indent=2)+'\n')
 print('Primitive geometry, filling and order-three charge arithmetic: passed')

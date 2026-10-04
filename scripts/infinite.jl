@@ -21,10 +21,11 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
     spectrum=transfer_spectrum(A)
     vals=spectrum["values"];xi=spectrum["xi_cells"]
     ratios=abs.(vals./vals[1])
-    entropies=[]
+    entropies=[];slice_spectra=[]
     for j=1:n
         p=abs2.(svdvals(Array(psi.C[j],inds(psi.C[j])...)));p./=sum(p)
         push!(entropies,-sum(x>0 ? x*log(x) : 0.0 for x in p))
+        j in slice_cuts && push!(slice_spectra,Dict("bond"=>j,"schmidt_probabilities"=>sort(p;rev=true),"rank_at_probability_threshold_1e-12"=>count(x->x>1e-12,p),"allocated_center_dimensions"=>dim.(inds(psi.C[j]))))
     end
     raw_errors=[];phase_errors=[];left_isometry_errors=[];right_isometry_errors=[];center_norm_errors=[]
     for j=1:n
@@ -38,9 +39,9 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
         push!(center_norm_errors,abs(norm(psi.C[j])-1))
     end
     sz_profile=[real(expect(psi,"Sz",j)) for j=1:n]
-    r=Dict("family"=>family,"width"=>w,"chi"=>maxlinkdim(psi),"cap"=>cap,"iteration"=>iteration,"cell_spins"=>n,
+    r=Dict("family"=>family,"width"=>w,"chi"=>maximum_bond_dimension(psi),"cap"=>cap,"iteration"=>iteration,"cell_spins"=>n,
         "energy_cell"=>real(sum(energies)),"entropy_bonds"=>entropies,"spatial_entropy"=>entropies[end],
-        "spatial_entropies_at_slice_cuts"=>entropies[slice_cuts],
+        "spatial_entropies_at_slice_cuts"=>entropies[slice_cuts],"schmidt_spectra_at_slice_cuts"=>slice_spectra,
         "slice_cut_entropy_modulation"=>maximum(entropies[slice_cuts])-minimum(entropies[slice_cuts]),
         "spatial_entropy_slice_mean"=>sum(entropies[slice_cuts])/cell_slices,
         "mean_sz"=>sum(sz_profile)/n,"site_sz_profile_infinite_order"=>sz_profile,"ordering_version"=>2,
@@ -71,8 +72,9 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
     # zero mean to the remaining exchanges. Round the trial bound upward.
     r["isolated_A_star_variational_upper_bound_cell"]=-2.4030921cell_slices*w
     r["energy_above_known_trial_state"]=r["energy_cell"]>-2.4030921cell_slices*w+1e-9
-    r["variational_bound_interpretation"]="Energy above the explicit trial state excludes a ground-state candidate irrespective of projected solver residual; satisfying this bound does not certify convergence."
+    r["variational_bound_interpretation"]="An above-trial raw expectation supports candidate exclusion only after state normalization/canonical consistency is checked, and a fixed-density comparison also needs a compatible trial filling. Satisfying the bound does not certify convergence."
     r["kind"]="infinite"
+    r["bond_dimension_details"]=mps_bond_dimension_details(psi)
     r["validation_fixture"]=occursin("_measurement_validation",tag)
     r["translation_period_restriction"]="$(cell_slices) axial slices"
     r["topological_flux_or_MES_identified"]=false
@@ -105,10 +107,17 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
     end
     target_density=get(r["number_background"],"physical_number_density",nothing)
     r["number_density_error_vs_background"]=target_density===nothing ? nothing : abs(r["mean_sz"]+.5-target_density)
+    quality_fields=["canonical_error","left_isometry_error","right_isometry_error","center_normalization_error","transfer_normalization_error"]
+    r["bound_comparison_state_consistency_tolerance"]=1e-10
+    r["bound_comparison_state_consistency_checked"]=all(r[k]<1e-10 for k in quality_fields)
+    compatible=target_density===nothing ? nothing : 1/3<=target_density<=2/3
+    r["isolated_A_star_trial_density_compatible"]=compatible
+    r["global_candidate_exclusion_supported_by_trial"]=r["energy_above_known_trial_state"] && r["bound_comparison_state_consistency_checked"]
+    r["fixed_density_candidate_exclusion_supported_by_trial"]=r["global_candidate_exclusion_supported_by_trial"] && r["u1_conserving_ansatz"] && compatible===true
     sector=r["number_background"]["label"]
     Ly=round(r["physical_circumference"];digits=5)
     measurement_seed=get(get(r,"audit",Dict()),"random_seed",7103)
-    final_path="results/checkpoints/infinite_$(family)_w$(w)_Ly$(Ly)_cell$(cell_slices)_N$(n)_chi$(maxlinkdim(psi))_$(sector)_seed$(measurement_seed)_v$(RUN_FORMAT_VERSION)$(tag)_stage$(iteration)_complete.jls"
+    final_path="results/checkpoints/infinite_$(family)_w$(w)_Ly$(Ly)_cell$(cell_slices)_N$(n)_chi$(maximum_bond_dimension(psi))_$(sector)_seed$(measurement_seed)_v$(RUN_FORMAT_VERSION)$(tag)_stage$(iteration)_complete.jls"
     manifest=save_checkpoint(final_path,psi,r)
     atomic_json(stem*".json",manifest)
     open("results/infinite_$(family)_w$(w)$(tag)_history.jsonl","a") do io;println(io,JSON3.write(r));end

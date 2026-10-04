@@ -35,11 +35,16 @@ for family,ordering,L in sorted(set((r['family'],r['ordering'],r['L']) for r in 
         interpretation='Descriptive lowest-energy envelope across recorded caps and number/flux branches. No common MES or global-ground selection is certified; no thermodynamic gamma confidence interval.')
     fits.append(estimate)
 
+bond_audit={r["source_result"]:r for r in json.load(open("results/infinite_bond_dimension_audit.json"))["records"]}
 infinite=[]
 for path in sorted(glob.glob('results/infinite_*_chi*.json')):
     r=json.load(open(path))
     if 'spatial_entropy' not in r or r.get('validation_fixture',False):continue
-    r['file']=path;infinite.append(r)
+    r['file']=path
+    r['historical_reported_chi']=r['chi']
+    r['audited_maximum_bond_dimension']=bond_audit.get(path,{}).get('maximum_bond_dimension',r.get('bond_dimension_details',{}).get('maximum_bond_dimension'))
+    r['bond_dimension_audit_status']=bond_audit.get(path,{}).get('status','Not yet independently audited')
+    infinite.append(r)
 output=dict(ln3=ln3,finite_states=finite,best_finite_states=best,entropy_fits=fits,infinite_states=infinite,
     scientific_strategy_reaudit='results/scientific_strategy_reaudit.md',conditional_filling_constraints=json.load(open('results/primitive_filling_audit.json')),phase_claims=dict(Z3_topological_order='not established',Z3_topological_order_excluded='not established',two_dimensional_gaplessness='not established',physical_U1_order='not established'),status='Study in progress; transfer lengths describe the measured variational infinite states, and apparent gamma values are not converged thermodynamic estimates.')
 pathlib.Path('results/scientific_summary.json').write_text(json.dumps(output,indent=2))

@@ -3,18 +3,24 @@ import glob,json,pathlib
 import numpy as np
 from provenance import provenance
 from fit_entropy import fit,LN3
+def bound_state_consistency(r):
+    fields=['canonical_error','left_isometry_error','right_isometry_error','center_normalization_error','transfer_normalization_error']
+    return all(isinstance(r.get(k),(int,float)) and np.isfinite(r[k]) and r[k]<1e-10 for k in fields)
+bond_audit={r["source_result"]:r for r in json.load(open("results/infinite_bond_dimension_audit.json"))["records"]}
 points=[]
 for path in sorted(glob.glob('results/infinite_*_chi*.json')):
     r=json.load(open(path))
     if 'spatial_entropy' not in r or r.get('validation_fixture',False):continue
     points.append(dict(source_file=path,family=r['family'],width=r['width'],circumference=r.get('physical_circumference',r['width']*(np.sqrt(3) if r['family']=='zigzag' else 3.0)),
         circumference_source='saved measurement' if 'physical_circumference' in r else 'derived from the explicit validated lattice convention',
-        cell_slices=r.get('cell_slices',2),cap=r['cap'],actual_chi=r['chi'],ordering=r.get('infinite_ordering','matter_first'),
+        cell_slices=r.get('cell_slices',2),cap=r['cap'],historical_reported_chi=r['chi'],actual_chi=bond_audit.get(path,{}).get('maximum_bond_dimension',r.get('bond_dimension_details',{}).get('maximum_bond_dimension')),bond_dimension_audit_status=bond_audit.get(path,{}).get('status','Not yet independently audited'),ordering=r.get('infinite_ordering','matter_first'),
         conserving_ansatz=r.get('u1_conserving_ansatz'),energy_cell=r['energy_cell'],
         number_background=r.get('number_background'),observed_number_density=r.get('mean_sz',0)+.5 if 'mean_sz' in r else None,
         number_density_error_vs_background=r.get('number_density_error_vs_background'),
         disjoint_dimer_variational_upper_bound_cell=-2*r.get('cell_slices',2)*r['width']/np.sqrt(3),
         isolated_A_star_variational_upper_bound_cell=-2.4030921*r.get('cell_slices',2)*r['width'],
+        bound_comparison_state_consistency_checked=bound_state_consistency(r),
+        trial_bound_comparison_interpretation='Raw above-trial comparison is not an exclusion proof for inconsistent center tensors; fixed-density comparisons also require a compatible trial density.',
         energy_above_known_trial_state=bool(r['energy_cell']>-2.4030921*r.get('cell_slices',2)*r['width']+1e-9),
         entropy=r.get('spatial_entropy_slice_mean',r['spatial_entropy']),entropy_modulation=r.get('slice_cut_entropy_modulation'),
         xi_cells=r['xi_cells'],solver_residual=r.get('solver_residual'),canonical_error=r.get('canonical_error'),

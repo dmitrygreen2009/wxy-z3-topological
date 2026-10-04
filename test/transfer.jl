@@ -2,6 +2,7 @@ using Test
 isdefined(Main,:cylinder) || include("../src/model.jl")
 using ITensorInfiniteMPS, KrylovKit
 include("../src/transfer_analysis.jl")
+include("../src/dense_transfer_matrix.jl")
 @testset "Analytically known infinite transfer spectrum" begin
     # A^up=diag(sqrt(p),sqrt(1-p)); A^down swaps the two bond states.
     # The channel eigenvalues are 1, 2sqrt(p(1-p)), 0, 0.
@@ -14,6 +15,8 @@ include("../src/transfer_analysis.jl")
     tensor[previous=>1,s[1]=>2,bond=>2]=sqrt(p)
     tensor[previous=>2,s[1]=>2,bond=>1]=sqrt(1-p)
     A=InfiniteMPS([tensor]);T=TransferMatrix(A)
+    dense_values=eigvals(dense_transfer_matrix(T))
+    @test sort(abs.(dense_values);rev=true)≈[1.,.8,0.,0.] atol=1e-10
     x=random_itensor(ComplexF64,dag(input_inds(T)))
     values,vectors,info=eigsolve(T,x,4,:LM;tol=1e-12,krylovdim=8)
     magnitudes=sort(abs.(values);rev=true)
@@ -30,6 +33,7 @@ end
     tensor=ITensor(ComplexF64,previous,s[1],bond)
     tensor[previous=>1,s[1]=>1,bond=>1]=1
     tensor[previous=>2,s[1]=>2,bond=>2]=1
+    @test sort(abs.(eigvals(dense_transfer_matrix(TransferMatrix(InfiniteMPS([tensor])))));rev=true)≈[1.,1.,0.,0.] atol=1e-11
     spectrum=transfer_spectrum(InfiniteMPS([tensor]);tol=1e-12)
     @test spectrum["fixed_point_rank_detected"]==2
     @test isinf(spectrum["xi_cells"])

@@ -35,7 +35,7 @@ function audited_vumps(H,psi;family,w,cap,maxiter=30,tol=1e-7,
         open(base*"_local_eigensolves.jsonl","a") do io
             println(io,JSON3.write(Dict("iteration"=>iteration,"git_commit"=>audit["git_commit"],"solves"=>local_records)))
         end
-        record=Dict("iteration"=>iteration,"bond_dimension"=>maxlinkdim(psi),"canonical_solver_residual"=>residual,
+        record=Dict("iteration"=>iteration,"bond_dimension"=>maximum_bond_dimension(psi),"canonical_solver_residual"=>residual,
             "runtime_seconds"=>elapsed,"left_energy_real"=>real.(left_energy),"left_energy_imag"=>imag.(left_energy),
             "right_energy_real"=>real.(right_energy),"right_energy_imag"=>imag.(right_energy),"tol"=>tol,
             "local_eigensolver_tolerance_evaluated"=>requested_local_tolerance,"git_commit"=>audit["git_commit"],"run_version"=>RUN_FORMAT_VERSION,
@@ -44,11 +44,11 @@ function audited_vumps(H,psi;family,w,cap,maxiter=30,tol=1e-7,
             "minimum_local_converged_eigenpairs"=>minimum(r["converged_eigenpairs"] for r in local_records))
         push!(iterations,record)
         open(base*"_iterations.jsonl","a") do io;println(io,JSON3.write(record));end
-        println("AUDITED VUMPS iteration=",iteration," chi=",maxlinkdim(psi)," residual=",residual," seconds=",elapsed);flush(stdout)
+        println("AUDITED VUMPS iteration=",iteration," chi=",maximum_bond_dimension(psi)," residual=",residual," seconds=",elapsed);flush(stdout)
         if iseven(iteration) || (residual<tol && local_passed) || iteration==maxiter
             metadata=merge(copy(audit),Dict("kind"=>"infinite","family"=>family,"width"=>w,
                 "physical_circumference"=>family=="zigzag" ? sqrt(3)*w : 3.0w,
-                "cell_slices"=>cell_slices,"cell_spins"=>n,"cap"=>cap,"bond_dimension"=>maxlinkdim(psi),
+                "cell_slices"=>cell_slices,"cell_spins"=>n,"cap"=>cap,"bond_dimension"=>maximum_bond_dimension(psi),
                 "infinite_ordering"=>ordering,"measurement_tag"=>tag,"iteration"=>iteration,
                 "stage_maxiter"=>maxiter,"tol"=>tol,"canonical_solver_residual"=>residual,
                 "runtime_seconds"=>time()-started,"iterations"=>iterations,

@@ -398,3 +398,23 @@ checkpoint names. Mean slice entropy is descriptive: inspect every cut and
 modulation before fitting. Transfer lengths in slices equal `cell_slices`
 times the cell transfer length; energy per vertex uses `2*w*cell_slices`.
 These alternatives have not yet supplied a converged 2D phase diagnosis.
+
+Infinite allocated bond dimensions include the unit-cell wrap bond in both AL
+and AR. The pinned finite-library `maxlinkdim` omits that bond; historical raw
+counts are retained alongside `results/infinite_bond_dimension_audit.json`.
+Reaudit saved tensors with `julia --project=. scripts/audit_infinite_bond_dimensions.jl`.
+Requested cap, allocated dimension and effective Schmidt rank are different.
+Full slice-cut probabilities are saved by new measurements. A raw energy above
+a trial state supports exclusion only after canonical/normalization checks;
+fixed-density comparisons also require a trial with compatible filling.
+
+The validated cell initializer accepts an optional site ordering after the
+update algorithm. For example,
+`julia --project=. scripts/infinite_random_cell.jl armchair 2 26 32 3 parallel matter_first`
+tests physical density 13/27 in 54 individual spins. This is a separate candidate,
+not a preferred-filling assumption. At armchair width two, matter-first ordering
+reduces the maximum operator span from 31 to 17 sites; its internal entanglement
+requirements still need comparison. Both orderings' nonlocal center operators
+pass independent microscopic complex-field checks. Original star-order runs
+and their checkpoints are preserved. The conditional ordinary D(Z3) filling
+constraint and initializer accessibility are in `results/primitive_filling_audit.json`.

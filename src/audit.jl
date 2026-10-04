@@ -120,13 +120,29 @@ struct ResourceLimitError <: Exception
     message::String
 end
 Base.showerror(io::IO,e::ResourceLimitError)=print(io,e.message)
+# The finite-library maxlinkdim omits the final unit-cell wrap bond.
+# Inspect every periodic bond without changing tensors or solver behavior.
+function mps_bond_dimension_details(psi)
+    levels=hasproperty(psi,:AL) && hasproperty(psi,:AR) ? Dict("AL"=>psi.AL,"AR"=>psi.AR) : Dict("MPS"=>psi)
+    periodic=hasproperty(psi,:AL) || (hasproperty(psi,:data) && hasproperty(getproperty(psi,:data),:translator))
+    dimensions=Dict{String,Vector{Int}}()
+    for (label,A) in levels
+        count=periodic ? length(A) : max(0,length(A)-1)
+        dimensions[label]=[let link=commonind(A[j],A[j+1]);isnothing(link) ? 1 : dim(link) end for j=1:count]
+    end
+    largest=maximum(vcat(collect(values(dimensions))...);init=1)
+    Dict("periodic_wrap_bond_included"=>periodic,"bond_dimensions_by_tensor_representation"=>dimensions,
+        "maximum_bond_dimension"=>largest,"historical_library_maxlinkdim"=>maxlinkdim(psi))
+end
+maximum_bond_dimension(psi)=mps_bond_dimension_details(psi)["maximum_bond_dimension"]
+
 function estimate_memory(psi,target_chi;label="calculation")
-    current=max(1,maxlinkdim(psi));state_bytes=Base.summarysize(psi)
+    details=mps_bond_dimension_details(psi);current=max(1,details["maximum_bond_dimension"]);state_bytes=Base.summarysize(psi)
     # Conservative environment/Krylov allowance; record estimates separately from measurements.
-    estimate=round(Int,1.5*2.0^30+20state_bytes*(target_chi/current)^2)
+    estimate=round(Int,1.5*2.0^30+20state_bytes*max(1.,target_chi/current)^2)
     budget=round(Int,0.5Sys.total_memory())
     record=Dict("label"=>label,"current_chi"=>current,"target_chi"=>target_chi,
-        "state_bytes"=>state_bytes,"estimated_peak_bytes"=>estimate,"process_memory_budget_bytes"=>budget,
+        "bond_dimension_details"=>details,"state_bytes"=>state_bytes,"estimated_peak_bytes"=>estimate,"process_memory_budget_bytes"=>budget,
         "system_memory_bytes"=>Sys.total_memory(),"measured_process_peak_bytes"=>Sys.maxrss(),
         "policy"=>"1.5 GiB runtime plus 20 times projected MPS storage; one half of system RAM per large worker",
         "allowed"=>estimate<=budget,"git_commit"=>try readchomp(`git rev-parse HEAD`) catch; "unknown" end)

@@ -381,3 +381,62 @@ slice), whereas a complex transfer phase can also contain transverse momentum.
 Fixed-site correlations across cells follow this helical displacement. This
 clarifies the convention without changing existing numerical transfer lengths
 or treating them as a two-dimensional spectral-gap certificate.
+
+
+An additional interpretation correction separates a raw infinite canonical
+expectation from a normalized consistent-state variational bound. At sizeable
+AL*C versus C*AR mismatch, a center-based expectation cannot by itself prove
+that a physical ground candidate lies above a trial state. Future measurement
+and saved-data analysis explicitly check canonicality, both isometries, center
+normalization and transfer normalization at 1e-10 before supporting that
+exclusion. A fixed-density comparison additionally requires the isolated-A-star
+trial to have a compatible filling (the construction covers densities 1/3
+through 2/3). Raw energy comparisons are preserved. The previously audited
+armchair QN cap16 exclusion remains supported: the consistently recanonicalized
+state has error 2e-15, changes energy by 3e-14, has compatible half filling,
+and lies about 0.0866 above the explicit trial. None of these checks certifies
+the global ground state or a thermodynamic entropy intercept.
+
+
+The same conditional filling argument allows density k/27, not only integer
+number per primitive cell. The closest permitted densities to half filling
+are 13/27 and 14/27, with fractional primitive-cell charges 1/3 and 2/3.
+Thus the density-4/9 candidate does not exhaust the symmetry-compatible
+alternatives. The current integral-number cell-product initializer cannot
+initialize 13/27 in a width-two two-slice cell; three or six slices permit
+exact integral cell numbers 26/54 or 52/108. This is an initializer limitation,
+not a claim that every possible noninjective two-slice MPS excludes that mean
+filling. The arithmetic and accessibility table are stored in
+`results/primitive_filling_audit.json`. Theory-compatible densities are test
+candidates, not presumed global ground fillings.
+
+
+The dense transfer audit exposed an allocated-bond reporting issue. The pinned
+finite-library `maxlinkdim` scans n-1 bonds and omits the infinite unit-cell
+wrap bond. The completed zigzag width-two cap32 parallel state was reported
+as chi16 but its wrap bond has dimension29, giving a full virtual transfer
+space of dimension841. Every eigenvalue of that space was independently
+obtained through official TransferMatrix actions and dense diagonalization:
+there is one peripheral eigenvalue at the stated 1e-9 tolerance, the maximum
+residual is 1.74e-13, and xi=0.117676310549364 cells agrees with scalar Krylov.
+This checks the spectrum of the same AL state, not a physical bulk gap.
+
+Future logging, filenames and memory estimation inspect all periodic AL and AR
+links. Eight index-level checks validate the correction, including a larger
+wrap bond and a finite-chain control. A saved-state audit corrects allocated
+bond counts without repeating optimizations or replacing historical raw data.
+Allocated dimension, requested cap, and effective Schmidt rank are distinct.
+Future measurements also retain full probabilities at every spatial slice
+cut. Near-zero Schmidt support can leave unused auxiliary transfer modes;
+operator coupling and boundary weights matter when interpreting those modes.
+The already documented two-start peripheral detection remains a lower-bound
+method except where a complete small-space dense audit is saved.
+
+Independent complex-product checks validate the infinite Hamiltonian against
+explicit vertex/endpoint records (12 checks), rather than only its coherent
+sum of W entries. The official nonlocal VUMPS center operator also matches
+independent microscopic local 2x2 fields for both endpoint families and both
+site orderings (48 checks). This validates complex coefficients, Hermiticity,
+periodic terms and local effective operators without rerunning benchmarks.
+The library pads all term MPOs to their common maximum range, satisfying its
+constant-range assumption. No Hamiltonian approximation was introduced.
