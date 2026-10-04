@@ -23,7 +23,9 @@
     "infinite_allocated_bond_dimension": "Pinned finite-MPS helper omitted periodic wrap; 41 saved states audited without optimization; one legacy payload is truncated and remains unrecoverable.",
     "closest_ordinary_D_Z3_compatible_fillings": "13/27 and 14/27 are necessary candidates nearest half filling under the stated nonpermuting SET assumptions, not certified energy minima.",
     "raw_inconsistent_center_energy_is_variational_bound": "Not guaranteed; trial-state exclusions require validated canonical consistency and compatible density.",
-    "infinite_exact_complex_operator_fields": "Independent complex-product energies and local effective-field checks passed for both wrappings and both individual-site orderings."
+    "infinite_exact_complex_operator_fields": "Independent complex-product energies and local effective-field checks passed for both wrappings and both individual-site orderings.",
+    "checkpoint_resume_controls": "Future finite resumes inherit recorded local controls rather than overriding stricter continuation settings; seeds and source initialization are explicit. No existing optimization was rerun.",
+    "bulk_filling_selected": "Not certified; short-cylinder end and central densities differ, and nearby sector energy differences compete with optimization error. Searches cannot be restricted to values closest to half filling."
   },
   "concrete_findings": [
     "Width-one parallel cycles have circumference winding, despite local support on the quotient",
@@ -65,7 +67,8 @@
     "results/infinite_effective_field_both_orderings_validation.log": "455f93494249abc884bbf8a1f5c20aaad2d3a99728da63cce4d3134ec89a6913",
     "results/infinite_ordering_driver_load_validation.log": "9b545e12a951ead284c13a511cb3fd28f218b333dbf27a2919ee6c74e8a4091a",
     "results/periodic_bond_dimensions_validation.log": "b6d008ea8a3694076dc4ff66678119410430ee0e8f663d9ccdf14ae9fde7cbeb",
-    "results/dense_transfer_known_state_validation.log": "aca2b087263e2ed66be4e3662b2a19731404929b1085f9d4c7a833522f61c5af"
+    "results/dense_transfer_known_state_validation.log": "aca2b087263e2ed66be4e3662b2a19731404929b1085f9d4c7a833522f61c5af",
+    "results/resume_controls_validation.log": "b944390d7a62502139e48ab634fc0719d7747531e890aadb51deceefcd4ee6f2"
   },
   "geometry_metadata_followup": "41 finite physical-cut and 40 infinite incidence records statically checked; includes new periods 3 and 6. Default period-two interactions and existing optimizations unchanged.",
   "contractible_cycle_definitions": "geometry/cgs_plaquettes",

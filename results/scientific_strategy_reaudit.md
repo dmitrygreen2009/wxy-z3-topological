@@ -454,3 +454,21 @@ passed known primitive-channel and GHZ tests, including exact multiplicity.
 Additional density branches remain planned rather than launched during heavy
 compressed-memory pressure. Existing expensive calculations continue, and
 smaller completed results and their local checkpoints remain preserved.
+
+Checkpoint-resume source inspection found a future reproducibility hazard:
+finite resumes unconditionally used Krylov dimension 12 and default one
+local iteration, even for a saved continuation specifying dimension 32 and
+ten iterations. The resume driver now retains recorded controls, including
+the refinement-specific dimension, for both the resumed sweep and subsequent
+bond stages. No active run was interrupted or restarted. Infinite resumes
+also explicitly retain seeds and record their source checkpoint provenance.
+
+The density strategy must not prioritize only values closest to one half.
+The short armchair charged-state profiles differ substantially between
+central rows and ends, while their energy splittings are comparable to
+remaining optimization errors. Neither their total filling nor the densities
+13/27 and 14/27 certify a bulk optimum. The complete conditional k/27 grid
+is recorded; broader density searches, length dependence, and particle-hole
+partners remain required wherever competitive energies emerge. A gapped
+plateau requires stability against number changes, not merely one fixed-N
+optimization. No density or symmetry branch currently certifies the 2D phase.
