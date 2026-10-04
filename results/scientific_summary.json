@@ -1346,6 +1346,27 @@
       "energy_change_from_lower_chi": null
     },
     {
+      "file": "results/zigzag_L4_w2_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 1,
+      "family": "zigzag",
+      "L": 4,
+      "w": 2,
+      "Ly": 3.4641016151377544,
+      "ordering": "star",
+      "nup": 35,
+      "ground_state_scope": "Fixed number sector; global cylinder minimum not certified",
+      "spins": 74,
+      "chi": 256,
+      "actual_chi": 256,
+      "E": -29.887890452482438,
+      "S": 2.305377990073058,
+      "last_sweep_energy_change": -0.00284895336972113,
+      "last_truncation_error": 0.00043022579965740806,
+      "entropy_refinement_change": null,
+      "entropy_change_from_lower_chi": null,
+      "energy_change_from_lower_chi": null
+    },
+    {
       "file": "results/zigzag_L4_w3_chi128.json",
       "record_index": 2,
       "family": "zigzag",
@@ -100879,7 +100900,58 @@
         "integral_cell_product_initializer": true
       }
     ],
-    "numerical_calculations_repeated": false
+    "numerical_calculations_repeated": false,
+    "half_filled_one_slice_cylinder_rows": [
+      {
+        "width": 1,
+        "physical_spins": 9,
+        "physical_number": "9/2",
+        "integer_number_per_helical_translation_row": false
+      },
+      {
+        "width": 2,
+        "physical_spins": 18,
+        "physical_number": "9",
+        "integer_number_per_helical_translation_row": true
+      },
+      {
+        "width": 3,
+        "physical_spins": 27,
+        "physical_number": "27/2",
+        "integer_number_per_helical_translation_row": false
+      },
+      {
+        "width": 4,
+        "physical_spins": 36,
+        "physical_number": "18",
+        "integer_number_per_helical_translation_row": true
+      },
+      {
+        "width": 5,
+        "physical_spins": 45,
+        "physical_number": "45/2",
+        "integer_number_per_helical_translation_row": false
+      },
+      {
+        "width": 6,
+        "physical_spins": 54,
+        "physical_number": "27",
+        "integer_number_per_helical_translation_row": true
+      },
+      {
+        "width": 7,
+        "physical_spins": 63,
+        "physical_number": "63/2",
+        "integer_number_per_helical_translation_row": false
+      },
+      {
+        "width": 8,
+        "physical_spins": 72,
+        "physical_number": "36",
+        "integer_number_per_helical_translation_row": true
+      }
+    ],
+    "row_parity_interpretation": "At fixed half filling, odd-width rows carry fractional U1 number. A unique gapped effective one-dimensional state preserving U1 and one-row helical translation is constrained; a two-row ansatz permits translation breaking. This does not establish a 2D phase or apply automatically to another density or symmetry branch."
   },
   "phase_claims": {
     "Z3_topological_order": "not established",

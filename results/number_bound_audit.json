@@ -1,0 +1,60 @@
+{
+  "derivation": "The microscopic one-particle hopping matrix h has minimum eigenvalue -sqrt(d_max), since W is unitary and C dagger C is the diagonal physical-edge incidence count. Factoring h+sqrt(d_max) I as L dagger L gives H+sqrt(d_max) N_up=sum_a B_a dagger B_a >=0 with B_a=sum_j L_aj S_j minus. Applying the same argument to h transpose and raising operators gives H>=-sqrt(d_max)(N_spins-N_up). Therefore E(N)>=-sqrt(d_max) min(N,N_spins-N). Hard-core spin algebra is retained; no free-particle many-body replacement is made.",
+  "benchmark_checks": [
+    {
+      "benchmark": "star",
+      "spins": 6,
+      "nup": 3,
+      "maximum_edge_degree": 1,
+      "exact_sector_lower_bound": -3.0,
+      "saved_ground_energy": -2.40309212754018
+    },
+    {
+      "benchmark": "pair",
+      "spins": 11,
+      "nup": 5,
+      "maximum_edge_degree": 2,
+      "exact_sector_lower_bound": -7.0710678118654755,
+      "saved_ground_energy": -4.396765543513652
+    },
+    {
+      "benchmark": "torus",
+      "spins": 18,
+      "nup": 9,
+      "maximum_edge_degree": 2,
+      "exact_sector_lower_bound": -12.727922061357857,
+      "saved_ground_energy": -7.364534839426007
+    }
+  ],
+  "many_body_diagonalizations_repeated": false,
+  "bulk_trial_energy_per_primitive_cell": -2.4030921,
+  "bulk_density_window_from_exact_lower_bound_and_trial": [
+    0.1888047466362023,
+    0.8111952533637977
+  ],
+  "ordinary_D_Z3_density_grid_remaining_after_energy_bound": [
+    "2/9",
+    "7/27",
+    "8/27",
+    "1/3",
+    "10/27",
+    "11/27",
+    "4/9",
+    "13/27",
+    "14/27",
+    "5/9",
+    "16/27",
+    "17/27",
+    "2/3",
+    "19/27",
+    "20/27",
+    "7/9"
+  ],
+  "interpretation": "This excludes extreme densities as global ground candidates using an exact operator inequality and a valid 2D trial. It does not select the preferred density or identify a topological phase. A stronger trial on a narrow cylinder must not be used as a 2D bulk energy bound without constructing a valid 2D extension.",
+  "source_validation_sha256": {
+    "results/flatband_audit.json": "6f283afd1285d60cc3f7845651d104a97ff61060896e75602bac9f2efbd74cd7",
+    "results/ed.json": "b01c6d74ec7978aff0679ce15528f0a7d9d73f3b07f7d672502d8a034682f9d8"
+  },
+  "git_commit": "39db345173f5c597bc967b0874e3620dcc1d59a9",
+  "analyzed_utc": "2026-10-04T21:09:59.511186+00:00"
+}

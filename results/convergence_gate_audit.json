@@ -1,0 +1,2979 @@
+{
+  "thresholds": {
+    "last_sweep_energy_change": 1e-08,
+    "entropy_refinement_change": 0.0001,
+    "truncation_error": 1e-08,
+    "bond_entropy_change": 0.001,
+    "bond_energy_per_vertex_change": 1e-06,
+    "canonical_solver_residual": 1e-07,
+    "measured_canonical_consistency": 1e-10
+  },
+  "threshold_source": "Existing finite production controls and audited infinite driver; no tolerance has been relaxed.",
+  "null_gate_meaning": "Required evidence is missing; unknown does not pass.",
+  "finite": [
+    {
+      "source_file": "results/armchair_L2_w1_chi128_star.json",
+      "record_index": 3,
+      "family": "armchair",
+      "length": 2,
+      "width": 1,
+      "nup": null,
+      "cap": 128,
+      "errors": {
+        "last_sweep_energy_change": -1.9451107391432743e-13,
+        "entropy_refinement_change": 1.0499704083954953e-07,
+        "truncation_error": 7.893049985999818e-08,
+        "bond_entropy_change": 0.00316532644154921,
+        "bond_energy_per_vertex_change": -8.643727689938707e-05
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L2_w1_chi128_star_Nup8.json",
+      "record_index": 3,
+      "family": "armchair",
+      "length": 2,
+      "width": 1,
+      "nup": 8,
+      "cap": 128,
+      "errors": {
+        "last_sweep_energy_change": -8.881784197001252e-15,
+        "entropy_refinement_change": 5.664403390781558e-08,
+        "truncation_error": 2.553056628889769e-09,
+        "bond_entropy_change": 0.0002662609288068829,
+        "bond_energy_per_vertex_change": -7.155479474274529e-06
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": true,
+        "bond_entropy_change": true,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L2_w1_chi256_star.json",
+      "record_index": 5,
+      "family": "armchair",
+      "length": 2,
+      "width": 1,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": 5.329070518200751e-15,
+        "entropy_refinement_change": -2.6243229811484525e-11,
+        "truncation_error": 1.6299888639332856e-10,
+        "bond_entropy_change": 1.585449575491893e-05,
+        "bond_energy_per_vertex_change": -3.330767115450328e-07
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": true,
+        "bond_entropy_change": true,
+        "bond_energy_per_vertex_change": true
+      },
+      "all_recorded_optimization_gates_passed": true,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L2_w1_chi256_star_Nup8.json",
+      "record_index": 5,
+      "family": "armchair",
+      "length": 2,
+      "width": 1,
+      "nup": 8,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -1.7763568394002505e-15,
+        "entropy_refinement_change": 9.547918011776346e-15,
+        "truncation_error": 9.925091960788003e-13,
+        "bond_entropy_change": 5.950225665518616e-07,
+        "bond_energy_per_vertex_change": -1.2044341524131141e-08
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": true,
+        "bond_entropy_change": true,
+        "bond_energy_per_vertex_change": true
+      },
+      "all_recorded_optimization_gates_passed": true,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L2_w1_chi256_star_Nup8_charge_sectors_PH_regression.json",
+      "record_index": 0,
+      "family": "armchair",
+      "length": 2,
+      "width": 1,
+      "nup": 12,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": 1.2434497875801753e-14,
+        "entropy_refinement_change": null,
+        "truncation_error": 9.761356795389696e-12,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L2_w1_chi256_star_charge_sectors_regression.json",
+      "record_index": 0,
+      "family": "armchair",
+      "length": 2,
+      "width": 1,
+      "nup": 8,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -1.4210854715202004e-14,
+        "entropy_refinement_change": null,
+        "truncation_error": 9.818856671312252e-12,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi128.json",
+      "record_index": 2,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": null,
+      "cap": 128,
+      "errors": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": 0.32516322945969134,
+        "bond_energy_per_vertex_change": -0.0029234988577349075
+      },
+      "gates": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star.json",
+      "record_index": 4,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -1.1490879359143946e-09,
+        "entropy_refinement_change": -0.0002097591161227541,
+        "truncation_error": 7.400389183949175e-07,
+        "bond_entropy_change": 0.009281552924998326,
+        "bond_energy_per_vertex_change": -0.00010790438937413604
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": false,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 0,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 18,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -2.2897896911899807e-09,
+        "entropy_refinement_change": null,
+        "truncation_error": 4.6239748154241235e-07,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 1,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 20,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -4.564116729000034e-07,
+        "entropy_refinement_change": null,
+        "truncation_error": 5.029344745949531e-07,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 2,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 17,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -2.021316447553545e-10,
+        "entropy_refinement_change": null,
+        "truncation_error": 1.1761010839027962e-07,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 3,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 21,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -4.984457291357103e-12,
+        "entropy_refinement_change": null,
+        "truncation_error": 1.1271325516333696e-07,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 4,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 16,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -7.689774800923033e-06,
+        "entropy_refinement_change": null,
+        "truncation_error": 9.894939408452262e-08,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 5,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 22,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -8.424186688671398e-06,
+        "entropy_refinement_change": null,
+        "truncation_error": 1.6235875151596006e-07,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 6,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 15,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -6.6722130043217476e-09,
+        "entropy_refinement_change": null,
+        "truncation_error": 5.946591011687326e-09,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 7,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 14,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -2.538413923502958e-12,
+        "entropy_refinement_change": null,
+        "truncation_error": 1.3883259108413073e-10,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 8,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 13,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -7.460698725481052e-14,
+        "entropy_refinement_change": null,
+        "truncation_error": 1.1927662645103905e-10,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit_particle_hole_audit.json",
+      "record_index": 0,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 20,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit_particle_hole_audit.json",
+      "record_index": 1,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 18,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit_particle_hole_audit.json",
+      "record_index": 2,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 21,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit_particle_hole_audit.json",
+      "record_index": 3,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 17,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit_particle_hole_audit.json",
+      "record_index": 4,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 22,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_charge_sectors_global_audit_particle_hole_audit.json",
+      "record_index": 5,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 16,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_number_candidate_Nup18.json",
+      "record_index": 0,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 18,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_seed7104.json",
+      "record_index": 4,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -4.797797714672924e-10,
+        "entropy_refinement_change": -5.4034170675620885e-05,
+        "truncation_error": 7.387571573372636e-07,
+        "bond_entropy_change": 0.00993151205992504,
+        "bond_energy_per_vertex_change": -0.00010870473666479974
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi256_star_seed7105.json",
+      "record_index": 4,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -1.7525518813954477e-09,
+        "entropy_refinement_change": -0.00031887727796142684,
+        "truncation_error": 7.390282043093308e-07,
+        "bond_entropy_change": 0.008749796792309361,
+        "bond_energy_per_vertex_change": -0.0001071973947341931
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": false,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi512_star.json",
+      "record_index": 6,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": null,
+      "cap": 512,
+      "errors": {
+        "last_sweep_energy_change": -2.184918912462308e-13,
+        "entropy_refinement_change": -3.877361045123706e-06,
+        "truncation_error": 1.9691086975223213e-08,
+        "bond_entropy_change": 0.00044936407344486895,
+        "bond_energy_per_vertex_change": -4.06170639744019e-06
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": false,
+        "bond_entropy_change": true,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w1_chi512_star_seed7202_Nup18.json",
+      "record_index": 2,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 18,
+      "cap": 512,
+      "errors": {
+        "last_sweep_energy_change": 2.5579538487363607e-13,
+        "entropy_refinement_change": -9.294178315855106e-09,
+        "truncation_error": 1.2960561694554644e-08,
+        "bond_entropy_change": 0.00023620235402788126,
+        "bond_energy_per_vertex_change": -2.8322210650078006e-06
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": false,
+        "bond_entropy_change": true,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w2_chi128.json",
+      "record_index": 2,
+      "family": "armchair",
+      "length": 4,
+      "width": 2,
+      "nup": null,
+      "cap": 128,
+      "errors": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": 0.1303773693731718,
+        "bond_energy_per_vertex_change": -0.04028907941201498
+      },
+      "gates": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w2_chi256_star.json",
+      "record_index": 4,
+      "family": "armchair",
+      "length": 4,
+      "width": 2,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -7.052602281376608e-05,
+        "entropy_refinement_change": 0.015226955632951178,
+        "truncation_error": 0.00016248825523000252,
+        "bond_entropy_change": 0.5267288294474755,
+        "bond_energy_per_vertex_change": -0.014898098708601593
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": false,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w2_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 0,
+      "family": "armchair",
+      "length": 4,
+      "width": 2,
+      "nup": 37,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -1.3323549723054384e-05,
+        "entropy_refinement_change": null,
+        "truncation_error": 0.00015974967376686795,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w2_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 1,
+      "family": "armchair",
+      "length": 4,
+      "width": 2,
+      "nup": 36,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -8.627589295429061e-06,
+        "entropy_refinement_change": null,
+        "truncation_error": 6.475684989769991e-05,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w2_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 2,
+      "family": "armchair",
+      "length": 4,
+      "width": 2,
+      "nup": 35,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -0.0004022837205823748,
+        "entropy_refinement_change": null,
+        "truncation_error": 8.221334184311861e-05,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w2_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 3,
+      "family": "armchair",
+      "length": 4,
+      "width": 2,
+      "nup": 34,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -5.205949673126042e-06,
+        "entropy_refinement_change": null,
+        "truncation_error": 6.606832332368479e-05,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w2_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 4,
+      "family": "armchair",
+      "length": 4,
+      "width": 2,
+      "nup": 33,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -8.055474944157481e-05,
+        "entropy_refinement_change": null,
+        "truncation_error": 6.647260238593775e-05,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w2_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 5,
+      "family": "armchair",
+      "length": 4,
+      "width": 2,
+      "nup": 32,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -8.131419928503192e-06,
+        "entropy_refinement_change": null,
+        "truncation_error": 6.0500209525701734e-05,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w2_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 6,
+      "family": "armchair",
+      "length": 4,
+      "width": 2,
+      "nup": 31,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -0.0007453453059085291,
+        "entropy_refinement_change": null,
+        "truncation_error": 6.732426242563817e-05,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w2_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 7,
+      "family": "armchair",
+      "length": 4,
+      "width": 2,
+      "nup": 30,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -1.6281603549828105e-06,
+        "entropy_refinement_change": null,
+        "truncation_error": 4.485977715155855e-05,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w3_chi128.json",
+      "record_index": 2,
+      "family": "armchair",
+      "length": 4,
+      "width": 3,
+      "nup": null,
+      "cap": 128,
+      "errors": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": 0.25387993904177053,
+        "bond_energy_per_vertex_change": -0.054614500541510104
+      },
+      "gates": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w3_chi256_star.json",
+      "record_index": 4,
+      "family": "armchair",
+      "length": 4,
+      "width": 3,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -0.001025792003943593,
+        "entropy_refinement_change": 0.006416683897659148,
+        "truncation_error": 0.00035485103994303986,
+        "bond_entropy_change": 0.15932146442679151,
+        "bond_energy_per_vertex_change": -0.0509658463067583
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": false,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L4_w4_chi256_star.json",
+      "record_index": 4,
+      "family": "armchair",
+      "length": 4,
+      "width": 4,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -0.007364467231084859,
+        "entropy_refinement_change": 0.16493275939047036,
+        "truncation_error": 0.0006795311952428147,
+        "bond_entropy_change": 0.6377201888358717,
+        "bond_energy_per_vertex_change": -0.050085129074627366
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": false,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L6_w2_chi128_star.json",
+      "record_index": 2,
+      "family": "armchair",
+      "length": 6,
+      "width": 2,
+      "nup": null,
+      "cap": 128,
+      "errors": {
+        "last_sweep_energy_change": -0.073694098123255,
+        "entropy_refinement_change": null,
+        "truncation_error": 0.00021442576241174712,
+        "bond_entropy_change": 0.40297320916626855,
+        "bond_energy_per_vertex_change": -0.03349888225910765
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/armchair_L6_w2_chi256_star.json",
+      "record_index": 4,
+      "family": "armchair",
+      "length": 6,
+      "width": 2,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -0.00014754740037403735,
+        "entropy_refinement_change": 0.03108482545443758,
+        "truncation_error": 9.124583685752388e-05,
+        "bond_entropy_change": 0.1360735479824431,
+        "bond_energy_per_vertex_change": -0.006486164850093641
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": false,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/snapshots/armchair_L4_w1_chi512_charged_number_audit_20261004T143827922021Z.json",
+      "record_index": 2,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": 18,
+      "cap": 512,
+      "errors": {
+        "last_sweep_energy_change": 2.5579538487363607e-13,
+        "entropy_refinement_change": -9.294178315855106e-09,
+        "truncation_error": 1.2960561694554644e-08,
+        "bond_entropy_change": 0.00023620235402788126,
+        "bond_energy_per_vertex_change": -2.8322210650078006e-06
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": false,
+        "bond_entropy_change": true,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/snapshots/armchair_L4_w1_chi512_neutral_number_audit.json",
+      "record_index": 6,
+      "family": "armchair",
+      "length": 4,
+      "width": 1,
+      "nup": null,
+      "cap": 512,
+      "errors": {
+        "last_sweep_energy_change": -2.184918912462308e-13,
+        "entropy_refinement_change": -3.877361045123706e-06,
+        "truncation_error": 1.9691086975223213e-08,
+        "bond_entropy_change": 0.00044936407344486895,
+        "bond_energy_per_vertex_change": -4.06170639744019e-06
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": false,
+        "bond_entropy_change": true,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/snapshots/zigzag_L6_w3_chi256_first_stage_audit_20261004T165627271255Z.json",
+      "record_index": 3,
+      "family": "zigzag",
+      "length": 6,
+      "width": 3,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -0.0017919489038575875,
+        "entropy_refinement_change": null,
+        "truncation_error": 0.0003453743598938782,
+        "bond_entropy_change": 0.2621588527413219,
+        "bond_energy_per_vertex_change": -0.009613458528555045
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L10_w1_chi512.json",
+      "record_index": 3,
+      "family": "zigzag",
+      "length": 10,
+      "width": 1,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -0.002057032947256232,
+        "entropy_refinement_change": null,
+        "truncation_error": 7.813481133620047e-07,
+        "bond_entropy_change": 0.021212321840439863,
+        "bond_energy_per_vertex_change": -0.0010087592173551486
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L10_w1_chi512_star_projected0_seed7112.json",
+      "record_index": 4,
+      "family": "zigzag",
+      "length": 10,
+      "width": 1,
+      "nup": null,
+      "cap": 512,
+      "errors": {
+        "last_sweep_energy_change": 1.0733032240750617e-09,
+        "entropy_refinement_change": null,
+        "truncation_error": 1.7614980216618617e-07,
+        "bond_entropy_change": 0.026146715071254878,
+        "bond_energy_per_vertex_change": -8.043496535492523e-06
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L2_w1_chi128_star.json",
+      "record_index": 3,
+      "family": "zigzag",
+      "length": 2,
+      "width": 1,
+      "nup": null,
+      "cap": 128,
+      "errors": {
+        "last_sweep_energy_change": 5.329070518200751e-15,
+        "entropy_refinement_change": 8.850897836865101e-08,
+        "truncation_error": 9.348698368256644e-12,
+        "bond_entropy_change": 7.567928452800743e-07,
+        "bond_energy_per_vertex_change": -1.6779533540400848e-08
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": true,
+        "bond_entropy_change": true,
+        "bond_energy_per_vertex_change": true
+      },
+      "all_recorded_optimization_gates_passed": true,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w1_chi128.json",
+      "record_index": 2,
+      "family": "zigzag",
+      "length": 4,
+      "width": 1,
+      "nup": null,
+      "cap": 128,
+      "errors": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": 0.008592760399993127,
+        "bond_energy_per_vertex_change": -5.797595005607725e-05
+      },
+      "gates": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w1_chi256_star.json",
+      "record_index": 4,
+      "family": "zigzag",
+      "length": 4,
+      "width": 1,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -1.1013412404281553e-13,
+        "entropy_refinement_change": 3.9103551885411036e-07,
+        "truncation_error": 4.0201376551924605e-10,
+        "bond_entropy_change": 0.0002571211325459455,
+        "bond_energy_per_vertex_change": -6.909269330002132e-07
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": true,
+        "bond_entropy_change": true,
+        "bond_energy_per_vertex_change": true
+      },
+      "all_recorded_optimization_gates_passed": true,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 0,
+      "family": "zigzag",
+      "length": 4,
+      "width": 1,
+      "nup": 18,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -7.638334409421077e-14,
+        "entropy_refinement_change": null,
+        "truncation_error": 4.02019246190476e-10,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 1,
+      "family": "zigzag",
+      "length": 4,
+      "width": 1,
+      "nup": 17,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -2.842170943040401e-14,
+        "entropy_refinement_change": null,
+        "truncation_error": 5.4468621432052414e-11,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 2,
+      "family": "zigzag",
+      "length": 4,
+      "width": 1,
+      "nup": 16,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": 2.1316282072803006e-14,
+        "entropy_refinement_change": null,
+        "truncation_error": 1.0876145865443672e-11,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 3,
+      "family": "zigzag",
+      "length": 4,
+      "width": 1,
+      "nup": 15,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -2.1316282072803006e-14,
+        "entropy_refinement_change": null,
+        "truncation_error": 9.959108679672296e-12,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 4,
+      "family": "zigzag",
+      "length": 4,
+      "width": 1,
+      "nup": 14,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -3.907985046680551e-14,
+        "entropy_refinement_change": null,
+        "truncation_error": 9.934743111040374e-12,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w1_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 5,
+      "family": "zigzag",
+      "length": 4,
+      "width": 1,
+      "nup": 13,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": 4.796163466380676e-14,
+        "entropy_refinement_change": null,
+        "truncation_error": 9.92796204815367e-12,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w1_chi256_star_projected1_seed7214.json",
+      "record_index": 3,
+      "family": "zigzag",
+      "length": 4,
+      "width": 1,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": 4.440892098500626e-14,
+        "entropy_refinement_change": null,
+        "truncation_error": 4.117139837314354e-10,
+        "bond_entropy_change": 0.0002442964005375803,
+        "bond_energy_per_vertex_change": -6.875393459004897e-07
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": true,
+        "bond_energy_per_vertex_change": true
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w1_chi256_star_seed7104.json",
+      "record_index": 4,
+      "family": "zigzag",
+      "length": 4,
+      "width": 1,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -7.815970093361102e-14,
+        "entropy_refinement_change": 3.856961459103303e-07,
+        "truncation_error": 4.0201276361043635e-10,
+        "bond_entropy_change": 0.00025756957924749635,
+        "bond_energy_per_vertex_change": -6.908858258825035e-07
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": true,
+        "bond_entropy_change": true,
+        "bond_energy_per_vertex_change": true
+      },
+      "all_recorded_optimization_gates_passed": true,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w1_chi256_star_seed7105.json",
+      "record_index": 4,
+      "family": "zigzag",
+      "length": 4,
+      "width": 1,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -9.414691248821327e-14,
+        "entropy_refinement_change": 5.46335103712714e-07,
+        "truncation_error": 9.973875522867398e-12,
+        "bond_entropy_change": 2.4501950853794696e-06,
+        "bond_energy_per_vertex_change": -7.685684311198315e-09
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": true,
+        "bond_entropy_change": true,
+        "bond_energy_per_vertex_change": true
+      },
+      "all_recorded_optimization_gates_passed": true,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w1_chi512_star_projected0_seed7112.json",
+      "record_index": 4,
+      "family": "zigzag",
+      "length": 4,
+      "width": 1,
+      "nup": null,
+      "cap": 512,
+      "errors": {
+        "last_sweep_energy_change": -2.6645352591003757e-14,
+        "entropy_refinement_change": null,
+        "truncation_error": 9.975055291942347e-13,
+        "bond_entropy_change": 5.419380164628507e-07,
+        "bond_energy_per_vertex_change": -1.2257814763216857e-09
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": true,
+        "bond_energy_per_vertex_change": true
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w2_chi128.json",
+      "record_index": 2,
+      "family": "zigzag",
+      "length": 4,
+      "width": 2,
+      "nup": null,
+      "cap": 128,
+      "errors": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": 0.0434456571652726,
+        "bond_energy_per_vertex_change": -0.0334028198164944
+      },
+      "gates": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w2_chi256_star.json",
+      "record_index": 4,
+      "family": "zigzag",
+      "length": 4,
+      "width": 2,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -2.053111072086722e-05,
+        "entropy_refinement_change": -0.012992394780566352,
+        "truncation_error": 0.00042538664439912324,
+        "bond_entropy_change": 0.06366148014929363,
+        "bond_energy_per_vertex_change": -0.003987403366179976
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": false,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w2_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 0,
+      "family": "zigzag",
+      "length": 4,
+      "width": 2,
+      "nup": 36,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": 6.5914203872807775e-06,
+        "entropy_refinement_change": null,
+        "truncation_error": 0.00035525433824614474,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w2_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 1,
+      "family": "zigzag",
+      "length": 4,
+      "width": 2,
+      "nup": 35,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -0.00284895336972113,
+        "entropy_refinement_change": null,
+        "truncation_error": 0.00043022579965740806,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w3_chi128.json",
+      "record_index": 2,
+      "family": "zigzag",
+      "length": 4,
+      "width": 3,
+      "nup": null,
+      "cap": 128,
+      "errors": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": 0.09352825149109467,
+        "bond_energy_per_vertex_change": -0.04677087610609091
+      },
+      "gates": {
+        "last_sweep_energy_change": null,
+        "entropy_refinement_change": null,
+        "truncation_error": null,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w3_chi256_star.json",
+      "record_index": 4,
+      "family": "zigzag",
+      "length": 4,
+      "width": 3,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -0.0002368948637965218,
+        "entropy_refinement_change": 0.011117310970818473,
+        "truncation_error": 0.00027724309390794407,
+        "bond_entropy_change": 0.15265210077193103,
+        "bond_energy_per_vertex_change": -0.008682747088924359
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": false,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w3_chi512_star.json",
+      "record_index": 6,
+      "family": "zigzag",
+      "length": 4,
+      "width": 3,
+      "nup": null,
+      "cap": 512,
+      "errors": {
+        "last_sweep_energy_change": -0.0025151642477894143,
+        "entropy_refinement_change": 0.029215106014049752,
+        "truncation_error": 9.647412144371703e-05,
+        "bond_entropy_change": 0.24942517021913457,
+        "bond_energy_per_vertex_change": -0.0026815109350390998
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": false,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w4_chi256_star.json",
+      "record_index": 4,
+      "family": "zigzag",
+      "length": 4,
+      "width": 4,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -0.0005630306224304604,
+        "entropy_refinement_change": -0.0035629700878536674,
+        "truncation_error": 0.00027294704672264447,
+        "bond_entropy_change": 0.35642473704452615,
+        "bond_energy_per_vertex_change": -0.026124708331378033
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": false,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L6_w1_chi256.json",
+      "record_index": 4,
+      "family": "zigzag",
+      "length": 6,
+      "width": 1,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -2.3928521386551438e-09,
+        "entropy_refinement_change": 5.1475006103807175e-05,
+        "truncation_error": 5.197695866343733e-07,
+        "bond_entropy_change": 0.009584798782716897,
+        "bond_energy_per_vertex_change": -0.00012906096445330917
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L6_w1_chi512_star_projected0_seed7112.json",
+      "record_index": 4,
+      "family": "zigzag",
+      "length": 6,
+      "width": 1,
+      "nup": null,
+      "cap": 512,
+      "errors": {
+        "last_sweep_energy_change": -0.0005998744272943668,
+        "entropy_refinement_change": null,
+        "truncation_error": 9.710391737954998e-09,
+        "bond_entropy_change": 0.28401794740199304,
+        "bond_energy_per_vertex_change": -0.0009437792764582417
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L6_w1_chi512_star_seed7112.json",
+      "record_index": 6,
+      "family": "zigzag",
+      "length": 6,
+      "width": 1,
+      "nup": null,
+      "cap": 512,
+      "errors": {
+        "last_sweep_energy_change": -1.0231815394945443e-12,
+        "entropy_refinement_change": 2.0201113004603144e-08,
+        "truncation_error": 1.9135842254364122e-09,
+        "bond_entropy_change": 0.28802302909452737,
+        "bond_energy_per_vertex_change": -0.0009586110373132802
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": true,
+        "truncation_error": true,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L6_w2_chi128_star.json",
+      "record_index": 3,
+      "family": "zigzag",
+      "length": 6,
+      "width": 2,
+      "nup": null,
+      "cap": 128,
+      "errors": {
+        "last_sweep_energy_change": -0.0005015338193956609,
+        "entropy_refinement_change": -0.002995745945107764,
+        "truncation_error": 0.0007086367727673666,
+        "bond_entropy_change": 0.24373401120582794,
+        "bond_energy_per_vertex_change": -0.00782638038463753
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": false,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L6_w2_chi256.json",
+      "record_index": 2,
+      "family": "zigzag",
+      "length": 6,
+      "width": 2,
+      "nup": null,
+      "cap": 128,
+      "errors": {
+        "last_sweep_energy_change": -0.003205930727645523,
+        "entropy_refinement_change": null,
+        "truncation_error": 0.0017059261467779149,
+        "bond_entropy_change": 0.05211294129154842,
+        "bond_energy_per_vertex_change": -0.033572692401843796
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L6_w2_chi256_star.json",
+      "record_index": 5,
+      "family": "zigzag",
+      "length": 6,
+      "width": 2,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -0.00018924728792057977,
+        "entropy_refinement_change": 0.0016334203732266683,
+        "truncation_error": 0.0003491039540508376,
+        "bond_entropy_change": 0.06112952087721113,
+        "bond_energy_per_vertex_change": -0.004186636364222451
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": false,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L6_w3_chi256_star.json",
+      "record_index": 4,
+      "family": "zigzag",
+      "length": 6,
+      "width": 3,
+      "nup": null,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -0.00042748160751671094,
+        "entropy_refinement_change": 0.0023419321984370356,
+        "truncation_error": 0.00037867873513702544,
+        "bond_entropy_change": 0.2645007849397589,
+        "bond_energy_per_vertex_change": -0.009746468032569547
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": false,
+        "truncation_error": false,
+        "bond_entropy_change": false,
+        "bond_energy_per_vertex_change": false
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    }
+  ],
+  "infinite": [
+    {
+      "source_file": "results/infinite_armchair_w1_chi16.json",
+      "family": "armchair",
+      "width": 1,
+      "cap": 16,
+      "allocated_chi": 6,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w1_chi2.json",
+      "family": "armchair",
+      "width": 1,
+      "cap": 2,
+      "allocated_chi": 2,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w1_chi32.json",
+      "family": "armchair",
+      "width": 1,
+      "cap": 32,
+      "allocated_chi": 9,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w1_chi32_finite_seed_star.json",
+      "family": "armchair",
+      "width": 1,
+      "cap": 32,
+      "allocated_chi": 31,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w1_chi4.json",
+      "family": "armchair",
+      "width": 1,
+      "cap": 4,
+      "allocated_chi": 4,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w1_chi64.json",
+      "family": "armchair",
+      "width": 1,
+      "cap": 64,
+      "allocated_chi": 18,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w1_chi64_finite_seed_star.json",
+      "family": "armchair",
+      "width": 1,
+      "cap": 64,
+      "allocated_chi": 64,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w1_chi64_finite_seed_star_fixedpoint.json",
+      "family": "armchair",
+      "width": 1,
+      "cap": 64,
+      "allocated_chi": 64,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": true,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w1_chi8.json",
+      "family": "armchair",
+      "width": 1,
+      "cap": 8,
+      "allocated_chi": 4,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w1_chi8_finite_seed_star.json",
+      "family": "armchair",
+      "width": 1,
+      "cap": 8,
+      "allocated_chi": 8,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w2_chi16_qn_star_active.json",
+      "family": "armchair",
+      "width": 2,
+      "cap": 16,
+      "allocated_chi": 7,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w2_chi16_qn_star_active_fixedpoint.json",
+      "family": "armchair",
+      "width": 2,
+      "cap": 16,
+      "allocated_chi": 7,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": true,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w2_chi2_qn_star_active.json",
+      "family": "armchair",
+      "width": 2,
+      "cap": 2,
+      "allocated_chi": 2,
+      "gates": {
+        "canonical_solver_residual": true,
+        "consistent_measured_state": true,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w2_chi4_qn_star_active.json",
+      "family": "armchair",
+      "width": 2,
+      "cap": 4,
+      "allocated_chi": 2,
+      "gates": {
+        "canonical_solver_residual": true,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_armchair_w2_chi8_qn_star_active.json",
+      "family": "armchair",
+      "width": 2,
+      "cap": 8,
+      "allocated_chi": 4,
+      "gates": {
+        "canonical_solver_residual": true,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi128_qn_star_active.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 128,
+      "allocated_chi": 128,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi128_qn_star_active_fixedpoint.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 128,
+      "allocated_chi": 128,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": true,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi16.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 16,
+      "allocated_chi": 16,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi16_finite_q0_star.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 16,
+      "allocated_chi": 16,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi16_qn_star_active.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 16,
+      "allocated_chi": 16,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi2.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 2,
+      "allocated_chi": 2,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi2_qn_star.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 2,
+      "allocated_chi": 2,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi2_qn_star_active.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 2,
+      "allocated_chi": 2,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi32.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 32,
+      "allocated_chi": 32,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi32_finite_q0_star.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 32,
+      "allocated_chi": 32,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi32_qn_star_active.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 32,
+      "allocated_chi": 32,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi32_qn_star_active_fixedpoint.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 32,
+      "allocated_chi": 32,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": true,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi4.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 4,
+      "allocated_chi": 4,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi4_qn_star.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 4,
+      "allocated_chi": 4,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi4_qn_star_active.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 4,
+      "allocated_chi": 4,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi64.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 64,
+      "allocated_chi": null,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi64_qn_star_active.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 64,
+      "allocated_chi": 64,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi64_qn_star_active_fixedpoint.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 64,
+      "allocated_chi": 64,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": true,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi8.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 8,
+      "allocated_chi": 8,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi8_finite_seed_star.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 8,
+      "allocated_chi": 8,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi8_qn_star.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 8,
+      "allocated_chi": 8,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w1_chi8_qn_star_active.json",
+      "family": "zigzag",
+      "width": 1,
+      "cap": 8,
+      "allocated_chi": 8,
+      "gates": {
+        "canonical_solver_residual": null,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w2_chi32_finite_seed_star.json",
+      "family": "zigzag",
+      "width": 2,
+      "cap": 32,
+      "allocated_chi": 29,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w2_chi32_finite_seed_star_fixedpoint.json",
+      "family": "zigzag",
+      "width": 2,
+      "cap": 32,
+      "allocated_chi": 29,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": true,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w2_chi32_finite_seed_star_parallel.json",
+      "family": "zigzag",
+      "width": 2,
+      "cap": 32,
+      "allocated_chi": 29,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w2_chi32_finite_seed_star_parallel_fixedpoint.json",
+      "family": "zigzag",
+      "width": 2,
+      "cap": 32,
+      "allocated_chi": 29,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": true,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/infinite_zigzag_w2_chi8_finite_seed_star.json",
+      "family": "zigzag",
+      "width": 2,
+      "cap": 8,
+      "allocated_chi": 8,
+      "gates": {
+        "canonical_solver_residual": false,
+        "consistent_measured_state": false,
+        "all_local_eigenpairs_converged": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "circumference_convergence_certified": false,
+      "global_ground_density_certified": false,
+      "common_topological_MES_certified": false,
+      "physical_bulk_gap_certified": false,
+      "eligible_for_2D_phase_inference": false
+    }
+  ],
+  "analysis_git_commit": "39db345173f5c597bc967b0874e3620dcc1d59a9",
+  "interpretation": "Optimization accuracy and thermodynamic phase evidence are distinct. These gates describe recorded evidence; false phase-certification fields are not claims that the physical phase is absent."
+}

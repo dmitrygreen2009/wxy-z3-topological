@@ -25,7 +25,10 @@
     "raw_inconsistent_center_energy_is_variational_bound": "Not guaranteed; trial-state exclusions require validated canonical consistency and compatible density.",
     "infinite_exact_complex_operator_fields": "Independent complex-product energies and local effective-field checks passed for both wrappings and both individual-site orderings.",
     "checkpoint_resume_controls": "Future finite resumes inherit recorded local controls rather than overriding stricter continuation settings; seeds and source initialization are explicit. No existing optimization was rerun.",
-    "bulk_filling_selected": "Not certified; short-cylinder end and central densities differ, and nearby sector energy differences compete with optimization error. Searches cannot be restricted to values closest to half filling."
+    "bulk_filling_selected": "Not certified; short-cylinder end and central densities differ, and nearby sector energy differences compete with optimization error. Searches cannot be restricted to values closest to half filling.",
+    "cylinder_half_filling_row_parity": "Odd widths have fractional U1 number 9*w/2 per one-row helical translation; two-row ansatz permits translation breaking. A parity trend does not establish a 2D phase.",
+    "recorded_convergence_review": "Six narrow finite records meet recorded sweep/bond heuristic criteria; zero completed infinite states have all canonical/local gates certified. No thermodynamic phase certificate.",
+    "exact_number_sector_lower_bound": "E(N)>=-sqrt(d_max)*min(N,Nspin-N) by positive spin-operator factorization. The valid 2D A-star trial excludes extreme densities; ordinary D(Z3) candidates k/27 with k=6..21 remain, without phase selection."
   },
   "concrete_findings": [
     "Width-one parallel cycles have circumference winding, despite local support on the quotient",
@@ -48,7 +51,7 @@
   "accepted_topological_fits": [],
   "report": "results/scientific_strategy_reaudit.md",
   "evidence_sha256": {
-    "results/strategy_geometry_audit.json": "f01632229da76806f3d6ffbfd9e5f78d4a0b4e6559969efcd0bc464436e7445f",
+    "results/strategy_geometry_audit.json": "41e5b4a5df3eec1ef6c7d8fe79c03735db63094eac6d0305ad60f3dde42c5c91",
     "results/cgs_general_audit.json": "da60ff842d31d63f3dae7245042339dc7060b8847a75be600880de664ae5d746",
     "results/torus_hard_gate_audit.md": "298be88dc5af3b26db861bfcb348a3d54e2518da6b93a038b26ce222049a1a67",
     "results/number_sector_cylinder_audit.md": "cfb667c4fb1021bd896c6372384a23fee673b254fff833c0a0030779668ed31c",
@@ -57,7 +60,7 @@
     "results/zigzag_L4_w1_chi256_star_projected1_seed7214_loops.json": "6b87d83a978074d0d45ea950a027a886a64c846714576d351307a36c0358bd06",
     "results/zigzag_L4_w2_chi256_star_circumference_cycles.json": "2aad476ae436c8744f1fdb0ebaee0227ef94bac12514e204a2dbfa367b3e74d4",
     "results/armchair_L4_w2_chi256_star_circumference_cycles.json": "c6d2d582677d7b1c7016cc3fb53a98b7e6352b7838a0af52e9ef9048dd332641",
-    "results/primitive_filling_audit.json": "8a711c3ac87844eab76dc6dd156d14c9e538d83fd3212e78740b4904bf7f36ee",
+    "results/primitive_filling_audit.json": "edd386a26de24bb5c76ae82eb6ffbb81f085654ff05b52e65eb06f6ff90e895a",
     "results/transfer_operator_coupling_audit.json": "3ed6ab701c85dac86f55d20fa8b91346baa6d6eca6160c18af7465ddc27687bb",
     "results/armchair_L4_w2_number_and_cycle_audit.json": "576fc12ecd77225895e553f1452abd17211571d3364e8328515e5d1b9729784e",
     "results/armchair_qn_initializer_trapping_audit.json": "b4129f61199a0dee9e74184e0c95bfe8d04ce484ff586f5a782175439a4faa2e",
@@ -68,7 +71,10 @@
     "results/infinite_ordering_driver_load_validation.log": "9b545e12a951ead284c13a511cb3fd28f218b333dbf27a2919ee6c74e8a4091a",
     "results/periodic_bond_dimensions_validation.log": "b6d008ea8a3694076dc4ff66678119410430ee0e8f663d9ccdf14ae9fde7cbeb",
     "results/dense_transfer_known_state_validation.log": "aca2b087263e2ed66be4e3662b2a19731404929b1085f9d4c7a833522f61c5af",
-    "results/resume_controls_validation.log": "b944390d7a62502139e48ab634fc0719d7747531e890aadb51deceefcd4ee6f2"
+    "results/resume_controls_validation.log": "b944390d7a62502139e48ab634fc0719d7747531e890aadb51deceefcd4ee6f2",
+    "results/parallel_expanded_local_solver_snapshot.json": "8b3e7eeec4124e26dd1a187ed9131b3f16e54d6d3825715ce1258c0d3a038393",
+    "results/convergence_gate_audit.json": "975215a628b0211df358a62359393c32472557486ec933aebf357afc62c46bdf",
+    "results/number_bound_audit.json": "79f8dc961d08dbfb405c1579f7aebd0f5dbbe067f71cefbfe5652874c1c2c414"
   },
   "geometry_metadata_followup": "41 finite physical-cut and 40 infinite incidence records statically checked; includes new periods 3 and 6. Default period-two interactions and existing optimizations unchanged.",
   "contractible_cycle_definitions": "geometry/cgs_plaquettes",

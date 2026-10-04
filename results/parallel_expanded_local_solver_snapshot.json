@@ -1,0 +1,80 @@
+{
+  "audited_utc": "2026-10-04T20:33:01.480949+00:00",
+  "source_jsonl": "results/infinite_zigzag_w2_chi32_finite_seed_star_parallel_expanded_local_eigensolves.jsonl",
+  "preserved_source_prefix": "results/parallel_expanded_local_solver_snapshot.jsonl",
+  "preserved_source_sha256": "37e70d33fca3d202d8df1f155ccbadc968e9a3e0998ac1f4a560ca58f5742919",
+  "analysis_git_commit": "39db345173f5c597bc967b0874e3620dcc1d59a9",
+  "records": [
+    {
+      "iteration": 1,
+      "git_commit": "d002119a5ae350f8ede5833a7bf44c2c4077aa98",
+      "local_solve_count": 72,
+      "all_local_criteria_passed": true,
+      "maximum_true_residual": 9.963483260352989e-11
+    },
+    {
+      "iteration": 2,
+      "git_commit": "d002119a5ae350f8ede5833a7bf44c2c4077aa98",
+      "local_solve_count": 72,
+      "all_local_criteria_passed": true,
+      "maximum_true_residual": 9.985811152622159e-11
+    },
+    {
+      "iteration": 3,
+      "git_commit": "d002119a5ae350f8ede5833a7bf44c2c4077aa98",
+      "local_solve_count": 72,
+      "all_local_criteria_passed": true,
+      "maximum_true_residual": 9.739354930759666e-11
+    },
+    {
+      "iteration": 4,
+      "git_commit": "d002119a5ae350f8ede5833a7bf44c2c4077aa98",
+      "local_solve_count": 72,
+      "all_local_criteria_passed": true,
+      "maximum_true_residual": 9.759442102497759e-11
+    },
+    {
+      "iteration": 5,
+      "git_commit": "d002119a5ae350f8ede5833a7bf44c2c4077aa98",
+      "local_solve_count": 72,
+      "all_local_criteria_passed": true,
+      "maximum_true_residual": 9.977238406440854e-11
+    },
+    {
+      "iteration": 6,
+      "git_commit": "d002119a5ae350f8ede5833a7bf44c2c4077aa98",
+      "local_solve_count": 72,
+      "all_local_criteria_passed": true,
+      "maximum_true_residual": 9.913408467718715e-11
+    },
+    {
+      "iteration": 7,
+      "git_commit": "d002119a5ae350f8ede5833a7bf44c2c4077aa98",
+      "local_solve_count": 72,
+      "all_local_criteria_passed": true,
+      "maximum_true_residual": 9.833445075855967e-11
+    },
+    {
+      "iteration": 8,
+      "git_commit": "d002119a5ae350f8ede5833a7bf44c2c4077aa98",
+      "local_solve_count": 72,
+      "all_local_criteria_passed": true,
+      "maximum_true_residual": 9.928567606307548e-11
+    },
+    {
+      "iteration": 9,
+      "git_commit": "d002119a5ae350f8ede5833a7bf44c2c4077aa98",
+      "local_solve_count": 72,
+      "all_local_criteria_passed": true,
+      "maximum_true_residual": 9.99363770670968e-11
+    },
+    {
+      "iteration": 10,
+      "git_commit": "d002119a5ae350f8ede5833a7bf44c2c4077aa98",
+      "local_solve_count": 72,
+      "all_local_criteria_passed": true,
+      "maximum_true_residual": 9.918012097885557e-11
+    }
+  ],
+  "interpretation": "Complete logged local-solve evidence only. Local accuracy does not certify canonical self-consistency, global ground energy, or thermodynamic convergence. Source calculation is unchanged."
+}

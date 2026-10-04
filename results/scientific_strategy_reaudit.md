@@ -1,9 +1,11 @@
 # Scientific strategy re-audit
 
 This audit uses the existing exact-Hamiltonian source, saved spectra, MPS results,
-geometry records, and convergence logs. Validated ED/DMRG/VUMPS calculations were
-not restarted. New static embedding/homology checks and local symmetry identities
-were added; ongoing runs and all valid physical checkpoints were preserved.
+geometry records, and convergence logs. Existing validated scientific results
+and local audit records were preserved; no production DMRG or VUMPS
+optimization was restarted. New static checks, analytic fixtures, and normal
+GitHub CI regressions checked modified helpers. Ongoing calculations and
+all valid physical checkpoints were preserved.
 
 **Scientific status: the current numerics neither establish nor exclude a
 2D Z3 topologically ordered phase. They also do not establish 2D gaplessness
@@ -13,7 +15,7 @@ the historical results and takes precedence over shorthand in older progress not
 
 ## Hamiltonian and geometry
 
-The microscopic implementation has the specified complex DFT3 W/sqrt(3), J=1,
+The microscopic implementation has the specified normalized complex Fourier matrix W, J=1,
 local three-spin matter triplets, and one spin per physical gauge edge. Raising
 and lowering amplitudes are conjugate partners. The corrected torus multiplicities
 4,1,1,4 remain validated; the historical hard-gate audit is unchanged. Neither
@@ -28,15 +30,16 @@ respectively. Both endpoints use the explicitly recorded local leg. Parallel
 edges remain distinct. Open ends retain dangling physical gauges: Nspin is
 9*L*w+w (zigzag) or 9*L*w+2*w (armchair), rather than the periodic bulk count.
 
-The independent static audit passed **41 finite embedded cuts and 16 infinite
+The independent static audit passed **41 finite embedded cuts and 40 infinite
 incidence/cut tables**. It checks physical positions rather than merely agreement
 of two code orderings. In units of the axial step, zigzag matter A/B positions
 are t and t+1/3; gauge legs 1,2,3 are t+1/6,t-1/3,t+1/6. Armchair matter
 positions are t; gauge positions are t,t-1/2,t+1/2. The half-open cut is at
 L/2. Integer-scaled coordinates confirm both even and odd recorded cuts and
-both infinite slice cuts. Matter triplets remain wholly on one side and every
-physical spin belongs to one side. The infinite cell contains two slices,
-4*w vertices and 18*w physical spins. Saved hopping tables independently match
+all declared infinite slice cuts. Matter triplets remain wholly on one side and every
+physical spin belongs to one side. The default infinite cell contains two slices,
+4*w vertices and 18*w physical spins; validated cells with S=3 or 6 slices
+contain 2*S*w vertices and 9*S*w physical spins. Saved hopping tables independently match
 the unfolded honeycomb incidence, including off-cell exchanges.
 
 The new winding audit exports 221 explicit circumference cycles. Importantly,
@@ -71,7 +74,9 @@ For even finite L, zigzag has Nspin=(9L+1)*w: odd widths have an odd
 physical spin count and a nearest-half sector with total Sz=+/-1/2, whereas
 even widths can have Sz=0. Both must be tracked; parity-dependent boundary
 or sector corrections cannot silently be absorbed into a common intercept.
-The two-slice infinite cells have even Nspin=18*w and imposed Sz=0.
+The original half-filled QN two-slice ansatz has even Nspin=18*w and a
+half-filling background. Other branches are unrestricted or use explicitly
+shifted fixed-density QNs; zero virtual flux alone never specifies half filling.
 
 A concrete sector-control failure was found without invalidating its numerical
 energy. The L4,w1 seed7214 run passed its initial q=1 projection checks but
@@ -112,9 +117,9 @@ must be marked unknown, not passed. No tolerance was relaxed in this audit.
 The analytic entropy and transfer tests validate the numerical pipeline. Transfer
 lengths use the library transfer matrix for a real infinite state, include all
 charge sectors through measurement-only densification, and retain complex leading
-eigenvalues and residuals. One transfer cell has two axial slices. Thus xi_cells
-and xi_slices differ by two; physical axial xi is 3*xi_cells (zigzag) or
-sqrt(3)*xi_cells (armchair). This is an axial correlation length, not an independent
+eigenvalues and residuals. A recorded transfer cell contains S axial slices.
+Thus xi_slices=S*xi_cells; physical axial xi is (3/2)*S*xi_cells (zigzag) or
+(sqrt(3)/2)*S*xi_cells (armchair), recovering the older factors at S=2. This is an axial correlation length, not an independent
 measurement of the transverse 2D correlation length or a spectral gap.
 
 Independent canonicalization defines a consistent state from the stored AL
@@ -137,9 +142,13 @@ are now kept separate in chi convergence comparisons.
 
 An exact trial-state bound exposes particularly misleading small residuals.
 The disjoint-A-star product gives E0_cell <= -4.8061842*w, conservatively rounded;
-independent 18-spin expectation error is below 6e-15. Armchair width-two cap2 and
-cap4 points violate this bound despite tiny reported residuals and are excluded
-as ground-state candidates. Their raw records are retained.
+independent 18-spin expectation error is below 6e-15. Some armchair width-two
+raw energies exceed this trial despite tiny reported residuals; inconsistent
+centers prevent interpreting those raw comparisons as exclusions. The
+independently recanonicalized cap16 half-filled branch has canonical error
+2e-15, energy change 3e-14, and an above-trial margin about 0.0866 per cell.
+That consistent state is excluded as a ground candidate; all raw records
+remain retained. See the detailed consistency audit below.
 
 ## What entropy fits can and cannot establish
 
@@ -465,10 +474,82 @@ also explicitly retain seeds and record their source checkpoint provenance.
 
 The density strategy must not prioritize only values closest to one half.
 The short armchair charged-state profiles differ substantially between
-central rows and ends, while their energy splittings are comparable to
-remaining optimization errors. Neither their total filling nor the densities
+central rows and ends, while optimization errors have not been bounded tightly enough to
+certify their nearby energy splittings. Neither their total filling nor the densities
 13/27 and 14/27 certify a bulk optimum. The complete conditional k/27 grid
 is recorded; broader density searches, length dependence, and particle-hole
 partners remain required wherever competitive energies emerge. A gapped
 plateau requires stability against number changes, not merely one fixed-N
 optimization. No density or symmetry branch currently certifies the 2D phase.
+
+At physical half filling the primitive axial translation row of either
+cylinder contains 9*w spin sites and 9*w/2 particles. Odd widths therefore
+have a fractional effective one-dimensional filling, whereas even widths
+do not. A unique gapped state preserving U1 and the one-row helical
+translation is constrained on odd-width cylinders; a two-row optimization
+can accommodate translation breaking or other degeneracy. This can affect
+parity trends in transfer length and entropy. It does not prove a 2D gapless
+phase, establish the ground filling, or automatically explain an
+unconverged state. Compare symmetry and number branches before pooling
+even/odd widths in an area-law fit. The explicit arithmetic is recorded in
+`results/primitive_filling_audit.json`.
+
+The machine-readable convergence review separates recorded sweep, truncation
+and bond-dimension criteria from thermodynamic evidence. At this snapshot
+6 of 76 finite records pass those available heuristic criteria; all are
+width-one cylinders. None of the 42 completed infinite measurements has all
+canonical and locally audited optimization gates documented as passed.
+Unknown evidence does not pass. Even a converged fixed-sector optimization
+does not certify the global ground sector, a common MES, length convergence,
+or circumference convergence. This report leaves the independently validated
+microscopic benchmarks intact and infers no 2D phase from current data.
+See `results/convergence_gate_audit.json` and its reproducible analysis script.
+
+Fixed total half filling can also impose an inhomogeneous state if the
+thermodynamic ground state instead selects two particle-hole related
+densities. Domain coexistence, a domain wall, or a coherent superposition
+would then contaminate a central-cut intercept. This is a possible failure
+mode, not an observation of such a phase. Full-state entropy is the correct
+quantity, but it does not remove the need to identify the actual bulk state.
+
+Where number-sector energies become reliable, record both number-addition
+and number-removal costs and their length dependence; the discrete curvature
+E(N+1)+E(N-1)-2E(N) is only a corroborating charge-gap diagnostic. Differences
+of unconverged variational upper bounds do not have a certified sign or
+error bar, and a positive short-cylinder curvature does not identify
+topological order. Existing sector-search energies remain raw trial results.
+
+A confirmed physical continuous-symmetry-broken phase would also require
+revisiting the entropy ansatz: Goldstone physics can add logarithmic terms
+even for a straight boundary. See [Metlitski and Grover](https://arxiv.org/abs/1112.5166).
+The coefficient and limits must be matched to the actual geometry and
+symmetry treatment; their finite-volume result is not automatically a
+formula for a finite-bond broken-symmetry infinite-cylinder state. No log
+term is fitted to rescue the present unconverged intercepts. Similarly, a
+charge sector with a growing transfer length does not alone exclude a
+coexisting deconfined discrete topological sector. The primary requested
+test remains the gapped D(Z3) scenario with converged finite correlation
+length and stable full-state entropy, while a gapless alternative would
+need additional sector-resolved evidence and a different finite-size
+analysis. Neither alternative is established by the current trial states.
+
+The previously validated exact one-particle bands also yield a rigorous
+number-sector bound for the interacting spin model. If h is its hopping
+matrix and lambda=sqrt(d_max), the positive matrix h+lambda*I factors as
+L†L. With B_a=sum_j L_aj*S_j^-, this gives the operator inequality
+H+lambda*N_up=sum_a B_a†B_a >=0. Applying the transposed-matrix argument
+to raising operators gives H+lambda*(Nspin-N_up)>=0. Thus every sector obeys
+E(N)>=-sqrt(d_max)*min(N,Nspin-N). This uses the actual hard-core spins,
+not a free-boson many-body approximation. Unitary W makes d_max the maximum
+physical shared-edge incidence count (two in the bulk, one for a single star).
+
+Combined with the valid 2D disjoint-A-star trial, the bound excludes bulk
+densities outside approximately [0.188805,0.811195] as global ground states.
+Under the already stated ordinary symmetry-preserving D(Z3) assumptions,
+the remaining k/27 candidates are k=6 through 21. This reduces the density
+search without selecting a phase or asserting that densities near one half
+are favored. Particle-hole partners remain exact mirrors. A better variational
+energy on a particular narrow cylinder must not be promoted to a 2D trial
+bound without constructing its valid 2D extension. The proof, preserved
+one-particle validation references, and benchmark inequalities are saved
+in `results/number_bound_audit.json`; no many-body calculation was repeated.

@@ -25,6 +25,7 @@ jobs:
       - run: python scripts/export_contractible_cycles.py
       - run: OPENBLAS_NUM_THREADS=1 python scripts/cgs_general_audit.py
       - run: python scripts/flatband_audit.py
+      - run: python scripts/number_bound_audit.py
       - run: OPENBLAS_NUM_THREADS=1 python scripts/parallel_edge_symmetry.py
       - run: OPENBLAS_NUM_THREADS=1 python scripts/star_trial_bound.py
       - run: OPENBLAS_NUM_THREADS=1 python test/cylinder_number_sectors.py
