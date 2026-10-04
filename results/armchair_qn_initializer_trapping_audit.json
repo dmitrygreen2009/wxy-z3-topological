@@ -1,0 +1,21 @@
+{
+  "source_result": "results/infinite_armchair_w2_chi16_qn_star_active.json",
+  "source_result_sha256": "0c5678d229753b9fab7fcee529301d1d295148032097af051af500995cf14b00",
+  "consistent_AL_state_result": "results/infinite_armchair_w2_chi16_qn_star_active_fixedpoint.json",
+  "consistent_result_sha256": "ec912448fab654611aefba85e64bd4bc02a162eebbf7bfaa7e679b0b0ffd79f9",
+  "energy_cell": -9.525782017201935,
+  "known_trial_upper_bound_cell": -9.6123684,
+  "energy_above_trial_bound": 0.08658638279806397,
+  "canonical_error": 2.0443507072218366e-15,
+  "inherited_solver_residual": 3.1500388409100338e-06,
+  "recanonicalization_energy_change": 3.197442310920451e-14,
+  "spatial_slice_entropy": 3.047834597594948e-31,
+  "xi_cells": 0.0,
+  "physical_density": 0.5,
+  "trial_compatible_with_enforced_density": true,
+  "trial_filling_construction": "Four disjoint A-star clusters have 12 up spins; choose six of the twelve B-matter spins up, giving Nup=18 of 36 per two-slice cell on average.",
+  "interpretation": "This particular QN product-start variational state cannot be the sector ground state: a compatible explicit trial state has lower energy. Zero spatial entropy/transfer length reflect a trapped slice-product state, not a phase diagnosis.",
+  "optimization_repeated": false,
+  "measurement": "Official canonicalization and observable extraction from unchanged AL tensors, justified by stored canonical inconsistency.",
+  "created_utc": "2026-10-04T16:50:19.732407+00:00"
+}

@@ -152,6 +152,15 @@ The armchair width-one unrestricted infinite state has been independently remeas
 
 A sector-scan attempt reported EOFError when loading the legacy zigzag L4 width-one reference. A subsequent pinned-environment checksum-aware load succeeded without replacing that state; the complete saved sector windows were reused. The recovery script remains available if a persistent unreadable checkpoint occurs. The transient load failure does not establish file corruption.
 
+The ongoing zigzag L6,width3 run completed its first chi256 stage with
+E=-66.4590725769925 and full-state central entropy 1.8722477346419069.
+Relative to its chi128 stage, entropy changed by about 0.2622 and energy by
+about -0.3461; maximum final-stage truncation error was 3.45e-4. This point is
+not converged and is not an accepted topological-fit input. An exact-byte
+snapshot preserves that completed stage while refinement continues from the
+same checkpoint. The physical model has 165 spins and Nup=83, so its odd-spin
+number correction must remain explicit in comparisons with other lengths.
+
 An independent variational upper bound guards against tangent-space traps: place a species-one Bell dimer on leg one of every A star and leg two of every B star. All selected gauges are distinct, each selected exchange contributes -1/sqrt(3), and all remaining exchanges have zero expectation. The unpaired gauges can be half filled. A two-slice infinite cell therefore has E0 <= -4*w/sqrt(3), independently of wrapping. The first armchair width-two QN point has Ecell=-3.46410161513775, above this bound (-4.61880215351701), despite residual 5.44e-16; it is excluded as a ground-state candidate. Subsequent scheduled expansions remain in progress. The permanent ITensor test checks the exact half-filled four-star dimer state against the microscopic MPO.
 
 The stronger isolated-A-star bound has now been checked independently by a full 18-spin fixed-number ED expectation: the normalized product trial has energy -4.806184255080366, within 5.33e-15 of twice the six-spin star energy. All B matter is fixed in Z, so its exchange expectations vanish; choosing half of B matter up gives total half filling for either wrapping. The conservative two-slice infinite bound is -4.8061842*width. This also excludes the armchair width-two cap-four point (-5.632993068933159) as a ground-state candidate despite residual 3.02e-8. The completed zigzag width-one cap-128 QN pass has Ecell=-7.337484937894882, entropy=1.272251856173988 and xi per slice=17.061643738098322, with inherited residual 3.2566e-5; local-sector and circumference limitations remain.

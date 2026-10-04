@@ -15,5 +15,19 @@ function infinite_cell_product(phi::MPS;tol=1e-14)
     _,right,_=ITensorInfiniteMPS.right_orthogonalize(A;left_tags=ts"Left",right_tags=ts"Right",tol)
     left,center,lambda=ITensorInfiniteMPS.left_orthogonalize(right;tol)
     @assert abs(lambda-1)<1e-10
+    # Official polar canonicalization retains the input arrow at the special
+    # one-dimensional boundary. Right-canonical subspace expansion expects the
+    # opposite arrow. Reorient this zero-QN index consistently in AR and C;
+    # storage, amplitudes, QN labels and the physical state are unchanged.
+    if hasqns(phi)
+        i=only(commoninds(right[n],right[n+1]))
+        if ITensors.dir(i)!=ITensors.Out
+            @assert dim(i)==1 && iszero(qn(i,ITensors.Block(1)))
+            flip(T,k)=ITensors.setinds(T,[j==k ? dag(j) : j for j in inds(T)])
+            right[n]=flip(right[n],i)
+            right[n+1]=flip(right[n+1],i)
+            center[n]=flip(center[n],i)
+        end
+    end
     InfiniteCanonicalMPS(left,center,right)
 end

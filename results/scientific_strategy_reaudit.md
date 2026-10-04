@@ -255,3 +255,21 @@ explicitly; legacy dense measurement tensors without that provenance remain
 unclassified rather than being assigned a density retrospectively. The new
 armchair width-two density-4/9 run is an independent candidate, motivated by
 the finite number scans, and provides no preferred-filling certificate yet.
+
+The first production expansion exposed a boundary-arrow incompatibility not
+covered by the ten state-only initializer checks. Both initial failed logs are
+preserved. The repair changes only the direction of a one-dimensional zero-QN
+right-canonical boundary index, consistently in AR and C, using the library's
+index operations; it changes no amplitudes or physical spin operators. Thirteen
+checks now include successful official subspace expansion across that boundary.
+The failed run produced no optimized scientific state and was retried from its
+same seeded initializer after this concrete interface correction.
+
+New consistent-state measurements of the completed armchair width-two QN
+cap16 stage give energy -9.525782017201935, canonical error 2.04e-15 and
+spatial entropy below 1e-30. Recanonicalization changes its energy by only
+3.2e-14. The compatible isolated-A-star trial energy is at most -9.6123684:
+this particular state is excluded as a sector ground state, despite its
+inherited 3.15e-6 solver residual. Its zero transfer length is a slice-product
+artifact, not a phase conclusion. No optimization was repeated for this audit;
+the newer QN stage continues. See `results/armchair_qn_initializer_trapping_audit.json`.

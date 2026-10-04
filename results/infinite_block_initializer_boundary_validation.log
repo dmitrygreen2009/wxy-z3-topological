@@ -1,0 +1,3 @@
+The two-site subspace expansion produced a zero-norm expansion at (1, 2). This is likely due to the long-range nature of the QN conserving Hamiltonian.
+Test Summary:                                                         | Pass  Total     Time
+Independent-cell initializer: exact Bell entropy and physical filling |   13     13  4m59.1s

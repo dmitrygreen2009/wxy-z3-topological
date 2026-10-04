@@ -1,6 +1,7 @@
 using Test,ITensorInfiniteMPS
 isdefined(Main,:cylinder) || include("../src/model.jl")
 include("../src/infinite_block_initializer.jl")
+include(joinpath(pkgdir(ITensorInfiniteMPS),"examples","vumps","src","vumps_subspace_expansion.jl"))
 @testset "Independent-cell initializer: exact Bell entropy and physical filling" begin
     s=siteinds("S=1/2",2;conserve_qns=true)
     phi=add(MPS(s,["Up","Dn"]),MPS(s,["Dn","Up"]);cutoff=1e-14);normalize!(phi)
@@ -24,4 +25,16 @@ include("../src/infinite_block_initializer.jl")
     tiled=infinite_cell_product(random_cell)
     @test sum(real(expect(tiled,"Sz",j))+.5 for j=1:9)≈4 atol=1e-12
     @test hasqns(siteind(tiled.AL,1))
+    # Exercise official expansion across the deliberate cell boundary; exact
+    # expectations alone do not check the library's QN arrow convention.
+    os=OpSum()
+    for j=1:2
+        os+=-.5,"S+",j,"S-",j+1
+        os+=-.5,"S-",j,"S+",j+1
+    end
+    H=InfiniteSum{MPO}(os,siteinds(only,psi))
+    expanded=subspace_expansion(psi,H;cutoff=1e-12,maxdim=4)
+    @test hasqns(siteind(expanded.AL,1))
+    @test dim(only(linkinds(expanded.AL,2=>3)))>1
+    @test all(iszero(flux(expanded.AL[j])) for j=1:2)
 end
