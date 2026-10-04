@@ -21,23 +21,11 @@ for path in ARGS
             "charge_probabilities"=>probabilities,"operator_max_bond_dimension"=>maxlinkdim(operator),
             "charge_purity_error"=>minimum(abs(z-cis(2pi*q/3)) for q=0:2)))
     end
-    correlations=[]
-    for first in [1,6]
-        onepoint=expect(psi,infinite_triplet_mpo(sites,first))
-        for cells in [1,2,4]
-            raw=expect(psi,infinite_triplet_pair_mpo(sites,first,first+cells*18w))
-            connected=raw-abs2(onepoint)
-            push!(correlations,Dict("first_matter_site"=>first,"distance_cells"=>cells,
-                "distance_slices"=>2cells,"one_point_real"=>real(onepoint),"one_point_imag"=>imag(onepoint),
-                "correlation_real"=>real(raw),"correlation_imag"=>imag(raw),
-                "connected_real"=>real(connected),"connected_imag"=>imag(connected)))
-        end
-    end
     result=Dict("family"=>family,"width"=>w,"source_checkpoint"=>path,
         "source_payload"=>actual,"source_sha256"=>open(io->bytes2hex(SHA.sha256(io)),actual),
         "source_canonical_error"=>meta["canonical_error"],
         "source_solver_residual"=>get(meta,"solver_residual",nothing),
-        "noncontractible_cycle_measurements"=>records,"matter_charge_three_correlations"=>correlations,
+        "noncontractible_cycle_measurements"=>records,
         "runtime_seconds"=>time()-started,
         "audit"=>run_provenance(solver="ITensorInfiniteMPS factorized microscopic circumference MPO contraction",
             settings=Dict("operator_cutoff"=>1e-14),initialization=path,conserved_quantum_numbers=[]),

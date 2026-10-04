@@ -176,11 +176,14 @@ combined as if they were the same thermodynamic state. Nor should axial xi from
 one mixed width-one branch certify length convergence of a different finite q=0
 branch or transverse convergence at another width.
 
-U(1) number conservation is exact. Core interpretation uses conserved-number
-observables and sector energetics. Archived matter-triplet measurements are
-excluded from phase interpretation and convergence decisions: invariance under
-CGS alone does not establish a distinguished physical role for that operator.
-No conclusion about spontaneous U(1) breaking follows from those measurements.
+U(1) number conservation is exact. A zero one-point charge-three matter expectation
+in a QN ansatz is enforced by that symmetry and cannot exclude spontaneous order.
+Raw <S+> can also be gauge variant; it is a variational/coherence diagnostic,
+not a physical order certificate. Gauge-invariant triplet correlations and their
+length/width scaling are needed. Continuous symmetry breaking can produce
+logarithmic entropy terms rather than the assumed constant-only correction;
+see [Metlitski and Grover](https://arxiv.org/abs/1112.5166). This is a competing
+possibility to test, not a claim that this model breaks U(1).
 
 Existing OLS errors measure scatter about a chosen finite-data line. They do not
 include uncontrolled chi, length, sector, and circumference systematics. Negative
@@ -241,8 +244,9 @@ For the consistently canonical width-one QN cap128 state, the leading full
 transfer magnitudes are 1, 0.8893877 (twice), and 0.7396177. New winding-loop
 connected contractions at 8 and 16 cells give a descriptive per-cell decay
 ratio about 0.7384, roughly following the fourth eigenvalue rather than the
-leading subdominant pair. These loop measurements do not identify the leading
-eigenvectors' quantum numbers or certify a physical gap or ground-state order. Raw
+leading subdominant pair. Charge-three matter contractions are much smaller.
+Neither operator measurement identifies the leading eigenvectors' quantum
+numbers, and neither certifies a physical gap or ground-state order. Raw
 contractions and a separate comparison are saved in
 `results/transfer_operator_coupling_audit.json`. Existing validated one-point
 values were reused; legacy records lack an original payload fingerprint, which
@@ -286,7 +290,7 @@ respectively, with flux-weight purity within rounding of one and eigenvector
 residuals below 9e-14. The next mode at 0.7396177 is neutral and has transfer
 length about 6.63 slices, compatible with the descriptive winding-correlation
 decay about 6.60 slices. Thus the full length 17.06 does not control the neutral
-winding operators in this U1 ansatz. The classification
+winding or charge-three matter operators in this U1 ansatz. The classification
 does not identify microscopic CGS charges or turn this unconverged width-one
 state into evidence for a two-dimensional gap or phase. Ten analytic matrix
 checks validate the QN-basis flux-weight bookkeeping; all transfer contractions

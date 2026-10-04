@@ -1,14 +1,5 @@
 isdefined(Main,:cylinder) || include("../src/model.jl")
 using Serialization
-function triplet_correlation(psi,left_sites,right_sites)
-    @assert length(left_sites)==length(right_sites)==3
-    @assert isempty(intersect(left_sites,right_sites))
-    ops=OpSum();term=Any[1.0]
-    for k in left_sites;append!(term,["S+",k]);end
-    for k in right_sites;append!(term,["S-",k]);end
-    add!(ops,term...)
-    inner(psi',MPO(ops,siteinds(psi)),psi)
-end
 function measure_file(path)
     started=time()
     psi=load_state(path)
@@ -31,24 +22,12 @@ function measure_file(path)
     gauge_mean=real.(expect(psi,"Sz";sites=gauge_sites))
     gauge_zz=real.(correlation_matrix(psi,"Sz","Sz";sites=gauge_sites))
     gauge_connected=gauge_zz-gauge_mean*transpose(gauge_mean)
-    # Product of three matter raising operators is invariant under the exact
-    # CGS matter cyclic permutation and common omega phase (omega^3=1).
-    triplets=[]
-    for separation=1:L-1
-        t=fld(L-1-separation,2)+1;u=t+separation
-        ls=[invorder[3(vertices[t]-1)+a] for a=1:3]
-        rs=[invorder[3(vertices[u]-1)+a] for a=1:3]
-        value=triplet_correlation(psi,ls,rs)
-        push!(triplets,Dict("slice_separation"=>separation,"left_slice"=>t-1,"right_slice"=>u-1,
-            "real"=>real(value),"imag"=>imag(value),"left_sites"=>ls,"right_sites"=>rs))
-    end
     entropies=[entropy_at(psi,b)[1] for b=1:length(psi)-1]
     r=Dict("source"=>path,"matter_sample_sites"=>selected,"sz"=>real.(sz),
         "connected_sz"=>[collect(row) for row in eachrow(connected)],
         "splus_sminus_real"=>[collect(row) for row in eachrow(real.(pm))],
         "splus_sminus_imag"=>[collect(row) for row in eachrow(imag.(pm))],
-        "entropy_all_bonds"=>entropies,"gauge_invariant_matter_triplet_correlations"=>triplets,
-        "triplet_interpretation"=>"Charge-three full-matter correlator invariant under exact local CGS actions; finite length and chi must be checked before interpreting persistence.",
+        "entropy_all_bonds"=>entropies,
         "runtime_seconds"=>time()-started,"source_git_commit"=>get(meta,:git_commit,nothing),
         "measurement_git_commit"=>LAUNCH_REVISION,
         "audit"=>run_provenance(solver="ITensorMPS full-state expectation contractions",settings=Dict(),initialization=path,conserved_quantum_numbers=["total Sz"]),

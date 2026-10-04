@@ -1,5 +1,5 @@
 {
-  "git_commit": "c474872d38af3ce6e20cd92e3ab9ec0372824c24",
+  "git_commit": "369f50b82ec041d6d447a10fecabf6bb4abb8319",
   "records": [
     {
       "source": "results/infinite_zigzag_w2_chi32_finite_seed_star_fixedpoint_circumference_cycles.json",
@@ -20,18 +20,13 @@
           0.31871465755160405
         ]
       ],
-      "maximum_matter_triplet_one_point_magnitude": 0.04602557519365117,
-      "largest_distance_cells": 4,
-      "largest_distance_raw_correlation_magnitudes": [
-        0.0018659815733408044,
-        0.0021183535719064396
-      ],
-      "largest_distance_connected_correlation_magnitudes": [
-        3.5701154147548655e-17,
-        2.0209290197545938e-18
-      ],
-      "ground_state_or_2D_order_certified": false
+      "ground_state_or_2D_order_certified": false,
+      "translated_operator_reaudit_status": "Pending saved-state remeasurement; no flux/MES certificate"
     }
   ],
-  "interpretation": "A nonzero CGS-invariant charge-three one-point expectation diagnoses U(1) breaking of this variational ansatz. It does not establish spontaneous order in the converged cylinder or 2D ground state. Short connected transfer correlations can coexist with its disconnected ordered plateau. Circumference charge weights do not certify a MES; separate initialization branches and convergence remain necessary."
+  "excluded_observables": [
+    "matter-triplet one-point functions",
+    "matter-triplet correlations"
+  ],
+  "interpretation": "Exact microscopic loop measurements of saved variational states. Loop purity does not certify a topological flux sector or MES. Translated-indexing audits and sector-preserving optimization remain required."
 }

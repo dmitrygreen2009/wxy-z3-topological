@@ -14,6 +14,7 @@
     "Z3_topological_order_excluded": "not established",
     "2D_gaplessness": "not established",
     "physical_U1_order": "not established",
+    "one_unrestricted_variational_ansatz_breaks_physical_U1": "Measured nonzero CGS-invariant charge-three matter expectation; no thermodynamic ground-state order certificate.",
     "half_filled_symmetry_preserving_D_Z3": "Conditionally incompatible with ordinary nonpermuting background-anyon U1 SET constraints; actual filling and symmetry are unresolved.",
     "two_slice_cell_exhausts_MES": "Not established: a three-sector translation cycle may require a larger cell.",
     "local_requested_eigensolver_tol_is_achieved": "Not inferred: new continuations save true residuals and ConvergenceInfo.",
@@ -77,6 +78,5 @@
   },
   "geometry_metadata_followup": "41 finite physical-cut and 40 infinite incidence records statically checked; includes new periods 3 and 6. Default period-two interactions and existing optimizations unchanged.",
   "contractible_cycle_definitions": "geometry/cgs_plaquettes",
-  "resource_management_followup": "No additional density or circumference jobs launched during observed heavy compressed-memory pressure; active calculations and checkpoints preserved.",
-  "excluded_diagnostic": "Matter-triplet observables are archival only; no distinguished microscopic role has been established."
+  "resource_management_followup": "No additional density or circumference jobs launched during observed heavy compressed-memory pressure; active calculations and checkpoints preserved."
 }

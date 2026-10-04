@@ -276,20 +276,19 @@ julia --project=. scripts/noncontractible_cycles.jl results/zigzag_L4_w2_chi256_
 
 The last command measures new circumference-cycle charges and density profiles on an existing state. CGS projection labels specify initialization; verify actual charges after optimization. A winding-operator eigenstate has not automatically been identified as a topological MES. Future finite-to-infinite fit caches carry source and payload fingerprints; legacy caches with unknown input fingerprints remain explicitly labeled reusable trial states with incomplete initializer provenance.
 
-### Audited circumference charges and physical matter correlations
+### Audited circumference charges
 
 For a saved infinite state in the explicit `star` ordering, measure winding-one
-microscopic CGS loops and connected charge-three matter correlations with:
+microscopic CGS loops with:
 
 ```sh
 julia --project=. test/cgs_operator_mpo.jl
-julia --project=. test/infinite_triplet_correlations.jl
 julia --project=. scripts/infinite_circumference_cycles.jl RESULT.jls
 ```
 
 The operator is factored into local three-spin library MPOs, so its construction
 does not allocate a dense whole-circumference tensor. Results include complex
-loop expectations, three charge probabilities, connected matter correlations,
+loop expectations and three charge probabilities,
 source checksums, and inherited convergence errors. Use a consistent canonical
 state for these contractions; `scripts/recanonicalize_infinite.jl` rebuilds the
 same AL-defined state without optimizing it when stored centers are inconsistent.
@@ -418,3 +417,29 @@ requirements still need comparison. Both orderings' nonlocal center operators
 pass independent microscopic complex-field checks. Original star-order runs
 and their checkpoints are preserved. The conditional ordinary D(Z3) filling
 constraint and initializer accessibility are in `results/primitive_filling_audit.json`.
+
+The scientific re-audit also checks convergence and admissible fillings without
+restarting a production optimization:
+
+```sh
+OPENBLAS_NUM_THREADS=1 python scripts/primitive_filling_audit.py
+OPENBLAS_NUM_THREADS=1 python scripts/number_bound_audit.py
+OPENBLAS_NUM_THREADS=1 python scripts/analyze_infinite.py
+OPENBLAS_NUM_THREADS=1 python scripts/convergence_gate_audit.py
+```
+
+The number bound is an exact hard-core-spin operator inequality, not a free-boson
+approximation. Combined with a valid 2D star-product trial, it rules out extreme
+bulk densities; it does not select a density or establish topological order.
+The convergence report treats missing evidence as unknown and keeps recorded
+optimization criteria separate from global-sector and thermodynamic claims.
+Odd-width half-filled rows have fractional number per primitive helical
+translation, so parity and symmetry branches must be checked before pooling
+circumferences. See `results/scientific_strategy_reaudit.md` for the current
+interpretation of all preserved results. Future large jobs should run serially
+while existing workers cause substantial memory compression.
+
+Matter-triplet measurements and their historical interpretations are retained
+in `results/archive/triplet_provenance/` and the original raw result files.
+They are excluded from core diagnostics, phase interpretation, convergence
+criteria, and entropy fits. No distinguished microscopic role has been derived.

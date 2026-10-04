@@ -1,0 +1,37 @@
+{
+  "git_commit": "c474872d38af3ce6e20cd92e3ab9ec0372824c24",
+  "records": [
+    {
+      "source": "results/infinite_zigzag_w2_chi32_finite_seed_star_fixedpoint_circumference_cycles.json",
+      "source_sha256": "3c2a579926cfed477cfe5e887170cce8319fd290f8c012d17dc9a99b4413f5d7",
+      "family": "zigzag",
+      "width": 2,
+      "source_solver_residual": 0.00028299856022583677,
+      "source_canonical_error": 6.3648702578532696e-12,
+      "circumference_charge_probabilities": [
+        [
+          0.3556978943908551,
+          0.3221512204029909,
+          0.32215088520615404
+        ],
+        [
+          0.3625706930635661,
+          0.3187146493848298,
+          0.31871465755160405
+        ]
+      ],
+      "maximum_matter_triplet_one_point_magnitude": 0.04602557519365117,
+      "largest_distance_cells": 4,
+      "largest_distance_raw_correlation_magnitudes": [
+        0.0018659815733408044,
+        0.0021183535719064396
+      ],
+      "largest_distance_connected_correlation_magnitudes": [
+        3.5701154147548655e-17,
+        2.0209290197545938e-18
+      ],
+      "ground_state_or_2D_order_certified": false
+    }
+  ],
+  "interpretation": "A nonzero CGS-invariant charge-three one-point expectation diagnoses U(1) breaking of this variational ansatz. It does not establish spontaneous order in the converged cylinder or 2D ground state. Short connected transfer correlations can coexist with its disconnected ordered plateau. Circumference charge weights do not certify a MES; separate initialization branches and convergence remain necessary."
+}

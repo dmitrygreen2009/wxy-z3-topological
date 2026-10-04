@@ -1,7 +1,8 @@
 # Local microscopic symmetry sectors in infinite width-one states
 
 Independent microscopic loop-MPO tests pass: U^3=I on an arbitrary complex
-state and the exactly known product-state loop charge. The canonicalized QN zigzag width-one chi32 and chi64
+state, the exactly known product-state charge, and the charge-three matter
+operator expectation. The canonicalized QN zigzag width-one chi32 and chi64
 states have Re<U> approximately -1/2 at each of the two cell slices, but
 Im<U> is far from either ±sqrt(3)/2. Their local cycle charges are mixed.
 These values are saved in the fixedpoint observable JSON files.
@@ -28,5 +29,7 @@ as independently measured with the full microscopic gate action. Their
 entropies must not be merged with the infinite mixed-cycle states as though
 they were identical sectors.
 
-Archived matter-triplet measurements do not enter phase interpretation. Full-state entropies still include every matter and gauge spin.
+The charge-three matter one-point expectation vanishes in these QN states,
+as required by conserved U1; this does not rule out spontaneous matter
+order. Full-state entropies still include every matter and gauge spin.
 No gauge-only entropy is used as topological evidence.

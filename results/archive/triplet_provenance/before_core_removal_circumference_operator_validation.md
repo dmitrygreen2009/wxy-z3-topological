@@ -21,11 +21,21 @@ library's unit-bond scaffold preserves the operator phase. The failed test logs
 are retained alongside the passing validation log; no stored production state
 or previously validated numerical result was changed.
 
-`scripts/infinite_circumference_cycles.jl` measures exact microscopic winding
-operators at each declared slice origin. It records complex expectations,
-charge probabilities, payload checksums, and inherited convergence errors.
-Matter-triplet measurements are archival only and excluded from the core pipeline.
-Loop purity alone does not certify a MES, a spectral gap, or a 2D phase.
+The charge-three matter correlation operator is the exact product of three S+
+operators on one star and three S- operators on another. Independent coherent
+product expectations are 1/64; an all-down product gives zero. A Hadamard acting
+on |Dn> yields the minus coherent state, whose triplet one-point expectation is
+-1/8, while its two-triplet expectation remains 1/64. These signs are fixed
+analytically rather than by relaxing any tolerance. All five new correlation
+checks passed at tolerance 1e-12, including support beyond one infinite cell.
+
+`scripts/infinite_circumference_cycles.jl` measures both slice-origin winding
+operators and charge-three correlations at separations one, two, and four
+infinite cells. It saves complex expectations, charge probabilities, source
+payload checksums, inherited canonical/solver errors, and provenance. These are
+observables of the saved variational state. Neither a pure loop charge nor a
+short variational correlation length alone certifies a minimally entangled
+state, a spectral gap, or the two-dimensional phase.
 
 ## First saved-state measurement (provisional)
 
@@ -36,11 +46,20 @@ variational solver residual remains 2.83e-4. No optimization was repeated.
 Its two winding operators have charge weights approximately
 (0.356, 0.322, 0.322) and (0.363, 0.319, 0.319), rather than a pure charge.
 
-Historical matter-triplet numbers and associated U(1)-breaking interpretations
-are superseded as core evidence. Raw values remain in the original JSON files
-and the archived pre-removal audit. No distinguished microscopic role has been
-derived for that observable. The short transfer length of this unconverged
-variational state does not certify a gapped topological phase.
+The physical, CGS-invariant matter-triplet expectations have magnitudes about
+0.0432 and 0.0460. At separation four cells the raw correlations are about
+0.00187 and 0.00212, while connected parts are near floating-point roundoff.
+Thus this particular unrestricted variational ansatz breaks physical U(1),
+with a disconnected ordered plateau and short connected correlations.
+This is not a claim of spontaneous order in the converged cylinder or 2D
+model. Its finite bond dimension, residual, initializer branch, and sector
+weights still require convergence checks. In particular its short transfer
+length is not evidence of a gapped topological phase. The ongoing wider-bond
+run is retained for comparison, rather than restarted.
+
+Raw expectations remain in the `_circumference_cycles.json` result.
+`scripts/summarize_infinite_microscopic_observables.py` generates a separate
+provisional summary without promoting these observations to phase conclusions.
 
 ## Contractible charges and number-sector follow-up
 
@@ -81,7 +100,12 @@ infinite product expectations for both wrappings at widths one and two.
 The adjoint uses the exact Abelian representation (c,q,p) -> (-c,-q,-p) mod 3.
 No whole-circumference dense tensor or custom contraction kernel is introduced.
 
-The independent winding-loop pair contractions and transfer eigenvalues remain
-archived variational-state measurements. Their geometry and translated support
-must be re-audited before renewed sector interpretation. Triplet correlations
-are excluded from this comparison and from all phase conclusions.
+New charge-three connected contractions on the saved, consistently canonical
+zigzag width-one QN cap128 state are only about 1e-10 at one/two cells, 1e-11
+at four cells, and 2e-15 at eight cells. These are observables of the approximate
+state; their small amplitudes are not a physical-ground-state correlation error
+bound, and the inherited solver residual remains 3.26e-5. They do not demonstrate
+long charge-three correlations even though the full transfer length is about
+17 axial slices. Additional winding-loop pair contractions test whether that
+full transfer mode instead couples to narrow-quotient sector fluctuations.
+Existing validated one-point contractions are reused rather than repeated.

@@ -40,6 +40,8 @@ infinite=[]
 for path in sorted(glob.glob('results/infinite_*_chi*.json')):
     r=json.load(open(path))
     if 'spatial_entropy' not in r or r.get('validation_fixture',False):continue
+    r={k:v for k,v in r.items() if not any(term in k.lower() for term in ('triplet','charge_three'))}
+    r['excluded_observable_policy']='Matter-triplet measurements are archival only'
     r['file']=path
     r['historical_reported_chi']=r['chi']
     r['audited_maximum_bond_dimension']=bond_audit.get(path,{}).get('maximum_bond_dimension',r.get('bond_dimension_details',{}).get('maximum_bond_dimension'))
