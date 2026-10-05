@@ -2,8 +2,9 @@
 isdefined(Main,:cylinder) || include("../src/model.jl")
 include("../src/matter_charge_basis.jl")
 include("../src/cgs_operator_mpo.jl")
+include("../src/real_charge_hamiltonian.jl")
 const WINDING_QN_DRIVER_SHA=bytes2hex(sha256(read(@__FILE__)))
-function run_winding_qn(family,L,w,nup,charge;seed=7254,maxcap=512,resume=nothing,krylovdim=12,eigsolve_maxiter=30,noise=[1e-5,1e-6,1e-7,0.0])
+function run_winding_qn(family,L,w,nup,charge;seed=7254,maxcap=512,resume=nothing,krylovdim=12,eigsolve_maxiter=30,noise=[1e-5,1e-6,1e-7,0.0],hamiltonian_representation="real_closed_form")
     Random.seed!(seed);started=time();ordering="star";lat=cylinder(family,L,w;ordering)
     table="geometry/cgs_cycles/$(family)_L$(L)_w$(w)_star.json"
     defs=JSON3.read(read(table,String),Dict{String,Any});cycle=first(c for c in defs["cycles"] if c["winding_number"]==1)
@@ -12,7 +13,8 @@ function run_winding_qn(family,L,w,nup,charge;seed=7254,maxcap=512,resume=nothin
     p=Int.(cycle["edge_exponents"]);weights=winding_site_weights(lat,p)
     if resume===nothing
         sites=winding_qn_sites(weights);state=winding_initial_state(weights,nup,charge)
-        psi=random_mps(ComplexF64,sites,state;linkdims=4)
+        initial_type=hamiltonian_representation=="real_closed_form" ? Float64 : ComplexF64
+        psi=random_mps(initial_type,sites,state;linkdims=4)
     else
         psi=load_state(resume);sites=siteinds(psi)
         @assert length(psi)==lat.n
@@ -21,7 +23,8 @@ function run_winding_qn(family,L,w,nup,charge;seed=7254,maxcap=512,resume=nothin
         @assert settings["basis"]=="exact_matter_charge_basis" && Int.(settings["onsite_winding_weights"])==weights
     end
     @assert val(flux(psi),"Sz")==2nup-lat.n && mod(val(flux(psi),"Winding"),3)==charge
-    H=MPO(charge_basis_opsum(lat),sites)
+    @assert hamiltonian_representation in ["real_closed_form","complex_matrix_units"]
+    H=MPO(hamiltonian_representation=="real_closed_form" ? real_charge_basis_opsum(lat) : charge_basis_opsum(lat),sites)
     U=cgs_product_mpo(sites,(;triplets=Tuple{Int,Int,Int}[],gauges=collect(enumerate(weights)),first_site=1,last_site=lat.n))
     known_energy=nothing
     for edpath in ["results/sector_penalty_ed_audit.json","results/winding_physical_sector_ed.json"]
@@ -35,7 +38,7 @@ function run_winding_qn(family,L,w,nup,charge;seed=7254,maxcap=512,resume=nothin
         end
     end
     audit=run_provenance(;seed,solver="ITensorMPS exact U1 x Z3 winding-QN DMRG",
-        settings=Dict("basis"=>"exact_matter_charge_basis","onsite_winding_weights"=>weights,"winding_charge"=>charge,
+        settings=Dict("basis"=>"exact_matter_charge_basis","hamiltonian_representation"=>hamiltonian_representation,"fresh_initialization_scalar_type"=>hamiltonian_representation=="real_closed_form" ? "Float64" : "ComplexF64","resume_state_preserved_without_tensor_realification"=>true,"onsite_winding_weights"=>weights,"winding_charge"=>charge,
             "edge_exponents"=>p,"matter_hilbert_space_dimension"=>8,"local_roundoff_cutoff"=>1e-14,
             "cutoff"=>1e-13,"sweeps_per_stage"=>12,"krylovdim"=>krylovdim,"eigsolve_maxiter"=>eigsolve_maxiter,"noise_schedule"=>noise,"noise_application"=>"First stage only; subsequent stages have zero noise to avoid rotating degenerate ground states","eigsolve_tol"=>1e-13,
             "purity_tolerance"=>1e-10,"variance_tolerance"=>1e-8,"energy_drift_tolerance"=>1e-9,"entropy_drift_tolerance"=>1e-5,"truncation_error_window"=>"Last four zero-noise sweeps",

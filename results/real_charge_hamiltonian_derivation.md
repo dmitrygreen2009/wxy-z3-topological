@@ -25,9 +25,7 @@ The full Hamiltonian remains exactly
 
 There are 18 real product terms per star including Hermitian conjugates.
 Physical shared edges are still represented once. This may reduce production
-memory relative to a complex matrix-unit representation, but the proposed
-library MPO implementation in `src/real_charge_hamiltonian.jl` must pass its
-separate equivalence test before it is used in an optimizer. Running jobs
+memory relative to a complex matrix-unit representation, and the library MPO implementation in `src/real_charge_hamiltonian.jl` has now passed its separate equivalence test in GitHub CI at commit d3e7db21. The run URL and validation scope are saved in `real_charge_hamiltonian_ci_validation.json`. Running jobs
 retain their original loaded Hamiltonians. A complex checkpoint must not be
 converted to a real state by taking the real part of each MPS tensor.
 

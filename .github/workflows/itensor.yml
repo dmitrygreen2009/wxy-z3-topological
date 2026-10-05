@@ -31,6 +31,7 @@ jobs:
       - run: OPENBLAS_NUM_THREADS=1 python scripts/charge_basis_ed_audit.py
       - run: OPENBLAS_NUM_THREADS=1 python scripts/real_charge_hamiltonian_audit.py
       - run: OPENBLAS_NUM_THREADS=1 python scripts/winding_physical_sector_ed.py --fixture
+      - run: python scripts/infinite_winding_charge_flow_audit.py
       - run: python scripts/flatband_audit.py
       - run: python scripts/number_bound_audit.py
       - run: OPENBLAS_NUM_THREADS=1 python scripts/parallel_edge_symmetry.py

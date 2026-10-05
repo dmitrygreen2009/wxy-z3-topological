@@ -1,0 +1,16 @@
+{
+  "git_commit": "d3e7db21879dc5cdf0ab3fbcc2ffab82500b20b2",
+  "status": "completed",
+  "conclusion": "success",
+  "run_url": "https://github.com/dmitrygreen2009/wxy-z3-topological/actions/runs/37245880156",
+  "workflow": "Exact microscopic WXY validation",
+  "validation_scope": [
+    "Independent ED and corrected torus first-14 levels with residual/Gram checks",
+    "Full-state entropy and transfer regression pipeline",
+    "Exact matter charge basis (42 local-library checks)",
+    "Exact winding checkpoint bridge (36 checks)",
+    "Real microscopic charge-basis MPO equivalence (18 checks inferred from the committed test loop)"
+  ],
+  "production_gate": "Passed for real_charge_basis_opsum as committed. No active job switched representations, no existing checkpoint tensors converted to real values.",
+  "test_count_source": "Counts are determined from test source; the public workflow success confirms the combined test command passed."
+}

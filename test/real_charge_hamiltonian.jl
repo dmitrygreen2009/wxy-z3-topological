@@ -11,8 +11,8 @@ include("../src/real_charge_hamiltonian.jl")
         sites=winding_qn_sites(weights)
         original=MPO(charge_basis_opsum(lat),sites)
         realH=MPO(real_charge_basis_opsum(lat),sites)
-        for q=0:2
-            psi=random_mps(ComplexF64,sites,winding_initial_state(weights,2,q);linkdims=3)
+        for q=0:2,scalar in [Float64,ComplexF64]
+            psi=random_mps(scalar,sites,winding_initial_state(weights,2,q);linkdims=3)
             a=apply(original,psi;cutoff=1e-14,maxdim=256)
             b=apply(realH,psi;cutoff=1e-14,maxdim=256)
             @test norm(a-b)<1e-10
