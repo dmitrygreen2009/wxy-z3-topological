@@ -473,4 +473,15 @@ julia --project=. scripts/convert_winding_checkpoint.jl PHYSICAL_RESULT.jls 0
 julia --project=. scripts/winding_qn_dmrg.jl zigzag 2 1 9 0 512 CONVERTED_CHECKPOINT.jls
 ```
 
-The converter writes a new projected branch and verifies that the original checkpoint SHA is unchanged. Its JSON records projection weight, number, basis, winding weights and conversion tolerances. The optimizer records both QNs, measured loop expectation/variance, energy variance, full-state Schmidt spectrum, convergence history, launch commit and executed driver SHA. Startup noise expands the allowed QN support; subsequent stages use zero noise to avoid artificial motion within degenerate ground spaces. Low-number fixtures are excluded from phase inference and TEE fits.
+The converter writes a new projected branch and verifies that the original checkpoint SHA is unchanged. Its JSON records projection weight, number, basis, winding weights and conversion tolerances. The optimizer records both QNs, measured loop expectation/variance, energy variance, full-state Schmidt spectrum, convergence history, launch commit and executed driver SHA. Expansion noise is recorded on the first pass at each cap; the second pass uses zero noise to check stability without repeatedly rotating degenerate ground spaces. Resumed finite optimizations preserve the saved bond cap. Low-number fixtures are excluded from phase inference and TEE fits.
+
+The individual infinite-winding package-closure gate passed 110 checks in CI. The production wrapper remains gated on its additional measurement/checkpoint integration test. It requires an explicit number background; it does not choose half filling.
+
+```sh
+# Example candidate background: 8 up spins on average per 18-site cell.
+# This is a filling comparison, not a claim that 4/9 is the bulk minimum.
+julia --project=. scripts/infinite_winding_qn.jl armchair 1 8 0 16
+julia --project=. scripts/infinite_winding_qn.jl armchair 1 8 1 16
+```
+
+The driver reports each disjoint winding eigenvalue and variance. Its JSON identifies the QN optimization checkpoint to resume, distinct from dense measurement copies. It uses exact real spin operators in the complete matter space, all physical individual sites, full-state spatial cuts, and the official transfer matrix. It requires a complete finite virtual-spectrum certificate before automatically repairing inconsistent Schmidt centers. Fixing a loop pattern is not a MES or emergent-flux identification, and neither filling selection nor 2D order follows from a small-cell run.

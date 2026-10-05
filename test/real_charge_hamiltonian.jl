@@ -4,6 +4,16 @@ isdefined(Main,:matter_charge_basis) || include("../src/matter_charge_basis.jl")
 include("../src/real_charge_hamiltonian.jl")
 @testset "Exact real winding-basis microscopic MPO" begin
     Random.seed!(7257)
+    # Full operator identity also covers matter N_up=3, absent in N2 fixtures.
+    star=(;n=6,nv=1,legs=[[1,2,3]],order=collect(1:6))
+    s=siteinds("S=1/2",6)
+    matrix(H)=reshape(Array(reduce(*,H),prime.(s)...,dag.(s)...),64,64)
+    physical=matrix(microscopic_mpo(star.legs,s))
+    V=kron(Matrix{ComplexF64}(I,8,8),matter_charge_basis()[8:-1:1,8:-1:1])
+    transformed=V'*physical*V
+    @test norm(matrix(MPO(charge_basis_opsum(star),s))-transformed)<1e-11
+    @test norm(matrix(MPO(real_charge_basis_opsum(star),s))-transformed)<1e-11
+    @test norm(transformed-transformed')<1e-12
     for family in ["zigzag","armchair"]
         lat=cylinder(family,2,1;ordering="star")
         defs=JSON3.read(read("geometry/cgs_cycles/$(family)_L2_w1_star.json",String),Dict{String,Any})

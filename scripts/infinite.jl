@@ -6,7 +6,7 @@ include("../src/infinite_model.jl")
 include("../src/vumps_audit.jl")
 include("../src/transfer_analysis.jl")
 
-function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_first")
+function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_first",result_transform=nothing)
     measurement_started=time()
     n=length(psi.AL);@assert n%(9w)==0
     cell_slices=n÷(9w)
@@ -89,6 +89,7 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
     if isfile(audit_path)
         a=JSON3.read(read(audit_path,String),Dict{String,Any})
         r["audit"]=a;r["git_commit"]=a["git_commit"]
+        r["basis"]=checkpoint_basis(a)
         r["number_background"]=get(a,"number_background",r["number_background"])
         r["measurement_tensors_have_qns"]=is_qn
         r["u1_conserving_ansatz"]=get(a,"optimization_u1_conserving_ansatz",is_qn)
@@ -105,6 +106,8 @@ function measure_infinite(psi,H,family,w,cap,iteration;tag="",ordering="matter_f
         r["git_commit"]=nothing
         r["historical_audit_gap"]="Original run predates launch provenance; measurement and legacy logs are preserved."
     end
+    @assert get(r,"basis","physical_spin")=="physical_spin" || result_transform!==nothing "Rotated infinite states require the validated physical-observable interpretation"
+    result_transform===nothing || result_transform(r)
     target_density=get(r["number_background"],"physical_number_density",nothing)
     r["number_density_error_vs_background"]=target_density===nothing ? nothing : abs(r["mean_sz"]+.5-target_density)
     quality_fields=["canonical_error","left_isometry_error","right_isometry_error","center_normalization_error","transfer_normalization_error"]

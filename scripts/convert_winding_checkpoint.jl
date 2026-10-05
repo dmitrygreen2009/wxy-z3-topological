@@ -1,14 +1,21 @@
 # Convert and project a saved physical MPS; never modify its source payload.
 isdefined(Main,:cylinder) || include("../src/model.jl")
 include("../src/winding_checkpoint_bridge.jl")
-function convert_winding_checkpoint(path,charge;maxdim=nothing)
+function convert_winding_checkpoint(path,charge;maxdim=nothing,target_nup=nothing)
     Random.seed!(7256);started=time();actual=resolve_checkpoint(path);source_sha=open(io->bytes2hex(sha256(io)),actual)
     meta=JSON3.read(read(replace(path,".jls"=>".json"),String),Dict{String,Any})
     settings=get(meta,"solver_settings",get(get(meta,"audit",Dict()),"solver_settings",Dict()))
     @assert get(meta,"basis",get(settings,"basis","physical_spin"))=="physical_spin"
     family=meta["family"];L=meta["length"];w=meta["width"];ordering=get(meta,"ordering","axial")
     @assert ordering=="star" "Direct sector continuation currently uses audited star ordering"
-    lat=cylinder(family,L,w;ordering);psi=load_state(path);nup=(lat.n+val(flux(psi),"Sz"))÷2
+    lat=cylinder(family,L,w;ordering);psi=load_state(actual);source_nup=(lat.n+val(flux(psi),"Sz"))÷2
+    number_map="Original physical number retained"
+    if target_nup!==nothing && target_nup!=source_nup
+        @assert target_nup==lat.n-source_nup "Only the exact particle-hole partner is supplied by this conversion"
+        psi=particle_hole_mps(psi)
+        number_map="Exact microscopic antiunitary particle-hole map; no reoptimization"
+    end
+    nup=(lat.n+val(flux(psi),"Sz"))÷2
     table="geometry/cgs_cycles/$(family)_L$(L)_w$(w)_$(ordering).json"
     defs=JSON3.read(read(table,String),Dict{String,Any});cycle=first(c for c in defs["cycles"] if c["winding_number"]==1)
     p=Int.(cycle["edge_exponents"]);cap=maxdim===nothing ? max(64,4maxlinkdim(psi)) : maxdim
@@ -30,6 +37,7 @@ function convert_winding_checkpoint(path,charge;maxdim=nothing)
     result=Dict("family"=>family,"length"=>L,"width"=>w,"physical_circumference"=>lat.circumference,"spins"=>lat.n,"vertices"=>lat.nv,
         "ordering"=>ordering,"seed"=>seed,"basis"=>"exact_matter_charge_basis","nup"=>nup,"total_sz"=>nup-lat.n/2,"filling_fraction"=>nup/lat.n,
         "source_payload"=>actual,"source_payload_sha256"=>source_sha,"source_energy"=>Ebefore,"source_entropy"=>Sbefore,
+        "source_nup"=>source_nup,"physical_number_map"=>number_map,
         "conversion_record"=>record,"conversion_energy"=>Eafter,"conversion_entropy"=>S,"schmidt_probabilities"=>probs,
         "geometry_cycle_definitions"=>table,"loop_label"=>cycle["label"],"audit"=>audit,"git_commit"=>audit["git_commit"],
         "runtime_seconds"=>time()-started,"interpretation"=>"New sector-projected branch from an unchanged original checkpoint. No optimization or convergence certificate.")
@@ -39,6 +47,6 @@ function convert_winding_checkpoint(path,charge;maxdim=nothing)
     manifest["checkpoint_file"]
 end
 if abspath(PROGRAM_FILE)==@__FILE__
-    @assert length(ARGS)==2
-    convert_winding_checkpoint(ARGS[1],parse(Int,ARGS[2]))
+    @assert length(ARGS) in [2,3]
+    convert_winding_checkpoint(ARGS[1],parse(Int,ARGS[2]);target_nup=length(ARGS)==3 ? parse(Int,ARGS[3]) : nothing)
 end

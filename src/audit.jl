@@ -12,6 +12,10 @@ const LAUNCH_SOURCE_HASHES=let fingerprints=Dict()
     fingerprints
 end
 const PROCESS_STARTED_UTC=string(now(UTC))
+function checkpoint_basis(metadata)
+    settings=get(metadata,"solver_settings",get(get(metadata,"audit",Dict()),"solver_settings",Dict()))
+    get(metadata,"basis",get(settings,"basis","physical_spin"))
+end
 function run_provenance(;seed=nothing,solver,settings=Dict(),initialization,conserved_quantum_numbers)
     revision=LAUNCH_REVISION;dirty=LAUNCH_CODE_DIRTY;fingerprints=copy(LAUNCH_SOURCE_HASHES)
     Dict("run_version"=>RUN_FORMAT_VERSION,"git_commit"=>revision,"code_worktree_dirty"=>dirty,

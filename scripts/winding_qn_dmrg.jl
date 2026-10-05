@@ -4,7 +4,7 @@ include("../src/matter_charge_basis.jl")
 include("../src/cgs_operator_mpo.jl")
 include("../src/real_charge_hamiltonian.jl")
 const WINDING_QN_DRIVER_SHA=bytes2hex(sha256(read(@__FILE__)))
-function run_winding_qn(family,L,w,nup,charge;seed=7254,maxcap=512,resume=nothing,krylovdim=12,eigsolve_maxiter=30,noise=[1e-5,1e-6,1e-7,0.0],hamiltonian_representation="real_closed_form")
+function run_winding_qn(family,L,w,nup,charge;seed=7254,maxcap=512,resume=nothing,krylovdim=12,eigsolve_maxiter=30,noise=[1e-5,1e-6,1e-7,0.0],hamiltonian_representation="real_closed_form",startcap=nothing)
     Random.seed!(seed);started=time();ordering="star";lat=cylinder(family,L,w;ordering)
     table="geometry/cgs_cycles/$(family)_L$(L)_w$(w)_star.json"
     defs=JSON3.read(read(table,String),Dict{String,Any});cycle=first(c for c in defs["cycles"] if c["winding_number"]==1)
@@ -15,13 +15,18 @@ function run_winding_qn(family,L,w,nup,charge;seed=7254,maxcap=512,resume=nothin
         sites=winding_qn_sites(weights);state=winding_initial_state(weights,nup,charge)
         initial_type=hamiltonian_representation=="real_closed_form" ? Float64 : ComplexF64
         psi=random_mps(initial_type,sites,state;linkdims=4)
+        resume_cap=32
     else
         psi=load_state(resume);sites=siteinds(psi)
         @assert length(psi)==lat.n
         previous=JSON3.read(read(replace(resume,".jls"=>".json"),String),Dict{String,Any})
         settings=get(previous,"solver_settings",get(get(previous,"audit",Dict()),"solver_settings",Dict()))
         @assert settings["basis"]=="exact_matter_charge_basis" && Int.(settings["onsite_winding_weights"])==weights
+        resume_cap=occursin("direct_winding",get(previous,"phase","")) ? Int(previous["cap"]) : maxlinkdim(psi)
     end
+    initial_cap=startcap===nothing ? max(32,resume_cap) : startcap
+    @assert maxlinkdim(psi)<=initial_cap<=maxcap
+    caps=sort(unique(vcat(initial_cap,[c for c in [32,64,128,256,512,1024] if initial_cap<c<maxcap],maxcap)))
     @assert val(flux(psi),"Sz")==2nup-lat.n && mod(val(flux(psi),"Winding"),3)==charge
     @assert hamiltonian_representation in ["real_closed_form","complex_matrix_units"]
     H=MPO(hamiltonian_representation=="real_closed_form" ? real_charge_basis_opsum(lat) : charge_basis_opsum(lat),sites)
@@ -40,17 +45,18 @@ function run_winding_qn(family,L,w,nup,charge;seed=7254,maxcap=512,resume=nothin
     audit=run_provenance(;seed,solver="ITensorMPS exact U1 x Z3 winding-QN DMRG",
         settings=Dict("basis"=>"exact_matter_charge_basis","hamiltonian_representation"=>hamiltonian_representation,"fresh_initialization_scalar_type"=>hamiltonian_representation=="real_closed_form" ? "Float64" : "ComplexF64","resume_state_preserved_without_tensor_realification"=>true,"onsite_winding_weights"=>weights,"winding_charge"=>charge,
             "edge_exponents"=>p,"matter_hilbert_space_dimension"=>8,"local_roundoff_cutoff"=>1e-14,
-            "cutoff"=>1e-13,"sweeps_per_stage"=>12,"krylovdim"=>krylovdim,"eigsolve_maxiter"=>eigsolve_maxiter,"noise_schedule"=>noise,"noise_application"=>"First stage only; subsequent stages have zero noise to avoid rotating degenerate ground states","eigsolve_tol"=>1e-13,
+            "cutoff"=>1e-13,"sweeps_per_stage"=>12,"krylovdim"=>krylovdim,"eigsolve_maxiter"=>eigsolve_maxiter,"noise_schedule"=>noise,"noise_application"=>"First pass at each bond cap; second pass has zero noise. This expands missing QN support at a new cap without repeatedly rotating degenerate ground states","eigsolve_tol"=>1e-13,
             "purity_tolerance"=>1e-10,"variance_tolerance"=>1e-8,"energy_drift_tolerance"=>1e-9,"entropy_drift_tolerance"=>1e-5,"truncation_error_window"=>"Last four zero-noise sweeps",
             "known_fixed_sector_ed_energy"=>known_energy,"known_energy_tolerance"=>1e-9),
         initialization=resume===nothing ? "Random MPS in exact number/winding QN block" : resume,
         conserved_quantum_numbers=["Physical N_up=$nup","Exact microscopic winding charge=$charge"])
     audit["executed_driver_sha256"]=WINDING_QN_DRIVER_SHA
+    audit["initial_cap"]=initial_cap
     stem="results/$(family)_L$(L)_w$(w)_Nup$(nup)_winding$(charge)_qn_seed$(seed)"
     records=[];previousS=nothing
-    for cap in unique(min.(maxcap,[32,64,128,256,512,1024])),pass in 1:2
+    for cap in caps,pass in 1:2
         estimate_memory(psi,cap;label="Direct winding-QN $family L$L w$w q$charge")
-        stage_noise=isempty(records) ? noise : [0.0]
+        stage_noise=pass==1 ? noise : [0.0]
         obs=finite_checkpoint_observer(lat;family,L,w,cap,seed,stage="direct_winding$(charge)_pass$(pass)",ordering,audit,cutoff=1e-13,noise=stage_noise,nup)
         _,psi=dmrg(H,psi;nsweeps=12,maxdim=cap,cutoff=1e-13,noise=stage_noise,eigsolve_krylovdim=krylovdim,eigsolve_maxiter,eigsolve_tol=1e-13,observer=obs,outputlevel=1)
         @assert val(flux(psi),"Sz")==2nup-lat.n && mod(val(flux(psi),"Winding"),3)==charge

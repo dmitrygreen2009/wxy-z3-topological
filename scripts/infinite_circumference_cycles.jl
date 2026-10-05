@@ -5,6 +5,7 @@ include("../src/infinite_observables.jl")
 for path in ARGS
     started=time()
     meta=JSON3.read(read(replace(path,".jls"=>".json"),String),Dict{String,Any})
+    @assert checkpoint_basis(meta)=="physical_spin" "Use the validated diagonal winding operators for rotated infinite states"
     @assert get(meta,"infinite_ordering","matter_first")=="star" "Operator coordinates require the explicitly audited star ordering"
     actual=resolve_checkpoint(path);psi=load_state(path)
     psi=InfiniteCanonicalMPS(dense(psi.AL),dense(psi.C),dense(psi.AR))

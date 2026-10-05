@@ -1,0 +1,4 @@
+2026-10-05T00:33:06.5390943Z Test Summary:                            | Pass  Total   Time
+2026-10-05T00:33:06.5391605Z Exact real winding-basis microscopic MPO |   36     36  34.6s
+2026-10-05T00:34:55.3394942Z Test Summary:                                           | Pass  Total   Time
+2026-10-05T00:34:55.3396044Z Individual infinite microscopic winding-cell constraint |  110    110  33.0s

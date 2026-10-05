@@ -1,0 +1,6 @@
+2026-10-05T00:08:23.4682496Z Test Summary:                                          | Pass  Total   Time
+2026-10-05T00:08:23.4684002Z Direct winding QN is an exact microscopic basis change |   42     42  29.7s
+2026-10-05T00:08:28.0822421Z Test Summary:                                               | Pass  Total  Time
+2026-10-05T00:08:28.0823289Z Existing physical MPS to exact winding-QN checkpoint bridge |   36     36  4.6s
+2026-10-05T00:08:38.3391154Z Test Summary:                            | Pass  Total   Time
+2026-10-05T00:08:38.3391691Z Exact real winding-basis microscopic MPO |   18     18  10.1s

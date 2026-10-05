@@ -3,6 +3,7 @@ isdefined(Main,:cylinder) || include("../src/model.jl")
 using ITensorInfiniteMPS, KrylovKit
 include("../src/transfer_analysis.jl")
 include("../src/dense_transfer_matrix.jl")
+include("../src/transfer_uniqueness.jl")
 @testset "Analytically known infinite transfer spectrum" begin
     # A^up=diag(sqrt(p),sqrt(1-p)); A^down swaps the two bond states.
     # The channel eigenvalues are 1, 2sqrt(p(1-p)), 0, 0.
@@ -15,6 +16,10 @@ include("../src/dense_transfer_matrix.jl")
     tensor[previous=>1,s[1]=>2,bond=>2]=sqrt(p)
     tensor[previous=>2,s[1]=>2,bond=>1]=sqrt(1-p)
     A=InfiniteMPS([tensor]);T=TransferMatrix(A)
+    certificate=transfer_uniqueness_certificate(A)
+    @test certificate["fixed_point_uniqueness_certified"]
+    @test certificate["primitive_peripheral_spectrum_certified"]
+    @test !transfer_uniqueness_certificate(A;maximum_dimension=1)["fixed_point_uniqueness_certified"]
     dense_values=eigvals(dense_transfer_matrix(T))
     @test sort(abs.(dense_values);rev=true)≈[1.,.8,0.,0.] atol=1e-10
     x=random_itensor(ComplexF64,dag(input_inds(T)))
@@ -33,6 +38,10 @@ end
     tensor=ITensor(ComplexF64,previous,s[1],bond)
     tensor[previous=>1,s[1]=>1,bond=>1]=1
     tensor[previous=>2,s[1]=>2,bond=>2]=1
+    certificate=transfer_uniqueness_certificate(InfiniteMPS([tensor]))
+    @test !certificate["fixed_point_uniqueness_certified"]
+    @test !certificate["primitive_peripheral_spectrum_certified"]
+    @test certificate["fixed_point_multiplicity_at_tolerance"]==2
     @test sort(abs.(eigvals(dense_transfer_matrix(TransferMatrix(InfiniteMPS([tensor])))));rev=true)≈[1.,1.,0.,0.] atol=1e-11
     spectrum=transfer_spectrum(InfiniteMPS([tensor]);tol=1e-12)
     @test spectrum["fixed_point_rank_detected"]==2

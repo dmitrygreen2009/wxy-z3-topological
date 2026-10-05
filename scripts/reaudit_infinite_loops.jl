@@ -2,8 +2,10 @@
 include("infinite.jl")
 include("../src/cgs_operator_mpo.jl")
 include("../src/canonical_analysis.jl")
+include("../src/transfer_uniqueness.jl")
 function reaudit_infinite_loops(path)
     started=time();meta=JSON3.read(read(replace(path,".jls"=>".json"),String),Dict{String,Any})
+    @assert checkpoint_basis(meta)=="physical_spin" "Use the winding-basis measurement driver for rotated infinite states"
     @assert get(meta,"infinite_ordering","matter_first")=="star"
     actual=resolve_checkpoint(path);source_sha=open(io->bytes2hex(sha256(io)),actual)
     psi=load_state(path);family=meta["family"];w=meta["width"];n=length(psi.AL);slices=n÷(9w)
@@ -11,10 +13,10 @@ function reaudit_infinite_loops(path)
     canonical_status="Stored state retained"
     if meta["canonical_error"]>1e-10
         A=hasqns(siteind(psi.AL,1)) ? InfiniteMPS([dense(psi.AL[j]) for j=1:n],translator(psi.AL)) : psi.AL
-        spectrum=transfer_spectrum(A)
-        if spectrum["fixed_point_rank_detected"]!=1
+        certificate=transfer_uniqueness_certificate(A)
+        if !certificate["primitive_peripheral_spectrum_certified"]
             atomic_json(replace(path,".jls"=>"_loop_reaudit.json"),Dict("source"=>path,"source_payload_sha256"=>source_sha,
-                "status"=>"Skipped: nonunique fixed point; no arbitrary sector/boundary change","fixed_point_rank"=>spectrum["fixed_point_rank_detected"]))
+                "status"=>"Skipped: primitive fixed point not certified; no arbitrary sector/boundary change","transfer_uniqueness_certificate"=>certificate))
             return
         end
         psi,_=canonicalize_left(psi.AL);canonical_status="Same AL state recanonicalized; no optimization"

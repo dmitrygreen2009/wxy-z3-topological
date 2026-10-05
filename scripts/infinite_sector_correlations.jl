@@ -3,6 +3,7 @@ include("../src/cgs_operator_mpo.jl")
 # Diagnose whether the narrow-quotient transfer length couples to loop sectors.
 path=ARGS[1];onepoint_path=ARGS[2];started=time()
 meta=JSON3.read(read(replace(path,".jls"=>".json"),String),Dict{String,Any})
+@assert checkpoint_basis(meta)=="physical_spin" "The physical matter loop representation requires an unrotated checkpoint"
 @assert meta["family"]=="zigzag" && meta["width"]==1 && meta["infinite_ordering"]=="star"
 old=JSON3.read(read(onepoint_path,String),Dict{String,Any})
 if haskey(old,"source_payload_sha256")

@@ -1,0 +1,28 @@
+{
+  "snapshot": "results/snapshots/winding_q0_physical_variational_plateau_20261005T005630737566Z.json",
+  "family": "zigzag",
+  "L": 2,
+  "width": 1,
+  "nup": 9,
+  "total_sz": -0.5,
+  "filling_fraction": 0.47368421052631576,
+  "winding_charge": 0,
+  "cap": 256,
+  "actual_bond_dimension": 110,
+  "energy": -7.69610153520467,
+  "independent_sector_ed_energy": -7.696107978815055,
+  "energy_error_vs_ed": 6.443610384820886e-06,
+  "energy_variance": 3.355583910291671e-05,
+  "entropy": 1.3552682243408956,
+  "loop_purity_error": 1.0781200106159774e-15,
+  "passed": false,
+  "interpretation": "Stationary variational candidate that fails the independent energy and variance gates. Incomplete QN support or initialization trapping is a working hypothesis, not a demonstrated cause. Cap increase and negligible discarded weight alone do not establish convergence. No previously validated original-basis result is invalidated.",
+  "continuation": "Preserve the running calculation. At its next scientific restart, resume without reducing its bond cap, with recorded expansion noise on the first pass at each cap and zero noise on the second; exact physical-ground checkpoint bridging is available if that remains inadequate.",
+  "unchanged_tolerances": {
+    "variance": 1e-08,
+    "energy_error_vs_ed": 1e-09,
+    "entropy_drift": 1e-05,
+    "loop_purity": 1e-10,
+    "truncation": 1e-10
+  }
+}

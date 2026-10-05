@@ -9,8 +9,8 @@
     "Full-state entropy and transfer regression pipeline",
     "Exact matter charge basis (42 local-library checks)",
     "Exact winding checkpoint bridge (36 checks)",
-    "Real microscopic charge-basis MPO equivalence (18 checks inferred from the committed test loop)"
+    "Real microscopic charge-basis MPO equivalence (18 checks confirmed in job logs)"
   ],
   "production_gate": "Passed for real_charge_basis_opsum as committed. No active job switched representations, no existing checkpoint tensors converted to real values.",
-  "test_count_source": "Counts are determined from test source; the public workflow success confirms the combined test command passed."
+  "test_count_source": "Downloaded GitHub job logs confirm 42 basis, 36 bridge and 18 real-MPO checks; selected summaries saved in real_charge_hamiltonian_ci_test_summary.log"
 }

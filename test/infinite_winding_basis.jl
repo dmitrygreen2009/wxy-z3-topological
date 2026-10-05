@@ -22,6 +22,12 @@ fixture_records=[]
         physical=apply(gates,physical;cutoff=1e-14,maxdim=256)
         Hold=MPO(infinite_opsum(family,1;periodic=true,ordering="star"),ss)
         @test inner(phi',Hrot,phi)≈inner(physical',Hold,physical) atol=1e-10
+        rotated_density=expect(phi,"Sz");physical_density=expect(physical,"Sz")
+        for row=0:1,first in [9row+1,9row+6]
+            for a=0:2
+                @test physical_density[first+a]≈sum(rotated_density[first:first+2])/3 atol=1e-10
+            end
+        end
         for group=1:length(charges)
             offset=family=="zigzag" ? (group-1)*9 : 0
             spec=merge(cgs_circumference_spec(family,1;offset),(;first_site=1,last_site=18))
@@ -60,8 +66,10 @@ fixture_records=[]
         @test infinite_number_background(psi)["physical_number_density"]≈1/3
     end
 end
-atomic_json("results/infinite_winding_basis_fixture.json",Dict("records"=>fixture_records,
+fixture_output=Dict("records"=>fixture_records,
     "audit"=>run_provenance(;seed=7259,solver="Official infinite canonicalization/expansion/one-update symmetry fixture",
         settings=Dict("cutoff"=>1e-12,"maxdim"=>3,"iterations"=>1,"local_tolerance"=>1e-10,"loop_tolerance"=>1e-10),
         initialization="Random finite cells with exact physical-number/winding QNs",conserved_quantum_numbers=["Physical mean N_up=6 per 18-site cell","Individual disjoint microscopic winding charges"]),
-    "interpretation"=>"Algebra and package-update closure only; not a converged cylinder, selected thermodynamic filling, MES or phase certificate."))
+    "interpretation"=>"Algebra and package-update closure only; not a converged cylinder, selected thermodynamic filling, MES or phase certificate.")
+atomic_json("results/infinite_winding_basis_fixture.json",fixture_output)
+println("INFINITE_WINDING_FIXTURE_JSON=",JSON3.write(fixture_output))

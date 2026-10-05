@@ -2,6 +2,7 @@ include("infinite.jl")
 include("../src/infinite_observables.jl")
 function measure_infinite_observables(path)
     started=time();meta=JSON3.read(read(replace(path,".jls"=>".json"),String),Dict{String,Any})
+    @assert checkpoint_basis(meta)=="physical_spin" "Physical matter operators cannot be applied directly to rotated matter modes"
     @assert get(meta,"infinite_ordering","matter_first")=="star" "Observable locations require the recorded star ordering"
     actual=resolve_checkpoint(path);source_sha=open(io->bytes2hex(sha256(io)),actual)
     psi=load_state(actual);psi=InfiniteCanonicalMPS(dense(psi.AL),dense(psi.C),dense(psi.AR))

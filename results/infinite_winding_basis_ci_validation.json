@@ -1,0 +1,19 @@
+{
+  "git_commit": "ee75cdca",
+  "workflow_run_id": 37247478658,
+  "job_id": 111568110265,
+  "run_url": "https://github.com/dmitrygreen2009/wxy-z3-topological/actions/runs/37247478658",
+  "status": "completed",
+  "conclusion": "success",
+  "passed_individual_loop_checks": 110,
+  "passed_real_and_complex_mpo_checks": 36,
+  "evidence": "Downloaded job logs; selected summaries in infinite_winding_basis_ci_test_summary.log",
+  "scope": "18 physical individual sites; explicit mean filling 1/3; both geometries and q0/q1; original-basis periodic energies and matter-dressed loop actions; canonicalization, expansion and one official infinite update; unchanged 1e-10 loop tolerance",
+  "limitations": [
+    "Not a converged cylinder calculation",
+    "No thermodynamic filling selected",
+    "No MES or emergent-flux identification",
+    "No 2D-phase claim",
+    "Additional production wrapper and physical-species interpretation tests remain gated"
+  ]
+}
