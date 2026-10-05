@@ -29,6 +29,8 @@ jobs:
       - run: OPENBLAS_NUM_THREADS=1 python scripts/sector_particle_hole_audit.py
       - run: OPENBLAS_NUM_THREADS=1 python scripts/matter_charge_basis_audit.py
       - run: OPENBLAS_NUM_THREADS=1 python scripts/charge_basis_ed_audit.py
+      - run: OPENBLAS_NUM_THREADS=1 python scripts/real_charge_hamiltonian_audit.py
+      - run: OPENBLAS_NUM_THREADS=1 python scripts/winding_physical_sector_ed.py --fixture
       - run: python scripts/flatband_audit.py
       - run: python scripts/number_bound_audit.py
       - run: OPENBLAS_NUM_THREADS=1 python scripts/parallel_edge_symmetry.py
@@ -42,7 +44,7 @@ jobs:
         run: OPENBLAS_NUM_THREADS=1 python scripts/torus_solver_audit.py
       - if: github.event_name == 'workflow_dispatch'
         run: python scripts/torus_gate.py
-      - run: julia --project=. -e 'include("test/runtests.jl"); include("test/entanglement.jl"); include("test/transfer.jl"); include("test/checkpoints.jl"); include("test/cgs_projection.jl"); include("test/cgs_sector_penalty.jl"); include("test/matter_charge_basis.jl"); include("test/winding_checkpoint_bridge.jl"); include("test/infinite_entropy.jl"); include("test/infinite_observables.jl"); include("test/particle_hole.jl"); include("test/spatial_partition.jl"); include("test/variational_bound.jl"); include("test/cgs_operator_mpo.jl"); include("test/contractible_operator_mpo.jl"); include("test/cgs_pair_operator_mpo.jl"); include("test/infinite_block_initializer.jl"); include("test/infinite_number_background.jl"); include("test/transfer_charge_labels.jl"); include("test/local_eigenpair_audit.jl"); include("test/parallel_vumps.jl"); include("test/infinite_cell_period.jl"); include("test/infinite_period_product.jl"); include("test/transfer_cell_period.jl"); include("test/finite_stationarity.jl"); include("test/infinite_complex_product.jl"); include("test/infinite_effective_field.jl"); include("test/periodic_bond_dimensions.jl"); include("test/resume_controls.jl")'
+      - run: julia --project=. -e 'include("test/runtests.jl"); include("test/entanglement.jl"); include("test/transfer.jl"); include("test/checkpoints.jl"); include("test/cgs_projection.jl"); include("test/cgs_sector_penalty.jl"); include("test/matter_charge_basis.jl"); include("test/winding_checkpoint_bridge.jl"); include("test/real_charge_hamiltonian.jl"); include("test/infinite_entropy.jl"); include("test/infinite_observables.jl"); include("test/particle_hole.jl"); include("test/spatial_partition.jl"); include("test/variational_bound.jl"); include("test/cgs_operator_mpo.jl"); include("test/contractible_operator_mpo.jl"); include("test/cgs_pair_operator_mpo.jl"); include("test/infinite_block_initializer.jl"); include("test/infinite_number_background.jl"); include("test/transfer_charge_labels.jl"); include("test/local_eigenpair_audit.jl"); include("test/parallel_vumps.jl"); include("test/infinite_cell_period.jl"); include("test/infinite_period_product.jl"); include("test/transfer_cell_period.jl"); include("test/finite_stationarity.jl"); include("test/infinite_complex_product.jl"); include("test/infinite_effective_field.jl"); include("test/periodic_bond_dimensions.jl"); include("test/resume_controls.jl")'
       - if: github.event_name == 'workflow_dispatch'
         run: julia --project=. test/infinite_period_measurement.jl
       - if: github.event_name == 'workflow_dispatch'

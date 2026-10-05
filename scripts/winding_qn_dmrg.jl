@@ -24,11 +24,13 @@ function run_winding_qn(family,L,w,nup,charge;seed=7254,maxcap=512,resume=nothin
     H=MPO(charge_basis_opsum(lat),sites)
     U=cgs_product_mpo(sites,(;triplets=Tuple{Int,Int,Int}[],gauges=collect(enumerate(weights)),first_site=1,last_site=lat.n))
     known_energy=nothing
-    if isfile("results/sector_penalty_ed_audit.json")
-        ed=JSON3.read(read("results/sector_penalty_ed_audit.json",String),Dict{String,Any})
+    for edpath in ["results/sector_penalty_ed_audit.json","results/winding_physical_sector_ed.json"]
+        isfile(edpath) || continue
+        ed=JSON3.read(read(edpath,String),Dict{String,Any})
         for row in ed["records"]
             if row["family"]==family && row["L"]==L && row["width"]==w && row["nup"]==nup
-                known_energy=only([sector["energy"] for sector in row["sectors"] if sector["charge"]==charge])
+                matches=[sector["energy"] for sector in row["sectors"] if sector["charge"]==charge]
+                isempty(matches) || (known_energy=only(matches))
             end
         end
     end

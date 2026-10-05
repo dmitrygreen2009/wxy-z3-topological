@@ -1,12 +1,38 @@
 {
-  "status": "Implementation validation and saved-state remeasurement pending",
-  "preserved": ["Exact Hamiltonian", "Physical shared-edge incidence", "Fixed-number basis", "Energy optimizations", "Full-state Schmidt spectra", "Transfer eigenvalues"],
+  "status": "66 microscopic/MPO checks passed; saved-state remeasurement pending",
+  "preserved": [
+    "Exact Hamiltonian",
+    "Physical shared-edge incidence",
+    "Fixed-number basis",
+    "Energy optimizations",
+    "Full-state Schmidt spectra",
+    "Transfer eigenvalues"
+  ],
   "known_issue": "CelledVector range/vector indexing does not implement general translated support. The factorized cgs_product_mpo uses scalar-index extraction; the legacy infinite_twocycle_mpo still had finite bounds and vector indexing and is now routed through that implementation.",
   "source_change": "src/infinite_observables.jl infinite_twocycle_mpo delegates to cgs_product_mpo",
-  "tests": ["test/cgs_operator_mpo.jl", "test/infinite_observables.jl", "test/cgs_sector_penalty.jl"],
-  "remeasure_families": ["zigzag", "armchair"],
-  "remeasure_observables": ["Translated winding expectations and charge probabilities", "Translated contractible-loop expectations", "Separated winding-pair contractions that use translated support"],
+  "tests": [
+    "test/cgs_operator_mpo.jl",
+    "test/infinite_observables.jl",
+    "test/cgs_sector_penalty.jl"
+  ],
+  "remeasure_families": [
+    "zigzag",
+    "armchair"
+  ],
+  "remeasure_observables": [
+    "Translated winding expectations and charge probabilities",
+    "Translated contractible-loop expectations",
+    "Separated winding-pair contractions that use translated support"
+  ],
   "disposition": "Historical raw loop values remain preserved, with renewed flux interpretation on hold until the specific source and support are validated. No claim that an unaffected energy/entropy optimization is invalid.",
   "excluded": "Matter-triplet one-point/correlation measurements do not enter this audit's phase interpretation.",
-  "no_optimization_restart": true
+  "no_optimization_restart": true,
+  "passed_checks": {
+    "exact_projector_penalty": 36,
+    "translated_circumference_mpo": 24,
+    "local_two_cycle": 3,
+    "translated_legacy_entry": 3
+  },
+  "sector_preserving_basis_checks": 42,
+  "checkpoint_bridge_checks": 36
 }

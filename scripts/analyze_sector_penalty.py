@@ -2,8 +2,11 @@
 No entropy point is admitted to a TEE fit by this validation alone.
 """
 import csv,glob,json,pathlib
-ed={(r['family'],r['L'],r['width'],r['nup'],s['charge']):s['energy']
-    for r in json.load(open('results/sector_penalty_ed_audit.json'))['records'] for s in r['sectors']}
+ed={}
+for path in ['results/sector_penalty_ed_audit.json','results/winding_physical_sector_ed.json']:
+    if pathlib.Path(path).exists():
+        ed.update({(r['family'],r['L'],r['width'],r['nup'],s['charge']):s['energy']
+            for r in json.load(open(path))['records'] for s in r['sectors']})
 rows=[]
 for path in sorted(glob.glob('results/*_winding*_penalty_seed*.json')+glob.glob('results/*_winding*_qn_seed*.json')):
     d=json.load(open(path));r=d['records'][-1];q=d['audit']['solver_settings']['winding_charge']

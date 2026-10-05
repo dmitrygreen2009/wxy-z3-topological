@@ -16,8 +16,7 @@ recorded in the geometry cycle JSON files.
 
 The physical individual-spin MPS QN implements U(1), while a winding U contains
 three-spin matter permutations and is not a product of individual-spin
-on-site charge labels in this basis. A new local charge basis is not assumed.
-Use instead
+on-site charge labels in this basis. The independently validated local basis change below supplies direct onsite charges while retaining all eight matter states. The original-basis exact penalty remains an independent fallback:
 
 P_q=(I+omega^(-q)U+omega^(-2q)U^2)/3,
 H_q=H+lambda(I-P_q).
@@ -86,6 +85,5 @@ fixed-sector conventions are preserved in `results/sector_particle_hole_audit.js
 An exact local matter basis change now supplies a promising direct U1 x Z3
 implementation. All eight matter states and individual two-dimensional sites
 are retained. Local algebra and independent full-block ED passed; library
-validation is pending. See `results/direct_winding_qn_strategy.md`. This is
-the preferred continuation if its production checks pass; the projector
+validation passed all 42 basis checks and 36 exact checkpoint-bridge checks. See `results/direct_winding_qn_strategy.md`. Direct finite optimization is now the preferred continuation; the projector
 penalty remains an exact fallback and independent cross-check.
