@@ -1,5 +1,13 @@
 # Sector-preserving optimization at independently audited finite fillings
 
+Checkpoint classification: VALIDATED AND USABLE FOR PHASE INFERENCE: none
+yet. COMPUTED BUT NOT YET CONVERGED: the physical q1/q2 and armchair production
+branches and wider-cylinder continuations. REJECTED / DIAGNOSTIC ONLY: the
+accepted small q0 optimizer benchmark and exact representation/initializer
+fixtures (usable for implementation validation, awaiting 2D gates), plus the
+preserved failed cold initialization. The q0 state is retained; this category
+does not reject its numerical values.
+
 The zigzag L2 width-one trivial winding state is now converged under the
 unchanged direct-QN acceptance criteria. It retains all 19 physical spins,
 including local matter, in the exact microscopic Hamiltonian. Its fixed

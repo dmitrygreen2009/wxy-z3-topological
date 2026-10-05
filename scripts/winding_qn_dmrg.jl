@@ -3,19 +3,27 @@ isdefined(Main,:cylinder) || include("../src/model.jl")
 include("../src/matter_charge_basis.jl")
 include("../src/cgs_operator_mpo.jl")
 include("../src/real_charge_hamiltonian.jl")
+include("../src/projected_number_initializer.jl")
 const WINDING_QN_DRIVER_SHA=bytes2hex(sha256(read(@__FILE__)))
-function run_winding_qn(family,L,w,nup,charge;seed=7254,maxcap=512,resume=nothing,krylovdim=12,eigsolve_maxiter=30,noise=[1e-5,1e-6,1e-7,0.0],hamiltonian_representation="real_closed_form",startcap=nothing)
+function run_winding_qn(family,L,w,nup,charge;seed=7254,maxcap=512,resume=nothing,krylovdim=12,eigsolve_maxiter=30,noise=[1e-5,1e-6,1e-7,0.0],hamiltonian_representation="real_closed_form",startcap=nothing,initialization_strategy="physical_number_projected")
     Random.seed!(seed);started=time();ordering="star";lat=cylinder(family,L,w;ordering)
     table="geometry/cgs_cycles/$(family)_L$(L)_w$(w)_star.json"
     defs=JSON3.read(read(table,String),Dict{String,Any});cycle=first(c for c in defs["cycles"] if c["winding_number"]==1)
     g=JSON3.read(read(defs["parent_geometry"],String),Dict{String,Any})
     @assert g["physical_spins"]==lat.n && Int.(g["mps_order_physical_spin_ids"])==lat.order && g["spatial_cut_mps_bond"]==lat.cut
     p=Int.(cycle["edge_exponents"]);weights=winding_site_weights(lat,p)
+    initialization_record=nothing
     if resume===nothing
-        sites=winding_qn_sites(weights);state=winding_initial_state(weights,nup,charge)
-        initial_type=hamiltonian_representation=="real_closed_form" ? Float64 : ComplexF64
-        psi=random_mps(initial_type,sites,state;linkdims=4)
-        resume_cap=32
+        @assert initialization_strategy in ["physical_number_projected","direct_two_site_qn_random"]
+        if initialization_strategy=="physical_number_projected"
+            psi,initialization_record=projected_number_initializer(lat,p,nup,charge;seed,maxdim=min(maxcap,128))
+            sites=siteinds(psi)
+        else
+            sites=winding_qn_sites(weights);state=winding_initial_state(weights,nup,charge)
+            initial_type=hamiltonian_representation=="real_closed_form" ? Float64 : ComplexF64
+            psi=random_mps(initial_type,sites,state;linkdims=4)
+        end
+        resume_cap=max(32,maxlinkdim(psi))
     else
         psi=load_state(resume);sites=siteinds(psi)
         @assert length(psi)==lat.n
@@ -43,12 +51,12 @@ function run_winding_qn(family,L,w,nup,charge;seed=7254,maxcap=512,resume=nothin
         end
     end
     audit=run_provenance(;seed,solver="ITensorMPS exact U1 x Z3 winding-QN DMRG",
-        settings=Dict("basis"=>"exact_matter_charge_basis","hamiltonian_representation"=>hamiltonian_representation,"fresh_initialization_scalar_type"=>hamiltonian_representation=="real_closed_form" ? "Float64" : "ComplexF64","resume_state_preserved_without_tensor_realification"=>true,"onsite_winding_weights"=>weights,"winding_charge"=>charge,
+        settings=Dict("basis"=>"exact_matter_charge_basis","hamiltonian_representation"=>hamiltonian_representation,"fresh_initialization_scalar_type"=>resume===nothing ? string(eltype(psi[1])) : nothing,"initialization_strategy"=>resume===nothing ? initialization_strategy : "Saved checkpoint retained","initialization_record"=>initialization_record,"resume_state_preserved_without_tensor_realification"=>true,"onsite_winding_weights"=>weights,"winding_charge"=>charge,
             "edge_exponents"=>p,"matter_hilbert_space_dimension"=>8,"local_roundoff_cutoff"=>1e-14,
             "cutoff"=>1e-13,"sweeps_per_stage"=>12,"krylovdim"=>krylovdim,"eigsolve_maxiter"=>eigsolve_maxiter,"noise_schedule"=>noise,"noise_application"=>"First pass at each bond cap; second pass has zero noise. This expands missing QN support at a new cap without repeatedly rotating degenerate ground states","eigsolve_tol"=>1e-13,
             "purity_tolerance"=>1e-10,"variance_tolerance"=>1e-8,"energy_drift_tolerance"=>1e-9,"entropy_drift_tolerance"=>1e-5,"truncation_error_window"=>"Last four zero-noise sweeps",
             "known_fixed_sector_ed_energy"=>known_energy,"known_energy_tolerance"=>1e-9),
-        initialization=resume===nothing ? "Random MPS in exact number/winding QN block" : resume,
+        initialization=resume===nothing ? initialization_strategy : resume,
         conserved_quantum_numbers=["Physical N_up=$nup","Exact microscopic winding charge=$charge"])
     audit["executed_driver_sha256"]=WINDING_QN_DRIVER_SHA
     audit["initial_cap"]=initial_cap

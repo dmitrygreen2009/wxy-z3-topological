@@ -466,6 +466,14 @@ sector result is automatically admitted to a topological entropy fit.
 
 Direct sector preservation is now available in the exact, number-preserving eight-state matter basis; every physical site still has dimension two. See [the direct-QN audit](results/direct_winding_qn_strategy.md). The 42 basis checks and 36 checkpoint-bridge checks have passed; finite optimizations retain physical number and microscopic winding charge throughout every update. Infinite repeated-charge blocks are not yet identified with an individual winding sector.
 
+The explicit exact `S=3/2 ⊕ S=1/2 ⊕ S=1/2` unitary and cycle-multiplicity
+labels are in [the coupled-spin basis derivation](results/matter_total_spin_basis.md)
+and `geometry/matter_total_spin_basis.json`. It is precisely the existing
+production encoder with a signed column permutation; all eight states remain.
+Its full 64-state microscopic Hamiltonian matrix and spectrum agree with the
+original representation. The winding QN includes multiplicity charge, matter
+number phases, and gauge action. Local S is not a conserved block label.
+
 ```sh
 julia --project=. test/matter_charge_basis.jl
 julia --project=. test/winding_checkpoint_bridge.jl
@@ -485,6 +493,15 @@ An incomplete sector is recorded without aborting the remaining sector cases.
 Run only one copy of this batch at a time: it writes the usual result aliases.
 Its accepted states remain fixed-number finite-cylinder results, not a
 thermodynamic filling, MES or TEE certificate.
+
+Fresh finite-sector initialization uses number-only physical randomization
+followed by the validated exact number/winding basis projector. This addresses
+the extra occupancy restrictions of adjacent two-site random gates with
+unequal winding weights; the symmetry constraint and Hamiltonian are unchanged.
+`results/winding_initializer_reachability_audit.md` gives the exact reason and
+the legacy initializer keyword for reproduction. Current loaded runs are
+unaffected. The new initializer is gated by its standalone regression tests
+before a fresh production launch.
 
 The individual infinite-winding package-closure gate passed 158 checks in CI at 5112ec1, including physical matter occupations. Its production measurement/checkpoint wrapper passed seven integration checks. Machine-readable CI fixtures and selected test summaries are preserved in `results/infinite_winding_basis_fixture.json`, `results/infinite_winding_driver_ci_fixture.json`, and `results/infinite_winding_driver_ci_test_summary.log`. These small fixtures do not establish cylinder convergence. The driver requires an explicit number background; it does not choose half filling.
 

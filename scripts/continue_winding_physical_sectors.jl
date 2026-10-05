@@ -29,6 +29,12 @@ function continue_winding_physical_sectors(;maxcap=512)
                     # A cold initialization can miss a CGS block. The validated
                     # physical ground checkpoint supplies a different exact seed.
                     resume=convert_winding_checkpoint(sources[family],0;target_nup=nup,maxdim=maxcap)
+                elseif charge!=0 && prior!==nothing &&
+                    get(prior["audit"]["solver_settings"],"initialization_strategy","direct_two_site_qn_random")=="direct_two_site_qn_random" &&
+                    last(prior["records"])["energy_variance"]>1e-8
+                    # Preserve the immutable failed checkpoint and initialize a
+                    # different branch through number-only physical randomization.
+                    resume=nothing
                 end
                 run_winding_qn(family,2,1,nup,charge;maxcap,resume,
                     noise=charge==0 ? [0.0] : [1e-5,1e-6,1e-7,0.0])
