@@ -475,7 +475,7 @@ julia --project=. scripts/winding_qn_dmrg.jl zigzag 2 1 9 0 512 CONVERTED_CHECKP
 
 The converter writes a new projected branch and verifies that the original checkpoint SHA is unchanged. Its JSON records projection weight, number, basis, winding weights and conversion tolerances. The optimizer records both QNs, measured loop expectation/variance, energy variance, full-state Schmidt spectrum, convergence history, launch commit and executed driver SHA. Expansion noise is recorded on the first pass at each cap; the second pass uses zero noise to check stability without repeatedly rotating degenerate ground spaces. Resumed finite optimizations preserve the saved bond cap. Low-number fixtures are excluded from phase inference and TEE fits.
 
-The individual infinite-winding package-closure gate passed 110 checks in CI. The production wrapper remains gated on its additional measurement/checkpoint integration test. It requires an explicit number background; it does not choose half filling.
+The individual infinite-winding package-closure gate passed 158 checks in CI at 5112ec1, including physical matter occupations. Its production measurement/checkpoint wrapper passed seven integration checks. Machine-readable CI fixtures and selected test summaries are preserved in `results/infinite_winding_basis_fixture.json`, `results/infinite_winding_driver_ci_fixture.json`, and `results/infinite_winding_driver_ci_test_summary.log`. These small fixtures do not establish cylinder convergence. The driver requires an explicit number background; it does not choose half filling.
 
 ```sh
 # Example candidate background: 8 up spins on average per 18-site cell.

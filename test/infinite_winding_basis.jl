@@ -7,7 +7,7 @@ include("../src/infinite_winding_basis.jl")
 fixture_records=[]
 
 @testset "Individual infinite microscopic winding-cell constraint" begin
-    for family in ["zigzag","armchair"],q in 0:1
+    for family in ["zigzag","armchair"],q in 0:2
         charges=family=="zigzag" ? [q,q] : [q]
         phi,layout=infinite_winding_initial_cell(family,1,6,charges;seed=7259,linkdims=2)
         @test iszero(flux(phi))

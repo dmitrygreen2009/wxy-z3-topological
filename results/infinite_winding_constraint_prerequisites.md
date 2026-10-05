@@ -1,4 +1,4 @@
-# Infinite winding constraints: algebra passed, optimizer gate pending
+# Infinite winding constraints: algebra and optimizer integration validated
 
 The direct finite winding-QN implementation has passed its microscopic basis,
 checkpoint-bridge and q0/q1 fixture gates for both cylinder families. Repeating
@@ -56,7 +56,7 @@ A gated implementation now exists in `src/infinite_winding_basis.jl`. It retains
 
 `test/infinite_winding_basis.jl` tests both families and q0/q1 at a deliberately chosen fixture density 1/3, compares periodic microscopic energies in the original physical basis, verifies the full matter-dressed loop action, then checks both ordinary and translated loop values after canonicalization, expansion and one official infinite update. The test uses at most 18 individual sites, bond cap 3 and one update; it is not a cylinder convergence run. No production constrained infinite state is claimed before it passes. Existing checkpoints and calculations remain unchanged.
 
-The initial gate passed all 110 checks in GitHub CI at ee75cdca: both geometries and q0/q1 retain their individual loop eigenvalues through canonicalization, expansion and an official infinite update. Selected downloaded job-log summaries are saved in `infinite_winding_basis_ci_test_summary.log`. The separate physical-species occupation identity and production measurement/checkpoint wrapper are now being tested before any production launch.
+The initial gate passed all 110 checks in GitHub CI at ee75cdca: both geometries and q0/q1 retain their individual loop eigenvalues through canonicalization, expansion and an official infinite update. The extended gate passed 158 checks at 5112ec1, including the physical-species occupation identity. The production measurement/checkpoint wrapper passed seven integration checks in the same run. Downloaded machine-readable fixtures are saved in `infinite_winding_basis_fixture.json` and `infinite_winding_driver_ci_fixture.json`; selected log summaries are in `infinite_winding_driver_ci_test_summary.log`. Their density 1/3 and short updates are implementation fixtures, not optimized physical filling or phase evidence. The q2 fixture extension is a subsequent test change, not part of the 5112ec1 validation record.
 
 The wrapper in `scripts/infinite_winding_qn.jl` requires an explicit physical N_up background and checks winding support and translated loop values after every official update. It preserves a QN optimization checkpoint for resume, separately from any dense measurement copy. Physical species magnetizations are reconstructed through the exact cyclic-symmetry identity; rotated mode occupations remain separately named. Source payload SHA is checked after measurement. No result is admitted to TEE fits by this driver.
 

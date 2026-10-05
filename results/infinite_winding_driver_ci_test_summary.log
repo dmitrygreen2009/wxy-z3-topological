@@ -1,0 +1,38 @@
+Source: workflow run 37250684584, job 111577491042, commit 5112ec13a954a89889727ed1c59f541adb42c682; conclusion success.
+2026-10-05T01:18:16.5994409Z Microscopic lattice regression |   97     97  4.2s
+2026-10-05T01:18:17.4117272Z Infinite Hamiltonian physical incidence |   55     55  0.8s
+2026-10-05T01:19:31.0984007Z MPO Hermiticity |    3      3  1m13.7s
+2026-10-05T01:19:55.5592970Z Independent exact Schmidt spectra |    4      4  24.4s
+2026-10-05T01:20:08.9663489Z Analytically known infinite transfer spectrum |    8      8  13.0s
+2026-10-05T01:20:10.6017497Z Degenerate fixed points are not hidden by scalar Krylov |    7      7  1.6s
+2026-10-05T01:21:21.0022550Z Finite checkpoint observer preserves DMRG and resumes |   13     13  1m10.4s
+2026-10-05T01:21:41.3981503Z Exact CGS projector and Hamiltonian commutation |    9      9  20.4s
+2026-10-05T01:22:04.6751623Z Exact winding-sector penalty on both microscopic geometries |   36     36  23.2s
+2026-10-05T01:22:40.0700333Z Direct winding QN is an exact microscopic basis change |   42     42  34.9s
+2026-10-05T01:22:45.2315761Z Existing physical MPS to exact winding-QN checkpoint bridge |   36     36  5.1s
+2026-10-05T01:23:54.8731560Z Exact real winding-basis microscopic MPO |   39     39  1m09.6s
+2026-10-05T01:24:02.7460240Z Infinite Schmidt entropy from independently known fixed point |    4      4  7.9s
+2026-10-05T01:24:03.6922457Z Conserved-spin infinite entropy via measurement-only densification |    3      3  0.9s
+2026-10-05T01:24:17.0470079Z Independent local-loop operator checks |    3      3  13.3s
+2026-10-05T01:24:22.5974148Z Legacy local-loop entry point translates scalar indices |    3      3  5.5s
+2026-10-05T01:24:23.3455614Z Exact particle-hole state mapping retains QNs and entropy |    5      5  0.7s
+2026-10-05T01:24:23.5588167Z Individual-site star ordering realizes the declared spatial partition |   36     36  0.2s
+2026-10-05T01:24:30.1724579Z Microscopic disjoint-dimer variational bound |    3      3  6.6s
+2026-10-05T01:24:34.5731653Z Factorized microscopic circumference MPO and translated infinite support |   24     24  4.4s
+2026-10-05T01:24:35.2336210Z Contractible microscopic operators from explicit lifted geometry |   12     12  0.6s
+2026-10-05T01:24:35.9027888Z Separated winding-loop adjoint products |   12     12  0.7s
+2026-10-05T01:24:57.0427035Z Independent-cell initializer: exact Bell entropy and physical filling |   13     13  21.0s
+2026-10-05T01:24:57.9419534Z Shifted zero flux distinguishes physical fillings |   21     21  0.9s
+2026-10-05T01:24:58.4439862Z Transfer vector charge labels in the original QN basis |   10     10  0.3s
+2026-10-05T01:25:00.0850450Z Local eigenpair evidence detects achieved and missed tolerances |    6      6  1.6s
+2026-10-05T01:25:06.2026515Z Official parallel VUMPS: exact ferromagnetic Ising ground state |    6      6  6.1s
+2026-10-05T01:25:06.8823177Z Individual-site microscopic infinite-cell periods |  216    216  0.7s
+2026-10-05T01:25:08.0357047Z Independent coherent-spin exchange expectation across cell periods |   12     12  1.1s
+2026-10-05T01:25:08.2619582Z Transfer length conversion is invariant under regrouping periods |    9      9  0.2s
+2026-10-05T01:25:11.0521604Z Projected stationarity of exactly checkable two-spin states |    5      5  2.8s
+2026-10-05T01:25:14.8856998Z Complex local-spin phases independently check infinite microscopic MPO |   12     12  3.8s
+2026-10-05T01:25:21.4316958Z Official nonlocal VUMPS center operator matches microscopic local fields |   48     48  6.5s
+2026-10-05T01:25:22.3420045Z Infinite bond dimensions include the larger wrap bond |    8      8  0.9s
+2026-10-05T01:25:22.4459027Z Resume retains recorded local solver accuracy |    5      5  0.1s
+2026-10-05T01:25:58.1149851Z Individual infinite microscopic winding-cell constraint |  158    158  35.5s
+2026-10-05T01:26:08.5757386Z Constrained infinite driver audit integration fixture |    7      7  9.9s
