@@ -475,7 +475,29 @@ julia --project=. scripts/winding_qn_dmrg.jl zigzag 2 1 9 0 512 CONVERTED_CHECKP
 
 The converter writes a new projected branch and verifies that the original checkpoint SHA is unchanged. Its JSON records projection weight, number, basis, winding weights and conversion tolerances. The optimizer records both QNs, measured loop expectation/variance, energy variance, full-state Schmidt spectrum, convergence history, launch commit and executed driver SHA. Expansion noise is recorded on the first pass at each cap; the second pass uses zero noise to check stability without repeatedly rotating degenerate ground spaces. Resumed finite optimizations preserve the saved bond cap. Low-number fixtures are excluded from phase inference and TEE fits.
 
+The physical-filling small-cylinder batch is reproducible with
+`julia --project=. scripts/continue_winding_physical_sectors.jl 512`.
+It retains converged hash-checked states, resumes incomplete sector checkpoints,
+and uses the original validated physical q0 ground checkpoint as an exact seed
+when a cold initialization has stalled. The zigzag N_up=10 source is mapped to
+its exact N_up=9 particle-hole partner before projection; armchair uses N_up=8.
+An incomplete sector is recorded without aborting the remaining sector cases.
+Run only one copy of this batch at a time: it writes the usual result aliases.
+Its accepted states remain fixed-number finite-cylinder results, not a
+thermodynamic filling, MES or TEE certificate.
+
 The individual infinite-winding package-closure gate passed 158 checks in CI at 5112ec1, including physical matter occupations. Its production measurement/checkpoint wrapper passed seven integration checks. Machine-readable CI fixtures and selected test summaries are preserved in `results/infinite_winding_basis_fixture.json`, `results/infinite_winding_driver_ci_fixture.json`, and `results/infinite_winding_driver_ci_test_summary.log`. These small fixtures do not establish cylinder convergence. The driver requires an explicit number background; it does not choose half filling.
+
+The extension to all three winding charges passed 237 checks at 653f22c and
+85a2f74. The latter also passed six provenance/completeness checks for reuse of
+a saved full transfer spectrum. See `results/infinite_winding_all_charges_fixture.json`
+and `results/infinite_winding_all_charges_ci_summary.log`.
+
+`scripts/convergence_gate_audit.py` now separates legacy sweep/bond heuristic
+passes from the required energy-variance evidence, and checks independent
+fixed-sector ED energy when recorded. Missing variance is unresolved rather
+than passed; the archived cold plateau is a permanent rejection fixture in
+`test/finite_energy_quality.py`. Existing energies and entropies are preserved.
 
 ```sh
 # Example candidate background: 8 up spins on average per 18-site cell.

@@ -6,9 +6,11 @@
     "bond_entropy_change": 0.001,
     "bond_energy_per_vertex_change": 1e-06,
     "canonical_solver_residual": 1e-07,
-    "measured_canonical_consistency": 1e-10
+    "measured_canonical_consistency": 1e-10,
+    "energy_variance": 1e-08,
+    "known_sector_energy": 1e-09
   },
-  "threshold_source": "Existing finite production controls and audited infinite driver; no tolerance has been relaxed.",
+  "threshold_source": "Existing production controls plus the direct winding optimizer energy variance and known-sector ED gates. The demonstrated cold plateau requires separating legacy sweep/bond heuristics from stationarity; no tolerance has been relaxed.",
   "null_gate_meaning": "Required evidence is missing; unknown does not pass.",
   "finite": [
     {
@@ -24,16 +26,20 @@
         "entropy_refinement_change": 1.0499704083954953e-07,
         "truncation_error": 7.893049985999818e-08,
         "bond_entropy_change": 0.00316532644154921,
-        "bond_energy_per_vertex_change": -8.643727689938707e-05
+        "bond_energy_per_vertex_change": -8.643727689938707e-05,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -53,16 +59,20 @@
         "entropy_refinement_change": 5.664403390781558e-08,
         "truncation_error": 2.553056628889769e-09,
         "bond_entropy_change": 0.0002662609288068829,
-        "bond_energy_per_vertex_change": -7.155479474274529e-06
+        "bond_energy_per_vertex_change": -7.155479474274529e-06,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": true,
         "bond_entropy_change": true,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -82,16 +92,20 @@
         "entropy_refinement_change": -2.6243229811484525e-11,
         "truncation_error": 1.6299888639332856e-10,
         "bond_entropy_change": 1.585449575491893e-05,
-        "bond_energy_per_vertex_change": -3.330767115450328e-07
+        "bond_energy_per_vertex_change": -3.330767115450328e-07,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": true,
         "bond_entropy_change": true,
-        "bond_energy_per_vertex_change": true
+        "bond_energy_per_vertex_change": true,
+        "energy_variance": null
       },
-      "all_recorded_optimization_gates_passed": true,
+      "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": true,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -111,16 +125,20 @@
         "entropy_refinement_change": 9.547918011776346e-15,
         "truncation_error": 9.925091960788003e-13,
         "bond_entropy_change": 5.950225665518616e-07,
-        "bond_energy_per_vertex_change": -1.2044341524131141e-08
+        "bond_energy_per_vertex_change": -1.2044341524131141e-08,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": true,
         "bond_entropy_change": true,
-        "bond_energy_per_vertex_change": true
+        "bond_energy_per_vertex_change": true,
+        "energy_variance": null
       },
-      "all_recorded_optimization_gates_passed": true,
+      "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": true,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -140,16 +158,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 9.761356795389696e-12,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -169,16 +191,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 9.818856671312252e-12,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -198,16 +224,20 @@
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": 0.32516322945969134,
-        "bond_energy_per_vertex_change": -0.0029234988577349075
+        "bond_energy_per_vertex_change": -0.0029234988577349075,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": null,
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -227,16 +257,20 @@
         "entropy_refinement_change": -0.0002097591161227541,
         "truncation_error": 7.400389183949175e-07,
         "bond_entropy_change": 0.009281552924998326,
-        "bond_energy_per_vertex_change": -0.00010790438937413604
+        "bond_energy_per_vertex_change": -0.00010790438937413604,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": false,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -256,16 +290,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 4.6239748154241235e-07,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -285,16 +323,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 5.029344745949531e-07,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -314,16 +356,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 1.1761010839027962e-07,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -343,16 +389,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 1.1271325516333696e-07,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -372,16 +422,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 9.894939408452262e-08,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -401,16 +455,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 1.6235875151596006e-07,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -430,16 +488,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 5.946591011687326e-09,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -459,16 +521,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 1.3883259108413073e-10,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -488,16 +554,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 1.1927662645103905e-10,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -517,16 +587,20 @@
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": null,
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -546,16 +620,20 @@
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": null,
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -575,16 +653,20 @@
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": null,
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -604,16 +686,20 @@
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": null,
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -633,16 +719,20 @@
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": null,
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -662,16 +752,20 @@
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": null,
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -691,16 +785,20 @@
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": null,
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -720,16 +818,20 @@
         "entropy_refinement_change": -5.4034170675620885e-05,
         "truncation_error": 7.387571573372636e-07,
         "bond_entropy_change": 0.00993151205992504,
-        "bond_energy_per_vertex_change": -0.00010870473666479974
+        "bond_energy_per_vertex_change": -0.00010870473666479974,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -749,16 +851,20 @@
         "entropy_refinement_change": -0.00031887727796142684,
         "truncation_error": 7.390282043093308e-07,
         "bond_entropy_change": 0.008749796792309361,
-        "bond_energy_per_vertex_change": -0.0001071973947341931
+        "bond_energy_per_vertex_change": -0.0001071973947341931,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": false,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -778,16 +884,20 @@
         "entropy_refinement_change": -3.877361045123706e-06,
         "truncation_error": 1.9691086975223213e-08,
         "bond_entropy_change": 0.00044936407344486895,
-        "bond_energy_per_vertex_change": -4.06170639744019e-06
+        "bond_energy_per_vertex_change": -4.06170639744019e-06,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": false,
         "bond_entropy_change": true,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -807,16 +917,20 @@
         "entropy_refinement_change": -9.294178315855106e-09,
         "truncation_error": 1.2960561694554644e-08,
         "bond_entropy_change": 0.00023620235402788126,
-        "bond_energy_per_vertex_change": -2.8322210650078006e-06
+        "bond_energy_per_vertex_change": -2.8322210650078006e-06,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": false,
         "bond_entropy_change": true,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -836,16 +950,20 @@
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": 0.1303773693731718,
-        "bond_energy_per_vertex_change": -0.04028907941201498
+        "bond_energy_per_vertex_change": -0.04028907941201498,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": null,
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -865,16 +983,20 @@
         "entropy_refinement_change": 0.015226955632951178,
         "truncation_error": 0.00016248825523000252,
         "bond_entropy_change": 0.5267288294474755,
-        "bond_energy_per_vertex_change": -0.014898098708601593
+        "bond_energy_per_vertex_change": -0.014898098708601593,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": false,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -894,16 +1016,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 0.00015974967376686795,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -923,16 +1049,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 6.475684989769991e-05,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -952,16 +1082,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 8.221334184311861e-05,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -981,16 +1115,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 6.606832332368479e-05,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1010,16 +1148,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 6.647260238593775e-05,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1039,16 +1181,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 6.0500209525701734e-05,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1068,16 +1214,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 6.732426242563817e-05,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1097,16 +1247,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 4.485977715155855e-05,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1126,16 +1280,20 @@
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": 0.25387993904177053,
-        "bond_energy_per_vertex_change": -0.054614500541510104
+        "bond_energy_per_vertex_change": -0.054614500541510104,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": null,
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1155,16 +1313,20 @@
         "entropy_refinement_change": 0.006416683897659148,
         "truncation_error": 0.00035485103994303986,
         "bond_entropy_change": 0.15932146442679151,
-        "bond_energy_per_vertex_change": -0.0509658463067583
+        "bond_energy_per_vertex_change": -0.0509658463067583,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": false,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1184,16 +1346,20 @@
         "entropy_refinement_change": 0.16493275939047036,
         "truncation_error": 0.0006795311952428147,
         "bond_entropy_change": 0.6377201888358717,
-        "bond_energy_per_vertex_change": -0.050085129074627366
+        "bond_energy_per_vertex_change": -0.050085129074627366,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": false,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1213,16 +1379,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 0.00021442576241174712,
         "bond_entropy_change": 0.40297320916626855,
-        "bond_energy_per_vertex_change": -0.03349888225910765
+        "bond_energy_per_vertex_change": -0.03349888225910765,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1242,16 +1412,20 @@
         "entropy_refinement_change": 0.03108482545443758,
         "truncation_error": 9.124583685752388e-05,
         "bond_entropy_change": 0.1360735479824431,
-        "bond_energy_per_vertex_change": -0.006486164850093641
+        "bond_energy_per_vertex_change": -0.006486164850093641,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": false,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1271,16 +1445,20 @@
         "entropy_refinement_change": -9.294178315855106e-09,
         "truncation_error": 1.2960561694554644e-08,
         "bond_entropy_change": 0.00023620235402788126,
-        "bond_energy_per_vertex_change": -2.8322210650078006e-06
+        "bond_energy_per_vertex_change": -2.8322210650078006e-06,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": false,
         "bond_entropy_change": true,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1300,16 +1478,20 @@
         "entropy_refinement_change": -3.877361045123706e-06,
         "truncation_error": 1.9691086975223213e-08,
         "bond_entropy_change": 0.00044936407344486895,
-        "bond_energy_per_vertex_change": -4.06170639744019e-06
+        "bond_energy_per_vertex_change": -4.06170639744019e-06,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": false,
         "bond_entropy_change": true,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1329,16 +1511,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 0.0003453743598938782,
         "bond_entropy_change": 0.2621588527413219,
-        "bond_energy_per_vertex_change": -0.009613458528555045
+        "bond_energy_per_vertex_change": -0.009613458528555045,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1358,16 +1544,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 7.813481133620047e-07,
         "bond_entropy_change": 0.021212321840439863,
-        "bond_energy_per_vertex_change": -0.0010087592173551486
+        "bond_energy_per_vertex_change": -0.0010087592173551486,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1387,16 +1577,54 @@
         "entropy_refinement_change": null,
         "truncation_error": 1.7614980216618617e-07,
         "bond_entropy_change": 0.026146715071254878,
-        "bond_energy_per_vertex_change": -8.043496535492523e-06
+        "bond_energy_per_vertex_change": -8.043496535492523e-06,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L2_w1_Nup9_winding0_qn_seed7254.json",
+      "record_index": 1,
+      "family": "zigzag",
+      "length": 2,
+      "width": 1,
+      "nup": 9,
+      "cap": 107,
+      "errors": {
+        "last_sweep_energy_change": 2.6645352591003757e-15,
+        "entropy_refinement_change": null,
+        "truncation_error": 2.1944381628776219e-13,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": 8.3716145127255e-11,
+        "known_sector_energy": 1.177369313154486e-11
+      },
+      "gates": {
+        "last_sweep_energy_change": true,
+        "entropy_refinement_change": null,
+        "truncation_error": true,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": true,
+        "known_sector_energy": true
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1416,16 +1644,20 @@
         "entropy_refinement_change": 8.850897836865101e-08,
         "truncation_error": 9.348698368256644e-12,
         "bond_entropy_change": 7.567928452800743e-07,
-        "bond_energy_per_vertex_change": -1.6779533540400848e-08
+        "bond_energy_per_vertex_change": -1.6779533540400848e-08,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": true,
         "bond_entropy_change": true,
-        "bond_energy_per_vertex_change": true
+        "bond_energy_per_vertex_change": true,
+        "energy_variance": null
       },
-      "all_recorded_optimization_gates_passed": true,
+      "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": true,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1445,16 +1677,20 @@
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": 0.008592760399993127,
-        "bond_energy_per_vertex_change": -5.797595005607725e-05
+        "bond_energy_per_vertex_change": -5.797595005607725e-05,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": null,
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1474,16 +1710,20 @@
         "entropy_refinement_change": 3.9103551885411036e-07,
         "truncation_error": 4.0201376551924605e-10,
         "bond_entropy_change": 0.0002571211325459455,
-        "bond_energy_per_vertex_change": -6.909269330002132e-07
+        "bond_energy_per_vertex_change": -6.909269330002132e-07,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": true,
         "bond_entropy_change": true,
-        "bond_energy_per_vertex_change": true
+        "bond_energy_per_vertex_change": true,
+        "energy_variance": null
       },
-      "all_recorded_optimization_gates_passed": true,
+      "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": true,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1503,16 +1743,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 4.02019246190476e-10,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1532,16 +1776,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 5.4468621432052414e-11,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1561,16 +1809,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 1.0876145865443672e-11,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1590,16 +1842,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 9.959108679672296e-12,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1619,16 +1875,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 9.934743111040374e-12,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1648,16 +1908,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 9.92796204815367e-12,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1677,16 +1941,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 4.117139837314354e-10,
         "bond_entropy_change": 0.0002442964005375803,
-        "bond_energy_per_vertex_change": -6.875393459004897e-07
+        "bond_energy_per_vertex_change": -6.875393459004897e-07,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": true,
-        "bond_energy_per_vertex_change": true
+        "bond_energy_per_vertex_change": true,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1706,16 +1974,20 @@
         "entropy_refinement_change": 3.856961459103303e-07,
         "truncation_error": 4.0201276361043635e-10,
         "bond_entropy_change": 0.00025756957924749635,
-        "bond_energy_per_vertex_change": -6.908858258825035e-07
+        "bond_energy_per_vertex_change": -6.908858258825035e-07,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": true,
         "bond_entropy_change": true,
-        "bond_energy_per_vertex_change": true
+        "bond_energy_per_vertex_change": true,
+        "energy_variance": null
       },
-      "all_recorded_optimization_gates_passed": true,
+      "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": true,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1735,16 +2007,20 @@
         "entropy_refinement_change": 5.46335103712714e-07,
         "truncation_error": 9.973875522867398e-12,
         "bond_entropy_change": 2.4501950853794696e-06,
-        "bond_energy_per_vertex_change": -7.685684311198315e-09
+        "bond_energy_per_vertex_change": -7.685684311198315e-09,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": true,
         "bond_entropy_change": true,
-        "bond_energy_per_vertex_change": true
+        "bond_energy_per_vertex_change": true,
+        "energy_variance": null
       },
-      "all_recorded_optimization_gates_passed": true,
+      "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": true,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1764,16 +2040,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 9.975055291942347e-13,
         "bond_entropy_change": 5.419380164628507e-07,
-        "bond_energy_per_vertex_change": -1.2257814763216857e-09
+        "bond_energy_per_vertex_change": -1.2257814763216857e-09,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": true,
-        "bond_energy_per_vertex_change": true
+        "bond_energy_per_vertex_change": true,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1793,16 +2073,20 @@
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": 0.0434456571652726,
-        "bond_energy_per_vertex_change": -0.0334028198164944
+        "bond_energy_per_vertex_change": -0.0334028198164944,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": null,
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1822,16 +2106,20 @@
         "entropy_refinement_change": -0.012992394780566352,
         "truncation_error": 0.00042538664439912324,
         "bond_entropy_change": 0.06366148014929363,
-        "bond_energy_per_vertex_change": -0.003987403366179976
+        "bond_energy_per_vertex_change": -0.003987403366179976,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": false,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1851,16 +2139,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 0.00035525433824614474,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1880,16 +2172,86 @@
         "entropy_refinement_change": null,
         "truncation_error": 0.00043022579965740806,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": null,
-        "bond_energy_per_vertex_change": null
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w2_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 2,
+      "family": "zigzag",
+      "length": 4,
+      "width": 2,
+      "nup": 34,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -1.2455915481268676e-05,
+        "entropy_refinement_change": null,
+        "truncation_error": 0.0004312102890065369,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
+      "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
+      "thermodynamic_length_convergence_certified": false,
+      "global_ground_sector_certified": false,
+      "common_topological_MES_certified": false,
+      "eligible_for_2D_phase_inference": false
+    },
+    {
+      "source_file": "results/zigzag_L4_w2_chi256_star_charge_sectors_global_audit.json",
+      "record_index": 3,
+      "family": "zigzag",
+      "length": 4,
+      "width": 2,
+      "nup": 33,
+      "cap": 256,
+      "errors": {
+        "last_sweep_energy_change": -0.0013230380179294343,
+        "entropy_refinement_change": null,
+        "truncation_error": 0.00036471249625268933,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null,
+        "known_sector_energy": null
+      },
+      "gates": {
+        "last_sweep_energy_change": false,
+        "entropy_refinement_change": null,
+        "truncation_error": false,
+        "bond_entropy_change": null,
+        "bond_energy_per_vertex_change": null,
+        "energy_variance": null
+      },
+      "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1909,16 +2271,20 @@
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": 0.09352825149109467,
-        "bond_energy_per_vertex_change": -0.04677087610609091
+        "bond_energy_per_vertex_change": -0.04677087610609091,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": null,
         "entropy_refinement_change": null,
         "truncation_error": null,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1938,16 +2304,20 @@
         "entropy_refinement_change": 0.011117310970818473,
         "truncation_error": 0.00027724309390794407,
         "bond_entropy_change": 0.15265210077193103,
-        "bond_energy_per_vertex_change": -0.008682747088924359
+        "bond_energy_per_vertex_change": -0.008682747088924359,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": false,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1967,16 +2337,20 @@
         "entropy_refinement_change": 0.029215106014049752,
         "truncation_error": 9.647412144371703e-05,
         "bond_entropy_change": 0.24942517021913457,
-        "bond_energy_per_vertex_change": -0.0026815109350390998
+        "bond_energy_per_vertex_change": -0.0026815109350390998,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": false,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -1996,16 +2370,20 @@
         "entropy_refinement_change": -0.0035629700878536674,
         "truncation_error": 0.00027294704672264447,
         "bond_entropy_change": 0.35642473704452615,
-        "bond_energy_per_vertex_change": -0.026124708331378033
+        "bond_energy_per_vertex_change": -0.026124708331378033,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": false,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -2025,16 +2403,20 @@
         "entropy_refinement_change": 5.1475006103807175e-05,
         "truncation_error": 5.197695866343733e-07,
         "bond_entropy_change": 0.009584798782716897,
-        "bond_energy_per_vertex_change": -0.00012906096445330917
+        "bond_energy_per_vertex_change": -0.00012906096445330917,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -2054,16 +2436,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 9.710391737954998e-09,
         "bond_entropy_change": 0.28401794740199304,
-        "bond_energy_per_vertex_change": -0.0009437792764582417
+        "bond_energy_per_vertex_change": -0.0009437792764582417,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": true,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -2083,16 +2469,20 @@
         "entropy_refinement_change": 2.0201113004603144e-08,
         "truncation_error": 1.9135842254364122e-09,
         "bond_entropy_change": 0.28802302909452737,
-        "bond_energy_per_vertex_change": -0.0009586110373132802
+        "bond_energy_per_vertex_change": -0.0009586110373132802,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": true,
         "entropy_refinement_change": true,
         "truncation_error": true,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -2112,16 +2502,20 @@
         "entropy_refinement_change": -0.002995745945107764,
         "truncation_error": 0.0007086367727673666,
         "bond_entropy_change": 0.24373401120582794,
-        "bond_energy_per_vertex_change": -0.00782638038463753
+        "bond_energy_per_vertex_change": -0.00782638038463753,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": false,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -2141,16 +2535,20 @@
         "entropy_refinement_change": null,
         "truncation_error": 0.0017059261467779149,
         "bond_entropy_change": 0.05211294129154842,
-        "bond_energy_per_vertex_change": -0.033572692401843796
+        "bond_energy_per_vertex_change": -0.033572692401843796,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": null,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -2170,16 +2568,20 @@
         "entropy_refinement_change": 0.0016334203732266683,
         "truncation_error": 0.0003491039540508376,
         "bond_entropy_change": 0.06112952087721113,
-        "bond_energy_per_vertex_change": -0.004186636364222451
+        "bond_energy_per_vertex_change": -0.004186636364222451,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": false,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -2199,16 +2601,20 @@
         "entropy_refinement_change": 0.0023419321984370356,
         "truncation_error": 0.00037867873513702544,
         "bond_entropy_change": 0.2645007849397589,
-        "bond_energy_per_vertex_change": -0.009746468032569547
+        "bond_energy_per_vertex_change": -0.009746468032569547,
+        "energy_variance": null,
+        "known_sector_energy": null
       },
       "gates": {
         "last_sweep_energy_change": false,
         "entropy_refinement_change": false,
         "truncation_error": false,
         "bond_entropy_change": false,
-        "bond_energy_per_vertex_change": false
+        "bond_energy_per_vertex_change": false,
+        "energy_variance": null
       },
       "all_recorded_optimization_gates_passed": false,
+      "legacy_sweep_and_bond_gates_passed": false,
       "local_stationarity_evidence_scope": "Sweep and bond criteria alone do not certify achieved local eigensolver accuracy or variational stationarity.",
       "thermodynamic_length_convergence_certified": false,
       "global_ground_sector_certified": false,
@@ -2974,6 +3380,6 @@
       "eligible_for_2D_phase_inference": false
     }
   ],
-  "analysis_git_commit": "39db345173f5c597bc967b0874e3620dcc1d59a9",
+  "analysis_git_commit": "85a2f74e7b719468c000f5092909735782ca94bf",
   "interpretation": "Optimization accuracy and thermodynamic phase evidence are distinct. These gates describe recorded evidence; false phase-certification fields are not claims that the physical phase is absent."
 }

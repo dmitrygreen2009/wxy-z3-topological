@@ -34,5 +34,16 @@
     "translated_legacy_entry": 3
   },
   "sector_preserving_basis_checks": 42,
-  "checkpoint_bridge_checks": 36
+  "checkpoint_bridge_checks": 36,
+  "infinite_individual_winding_gate": {
+    "status": "237 all-charge closure checks and 7 production integration checks passed on both geometries",
+    "commit": "653f22c1652f9105278bbd263249a0b0c4637491",
+    "machine_fixture": "results/infinite_winding_all_charges_fixture.json",
+    "scope": "Short density-1/3 implementation fixtures, not physical cylinder convergence"
+  },
+  "complete_transfer_cache_gate": {
+    "checks": 6,
+    "commit": "85a2f74e7b719468c000f5092909735782ca94bf",
+    "reuse_condition": "Identical payload SHA and virtual dimension; full eigenvalue/residual arrays pass normalization, uniqueness and peripheral checks at current tolerance"
+  }
 }

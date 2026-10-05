@@ -1,0 +1,5 @@
+Source: workflow run 37251827251, job 111580868175, commit 85a2f74e7b719468c000f5092909735782ca94bf; conclusion success.
+2026-10-05T01:37:45.1953224Z Stored transfer certificates require exact provenance and completeness |    6      6  0.4s
+2026-10-05T01:41:30.3404614Z Exact real winding-basis microscopic MPO |   39     39  1m07.7s
+2026-10-05T01:43:42.3871918Z Individual infinite microscopic winding-cell constraint |  237    237  45.7s
+2026-10-05T01:43:53.0350363Z Constrained infinite driver audit integration fixture |    7      7  10.1s
