@@ -13,7 +13,10 @@ function reaudit_infinite_loops(path)
     canonical_status="Stored state retained"
     if meta["canonical_error"]>1e-10
         A=hasqns(siteind(psi.AL,1)) ? InfiniteMPS([dense(psi.AL[j]) for j=1:n],translator(psi.AL)) : psi.AL
-        certificate=transfer_uniqueness_certificate(A)
+        dimension=prod(dim.(dag(input_inds(TransferMatrix(A)))))
+        cachepath=replace(actual,".jls"=>"_dense_transfer_audit.json")
+        certificate=isfile(cachepath) ? cached_transfer_uniqueness_certificate(
+            JSON3.read(read(cachepath,String),Dict{String,Any}),source_sha,dimension) : transfer_uniqueness_certificate(A)
         if !certificate["primitive_peripheral_spectrum_certified"]
             atomic_json(replace(path,".jls"=>"_loop_reaudit.json"),Dict("source"=>path,"source_payload_sha256"=>source_sha,
                 "status"=>"Skipped: primitive fixed point not certified; no arbitrary sector/boundary change","transfer_uniqueness_certificate"=>certificate))
@@ -64,6 +67,7 @@ function reaudit_infinite_loops(path)
     end
     @assert open(io->bytes2hex(sha256(io)),actual)==source_sha "Source checkpoint changed: discard measurement"
     result=Dict("source"=>path,"source_payload"=>actual,"source_payload_sha256"=>source_sha,"family"=>family,"width"=>w,
+        "transfer_uniqueness_certificate"=>@isdefined(certificate) ? certificate : nothing,
         "cell_slices"=>slices,"cell_spins"=>n,"canonical_action"=>canonical_status,
         "source_canonical_error"=>meta["canonical_error"],"source_solver_residual"=>get(meta,"solver_residual",nothing),
         "winding_measurements"=>records,"contractible_measurements"=>plaquettes,"winding_pair_correlations"=>pairs,

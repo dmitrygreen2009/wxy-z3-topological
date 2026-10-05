@@ -32,6 +32,20 @@ include("../src/transfer_uniqueness.jl")
     @test maximum(norm(T(vectors[k])-values[k]*vectors[k]) for k in eachindex(values))<1e-10
 end
 
+@testset "Stored transfer certificates require exact provenance and completeness" begin
+    record=Dict("source_payload_sha256"=>"fixture-sha","transfer_dimension"=>4,
+        "eigenvalues_real"=>[1.,.8,0.,0.],"eigenvalues_imag"=>zeros(4),"eigenvalue_residuals"=>zeros(4))
+    @test cached_transfer_uniqueness_certificate(record,"fixture-sha",4)["primitive_peripheral_spectrum_certified"]
+    @test !cached_transfer_uniqueness_certificate(record,"other-sha",4)["primitive_peripheral_spectrum_certified"]
+    @test !cached_transfer_uniqueness_certificate(record,"fixture-sha",9)["primitive_peripheral_spectrum_certified"]
+    bad=deepcopy(record);pop!(bad["eigenvalues_real"])
+    @test !cached_transfer_uniqueness_certificate(bad,"fixture-sha",4)["primitive_peripheral_spectrum_certified"]
+    bad=deepcopy(record);bad["eigenvalues_real"][2]=1.
+    @test !cached_transfer_uniqueness_certificate(bad,"fixture-sha",4)["primitive_peripheral_spectrum_certified"]
+    bad=deepcopy(record);bad["eigenvalue_residuals"][1]=1e-5
+    @test !cached_transfer_uniqueness_certificate(bad,"fixture-sha",4)["primitive_peripheral_spectrum_certified"]
+end
+
 @testset "Degenerate fixed points are not hidden by scalar Krylov" begin
     s=infsiteinds("S=1/2",1;conserve_qns=false,initstate=n->"Up")
     bond=Index(2,"Link,l=1,c=1");previous=ITensorInfiniteMPS.translatecelltags(bond,-1)

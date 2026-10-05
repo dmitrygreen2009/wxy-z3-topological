@@ -33,10 +33,12 @@ zigzag cell, the two individual one-slice loops require separate accounting;
 their product is insufficient. Armchair odd-slice source cells do not align
 with the two-slice charge period and require an enlarged cell for this route.
 
-No infinite constrained optimizer is certified yet. Initialization, subspace
-expansion, the official VUMPS update and canonicalization must be checked for
-boundary-block retention, then translated loop means and variances measured
-on both geometries. Original infinite checkpoints remain unchanged. Existing
+The infinite constrained implementation has now passed initialization, subspace
+expansion, an official VUMPS update and canonicalization checks for
+boundary-block retention, plus translated loop means and variances
+on both geometries. These fixtures certify those tested operations; longer
+optimizations continue to check the same invariants after every update.
+Original infinite checkpoints remain unchanged. Existing
 unrestricted energy/entropy jobs continue; these algebraic checks do not
 invalidate them or restart them.
 
@@ -46,9 +48,10 @@ without checking those relations. This prerequisite establishes no
 thermodynamic filling, converged entropy intercept, deconfinement, or 2D phase.
 
 Physical individual matter occupations after the basis rotation are not mode
-occupations. A future infinite measurement driver must either transform the
-appropriate local matter operators or explicitly report only invariant star
-number and physical gauge occupations. Full-state spatial entropy at cuts
+occupations. The implemented driver uses the exact cyclic-symmetry identity
+in a pure loop state to assign each physical species one third of the invariant
+star magnetization; the fixture checks it independently in the physical basis.
+Mode occupations are archived separately. Full-state spatial entropy at cuts
 between complete stars and complete-cell transfer eigenvalues are invariant
 under the local matter unitary; that does not remove their convergence gates.
 
@@ -61,3 +64,9 @@ The initial gate passed all 110 checks in GitHub CI at ee75cdca: both geometries
 The wrapper in `scripts/infinite_winding_qn.jl` requires an explicit physical N_up background and checks winding support and translated loop values after every official update. It preserves a QN optimization checkpoint for resume, separately from any dense measurement copy. Physical species magnetizations are reconstructed through the exact cyclic-symmetry identity; rotated mode occupations remain separately named. Source payload SHA is checked after measurement. No result is admitted to TEE fits by this driver.
 
 A detected fixed-point rank of one from scalar Krylov starts is explicitly insufficient for automatic recanonicalization. The new measurement path requires a complete dense virtual spectrum (resource limit dimension 256, tolerance 1e-10) with one unit-modulus peripheral eigenvalue. At larger dimensions, or with an unresolved peripheral subspace, inconsistent centers are retained and their entropy is marked unresolved. Previously saved recanonicalized variational states remain preserved; any assertion of equivalence to an original nonprimitive boundary choice needs a separate complete source-spectrum audit. Their measured properties do not establish the physical phase.
+
+The saved-state loop audit can reuse an existing complete virtual eigenspectrum
+instead of repeating a validated eigensolve. It requires the identical payload
+SHA, full virtual dimension, every eigenvalue and residual, and reevaluates
+normalization, residuals and both fixed-point and peripheral multiplicities at
+the current tolerance. A stale, partial or inaccurate cache is rejected.
