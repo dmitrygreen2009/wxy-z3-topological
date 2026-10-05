@@ -51,7 +51,7 @@ function charge_sectors(path;chi=256,deltas=[-1,1,-2,2,-3,3],tag="")
         checkpoint="results/checkpoints/$(family)_w$(w)_L$(L)_N$(lat.n)_chi$(chi)_Nup$(record["nup"])_seed$(sector_seed)_v$(RUN_FORMAT_VERSION)_$(ordering)_charge_complete.jls"
         push!(records,save_checkpoint(checkpoint,psi,merge(copy(record),Dict("kind"=>"finite"))))
         result=Dict("reference_file"=>path,"reference_energy"=>E0,"chi"=>chi,"geometry"=>Dict("family"=>family,"length"=>L,"width"=>w,"physical_spins"=>lat.n,"physical_circumference"=>lat.circumference,"reference_nup"=>reference_nup),"records"=>records,
-            "interpretation"=>"Finite variational sector comparison; Unexamined number and CGS sectors remain possible lower-energy competitors. Charge-three matter operator is CGS invariant.")
+            "interpretation"=>"Finite variational number-sector comparison; unexamined number and CGS sectors remain possible lower-energy competitors. Matter-triplet measurements are archival only and do not enter this energy comparison or phase interpretation.")
         atomic_json(replace(path,".jls"=>"_charge_sectors$(tag).json"),result)
     end
 end

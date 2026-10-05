@@ -528,3 +528,37 @@ julia --project=. scripts/infinite_winding_qn.jl armchair 1 8 1 16
 ```
 
 The driver reports each disjoint winding eigenvalue and variance. Its JSON identifies the QN optimization checkpoint to resume, distinct from dense measurement copies. It uses exact real spin operators in the complete matter space, all physical individual sites, full-state spatial cuts, and the official transfer matrix. It requires a complete finite virtual-spectrum certificate before automatically repairing inconsistent Schmidt centers. Fixing a loop pattern is not a MES or emergent-flux identification, and neither filling selection nor 2D order follows from a small-cell run.
+
+### Conservative Mac resource queue
+
+`results/julia_resource_pause_audit.json` records the audited live process
+identities, purposes, checkpoint paths and scientific resume priorities for
+this machine. Twelve lower-priority Julia children were paused with SIGSTOP;
+the armchair winding-sector batch and every shell parent were retained.
+SIGSTOP preserves current in-memory work, including progress newer than the
+latest disk checkpoint. It does not free the calculation's allocated memory.
+
+A lightweight `scripts/julia_resource_queue.py watch` process waits for the
+armchair batch to exit with all three fixed-sector convergence gates passed.
+It then uses SIGCONT to resume one queued calculation at a time. Each signal
+requires an exact match of PID, parent PID, launch time and command. A reused
+PID receives no signal. If the armchair batch exits before its gates pass,
+the queue stays paused for targeted continuation of the missing sectors.
+
+The first queued calculation is the wider armchair N_up31 chi512 filling
+refinement; the wider zigzag unfinished number scan follows. Small validated
+zigzag winding candidates are retained without further optimization.
+This manifest is machine-specific and is not a job-launch file for a fresh
+clone. Resume a suspended process through SIGCONT, rather than restarting its
+solver from disk. Start only one watcher against the manifest:
+
+```bash
+python3 scripts/julia_resource_queue.py watch results/julia_resource_pause_audit.json
+```
+
+Its disposable stdout is ignored by Git; signal events and queue state are
+saved atomically in the small audit JSON. No useful Julia calculation is
+terminated by this controller.
+The independent `results/julia_resource_pause_verification.json` retains
+checkpoint checksums, parent-process verification, and the observed automatic
+SIGCONT resumption separately from the watcher's changing queue state.

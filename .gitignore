@@ -21,3 +21,5 @@ results/*.jls.previous
 # Snapshot aliases can also hold local finite-to-infinite fitting caches.
 results/**/*.jls
 results/**/*.jls.previous
+# Machine-local stdout from the conservative process resume watcher.
+results/julia_resource_resume_scheduler.log

@@ -1,0 +1,260 @@
+{
+  "created_utc": "2026-10-05T05:12:49.443374+00:00",
+  "julia_executable": "/private/tmp/julia-1.10.10/bin/julia",
+  "critical_process": {
+    "pid": 19239,
+    "ppid": 19238,
+    "state": "R",
+    "started": "Sun Oct 4 21:28:02 2026",
+    "command": "/private/tmp/julia-1.10.10/bin/julia --project=. -e include(\"scripts/convert_winding_checkpoint.jl\"); include(\"scripts/winding_qn_dmrg.jl\"); c=convert_winding_checkpoint(\"results/zigzag_L2_w1_chi128_star.jls\",0;target_nup=9,maxdim=512); run_winding_qn(\"zigzag\",2,1,9,0;maxcap=512,resume=c,noise=[0.0]); for q in 1:2; run_winding_qn(\"zigzag\",2,1,9,q;maxcap=512); end; c=convert_winding_checkpoint(\"results/armchair_L2_w1_chi256_star_Nup8.jls\",0;target_nup=8,maxdim=512); run_winding_qn(\"armchair\",2,1,8,0;maxcap=512,resume=c,noise=[0.0]); for q in 1:2; run_winding_qn(\"armchair\",2,1,8,q;maxcap=512); end"
+  },
+  "critical_purpose": "Active armchair L2 width-one N_up8 q0/q1/q2 winding-sector batch",
+  "resume_policy": "After all armchair sector gates pass and critical process exits, resume one heavy Julia calculation at a time in listed scientific priority order; verify PID/start/command identity; never terminate.",
+  "parent_process_policy": "Shell parent processes remain alive and waiting; only Julia children receive SIGSTOP/SIGCONT.",
+  "checkpoint_policy": "Existing metadata and payload existence/size confirmed; no new Julia verification or checkpoint writes requested. SIGSTOP preserves current in-memory progress even between checkpoint writes.",
+  "active_heavy_target": 1,
+  "resume_queue": [
+    {
+      "priority": 1,
+      "process": {
+        "pid": 71398,
+        "ppid": 71397,
+        "state": "U",
+        "started": "Sun Oct 4 14:33:18 2026",
+        "command": "/private/tmp/julia-1.10.10/bin/julia --project=. -e include(\"scripts/continue.jl\"); continue_cylinder(\"results/checkpoints/armchair_w2_L4_N76_chi256_Nup31_seed7196_v3_star_charge_complete.jls\",512;eigsolve_krylovdim=32,eigsolve_maxiter=10,eigsolve_tol=1e-14,eigsolve_verbosity=1)"
+      },
+      "purpose": "Armchair width-two L4 N_up31 chi512 finite energy/filling convergence",
+      "checkpoint_metadata": "results/checkpoints/armchair_w2_L4_N76_chi256_Nup31_seed7196_v3_star_charge_complete.json",
+      "checkpoint_payload": "results/checkpoints/armchair_w2_L4_N76_chi256_Nup31_seed7196_v3_star_charge_complete.jls",
+      "checkpoint_bytes": 22734566,
+      "checkpoint_metadata_mtime_utc": "2026-10-04T16:28:08.886881+00:00",
+      "log": "results/armchair_L4_w2_Nup31_chi512_strict_local_continuation.log",
+      "last_log_lines": "After sweep 1 energy=-30.63021385790139  maxlinkdim=512 maxerr=2.12E-06 time=18449.137",
+      "note": "Latest disk checkpoint is the complete chi256 seed; current chi512 sweep is preserved in memory.",
+      "status": "SIGCONT sent; resumed without restart",
+      "paused_utc": "2026-10-05T05:13:08.409469+00:00",
+      "resumed_utc": "2026-10-05T05:17:28.415266+00:00"
+    },
+    {
+      "priority": 2,
+      "process": {
+        "pid": 75917,
+        "ppid": 75914,
+        "state": "R",
+        "started": "Sun Oct 4 00:04:45 2026",
+        "command": "/private/tmp/julia-1.10.10/bin/julia --project=. -e include(\"scripts/recover_legacy_checkpoint.jl\"); recover_zigzag_reference(); include(\"scripts/cylinder_number_search.jl\")"
+      },
+      "purpose": "Wider zigzag L4 width-two unfinished number-sector scan",
+      "checkpoint_metadata": "results/checkpoints/zigzag_w2_L4_N74_chi256_Nup31_seed7197_v3_star_charge_delta-6_latest.json",
+      "checkpoint_payload": "results/checkpoints/zigzag_w2_L4_N74_chi256_Nup31_seed7197_v3_star_charge_delta-6_latest.jls",
+      "checkpoint_bytes": 23476370,
+      "checkpoint_metadata_mtime_utc": "2026-10-05T04:18:57.999726+00:00",
+      "log": "results/cylinder_number_search_resumed.log",
+      "last_log_lines": "After sweep 2 energy=-29.855140629658056  maxlinkdim=256 maxerr=1.17E-05 time=2265.506\nAfter sweep 3 energy=-29.855627841053753  maxlinkdim=256 maxerr=1.70E-05 time=1878.626",
+      "note": "Unfinished filling comparison; distinct from validated L2 width-one winding candidates.",
+      "status": "SIGSTOP sent; in-memory state and parent retained",
+      "paused_utc": "2026-10-05T05:13:09.236357+00:00"
+    },
+    {
+      "priority": 3,
+      "process": {
+        "pid": 79762,
+        "ppid": 79761,
+        "state": "R",
+        "started": "Sun Oct 4 00:37:26 2026",
+        "command": "/private/tmp/julia-1.10.10/bin/julia --project=. scripts/infinite_qn.jl armchair 2 64"
+      },
+      "purpose": "Armchair width-two U1 infinite refinement",
+      "checkpoint_metadata": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi32_Sz0_seed7103_v3_qn_star_active_latest.json",
+      "checkpoint_payload": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi32_Sz0_seed7103_v3_qn_star_active_latest.jls",
+      "checkpoint_bytes": 232001,
+      "checkpoint_metadata_mtime_utc": "2026-10-05T03:32:27.709338+00:00",
+      "log": "results/infinite_armchair_w2_qn.log",
+      "last_log_lines": "AUDITED VUMPS iteration=20 chi=8 residual=9.95244014882396e-6 seconds=4580.146947791\nAUDITED VUMPS iteration=21 chi=8 residual=5.672365181456584e-6 seconds=4956.164120292",
+      "note": "Exploratory U1 refinement; not a clean winding-sector production state.",
+      "status": "SIGSTOP sent; in-memory state and parent retained",
+      "paused_utc": "2026-10-05T05:13:10.119972+00:00"
+    },
+    {
+      "priority": 4,
+      "process": {
+        "pid": 85940,
+        "ppid": 85938,
+        "state": "R",
+        "started": "Sun Oct 4 08:03:00 2026",
+        "command": "/private/tmp/julia-1.10.10/bin/julia --project=. -e include(\"scripts/infinite_from_finite.jl\"); infinite_from_finite(\"results/zigzag_L6_w1_chi512_star_seed7112.jls\";initial_chi=16,target_chi=128,tag=\"_finite_q0_star\")"
+      },
+      "purpose": "Zigzag width-one finite-to-infinite warm start",
+      "checkpoint_metadata": "results/checkpoints/infinite_zigzag_w1_cell2_N18_chi64_unrestricted_seed7103_v3_finite_q0_star_latest.json",
+      "checkpoint_payload": "results/checkpoints/infinite_zigzag_w1_cell2_N18_chi64_unrestricted_seed7103_v3_finite_q0_star_latest.jls",
+      "checkpoint_bytes": 5926246,
+      "checkpoint_metadata_mtime_utc": "2026-10-05T04:56:56.814338+00:00",
+      "log": "results/infinite_zigzag_w1_q0_warm_start.log",
+      "last_log_lines": "AUDITED VUMPS iteration=19 chi=64 residual=0.0001337241689116901 seconds=5281.394065917\nAUDITED VUMPS iteration=20 chi=64 residual=9.486770774862513e-5 seconds=6347.75801375",
+      "note": "Unfinished infinite length/bond study; separate from validated small finite candidates.",
+      "status": "SIGSTOP sent; in-memory state and parent retained",
+      "paused_utc": "2026-10-05T05:13:10.367137+00:00"
+    },
+    {
+      "priority": 5,
+      "process": {
+        "pid": 39835,
+        "ppid": 39834,
+        "state": "R",
+        "started": "Sat Oct 3 20:11:13 2026",
+        "command": "/private/tmp/julia-1.10.10/bin/julia --project=. scripts/extend_study.jl"
+      },
+      "purpose": "Broad finite cylinder length/circumference extension currently armchair L4 width-three chi512",
+      "checkpoint_metadata": "results/armchair_L4_w3_chi256_star.json",
+      "checkpoint_payload": "results/armchair_L4_w3_chi256_star.jls",
+      "checkpoint_bytes": 37765730,
+      "checkpoint_metadata_mtime_utc": "2026-10-04T00:06:42.187499+00:00",
+      "log": "results/extend_study.log",
+      "last_log_lines": "After sweep 6 energy=-66.46386091913702  maxlinkdim=256 maxerr=3.79E-04 time=1156.723\nAfter sweep 1 energy=-45.36678582137518  maxlinkdim=512 maxerr=3.35E-05 time=20951.856",
+      "note": "Latest disk checkpoint is complete chi256 seed; current chi512 sweep is preserved in memory.",
+      "status": "SIGSTOP sent; in-memory state and parent retained",
+      "paused_utc": "2026-10-05T05:13:10.636110+00:00"
+    },
+    {
+      "priority": 6,
+      "process": {
+        "pid": 69373,
+        "ppid": 69369,
+        "state": "R",
+        "started": "Sun Oct 4 14:27:43 2026",
+        "command": "/private/tmp/julia-1.10.10/bin/julia --project=. scripts/infinite_parallel_refine.jl results/checkpoints/infinite_zigzag_w2_Ly3.4641_cell2_N36_chi16_unrestricted_seed7232_v3_finite_seed_star_parallel_stage1_complete.jls 64"
+      },
+      "purpose": "Zigzag width-two parallel infinite expansion/refinement",
+      "checkpoint_metadata": "results/checkpoints/infinite_zigzag_w2_cell2_N36_chi32_unrestricted_seed7241_v3_finite_seed_star_parallel_expanded_latest.json",
+      "checkpoint_payload": "results/checkpoints/infinite_zigzag_w2_cell2_N36_chi32_unrestricted_seed7241_v3_finite_seed_star_parallel_expanded_latest.jls",
+      "checkpoint_bytes": 3003592,
+      "checkpoint_metadata_mtime_utc": "2026-10-05T04:12:39.251437+00:00",
+      "log": "results/infinite_zigzag_w2_parallel_expanded_corrected.log",
+      "last_log_lines": "AUDITED VUMPS iteration=38 chi=32 residual=0.008848645264346311 seconds=2247.82393325\nAUDITED VUMPS iteration=39 chi=32 residual=0.0074169294541371915 seconds=2295.134484667",
+      "note": "Exploratory infinite refinement.",
+      "status": "SIGSTOP sent; in-memory state and parent retained",
+      "paused_utc": "2026-10-05T05:13:10.799179+00:00"
+    },
+    {
+      "priority": 7,
+      "process": {
+        "pid": 61168,
+        "ppid": 61166,
+        "state": "R",
+        "started": "Sat Oct 3 22:13:10 2026",
+        "command": "/private/tmp/julia-1.10.10/bin/julia --project=. -e include(\"scripts/infinite_from_finite.jl\"); infinite_from_finite(\"results/zigzag_L6_w2_chi256_star.jls\";initial_chi=8,target_chi=64)"
+      },
+      "purpose": "Zigzag width-two finite-to-infinite warm start",
+      "checkpoint_metadata": "results/checkpoints/infinite_zigzag_w2_cell2_N36_chi64_unrestricted_seed7103_v3_finite_seed_star_latest.json",
+      "checkpoint_payload": "results/checkpoints/infinite_zigzag_w2_cell2_N36_chi64_unrestricted_seed7103_v3_finite_seed_star_latest.jls",
+      "checkpoint_bytes": 3381048,
+      "checkpoint_metadata_mtime_utc": "2026-10-05T02:27:30.831428+00:00",
+      "log": "results/infinite_zigzag_w2_warm_start.log",
+      "last_log_lines": "AUDITED VUMPS iteration=19 chi=58 residual=0.0015789035547139768 seconds=6731.075017125\nAUDITED VUMPS iteration=20 chi=58 residual=0.001759510011404117 seconds=7021.598669125",
+      "note": "Lower priority alternate infinite initialization.",
+      "status": "SIGSTOP sent; in-memory state and parent retained",
+      "paused_utc": "2026-10-05T05:13:10.910451+00:00"
+    },
+    {
+      "priority": 8,
+      "process": {
+        "pid": 20388,
+        "ppid": 20387,
+        "state": "R",
+        "started": "Sun Oct 4 10:51:06 2026",
+        "command": "/private/tmp/julia-1.10.10/bin/julia --project=. -e include(\"scripts/infinite_from_finite.jl\"); infinite_from_finite(\"results/checkpoints/armchair_w2_L4_N76_chi256_Nup33_seed7198_v3_star_charge_complete.jls\";initial_chi=16,target_chi=128,tag=\"_finite_charge_Nup33_star\")"
+      },
+      "purpose": "Armchair width-two N_up33 finite-to-infinite warm start",
+      "checkpoint_metadata": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi16_unrestricted_seed7104_v3_finite_charge_Nup33_star_latest.json",
+      "checkpoint_payload": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi16_unrestricted_seed7104_v3_finite_charge_Nup33_star_latest.jls",
+      "checkpoint_bytes": 791752,
+      "checkpoint_metadata_mtime_utc": "2026-10-05T02:34:09.566060+00:00",
+      "log": "results/infinite_armchair_w2_charged_warm_start.log",
+      "last_log_lines": "AUDITED VUMPS iteration=9 chi=16 residual=0.03409190362650982 seconds=6091.459528709\nAUDITED VUMPS iteration=10 chi=16 residual=0.03488234938784734 seconds=10135.725321708",
+      "note": "Lower priority alternate infinite initialization; source finite filling does not fix unrestricted infinite filling.",
+      "status": "SIGSTOP sent; in-memory state and parent retained",
+      "paused_utc": "2026-10-05T05:13:10.993716+00:00"
+    },
+    {
+      "priority": 9,
+      "process": {
+        "pid": 84177,
+        "ppid": 84176,
+        "state": "R",
+        "started": "Sun Oct 4 07:56:17 2026",
+        "command": "/private/tmp/julia-1.10.10/bin/julia --project=. -e include(\"scripts/infinite_from_finite.jl\"); infinite_from_finite(\"results/armchair_L6_w2_chi256_star.jls\";initial_chi=8,target_chi=64)"
+      },
+      "purpose": "Armchair width-two unrestricted finite-to-infinite warm start",
+      "checkpoint_metadata": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi8_unrestricted_seed7103_v3_finite_seed_star_latest.json",
+      "checkpoint_payload": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi8_unrestricted_seed7103_v3_finite_seed_star_latest.jls",
+      "checkpoint_bytes": 238792,
+      "checkpoint_metadata_mtime_utc": "2026-10-05T01:42:37.546983+00:00",
+      "log": "results/infinite_armchair_w2_warm_start.log",
+      "last_log_lines": "AUDITED VUMPS iteration=26 chi=8 residual=0.011354314091606971 seconds=6102.5268615\nAUDITED VUMPS iteration=27 chi=8 residual=0.01043541694357256 seconds=11293.699436584",
+      "note": "Lower priority alternate infinite initialization.",
+      "status": "SIGSTOP sent; in-memory state and parent retained",
+      "paused_utc": "2026-10-05T05:13:11.113423+00:00"
+    },
+    {
+      "priority": 10,
+      "process": {
+        "pid": 45824,
+        "ppid": 45823,
+        "state": "R",
+        "started": "Sun Oct 4 12:54:23 2026",
+        "command": "/private/tmp/julia-1.10.10/bin/julia --project=. scripts/infinite_random_cell.jl armchair 2 16 64"
+      },
+      "purpose": "Armchair width-two infinite rho4/9 cell-two exploratory refinement",
+      "checkpoint_metadata": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi8_rho4of9_seed7227_v3_qn_rho4of9_cell_product_seed7226_star_latest.json",
+      "checkpoint_payload": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi8_rho4of9_seed7227_v3_qn_rho4of9_cell_product_seed7226_star_latest.jls",
+      "checkpoint_bytes": 309617,
+      "checkpoint_metadata_mtime_utc": "2026-10-05T02:41:10.835852+00:00",
+      "log": "results/infinite_armchair_w2_rho4of9_random_cell_boundaryfix.log",
+      "last_log_lines": "AUDITED VUMPS iteration=5 chi=8 residual=0.10994305739087629 seconds=5451.11544675\nAUDITED VUMPS iteration=6 chi=8 residual=0.42583044452569413 seconds=8266.047499292",
+      "note": "Exploratory rational filling refinement.",
+      "status": "SIGSTOP sent; in-memory state and parent retained",
+      "paused_utc": "2026-10-05T05:13:11.253894+00:00"
+    },
+    {
+      "priority": 11,
+      "process": {
+        "pid": 66246,
+        "ppid": 66245,
+        "state": "R",
+        "started": "Sun Oct 4 14:19:23 2026",
+        "command": "/private/tmp/julia-1.10.10/bin/julia --project=. scripts/infinite_random_cell.jl armchair 2 48 32 6 parallel"
+      },
+      "purpose": "Armchair width-two infinite rho4/9 cell-six parallel refinement",
+      "checkpoint_metadata": "results/checkpoints/infinite_armchair_w2_cell6_N108_chi8_rho4of9_seed7227_v3_qn_rho4of9_cell_product_seed7226_star_cell6_latest.json",
+      "checkpoint_payload": "results/checkpoints/infinite_armchair_w2_cell6_N108_chi8_rho4of9_seed7227_v3_qn_rho4of9_cell_product_seed7226_star_cell6_latest.jls",
+      "checkpoint_bytes": 944401,
+      "checkpoint_metadata_mtime_utc": "2026-10-05T00:33:45.889899+00:00",
+      "log": "results/infinite_armchair_w2_rho4of9_cell6_parallel.log",
+      "last_log_lines": "AUDITED VUMPS iteration=1 chi=8 residual=1.372481630118889 seconds=10364.837701666\nAUDITED VUMPS iteration=2 chi=8 residual=1.2873601429473467 seconds=11608.373276167",
+      "note": "Expensive enlarged-cell exploratory refinement.",
+      "status": "SIGSTOP sent; in-memory state and parent retained",
+      "paused_utc": "2026-10-05T05:13:11.369406+00:00"
+    },
+    {
+      "priority": 12,
+      "process": {
+        "pid": 16718,
+        "ppid": 16717,
+        "state": "R",
+        "started": "Sun Oct 4 10:39:26 2026",
+        "command": "/private/tmp/julia-1.10.10/bin/julia --project=. -e include(\"scripts/infinite_from_finite.jl\"); infinite_from_finite(\"results/zigzag_L4_w3_chi256_star.jls\";initial_chi=16,target_chi=128,tag=\"_finite_seed_star\")"
+      },
+      "purpose": "Zigzag width-three finite-to-infinite warm start",
+      "checkpoint_metadata": "results/checkpoints/infinite_zigzag_w3_cell2_N54_chi16_unrestricted_seed7104_v3_finite_seed_star_latest.json",
+      "checkpoint_payload": "results/checkpoints/infinite_zigzag_w3_cell2_N54_chi16_unrestricted_seed7104_v3_finite_seed_star_latest.jls",
+      "checkpoint_bytes": 1187266,
+      "checkpoint_metadata_mtime_utc": "2026-10-05T00:00:54.462061+00:00",
+      "log": "results/infinite_zigzag_w3_warm_start.log",
+      "last_log_lines": "AUDITED VUMPS iteration=8 chi=16 residual=0.02236473284619788 seconds=9684.332627292\nAUDITED VUMPS iteration=9 chi=16 residual=0.02054412903023567 seconds=16177.794621458",
+      "note": "Expensive larger-circumference exploratory initialization.",
+      "status": "SIGSTOP sent; in-memory state and parent retained",
+      "paused_utc": "2026-10-05T05:13:11.475690+00:00"
+    }
+  ],
+  "scheduler_status": "One queued calculation resumed"
+}

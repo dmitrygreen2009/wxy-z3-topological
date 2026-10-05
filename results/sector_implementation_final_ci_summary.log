@@ -6,3 +6,12 @@ Source: workflow run 37258833725, job 111601504584, commit 0420445; conclusion s
 2026-10-05T03:24:50.8123484Z Stored transfer certificates require exact provenance and completeness |    6      6  0.4s
 2026-10-05T03:31:13.4254591Z Individual infinite microscopic winding-cell constraint |  237    237  49.2s
 2026-10-05T03:31:25.0039772Z Constrained infinite driver audit integration fixture |    7      7  11.0s
+
+Source: workflow run 37260917231, job 111607768593, commit d8ce470; conclusion success. All three zigzag physical-filling sector results pass their independent ED/variance gates; normal CI regression suite passed.
+2026-10-05T03:53:56.3954727Z Physical-number initialization projects into every target winding block |   30     30  1m48.1s
+2026-10-05T03:54:08.6252398Z Exact quartet and cycle-multiplicity doublets use the validated MPS encoder |   21     21  7.8s
+2026-10-05T03:56:30.8390431Z Stored transfer certificates require exact provenance and completeness |    6      6  0.4s
+2026-10-05T03:59:03.9398461Z Direct winding QN is an exact microscopic basis change |   42     42  35.3s
+2026-10-05T04:00:16.9757472Z Exact real winding-basis microscopic MPO |   39     39  1m07.9s
+2026-10-05T04:02:30.8470497Z Individual infinite microscopic winding-cell constraint |  237    237  46.1s
+2026-10-05T04:02:41.5275547Z Constrained infinite driver audit integration fixture |    7      7  10.1s

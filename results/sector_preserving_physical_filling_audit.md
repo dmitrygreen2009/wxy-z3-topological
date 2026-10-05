@@ -1,9 +1,9 @@
 # Sector-preserving optimization at independently audited finite fillings
 
 Checkpoint classification: VALIDATED AND USABLE FOR PHASE INFERENCE: none
-yet. COMPUTED BUT NOT YET CONVERGED: the armchair production branches and
-wider-cylinder continuations. REJECTED / DIAGNOSTIC ONLY: the accepted small
-zigzag q0/q1/q2 optimizer benchmarks and exact representation/initializer
+yet. COMPUTED BUT NOT YET CONVERGED: the wider-cylinder continuations.
+REJECTED / DIAGNOSTIC ONLY: the accepted small zigzag and armchair q0/q1/q2
+optimizer benchmarks and exact representation/initializer
 fixtures (usable for implementation validation, awaiting 2D gates), plus the
 preserved failed cold initialization. The q0 state is retained; this category
 does not reject its numerical values.
@@ -51,7 +51,7 @@ It is rejected: tiny truncation error and sweep drift coexisted with variance
 3.36e-5 and an ED energy error 6.44e-6. The successful alternative seed does
 not establish the precise mechanism of that optimizer trap.
 
-The armchair counterparts remain in progress. The already validated N_up=2 fixture comparisons establish
+The armchair counterparts are now complete as recorded below. The already validated N_up=2 fixture comparisons establish
 sector-algorithm behavior, not physical filling. No point here is admitted to
 a topological-entropy fit: common MES identification and length/circumference
 convergence remain separate requirements. No finite-ring substitution for an
@@ -96,3 +96,46 @@ transfer matrix can be obtained by joining their distinct open end bonds.
 They remain REJECTED / DIAGNOSTIC ONLY for 2D phase interpretation, while
 valid and retained as quantitative sector-preserving optimizer benchmarks.
 No entropy point has been admitted to a gamma fit.
+
+## Completed armchair physical-filling winding-sector candidates
+
+All three separately optimized armchair L2 width-one candidates pass the
+frozen fixed-number/winding gates. Each retains all 20 physical spins with
+fixed N_up=8, S^z=-2, filling 8/20, and the validated full-state spatial
+cut recorded in its result JSON. The independent all-number finite scan
+identifies N_up=8 and its particle-hole partner N_up=12 as global finite
+minima; it does not determine the infinite filling.
+
+| q | Energy | ED error | H variance | Full-state S | Cap / achieved bond | Loop purity error |
+|---|---:|---:|---:|---:|---:|---:|
+| 0 | -8.037741645043154 | 1.439e-11 | 1.311e-10 | 1.144144154081445 | 198 / 198 | 1.385e-15 |
+| 1 | -7.495281096629017 | 3.524e-12 | 3.208e-11 | 1.247446159039853 | 256 / 224 | 1.535e-15 |
+| 2 | -7.495281096627773 | 4.780e-12 | 4.493e-11 | 1.338533480820499 | 256 / 222 | 9.550e-16 |
+
+The q0 source is the preserved physical-spin N_up8 ground checkpoint,
+converted through the exact basis/projector bridge and refined in the
+winding QN representation. Nontrivial q1/q2 branches were independently
+optimized through caps 32,64,128,256; insufficient earlier caps remain
+recorded. Their winding means are omega and conjugate(omega), and loop
+variances vanish within roundoff. Their spectra contain independently
+observed degenerate ground vectors within the fixed q sector. Different
+entropies in q1 and q2 therefore do not establish different quantum
+dimensions or a failure of energy convergence: these optimized branches
+have not been certified as minimally entangled states.
+
+All six small physical-filling sector candidates now validate the exact
+sector-preserving implementation against independent ED. No complete
+multiplicity claim is made from scalar ARPACK. Correlation lengths remain
+null for these open finite states, and all six remain REJECTED / DIAGNOSTIC
+ONLY for 2D phase inference pending the distinct MES, length, circumference
+and bulk-filling gates. No point is admitted to an entropy-intercept fit.
+
+At the user's resource checkpoint, 12 lower-priority Julia jobs were
+confirmed against their purposes and disk checkpoints, then paused with
+SIGSTOP. The active armchair sector batch was preserved and completed
+normally. A lightweight watcher successfully resumed the first queued
+width-two armchair number-sector refinement with SIGCONT; eleven jobs
+remain paused and the active heavy-Julia limit is one. Checkpoints, parent
+processes, and in-memory progress were preserved. The machine-local queue
+and independent checksum/process verification are recorded separately in
+`julia_resource_pause_audit.json` and `julia_resource_pause_verification.json`.

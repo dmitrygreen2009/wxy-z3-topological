@@ -1,0 +1,152 @@
+{
+  "verified_utc": "2026-10-05T05:18:53.971660+00:00",
+  "initial_stop_confirmation": "All 12 targets were verified in T state with every shell parent alive before the armchair batch completed.",
+  "armchair_batch_completion": "All three fixed-sector gates passed; original Julia and parent exited normally.",
+  "automatic_resume_verified": "Watcher sent SIGCONT to first queued PID 71398 without restarting it; eleven other jobs remain stopped.",
+  "active_julia_pids": [
+    71398
+  ],
+  "watcher_process": {
+    "pid": 44525,
+    "ppid": 44523,
+    "state": "S",
+    "started": "Mon Oct 5 01:13:57 2026",
+    "command": "/opt/homebrew/Cellar/python@3.14/3.14.0/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python scripts/julia_resource_queue.py watch results/julia_resource_pause_audit.json"
+  },
+  "checkpoint_and_parent_verification": [
+    {
+      "pid": 71398,
+      "current_state": "R",
+      "parent_pid": 71397,
+      "parent_preserved": true,
+      "checkpoint_payload": "results/checkpoints/armchair_w2_L4_N76_chi256_Nup31_seed7196_v3_star_charge_complete.jls",
+      "payload_bytes": 22734566,
+      "observed_sha256": "0b2859e574b2c0f095fc7751c187b81151692f842757685b1dda2eeddf66c81f",
+      "stored_sha256": "0b2859e574b2c0f095fc7751c187b81151692f842757685b1dda2eeddf66c81f",
+      "integrity_status": "Matches saved metadata"
+    },
+    {
+      "pid": 75917,
+      "current_state": "T",
+      "parent_pid": 75914,
+      "parent_preserved": true,
+      "checkpoint_payload": "results/checkpoints/zigzag_w2_L4_N74_chi256_Nup31_seed7197_v3_star_charge_delta-6_latest.jls",
+      "payload_bytes": 23476370,
+      "observed_sha256": "aab2105bcb3ac75a3dea2f915df81d880cd7e6dec07c86d0d0c9d1814e513a4a",
+      "stored_sha256": "aab2105bcb3ac75a3dea2f915df81d880cd7e6dec07c86d0d0c9d1814e513a4a",
+      "integrity_status": "Matches saved metadata"
+    },
+    {
+      "pid": 79762,
+      "current_state": "T",
+      "parent_pid": 79761,
+      "parent_preserved": true,
+      "checkpoint_payload": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi32_Sz0_seed7103_v3_qn_star_active_latest.jls",
+      "payload_bytes": 232001,
+      "observed_sha256": "9f1e3b7165fe483a3fedc983e9fbffc9e72a6415081174cbd447353f01dedeac",
+      "stored_sha256": "9f1e3b7165fe483a3fedc983e9fbffc9e72a6415081174cbd447353f01dedeac",
+      "integrity_status": "Matches saved metadata"
+    },
+    {
+      "pid": 85940,
+      "current_state": "T",
+      "parent_pid": 85938,
+      "parent_preserved": true,
+      "checkpoint_payload": "results/checkpoints/infinite_zigzag_w1_cell2_N18_chi64_unrestricted_seed7103_v3_finite_q0_star_latest.jls",
+      "payload_bytes": 5926246,
+      "observed_sha256": "6c53f663f14a2a83689a3191b2555a1abe53e112e703c1ed8807a889601857d0",
+      "stored_sha256": "6c53f663f14a2a83689a3191b2555a1abe53e112e703c1ed8807a889601857d0",
+      "integrity_status": "Matches saved metadata"
+    },
+    {
+      "pid": 39835,
+      "current_state": "T",
+      "parent_pid": 39834,
+      "parent_preserved": true,
+      "checkpoint_payload": "results/armchair_L4_w3_chi256_star.jls",
+      "payload_bytes": 37765730,
+      "observed_sha256": "b49356ace972555e34cde7139d391c0229663644e47e0f40a5c27ef1e452c4d6",
+      "stored_sha256": null,
+      "integrity_status": "Observed checksum recorded; legacy metadata has no stored checksum"
+    },
+    {
+      "pid": 69373,
+      "current_state": "T",
+      "parent_pid": 69369,
+      "parent_preserved": true,
+      "checkpoint_payload": "results/checkpoints/infinite_zigzag_w2_cell2_N36_chi32_unrestricted_seed7241_v3_finite_seed_star_parallel_expanded_latest.jls",
+      "payload_bytes": 3003592,
+      "observed_sha256": "f8a4b236a1b420ad966c3ec279828677a6c79d077d745c3af0f5fd12424958d3",
+      "stored_sha256": "f8a4b236a1b420ad966c3ec279828677a6c79d077d745c3af0f5fd12424958d3",
+      "integrity_status": "Matches saved metadata"
+    },
+    {
+      "pid": 61168,
+      "current_state": "T",
+      "parent_pid": 61166,
+      "parent_preserved": true,
+      "checkpoint_payload": "results/checkpoints/infinite_zigzag_w2_cell2_N36_chi64_unrestricted_seed7103_v3_finite_seed_star_latest.jls",
+      "payload_bytes": 3381048,
+      "observed_sha256": "3a73947ff9f332604b04ca7e7c36f4b5b43e0c031ae6cff21d52681935d5df4d",
+      "stored_sha256": "3a73947ff9f332604b04ca7e7c36f4b5b43e0c031ae6cff21d52681935d5df4d",
+      "integrity_status": "Matches saved metadata"
+    },
+    {
+      "pid": 20388,
+      "current_state": "T",
+      "parent_pid": 20387,
+      "parent_preserved": true,
+      "checkpoint_payload": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi16_unrestricted_seed7104_v3_finite_charge_Nup33_star_latest.jls",
+      "payload_bytes": 791752,
+      "observed_sha256": "f24419742bceb37821dbc2c355a36f5397cddff49af0ea60247d2746ba62ee39",
+      "stored_sha256": "f24419742bceb37821dbc2c355a36f5397cddff49af0ea60247d2746ba62ee39",
+      "integrity_status": "Matches saved metadata"
+    },
+    {
+      "pid": 84177,
+      "current_state": "T",
+      "parent_pid": 84176,
+      "parent_preserved": true,
+      "checkpoint_payload": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi8_unrestricted_seed7103_v3_finite_seed_star_latest.jls",
+      "payload_bytes": 238792,
+      "observed_sha256": "36916ef9bd0ddd53f3a33b08d1b0ee43bf0791f4a0f3b0c8dc13d3a1b22677be",
+      "stored_sha256": "36916ef9bd0ddd53f3a33b08d1b0ee43bf0791f4a0f3b0c8dc13d3a1b22677be",
+      "integrity_status": "Matches saved metadata"
+    },
+    {
+      "pid": 45824,
+      "current_state": "T",
+      "parent_pid": 45823,
+      "parent_preserved": true,
+      "checkpoint_payload": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi8_rho4of9_seed7227_v3_qn_rho4of9_cell_product_seed7226_star_latest.jls",
+      "payload_bytes": 309617,
+      "observed_sha256": "3b6b6926f6c8dba6fdcdccd10c65384027a6e32f11dfa8148ac5f2780cb8c9dc",
+      "stored_sha256": "3b6b6926f6c8dba6fdcdccd10c65384027a6e32f11dfa8148ac5f2780cb8c9dc",
+      "integrity_status": "Matches saved metadata"
+    },
+    {
+      "pid": 66246,
+      "current_state": "T",
+      "parent_pid": 66245,
+      "parent_preserved": true,
+      "checkpoint_payload": "results/checkpoints/infinite_armchair_w2_cell6_N108_chi8_rho4of9_seed7227_v3_qn_rho4of9_cell_product_seed7226_star_cell6_latest.jls",
+      "payload_bytes": 944401,
+      "observed_sha256": "464d3fe55ab991eb50716046a7948f5a12deb8b05cb1403ce9dec07df372a47f",
+      "stored_sha256": "464d3fe55ab991eb50716046a7948f5a12deb8b05cb1403ce9dec07df372a47f",
+      "integrity_status": "Matches saved metadata"
+    },
+    {
+      "pid": 16718,
+      "current_state": "T",
+      "parent_pid": 16717,
+      "parent_preserved": true,
+      "checkpoint_payload": "results/checkpoints/infinite_zigzag_w3_cell2_N54_chi16_unrestricted_seed7104_v3_finite_seed_star_latest.jls",
+      "payload_bytes": 1187266,
+      "observed_sha256": "c68278bc5cccc6f8a9d59c74b98758fa2644753d4d6bbd0f5d76007bc899e65e",
+      "stored_sha256": "c68278bc5cccc6f8a9d59c74b98758fa2644753d4d6bbd0f5d76007bc899e65e",
+      "integrity_status": "Matches saved metadata"
+    }
+  ],
+  "queue_manifest": "results/julia_resource_pause_audit.json",
+  "queue_manifest_sha256": "3966f2d9415018cc7790c2e6eb3532649bc62625efab75b9a375b332b174d568"
+}
