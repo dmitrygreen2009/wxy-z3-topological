@@ -51,3 +51,7 @@ appropriate local matter operators or explicitly report only invariant star
 number and physical gauge occupations. Full-state spatial entropy at cuts
 between complete stars and complete-cell transfer eigenvalues are invariant
 under the local matter unitary; that does not remove their convergence gates.
+
+A gated implementation now exists in `src/infinite_winding_basis.jl`. It retains all individual spin sites and all matter states, uses the exact real Hamiltonian, and initializes explicit physical-number backgrounds plus separate winding QNs for the disjoint loops in the cell. Winding background offsets are recorded separately from physical phase weights. The pinned library supports four QN fields, so this prototype permits up to three independent loop fields plus physical number. Each winding boundary is checked for zero charge support in both AL and AR.
+
+`test/infinite_winding_basis.jl` tests both families and q0/q1 at a deliberately chosen fixture density 1/3, compares periodic microscopic energies in the original physical basis, verifies the full matter-dressed loop action, then checks both ordinary and translated loop values after canonicalization, expansion and one official infinite update. The test uses at most 18 individual sites, bond cap 3 and one update; it is not a cylinder convergence run. No production constrained infinite state is claimed before it passes. Existing checkpoints and calculations remain unchanged.
