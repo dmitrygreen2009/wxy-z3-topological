@@ -1,0 +1,8 @@
+Source: workflow run 37258833725, job 111601504584, commit 0420445; conclusion success. Constraint/Hamiltonian implementation frozen for production unless a concrete failure is found.
+2026-10-05T03:20:32.0870706Z Unequal winding weights restrict two-site randomization |    6      6  22.8s
+2026-10-05T03:22:16.1371673Z Physical-number initialization projects into every target winding block |   30     30  1m43.9s
+2026-10-05T03:22:18.2419440Z Exact quartet plus two cycle-labeled doublets: all matrix checks passed. {'unitarity': np.float64(6.998086483631616e-16), 'total_spin': np.float64(1.956609104470887e-15), 'magnetization': np.float64(3.499043241815808e-16), 'cyclic_permutation': np.float64(1.0570082554142168e-15), 'spin_ladder_phase': np.float64(1.1028692823447893e-15), 'hamiltonian_matrix': np.float64(6.127633996961562e-16), 'existing_mps_matrix': np.float64(3.72407615681534e-15), 'full_spectrum': 2.4424906541753444e-15, 'hermiticity': np.float64(0.0)}
+2026-10-05T03:22:28.3796353Z Exact quartet and cycle-multiplicity doublets use the validated MPS encoder |   21     21  7.8s
+2026-10-05T03:24:50.8123484Z Stored transfer certificates require exact provenance and completeness |    6      6  0.4s
+2026-10-05T03:31:13.4254591Z Individual infinite microscopic winding-cell constraint |  237    237  49.2s
+2026-10-05T03:31:25.0039772Z Constrained infinite driver audit integration fixture |    7      7  11.0s

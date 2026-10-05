@@ -493,6 +493,10 @@ An incomplete sector is recorded without aborting the remaining sector cases.
 Run only one copy of this batch at a time: it writes the usual result aliases.
 Its accepted states remain fixed-number finite-cylinder results, not a
 thermodynamic filling, MES or TEE certificate.
+On a fresh checkout without local MPS payloads, the q0 jobs use the validated
+number-projected initializer directly; existing physical ground payloads are
+preferred when available. A standalone from-scratch command is
+`julia --project=. scripts/winding_qn_dmrg.jl zigzag 2 1 9 0 512`.
 
 Fresh finite-sector initialization uses number-only physical randomization
 followed by the validated exact number/winding basis projector. This addresses

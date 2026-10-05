@@ -23,9 +23,10 @@ function continue_winding_physical_sectors(;maxcap=512)
                 status["status"]="Previously converged state retained without optimization"
             else
                 resume=prior===nothing ? nothing : prior["checkpoint_file"]
-                if charge==0 && resume===nothing
+                source_available=try isfile(resolve_checkpoint(sources[family])) catch;false end
+                if charge==0 && resume===nothing && source_available
                     resume=convert_winding_checkpoint(sources[family],0;target_nup=nup,maxdim=maxcap)
-                elseif charge==0 && prior!==nothing && last(prior["records"])["energy_variance"]>1e-8
+                elseif charge==0 && prior!==nothing && last(prior["records"])["energy_variance"]>1e-8 && source_available
                     # A cold initialization can miss a CGS block. The validated
                     # physical ground checkpoint supplies a different exact seed.
                     resume=convert_winding_checkpoint(sources[family],0;target_nup=nup,maxdim=maxcap)

@@ -269,6 +269,66 @@
       "eligible_for_topological_entropy_fit": false,
       "independent_ed_energy": -7.696107978815055,
       "energy_error_vs_ed": 1.177369313154486e-11
+    },
+    {
+      "source": "results/zigzag_L2_w1_Nup9_winding1_qn_seed7254.json",
+      "algorithm": "direct winding QN",
+      "family": "zigzag",
+      "L": 2,
+      "width": 1,
+      "physical_spins": 19,
+      "nup": 9,
+      "total_sz": -0.5,
+      "filling_fraction": 0.47368421052631576,
+      "filling_selection": "Fixed physical number and winding MPS QNs",
+      "winding_charge": 1,
+      "loop_label": "circumference_cycle_t0",
+      "cap": 128,
+      "actual_bond_dimension": 113,
+      "energy": -7.6517583916201115,
+      "entropy": 0.8679772807882762,
+      "energy_variance": 7.15871806278301e-11,
+      "loop_mean_real": -0.4999999999999993,
+      "loop_mean_imag": 0.8660254037844394,
+      "loop_variance": -4.440892098500626e-16,
+      "loop_purity_error": 8.326672684688674e-16,
+      "sector_convergence_passed": true,
+      "correlation_length": null,
+      "runtime_seconds": 2955.4070670604706,
+      "git_commit": "5112ec13a954a89889727ed1c59f541adb42c682",
+      "eligible_for_topological_entropy_fit": false,
+      "independent_ed_energy": -7.651758391631642,
+      "energy_error_vs_ed": 1.1530332244547026e-11
+    },
+    {
+      "source": "results/zigzag_L2_w1_Nup9_winding2_qn_seed7254.json",
+      "algorithm": "direct winding QN",
+      "family": "zigzag",
+      "L": 2,
+      "width": 1,
+      "physical_spins": 19,
+      "nup": 9,
+      "total_sz": -0.5,
+      "filling_fraction": 0.47368421052631576,
+      "filling_selection": "Fixed physical number and winding MPS QNs",
+      "winding_charge": 2,
+      "loop_label": "circumference_cycle_t0",
+      "cap": 128,
+      "actual_bond_dimension": 113,
+      "energy": -7.651758391620521,
+      "entropy": 0.8679772808235457,
+      "energy_variance": 6.870948254800169e-11,
+      "loop_mean_real": -0.5000000000000008,
+      "loop_mean_imag": -0.8660254037844384,
+      "loop_variance": -4.440892098500626e-16,
+      "loop_purity_error": 3.510833468576701e-16,
+      "sector_convergence_passed": true,
+      "correlation_length": null,
+      "runtime_seconds": 3785.072060108185,
+      "git_commit": "5112ec13a954a89889727ed1c59f541adb42c682",
+      "eligible_for_topological_entropy_fit": false,
+      "independent_ed_energy": -7.651758391631634,
+      "energy_error_vs_ed": 1.1112888387287967e-11
     }
   ],
   "comparisons": [
@@ -333,6 +393,38 @@
       "sources": [
         "results/zigzag_L2_w1_Nup2_winding0_penalty_seed7252.json",
         "results/zigzag_L2_w1_Nup2_winding1_penalty_seed7252.json"
+      ],
+      "interpretation": "Finite-cylinder fixed-number winding-sector comparison; not a deconfinement, MES or 2D topological certificate."
+    },
+    {
+      "family": "zigzag",
+      "L": 2,
+      "width": 1,
+      "nup": 9,
+      "loop_label": "circumference_cycle_t0",
+      "algorithm": "direct winding QN",
+      "nontrivial_charge": 1,
+      "energy_difference_nontrivial_minus_trivial": 0.04434958718317006,
+      "entropy_difference_nontrivial_minus_trivial": -0.4873316494233928,
+      "sources": [
+        "results/zigzag_L2_w1_Nup9_winding0_qn_seed7254.json",
+        "results/zigzag_L2_w1_Nup9_winding1_qn_seed7254.json"
+      ],
+      "interpretation": "Finite-cylinder fixed-number winding-sector comparison; not a deconfinement, MES or 2D topological certificate."
+    },
+    {
+      "family": "zigzag",
+      "L": 2,
+      "width": 1,
+      "nup": 9,
+      "loop_label": "circumference_cycle_t0",
+      "algorithm": "direct winding QN",
+      "nontrivial_charge": 2,
+      "energy_difference_nontrivial_minus_trivial": 0.04434958718276061,
+      "entropy_difference_nontrivial_minus_trivial": -0.48733164938812323,
+      "sources": [
+        "results/zigzag_L2_w1_Nup9_winding0_qn_seed7254.json",
+        "results/zigzag_L2_w1_Nup9_winding2_qn_seed7254.json"
       ],
       "interpretation": "Finite-cylinder fixed-number winding-sector comparison; not a deconfinement, MES or 2D topological certificate."
     }

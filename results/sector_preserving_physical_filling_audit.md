@@ -1,9 +1,9 @@
 # Sector-preserving optimization at independently audited finite fillings
 
 Checkpoint classification: VALIDATED AND USABLE FOR PHASE INFERENCE: none
-yet. COMPUTED BUT NOT YET CONVERGED: the physical q1/q2 and armchair production
-branches and wider-cylinder continuations. REJECTED / DIAGNOSTIC ONLY: the
-accepted small q0 optimizer benchmark and exact representation/initializer
+yet. COMPUTED BUT NOT YET CONVERGED: the armchair production branches and
+wider-cylinder continuations. REJECTED / DIAGNOSTIC ONLY: the accepted small
+zigzag q0/q1/q2 optimizer benchmarks and exact representation/initializer
 fixtures (usable for implementation validation, awaiting 2D gates), plus the
 preserved failed cold initialization. The q0 state is retained; this category
 does not reject its numerical values.
@@ -51,10 +51,48 @@ It is rejected: tiny truncation error and sweep drift coexisted with variance
 3.36e-5 and an ED energy error 6.44e-6. The successful alternative seed does
 not establish the precise mechanism of that optimizer trap.
 
-Nontrivial physical-filling winding states and the armchair counterparts
-remain in progress. The already validated N_up=2 fixture comparisons establish
+The armchair counterparts remain in progress. The already validated N_up=2 fixture comparisons establish
 sector-algorithm behavior, not physical filling. No point here is admitted to
 a topological-entropy fit: common MES identification and length/circumference
 convergence remain separate requirements. No finite-ring substitution for an
 infinite transfer matrix is used, and no finite-state correlation length is
 assigned by joining unrelated end bonds. No 2D phase is established or excluded.
+
+## Completed zigzag physical-filling winding-sector candidates
+
+All three separately optimized q=0,1,2 states pass the frozen fixed-number /
+winding-QN gates. They share N_up=9, S^z=-1/2, filling 9/19, 19 physical
+spins and the full-state spatial cut at bond 10. Number and winding charge
+are imposed exactly by the MPS QNs; they are not chosen variationally.
+The full finite-geometry number scan supplies the filling comparison.
+
+| q | Energy | ED error | H variance | Full-state S | Cap / achieved bond | Loop purity error |
+|---|---:|---:|---:|---:|---:|---:|
+| 0 | -7.696107978803282 | 1.177e-11 | 8.372e-11 | 1.355308930211669 | 107 / 107 | 1.074e-15 |
+| 1 | -7.651758391620112 | 1.153e-11 | 7.159e-11 | 0.867977280788276 | 128 / 113 | 8.327e-16 |
+| 2 | -7.651758391620521 | 1.111e-11 | 6.871e-11 | 0.867977280823546 | 128 / 113 | 3.511e-16 |
+
+The q1/q2 runs progressed through caps 32,64,128. Cap64 failed the
+unchanged energy-variance and ED-error gates despite small sweep drift;
+cap128 passed, with nine final zero-noise sweeps and entropy changes
+9.79e-8 / 9.64e-8 from the cap64 states. The q1/q2 winding expectations
+are omega / conjugate(omega), respectively, with loop variances consistent
+with zero at roundoff. Their energy splittings above q0 are
+0.0443495871831705 and 0.0443495871827608 J. This width-one splitting is
+not a circumference-scaling result or a confinement measurement.
+
+The complete scalar-ARPACK sector lists are not multiplicity certificates.
+No uniqueness or MES claim follows from these small excited-sector
+solutions. The method, exact full eight-state matter representation,
+Hamiltonian MPO and winding constraints are frozen after the independent
+ED and regression validations; the later exact total-spin basis audit
+identifies the same basis up to signed permutation. Older initializer
+reachability restrictions do not invalidate these converged results, which
+pass independent ED and variance checks. The q1/q2 run process retained
+its launch implementation and did not reload later source edits.
+
+Correlation lengths remain null for these finite candidates: no infinite
+transfer matrix can be obtained by joining their distinct open end bonds.
+They remain REJECTED / DIAGNOSTIC ONLY for 2D phase interpretation, while
+valid and retained as quantitative sector-preserving optimizer benchmarks.
+No entropy point has been admitted to a gamma fit.
