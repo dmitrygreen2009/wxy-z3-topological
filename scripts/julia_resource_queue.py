@@ -1,7 +1,7 @@
 """Conservative SIGSTOP/SIGCONT control of an explicitly audited Julia queue.
 Checks PID, launch time and command before signaling; never terminates a job.
 """
-import argparse, datetime, json, os, pathlib, signal, subprocess, time
+import argparse, datetime, hashlib, json, os, pathlib, signal, subprocess, time
 
 
 def utc():
@@ -50,6 +50,7 @@ def control(path, action):
     assert action == 'watch'
     print('Watching armchair winding batch; resume queue runs one heavy Julia job at a time.', flush=True)
     while True:
+        data = json.loads(path.read_text())
         current = processes()
         critical = data['critical_process']
         if same_process(critical, current.get(critical['pid'])) and 'Z' not in current[critical['pid']]['state']:
@@ -71,11 +72,52 @@ def control(path, action):
             time.sleep(30)
             continue
         resumed = False
+        blocked = False
         for job in data['resume_queue']:
             process = current.get(job['process']['pid'])
+            if job.get('restart_launched'):
+                replacement = current.get(job.get('restart_pid'))
+                if replacement is None or 'Z' in replacement['state']:
+                    job['restart_status'] = 'Restarted process exited; checkpoint/result audit still required'
+                continue
+            if job.get('protected') and same_process(job['process'], process):
+                data['scheduler_status'] = 'Protected paused finite batch is next; no validated complete restart path, so it remains paused and lower priorities wait'
+                blocked = True
+                break
+            if job.get('restart_ready'):
+                if same_process(job['process'], process) and 'Z' not in process['state']:
+                    data['scheduler_status'] = 'Validated restart waits for confirmed release of original paused process'
+                    blocked = True
+                    break
+                if not job.get('restart_released'):
+                    data['scheduler_status'] = 'Restart not released by safety audit; queue remains held'
+                    blocked = True
+                    break
+                plan = job['restart_plan']
+                snapshot = pathlib.Path(plan['snapshot'])
+                with snapshot.open('rb') as source:
+                    assert hashlib.file_digest(source, 'sha256').hexdigest() == plan['snapshot_sha256']
+                command = [data['julia_executable'], '--project=.', '-e',
+                    'include("scripts/resume_checkpoint.jl");resume_checkpoint(ARGS[1],parse(Int,ARGS[2]);preserve_stage_budget=true)',
+                    plan['snapshot'], str(plan['target_cap'])]
+                environment = os.environ.copy()
+                environment.update(JULIA_DEPOT_PATH='/private/tmp/wxy-julia-depot', OPENBLAS_NUM_THREADS='1')
+                with open(job['restart_log'], 'ab') as log:
+                    child = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, env=environment, start_new_session=True)
+                job.update(restart_launched=True, restart_pid=child.pid, restart_launch_utc=utc(),
+                           restart_status='Launched existing solver from validated immutable checkpoint',restart_command=command)
+                print(utc(), 'Checkpoint restart', child.pid, job['purpose'], flush=True)
+                resumed = True
+                break
             if not same_process(job['process'], process) or 'Z' in process['state']:
                 job['status'] = 'Process completed or no longer matches; no signal sent'
                 continue
+            # Legacy queues can still be resumed in memory. Converted queues
+            # never automatically SIGCONT an unvalidated protected process.
+            if data.get('checkpoint_restart_mode'):
+                data['scheduler_status'] = 'Unvalidated resident job remains paused'
+                blocked = True
+                break
             if 'T' in process['state']:
                 os.kill(process['pid'], signal.SIGCONT)
                 job['status'] = 'SIGCONT sent; resumed without restart'
@@ -83,9 +125,12 @@ def control(path, action):
                 print(utc(), 'Resumed', process['pid'], job['purpose'], flush=True)
                 resumed = True
                 break
-        data['scheduler_status'] = 'One queued calculation resumed' if resumed else 'All queued calculations completed'
+        if resumed:
+            data['scheduler_status'] = 'One queued calculation launched or resumed'
+        elif not blocked:
+            data['scheduler_status'] = 'No matching queued calculation remains; review individual exit/result statuses'
         save(path, data)
-        if not resumed:
+        if not resumed and not blocked:
             return
         time.sleep(30)
 

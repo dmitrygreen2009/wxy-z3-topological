@@ -1,0 +1,114 @@
+{
+  "started_utc": "2026-10-06T00:00:05.386888+00:00",
+  "records": [
+    {
+      "pid": 20388,
+      "termination_confirmed": true,
+      "snapshot": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi16_unrestricted_seed7104_v3_finite_charge_Nup33_star_latest_resource_restart_snapshot.jls",
+      "checkpoint_sha256": "f24419742bceb37821dbc2c355a36f5397cddff49af0ea60247d2746ba62ee39",
+      "unfinished_work": "Recompute any completed iteration after the saved even iteration and the interrupted partial next iteration; prior diagnostic logs retained. No validated final state is discarded.",
+      "completed_unsaved_iterations": 0
+    },
+    {
+      "pid": 84177,
+      "termination_confirmed": true,
+      "snapshot": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi8_unrestricted_seed7103_v3_finite_seed_star_latest_resource_restart_snapshot.jls",
+      "checkpoint_sha256": "36916ef9bd0ddd53f3a33b08d1b0ee43bf0791f4a0f3b0c8dc13d3a1b22677be",
+      "unfinished_work": "Recompute any completed iteration after the saved even iteration and the interrupted partial next iteration; prior diagnostic logs retained. No validated final state is discarded.",
+      "completed_unsaved_iterations": 1
+    },
+    {
+      "pid": 45824,
+      "termination_confirmed": true,
+      "snapshot": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi8_rho4of9_seed7227_v3_qn_rho4of9_cell_product_seed7226_star_latest_resource_restart_snapshot.jls",
+      "checkpoint_sha256": "3b6b6926f6c8dba6fdcdccd10c65384027a6e32f11dfa8148ac5f2780cb8c9dc",
+      "unfinished_work": "Recompute any completed iteration after the saved even iteration and the interrupted partial next iteration; prior diagnostic logs retained. No validated final state is discarded.",
+      "completed_unsaved_iterations": 0
+    },
+    {
+      "pid": 66246,
+      "termination_confirmed": true,
+      "snapshot": "results/checkpoints/infinite_armchair_w2_cell6_N108_chi8_rho4of9_seed7227_v3_qn_rho4of9_cell_product_seed7226_star_cell6_latest_resource_restart_snapshot.jls",
+      "checkpoint_sha256": "464d3fe55ab991eb50716046a7948f5a12deb8b05cb1403ce9dec07df372a47f",
+      "unfinished_work": "Recompute any completed iteration after the saved even iteration and the interrupted partial next iteration; prior diagnostic logs retained. No validated final state is discarded.",
+      "completed_unsaved_iterations": 0
+    },
+    {
+      "pid": 16718,
+      "termination_confirmed": true,
+      "snapshot": "results/checkpoints/infinite_zigzag_w3_cell2_N54_chi16_unrestricted_seed7104_v3_finite_seed_star_latest_resource_restart_snapshot.jls",
+      "checkpoint_sha256": "c68278bc5cccc6f8a9d59c74b98758fa2644753d4d6bbd0f5d76007bc899e65e",
+      "unfinished_work": "Recompute any completed iteration after the saved even iteration and the interrupted partial next iteration; prior diagnostic logs retained. No validated final state is discarded.",
+      "completed_unsaved_iterations": 1
+    },
+    {
+      "pid": 85940,
+      "termination_confirmed": true,
+      "snapshot": "results/checkpoints/infinite_zigzag_w1_cell2_N18_chi64_unrestricted_seed7103_v3_finite_q0_star_latest_resource_restart_snapshot.jls",
+      "checkpoint_sha256": "6c53f663f14a2a83689a3191b2555a1abe53e112e703c1ed8807a889601857d0",
+      "unfinished_work": "Recompute any completed iteration after the saved even iteration and the interrupted partial next iteration; prior diagnostic logs retained. No validated final state is discarded.",
+      "completed_unsaved_iterations": 0
+    },
+    {
+      "pid": 69373,
+      "termination_confirmed": true,
+      "snapshot": "results/checkpoints/infinite_zigzag_w2_cell2_N36_chi32_unrestricted_seed7241_v3_finite_seed_star_parallel_expanded_latest_resource_restart_snapshot.jls",
+      "checkpoint_sha256": "f8a4b236a1b420ad966c3ec279828677a6c79d077d745c3af0f5fd12424958d3",
+      "unfinished_work": "Recompute any completed iteration after the saved even iteration and the interrupted partial next iteration; prior diagnostic logs retained. No validated final state is discarded.",
+      "completed_unsaved_iterations": 1
+    },
+    {
+      "pid": 61168,
+      "termination_confirmed": true,
+      "snapshot": "results/checkpoints/infinite_zigzag_w2_cell2_N36_chi64_unrestricted_seed7103_v3_finite_seed_star_latest_resource_restart_snapshot.jls",
+      "checkpoint_sha256": "3a73947ff9f332604b04ca7e7c36f4b5b43e0c031ae6cff21d52681935d5df4d",
+      "unfinished_work": "Recompute any completed iteration after the saved even iteration and the interrupted partial next iteration; prior diagnostic logs retained. No validated final state is discarded.",
+      "completed_unsaved_iterations": 0
+    },
+    {
+      "pid": 79762,
+      "termination_confirmed": true,
+      "snapshot": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi32_Sz0_seed7103_v3_qn_star_active_latest_resource_restart_snapshot.jls",
+      "checkpoint_sha256": "9f1e3b7165fe483a3fedc983e9fbffc9e72a6415081174cbd447353f01dedeac",
+      "unfinished_work": "Recompute any completed iteration after the saved even iteration and the interrupted partial next iteration; prior diagnostic logs retained. No validated final state is discarded.",
+      "completed_unsaved_iterations": 1
+    }
+  ],
+  "protected_pid": 39835,
+  "memory_before_release": {
+    "vm_stat": {
+      "returncode": 0,
+      "stdout": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                3748.\nPages active:                            194893.\nPages inactive:                          192884.\nPages speculative:                          673.\nPages throttled:                              0.\nPages wired down:                        167670.\nPages purgeable:                             18.\n\"Translation faults\":               29945615826.\nPages copy-on-write:                  451909267.\nPages zero filled:                   5674087462.\nPages reactivated:                   9161715051.\nPages purged:                         453342503.\nFile-backed pages:                       130432.\nAnonymous pages:                         258018.\nPages stored in compressor:             2389964.\nPages occupied by compressor:            448945.\nDecompressions:                     16678857041.\nCompressions:                       17950306411.\nPageins:                              262233963.\nPageouts:                               6489956.\nSwapins:                              300762579.\nSwapouts:                             318375723.\n",
+      "stderr": ""
+    },
+    "swap_usage": {
+      "returncode": 0,
+      "stdout": "total = 13312.00M  used = 12291.12M  free = 1020.88M  (encrypted)\n",
+      "stderr": ""
+    },
+    "memory_pressure": {
+      "returncode": 0,
+      "stdout": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 38%\n",
+      "stderr": ""
+    }
+  },
+  "memory_immediately_after_release": {
+    "vm_stat": {
+      "returncode": 0,
+      "stdout": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                4225.\nPages active:                            210929.\nPages inactive:                          208957.\nPages speculative:                          690.\nPages throttled:                              0.\nPages wired down:                        166408.\nPages purgeable:                              2.\n\"Translation faults\":               29951368872.\nPages copy-on-write:                  452133773.\nPages zero filled:                   5676031322.\nPages reactivated:                   9163788185.\nPages purged:                         453475180.\nFile-backed pages:                       114461.\nAnonymous pages:                         306115.\nPages stored in compressor:             1760911.\nPages occupied by compressor:            417958.\nDecompressions:                     16680753334.\nCompressions:                       17952226029.\nPageins:                              262363153.\nPageouts:                               6493870.\nSwapins:                              300989109.\nSwapouts:                             318513928.\n",
+      "stderr": ""
+    },
+    "swap_usage": {
+      "returncode": 0,
+      "stdout": "total = 11264.00M  used = 10148.44M  free = 1115.56M  (encrypted)\n",
+      "stderr": ""
+    },
+    "memory_pressure": {
+      "returncode": 0,
+      "stdout": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 41%\n",
+      "stderr": ""
+    }
+  },
+  "finished_utc": "2026-10-06T00:05:28.967109+00:00",
+  "latest_release_attempt_utc": "2026-10-06T00:05:28.900994+00:00"
+}

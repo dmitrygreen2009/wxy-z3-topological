@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-06T00:08:12.846614+00:00",
+  "released_pids": [
+    79762,
+    85940,
+    69373,
+    61168,
+    20388,
+    84177,
+    45824,
+    66246,
+    16718
+  ],
+  "active_julia_pids": [
+    75917
+  ],
+  "protected_process": {
+    "pid": 39835,
+    "ppid": 39834,
+    "state": "T",
+    "started": "Sat Oct 3 20:11:13 2026",
+    "command": "/private/tmp/julia-1.10.10/bin/julia --project=. scripts/extend_study.jl"
+  },
+  "watcher_process": {
+    "pid": 94839,
+    "ppid": 94838,
+    "state": "S",
+    "started": "Mon Oct 5 20:06:28 2026",
+    "command": "/opt/homebrew/Cellar/python@3.14/3.14.0/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python scripts/julia_resource_queue.py watch results/julia_resource_pause_audit.json"
+  },
+  "launch_concurrency_limit": 1
+}

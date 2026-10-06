@@ -21,7 +21,7 @@ function newest_checkpoint(family,L,w;nup=nothing)
     end
     error("No valid checkpoint for $family L=$L w=$w")
 end
-function resume_checkpoint(path,target=nothing)
+function resume_checkpoint(path,target=nothing;validate_only=false,preserve_stage_budget=false)
     psi,meta=load_valid_checkpoint(path)
     family=meta["family"];w=meta["width"];cap=meta["cap"]
     if meta["kind"]=="infinite"
@@ -34,9 +34,25 @@ function resume_checkpoint(path,target=nothing)
         local_solver=rule=="max(residual/10,1e-10)" ? (x->max(x/10,1e-10)) : (x->local_tol)
         seed=get(meta,"random_seed",get(meta,"seed",7103));Random.seed!(seed)
         remaining=max(1,get(meta,"stage_maxiter",40)-meta["iteration"])
+        future_maxiter=preserve_stage_budget ? get(settings,"original_stage_maxiter",meta["stage_maxiter"]) : 40
+        if validate_only
+            @assert get(meta,"basis","physical_spin")=="physical_spin"
+            @assert length(psi.AL)==meta["cell_spins"]
+            @assert maximum_bond_dimension(psi)<=cap
+            @assert target===nothing || target>=cap
+            return Dict("checkpoint_readable"=>true,"resume_setup_valid"=>true,
+                "kind"=>"infinite","family"=>family,"width"=>w,"cap"=>cap,
+                "cell_spins"=>length(psi.AL),"cell_slices"=>length(psi.AL)÷(9w),
+                "remaining_iterations"=>remaining,"future_stage_maxiter"=>future_maxiter,
+                "solver_tolerance"=>get(meta,"tol",1e-7),"local_solver_tolerance"=>local_tol,
+                "update_algorithm"=>algorithm,"seed"=>seed,"target_cap"=>target,
+                "number_background"=>infinite_number_background(psi),
+                "checkpoint_sha256"=>meta["checkpoint_sha256"],
+                "verification_scope"=>"Actual checkpoint deserialization, norm/index checks and original exact Hamiltonian construction; no optimization iteration executed")
+        end
         function resumed_audit(nextcap,iterations)
             run_provenance(;seed,solver="ITensorInfiniteMPS VUMPS checkpoint resume",
-                settings=merge(copy(settings),Dict("maxiter"=>iterations,"cap"=>nextcap,"source_iteration"=>meta["iteration"],"local_solver_tolerance_rule"=>rule,"multisite_update_algorithm"=>algorithm)),
+                settings=merge(copy(settings),Dict("maxiter"=>iterations,"original_stage_maxiter"=>future_maxiter,"cap"=>nextcap,"source_iteration"=>meta["iteration"],"local_solver_tolerance_rule"=>rule,"multisite_update_algorithm"=>algorithm)),
                 initialization=path,conserved_quantum_numbers=hasqns(siteind(psi.AL,1)) ? ["U1 background retained from checkpoint"] : String[])
         end
         audit=resumed_audit(cap,remaining)
@@ -50,11 +66,12 @@ function resume_checkpoint(path,target=nothing)
             cap<nextcap<=target || continue
             estimate_memory(psi,nextcap;label="$(family) infinite resumed w$(w) expansion")
             psi=subspace_expansion(psi,H;cutoff=min(get(settings,"subspace_expansion_cutoff",1e-10),1e-10),maxdim=nextcap)
-            psi=audited_vumps(H,psi;family,w,cap=nextcap,maxiter=40,seed,audit=resumed_audit(nextcap,40),tol=get(meta,"tol",1e-7),solver_tol=local_solver,solver_tolerance_rule=rule,ordering,tag,update_algorithm=algorithm)
+            psi=audited_vumps(H,psi;family,w,cap=nextcap,maxiter=future_maxiter,seed,audit=resumed_audit(nextcap,future_maxiter),tol=get(meta,"tol",1e-7),solver_tol=local_solver,solver_tolerance_rule=rule,ordering,tag,update_algorithm=algorithm)
             measure_infinite(psi,H,family,w,nextcap,100+nextcap;ordering,tag)
         end
         return
     end
+    @assert !validate_only "Finite resume setup validation is not implemented; no optimization was started"
     L=meta["length"];nup=get(meta,"nup",cld(meta["physical_spins"],2));explicit_sector=get(meta,"explicit_number_sector",nup!=cld(meta["physical_spins"],2));seed=get(meta,"random_seed",get(meta,"seed",7103));ordering=meta["ordering"]
     Random.seed!(seed)
     lat=cylinder(family,L,w;ordering);H=MPO(lat.os,siteinds(psi))

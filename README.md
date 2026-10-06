@@ -562,3 +562,37 @@ terminated by this controller.
 The independent `results/julia_resource_pause_verification.json` retains
 checkpoint checksums, parent-process verification, and the observed automatic
 SIGCONT resumption separately from the watcher's changing queue state.
+
+The memory-resident pause policy was subsequently replaced, at the user's
+request, by verified checkpoint restarts. Nine paused infinite jobs passed
+actual Julia deserialization, normalization/index checks and construction of
+the original exact Hamiltonian through `resume_checkpoint(...;
+validate_only=true, preserve_stage_budget=true)`. No optimization iteration
+was executed by this verification. Their immutable local MPS snapshots are
+ignored by Git; the snapshot metadata and full solver restart plans are in
+`results/julia_checkpoint_restart_plans.json` and
+`results/julia_checkpoint_restart_validation.json`.
+
+Only those nine validated processes received SIGTERM. Four Julia shutdowns
+stalled at a GC safepoint; the runtime's repeated-SIGTERM exit path completed
+their release without SIGKILL. The broad finite batch remains paused: its
+older chi256 seed is readable, but the live chi512 sweep and complete batch
+control state are not captured by a validated full resume path. The watcher
+will hold at that protected job's existing priority rather than discard its
+state or skip its scientific priority.
+
+The watcher now launches the existing resume solver from the validated
+snapshot once the sole active priority job exits. Iteration budgets (including
+the original 30-iteration QN stages), bond caps, Hamiltonians, update algorithm,
+filling/QN indices and tolerances are retained. The existing resume protocol
+resets the recorded random seed; a checkpoint does not preserve the live RNG
+stream or an interrupted iteration. Any completed but unsaved iteration and
+partial next iteration must be recomputed; the exact accounting and original
+logs are retained per job. No validated final result is discarded.
+
+Read-only resource follow-up is available through
+`python3 scripts/check_resource_memory.py` (macOS process/statistics access may
+require the host's normal permissions). Release, memory and process audits
+are saved as `results/julia_checkpoint_ram_release_*.json`. Do not rerun the
+release utility on arbitrary processes: it requires the independently
+validated immutable snapshot and exact recorded process identity.

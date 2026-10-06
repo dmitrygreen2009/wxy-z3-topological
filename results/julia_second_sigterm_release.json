@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-06T00:04:52.193678+00:00",
+  "records": [
+    {
+      "pid": 79762,
+      "status": "Second SIGTERM delivered to already-shutting-down validated job; no SIGKILL used",
+      "snapshot": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi32_Sz0_seed7103_v3_qn_star_active_latest_resource_restart_snapshot.jls"
+    },
+    {
+      "pid": 85940,
+      "status": "Second SIGTERM delivered to already-shutting-down validated job; no SIGKILL used",
+      "snapshot": "results/checkpoints/infinite_zigzag_w1_cell2_N18_chi64_unrestricted_seed7103_v3_finite_q0_star_latest_resource_restart_snapshot.jls"
+    },
+    {
+      "pid": 69373,
+      "status": "Second SIGTERM delivered to already-shutting-down validated job; no SIGKILL used",
+      "snapshot": "results/checkpoints/infinite_zigzag_w2_cell2_N36_chi32_unrestricted_seed7241_v3_finite_seed_star_parallel_expanded_latest_resource_restart_snapshot.jls"
+    },
+    {
+      "pid": 61168,
+      "status": "Second SIGTERM delivered to already-shutting-down validated job; no SIGKILL used",
+      "snapshot": "results/checkpoints/infinite_zigzag_w2_cell2_N36_chi64_unrestricted_seed7103_v3_finite_seed_star_latest_resource_restart_snapshot.jls"
+    }
+  ],
+  "reason": "Sampled Julia shutdown is stuck at jl_atexit_hook GC safepoint; official v1.10.10 signal listener exits on repeated SIGTERM",
+  "source": "https://github.com/JuliaLang/julia/blob/v1.10.10/src/signals-unix.c"
+}

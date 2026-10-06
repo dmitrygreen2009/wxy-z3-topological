@@ -23,3 +23,6 @@ results/**/*.jls
 results/**/*.jls.previous
 # Machine-local stdout from the conservative process resume watcher.
 results/julia_resource_resume_scheduler.log
+# Disposable resource-control stdout and full OS binary-image sampling.
+results/resource_restart_pid*.log
+results/julia_sigterm_shutdown_sample.txt
