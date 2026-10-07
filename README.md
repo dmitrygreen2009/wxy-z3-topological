@@ -608,9 +608,22 @@ are saved in results/julia_resource_pause_audit.json. Unsafe recovery produces
 a timestamped results/QUEUE_BLOCKED.txt, log alert and attempted macOS desktop
 notification. BLOCKED is latched: correct the stated cause, then clear queue_state
 in the manifest to permit recovery; it does not repeatedly launch failed jobs.
-All process exits alone never certify scientific completion: validated results
-must explicitly set scientific_completion_verified for every queued item before
-QUEUE_COMPLETE.txt is written. This record concerns the queued jobs only, not
+Process exits alone never certify completion: every queued item needs a validated
+expected-output contract (or an explicit scientific_completion_verified record)
+before QUEUE_COMPLETE.txt is written. Scheduled completion does not certify
+convergence for phase inference. This record concerns the queued jobs only, not
 proof that the entire two-dimensional phase program is complete. Test without
 running numerical solvers:
 `python3 -m unittest discover -s test -p 'test_julia_resource_queue.py'`.
+
+Output-aware exit handling (2026-10-07): scheduled solver completion is now
+checked from explicit expected-result contracts (geometry, target cap, final
+phase and planned sweep counts), or from the matching infinite target-stage
+completion manifest. Checkpoint bytes and SHA256 must agree with both the
+result and checkpoint sidecar, and restarted outputs must postdate launch.
+An explicitly required solver tolerance is checked unchanged. A valid protected
+process output advances the queue even when its non-child exit status cannot
+be recovered; missing/ambiguous/corrupt output produces a specific BLOCKED
+reason. Output blockers are rechecked every 30 seconds without relaunching the
+failed calculation. Fixed-budget completion remains separate from convergence
+for phase inference; no entropy point is admitted merely for finishing sweeps.

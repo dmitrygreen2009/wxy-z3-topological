@@ -1,0 +1,14 @@
+{
+  "checked_utc": "2026-10-07T16:04:40.524562+00:00",
+  "previous_solver_pid": 39835,
+  "previous_exit_code": 0,
+  "completed_expected_result": "results/armchair_L4_w3_chi512_star.json",
+  "checkpoint_readability_validation": "results/armchair_L4_w3_chi512_exit_validation.json",
+  "running_pid": 25974,
+  "running_job": "Zigzag width-two parallel infinite chi32 to chi64",
+  "watcher_pid": 26756,
+  "sole_active_heavy_julia": true,
+  "next_job": "Zigzag width-two finite-to-infinite warm start chi64",
+  "regression_tests_passed": 13,
+  "numerical_controls_unchanged": true
+}

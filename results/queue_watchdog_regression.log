@@ -1,18 +1,24 @@
-.2026-10-07T04:23:57.375282+00:00 EXIT protected chi512 status 7 {"log": "test"}
-2026-10-07T04:23:57.375353+00:00 TRANSITIONING: Resuming preserved in-memory PID 123
-2026-10-07T04:23:57.375592+00:00 RUNNING: protected chi512 PID 123
-.2026-10-07T04:23:57.390053+00:00 EXIT STATUS UNKNOWN protected chi512 {"source_checkpoint": null, "log": null, "latest_checkpoint_metadata_at_exit": "results/checkpoints/infinite_zigzag_w1_Ly1.73205_cell2_N18_chi128_unrestricted_seed7103_v3_finite_q0_star_stage228_complete.json", "checkpoint_scope": "Most recently written metadata; not a certificate of this batch completion"}
-2026-10-07T04:23:57.390151+00:00 BLOCKED: All queued processes exited, but completion/convergence requires result validation: protected chi512
-.2026-10-07T04:23:57.395799+00:00 EXIT STATUS UNKNOWN protected chi512 {"source_checkpoint": null, "log": null, "latest_checkpoint_metadata_at_exit": "results/checkpoints/infinite_zigzag_w1_Ly1.73205_cell2_N18_chi128_unrestricted_seed7103_v3_finite_q0_star_stage228_complete.json", "checkpoint_scope": "Most recently written metadata; not a certificate of this batch completion"}
-2026-10-07T04:23:57.395847+00:00 BLOCKED: Protected process vanished; preserve checkpoints and reconstruct batch before replacement: protected chi512
-.2026-10-07T04:23:57.397256+00:00 TRANSITIONING: Resuming preserved in-memory PID 123
-2026-10-07T04:23:57.397494+00:00 RUNNING: protected chi512 PID 123
-.2026-10-07T04:23:57.398529+00:00 RUNNING: Active Julia PID(s): 123
-.2026-10-07T04:23:57.400098+00:00 TRANSITIONING: Launching validated checkpoint: protected chi512
-2026-10-07T04:23:57.400434+00:00 RUNNING: protected chi512 PID 456
-.2026-10-07T04:23:57.401647+00:00 COMPLETE: [{"job": "protected chi512", "artifacts": null}]
+.2026-10-07T16:03:15.555981+00:00 EXIT protected chi512 status 7 {"log": "test"}
+2026-10-07T16:03:15.556038+00:00 BLOCKED: protected chi512: No explicit expected-output contract; completion is ambiguous
+.2026-10-07T16:03:15.787096+00:00 EXIT STATUS UNKNOWN protected chi512 {"source_checkpoint": null, "log": null, "latest_checkpoint_metadata_at_exit": "results/checkpoints/armchair_w2_Ly6.0_L8_N148_chi256_Nup74_seed7103_v3_star_refined_complete.json", "checkpoint_scope": "Most recently written metadata; not a certificate of this batch completion"}
+2026-10-07T16:03:15.787536+00:00 OUTPUT VALIDATED protected chi512 {"result": "/var/folders/v7/_3wjvphx5y76k26xy97lbxpm0000gn/T/tmpht0bum9u/completed.json", "checkpoint": "/var/folders/v7/_3wjvphx5y76k26xy97lbxpm0000gn/T/tmpht0bum9u/completed.jls", "sha256": "b227f6a7fa15006b96d4fab9d9e1ca75d447b1e2cb9b6845600d1ad59e8b66e2", "scheduled_completion_validated": true, "energy": -45.6, "solver_residual": null, "phase_convergence_certified": false, "interpretation": "Scheduled computation finished; existing scientific convergence gates remain unchanged"}
+2026-10-07T16:03:15.787590+00:00 COMPLETE: [{"job": "protected chi512", "artifacts": {"source_checkpoint": null, "log": null, "latest_checkpoint_metadata_at_exit": "results/checkpoints/armchair_w2_Ly6.0_L8_N148_chi256_Nup74_seed7103_v3_star_refined_complete.json", "checkpoint_scope": "Most recently written metadata; not a certificate of this batch completion"}}]
+..2026-10-07T16:03:15.797162+00:00 EXIT STATUS UNKNOWN protected chi512 {"source_checkpoint": null, "log": null, "latest_checkpoint_metadata_at_exit": "results/checkpoints/armchair_w2_Ly6.0_L8_N148_chi256_Nup74_seed7103_v3_star_refined_complete.json", "checkpoint_scope": "Most recently written metadata; not a certificate of this batch completion"}
+2026-10-07T16:03:15.797264+00:00 BLOCKED: All queued processes exited, but completion/convergence requires result validation: protected chi512
+...2026-10-07T16:03:15.813181+00:00 EXIT STATUS UNKNOWN protected chi512 {"source_checkpoint": null, "log": null, "latest_checkpoint_metadata_at_exit": "results/checkpoints/armchair_w2_Ly6.0_L8_N148_chi256_Nup74_seed7103_v3_star_refined_complete.json", "checkpoint_scope": "Most recently written metadata; not a certificate of this batch completion"}
+2026-10-07T16:03:15.813268+00:00 BLOCKED: protected chi512: No explicit expected-output contract; completion is ambiguous
+.2026-10-07T16:03:15.815674+00:00 TRANSITIONING: Resuming preserved in-memory PID 123
+2026-10-07T16:03:15.816094+00:00 RUNNING: protected chi512 PID 123
+.2026-10-07T16:03:15.817522+00:00 RUNNING: Active Julia PID(s): 123
+.2026-10-07T16:03:15.829841+00:00 EXIT STATUS UNKNOWN protected chi512 {"source_checkpoint": null, "log": null, "latest_checkpoint_metadata_at_exit": "results/checkpoints/armchair_w2_Ly6.0_L8_N148_chi256_Nup74_seed7103_v3_star_refined_complete.json", "checkpoint_scope": "Most recently written metadata; not a certificate of this batch completion"}
+2026-10-07T16:03:15.830410+00:00 OUTPUT VALIDATED protected chi512 {"result": "/var/folders/v7/_3wjvphx5y76k26xy97lbxpm0000gn/T/tmp778yk23d/completed.json", "checkpoint": "/var/folders/v7/_3wjvphx5y76k26xy97lbxpm0000gn/T/tmp778yk23d/completed.jls", "sha256": "b227f6a7fa15006b96d4fab9d9e1ca75d447b1e2cb9b6845600d1ad59e8b66e2", "scheduled_completion_validated": true, "energy": -45.6, "solver_residual": null, "phase_convergence_certified": false, "interpretation": "Scheduled computation finished; existing scientific convergence gates remain unchanged"}
+2026-10-07T16:03:15.830659+00:00 TRANSITIONING: Launching validated checkpoint: next validated job
+2026-10-07T16:03:15.831392+00:00 RUNNING: next validated job PID 456
+.2026-10-07T16:03:15.834147+00:00 TRANSITIONING: Launching validated checkpoint: protected chi512
+2026-10-07T16:03:15.834646+00:00 RUNNING: protected chi512 PID 456
+.2026-10-07T16:03:15.836180+00:00 COMPLETE: [{"job": "protected chi512", "artifacts": null}]
 .
 ----------------------------------------------------------------------
-Ran 8 tests in 0.029s
+Ran 13 tests in 0.286s
 
 OK

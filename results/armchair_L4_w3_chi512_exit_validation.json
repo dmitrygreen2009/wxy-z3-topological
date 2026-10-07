@@ -1,0 +1,22 @@
+{
+  "checkpoint_readable": true,
+  "energy": -45.66438793955968,
+  "entropy": 3.4209742005627475,
+  "cap": 512,
+  "physical_spins": 114,
+  "nup": 57,
+  "checkpoint_sha256": "7ed7d11f74149f621f969cbfc1050e48ab1a175b6d034a02681c033a273db71f",
+  "interpretation": "Scheduled two-pass continuation complete, not a bond/length/flux convergence certificate",
+  "scheduled_passes_complete": true,
+  "checksum_and_norm_verified": true,
+  "sz": 0,
+  "checkpoint": "results/checkpoints/armchair_w3_Ly9.0_L4_N114_chi512_Nup57_seed7103_v3_star_continuation_pass2_complete.jls",
+  "exit_code": 0,
+  "exit_evidence": "Original exec session52972",
+  "full_state_entropy": 3.4209742005627475,
+  "final_sweep_energy_change": 0.00027025731546359566,
+  "final_sweep_truncation_error": 0.00013983073254903328,
+  "entropy_change_refinement": 0.0006783483300023541,
+  "classification": "COMPUTED BUT NOT YET CONVERGED",
+  "phase_convergence_certified": false
+}

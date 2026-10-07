@@ -191,7 +191,19 @@
         "latest_checkpoint": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi64_Sz0_seed7103_v3_qn_star_active_latest.jls",
         "final_cap": 64,
         "iteration": 6
-      }
+      },
+      "completion_inspection": {
+        "result": "results/checkpoints/infinite_armchair_w2_Ly6.0_cell2_N36_chi9_Sz0_seed7103_v3_qn_star_active_stage164_complete.json",
+        "checkpoint": "results/checkpoints/infinite_armchair_w2_Ly6.0_cell2_N36_chi9_Sz0_seed7103_v3_qn_star_active_stage164_complete.jls",
+        "sha256": "dff30d3c39f65e6d5ec24b25a02b58e2d69fdce295bd7d5518b68791b7b50bfe",
+        "scheduled_completion_validated": true,
+        "energy": -1.4369159039861603,
+        "solver_residual": 3.40351024013633e-09,
+        "phase_convergence_certified": false,
+        "interpretation": "Scheduled computation finished; existing scientific convergence gates remain unchanged"
+      },
+      "completion_validated": true,
+      "completed_utc": "2026-10-07T16:03:16.016511+00:00"
     },
     {
       "priority": 4,
@@ -300,7 +312,19 @@
         "latest_checkpoint": "results/checkpoints/infinite_zigzag_w1_cell2_N18_chi128_unrestricted_seed7103_v3_finite_q0_star_latest.jls",
         "final_cap": 128,
         "iteration": 40
-      }
+      },
+      "completion_inspection": {
+        "result": "results/checkpoints/infinite_zigzag_w1_Ly1.73205_cell2_N18_chi128_unrestricted_seed7103_v3_finite_q0_star_stage228_complete.json",
+        "checkpoint": "results/checkpoints/infinite_zigzag_w1_Ly1.73205_cell2_N18_chi128_unrestricted_seed7103_v3_finite_q0_star_stage228_complete.jls",
+        "sha256": "502e84fe358aeb7232f17944d902dee962d5e245bc41cd991575a3333d8839f2",
+        "scheduled_completion_validated": true,
+        "energy": -1.8343879135452446,
+        "solver_residual": 2.903138912983473e-06,
+        "phase_convergence_certified": false,
+        "interpretation": "Scheduled computation finished; existing scientific convergence gates remain unchanged"
+      },
+      "completion_validated": true,
+      "completed_utc": "2026-10-07T16:03:16.069619+00:00"
     },
     {
       "priority": 5,
@@ -319,13 +343,49 @@
       "log": "results/extend_study.log",
       "last_log_lines": "After sweep 6 energy=-66.46386091913702  maxlinkdim=256 maxerr=3.79E-04 time=1156.723\nAfter sweep 1 energy=-45.36678582137518  maxlinkdim=512 maxerr=3.35E-05 time=20951.856",
       "note": "Latest disk checkpoint is complete chi256 seed; current chi512 sweep is preserved in memory.",
-      "status": "SIGCONT: existing in-memory solver state preserved",
+      "status": "Scheduled chi512 continuation complete and checkpoint validated; phase convergence not certified",
       "paused_utc": "2026-10-05T05:13:10.636110+00:00",
       "restart_ready": false,
       "protected": true,
       "protection_reason": "Only original chi256 seed is saved; chi512 sweep1 and partial sweep2 plus broad batch position remain in memory. No complete existing batch-resume path verified; do not terminate.",
       "resumed_utc": "2026-10-07T04:22:49.419598+00:00",
-      "protected_resume_authorization": "Explicit user request 2026-10-07"
+      "protected_resume_authorization": "Explicit user request 2026-10-07",
+      "execution_finished": true,
+      "exit_code": 0,
+      "exited_utc": "2026-10-07T14:25:35.662011+00:00",
+      "exit_evidence": "Original exec session 52972 returned exit_code=0 on 2026-10-07; completed outputs independently validated",
+      "final_artifacts": {
+        "source_checkpoint": "results/armchair_L4_w3_chi256_star.jls",
+        "log": "results/extend_study.log",
+        "latest_checkpoint_metadata_at_exit": "results/checkpoints/armchair_w2_Ly6.0_L8_N148_chi256_Nup74_seed7103_v3_star_refined_complete.json",
+        "checkpoint_scope": "Most recently written metadata; not a certificate of this batch completion"
+      },
+      "expected_result": {
+        "path": "results/armchair_L4_w3_chi512_star.json",
+        "fields": {
+          "family": "armchair",
+          "length": 4,
+          "width": 3,
+          "cap": 512,
+          "phase": "continuation_pass2"
+        },
+        "final_phase": "continuation_pass2",
+        "passes": 2,
+        "sweeps_per_pass": 8
+      },
+      "completion_inspection": {
+        "result": "results/armchair_L4_w3_chi512_star.json",
+        "checkpoint": "results/checkpoints/armchair_w3_Ly9.0_L4_N114_chi512_Nup57_seed7103_v3_star_continuation_pass2_complete.jls",
+        "sha256": "7ed7d11f74149f621f969cbfc1050e48ab1a175b6d034a02681c033a273db71f",
+        "scheduled_completion_validated": true,
+        "energy": -45.66438793955968,
+        "solver_residual": null,
+        "phase_convergence_certified": false,
+        "interpretation": "Scheduled computation finished; existing scientific convergence gates remain unchanged"
+      },
+      "completion_validated": true,
+      "completed_utc": "2026-10-07T15:58:39.027698+00:00",
+      "checkpoint_load_validation": "results/armchair_L4_w3_chi512_exit_validation.json"
     },
     {
       "priority": 6,
@@ -411,7 +471,25 @@
       "restart_status": "Original paused process exited after SIGTERM; immutable restart snapshot retained",
       "restart_log": "results/resource_restart_pid69373.log",
       "restart_released": true,
-      "restart_release_utc": "2026-10-06T00:04:52.286301+00:00"
+      "restart_release_utc": "2026-10-06T00:04:52.286301+00:00",
+      "restart_launched": true,
+      "restart_pid": 25974,
+      "restart_launch_utc": "2026-10-07T15:58:39.168090+00:00",
+      "restart_command": [
+        "/private/tmp/julia-1.10.10/bin/julia",
+        "--project=.",
+        "-e",
+        "include(\"scripts/resume_checkpoint.jl\");resume_checkpoint(ARGS[1],parse(Int,ARGS[2]);preserve_stage_budget=true)",
+        "results/checkpoints/infinite_zigzag_w2_cell2_N36_chi32_unrestricted_seed7241_v3_finite_seed_star_parallel_expanded_latest_resource_restart_snapshot.jls",
+        "64"
+      ],
+      "restart_process": {
+        "pid": 25974,
+        "ppid": 25969,
+        "state": "Ss",
+        "started": "Wed Oct 7 11:58:39 2026",
+        "command": "/private/tmp/julia-1.10.10/bin/julia --project=. -e include(\"scripts/resume_checkpoint.jl\");resume_checkpoint(ARGS[1],parse(Int,ARGS[2]);preserve_stage_budget=true) results/checkpoints/infinite_zigzag_w2_cell2_N36_chi32_unrestricted_seed7241_v3_finite_seed_star_parallel_expanded_latest_resource_restart_snapshot.jls 64"
+      }
     },
     {
       "priority": 7,
@@ -1103,19 +1181,19 @@
       "restart_release_utc": "2026-10-06T00:00:55.541376+00:00"
     }
   ],
-  "scheduler_status": "Active Julia PID(s): 39835",
+  "scheduler_status": "Active Julia PID(s): 25974",
   "checkpoint_restart_mode": true,
   "checkpoint_restart_conversion_utc": "2026-10-05T23:58:32.802631+00:00",
   "active_priority_pid_at_conversion": 75917,
   "scheduler_process": {
-    "pid": 51372,
-    "ppid": 51369,
+    "pid": 26756,
+    "ppid": 26747,
     "state": "S",
-    "started": "Wed Oct 7 00:22:49 2026",
+    "started": "Wed Oct 7 12:03:16 2026",
     "command": "/opt/homebrew/Cellar/python@3.14/3.14.0/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python scripts/julia_resource_queue.py watch results/julia_resource_pause_audit.json"
   },
   "queue_state": "RUNNING",
-  "scheduler_checked_utc": "2026-10-07T04:24:19.543505+00:00",
+  "scheduler_checked_utc": "2026-10-07T16:04:46.488857+00:00",
   "watchdog_poll_seconds": 30,
   "protected_sigcont_authorized": true
 }

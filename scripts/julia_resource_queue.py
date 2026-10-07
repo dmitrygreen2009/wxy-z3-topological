@@ -1,7 +1,7 @@
 """Conservative SIGSTOP/SIGCONT control of an explicitly audited Julia queue.
 Checks PID, launch time and command before signaling; never terminates a job.
 """
-import argparse, datetime, fcntl, hashlib, json, os, pathlib, re, signal, subprocess, time
+import argparse, datetime, fcntl, hashlib, json, math, os, pathlib, re, signal, subprocess, time
 
 
 def utc():
@@ -23,7 +23,7 @@ def processes():
 
 def same_process(saved, current):
     return current is not None and all(saved[k] == current[k]
-        for k in ['pid', 'ppid', 'started', 'command'])
+        for k in ['pid', 'started', 'command'])
 
 
 def save(path, data):
@@ -93,11 +93,90 @@ def checkpoint_record(job):
     return result
 
 
+def inspect_completion(job):
+    """Check the output contract; scheduled completion is distinct from convergence."""
+    expected = job.get('expected_result')
+    if expected:
+        result_path = pathlib.Path(expected['path'])
+        if not result_path.exists():
+            return False, {'error': 'Expected result is missing: ' + str(result_path)}
+        metadata = json.loads(result_path.read_text())
+        for key, value in expected.get('fields', {}).items():
+            if metadata.get(key) != value:
+                return False, {'error': f'Expected {key}={value}, got {metadata.get(key)} in {result_path}'}
+        if 'final_phase' in expected and metadata.get('phase') != expected['final_phase']:
+            return False, {'error': 'Incomplete final phase: ' + str(metadata.get('phase'))}
+        records = metadata.get('records', [])
+        if expected.get('passes'):
+            tail = records[-expected['passes']:]
+            if len(tail) != expected['passes'] or any(r.get('cap') != expected['fields']['cap'] or len(r.get('sweep_energies', [])) != expected['sweeps_per_pass'] for r in tail):
+                return False, {'error': 'Required scheduled passes/sweeps missing'}
+    elif job.get('restart_plan'):
+        artifacts = checkpoint_record(job)
+        if not artifacts.get('latest_metadata'):
+            return False, {'error': 'No final checkpoint metadata for restart'}
+        metadata = json.loads(pathlib.Path(artifacts['latest_metadata']).read_text())
+        plan = job['restart_plan']
+        if metadata.get('cap') != plan['target_cap']:
+            return False, {'error': 'Target bond-dimension stage not completed'}
+        # An atomic stage-complete manifest is written only after measurement.
+        stem = plan['snapshot'].split('_latest')[0]
+        # Stage-complete filenames also include Ly; match metadata, not implicit paths.
+        source = json.loads(pathlib.Path(plan['snapshot'].replace('.jls', '.json')).read_text())
+        complete = []
+        pattern = f"infinite_{source['family']}_w{source['width']}_*stage*_complete.json"
+        for p in pathlib.Path('results/checkpoints').glob(pattern):
+            m = json.loads(p.read_text())
+            fields = ('family', 'width', 'cell_spins', 'infinite_ordering', 'measurement_tag')
+            if m.get('cap') == plan['target_cap'] and all(m.get(k) == source.get(k) for k in fields):
+                complete.append((p, m))
+        if not complete:
+            return False, {'error': 'Target stage completion manifest missing'}
+        result_path, metadata = max(complete, key=lambda pair: pair[0].stat().st_mtime)
+    else:
+        return False, {'error': 'No explicit expected-output contract; completion is ambiguous'}
+    checkpoint = pathlib.Path(metadata['checkpoint_file'])
+    sidecar = pathlib.Path(str(checkpoint).replace('.jls', '.json'))
+    cp = json.loads(sidecar.read_text())
+    if not checkpoint.exists() or checkpoint.stat().st_size != cp['checkpoint_bytes']:
+        return False, {'error': 'Checkpoint missing or size mismatch: ' + str(checkpoint)}
+    with checkpoint.open('rb') as f:
+        digest = hashlib.file_digest(f, 'sha256').hexdigest()
+    if digest != cp['checkpoint_sha256'] or digest != metadata['checkpoint_sha256']:
+        return False, {'error': 'Checkpoint checksum mismatch: ' + str(checkpoint)}
+    if job.get('restart_launch_utc'):
+        written = datetime.datetime.fromisoformat(cp['checkpoint_written_utc'].replace('Z', '+00:00'))
+        if written.tzinfo is None:
+            written = written.replace(tzinfo=datetime.timezone.utc)
+        launched = datetime.datetime.fromisoformat(job['restart_launch_utc'])
+        if written < launched:
+            return False, {'error': 'Completion checkpoint predates this launch'}
+    scalar = metadata.get('solver_residual')
+    energy = metadata.get('energy_per_vertex', metadata.get('energy'))
+    if metadata.get('records'):
+        energy = metadata['records'][-1]['energy']
+    if energy is not None and not math.isfinite(energy):
+        return False, {'error': 'Nonfinite final energy'}
+    if job.get('requires_solver_convergence') and (scalar is None or scalar > metadata.get('tol', 1e-7)):
+        return False, {'error': 'Required original solver convergence criterion failed'}
+    return True, {'result': str(result_path), 'checkpoint': str(checkpoint), 'sha256': digest,
+                  'scheduled_completion_validated': True, 'energy': energy,
+                  'solver_residual': scalar, 'phase_convergence_certified': False,
+                  'interpretation': 'Scheduled computation finished; existing scientific convergence gates remain unchanged'}
+
+
+def record_completion(job):
+    valid, evidence = inspect_completion(job)
+    job['completion_inspection'] = evidence
+    if valid:
+        job.update(completion_validated=True, execution_finished=True, completed_utc=utc())
+    return valid, evidence
+
+
 def tick(path, children):
     data = json.loads(path.read_text())
     current = processes()
-    if data.get('queue_state') == 'BLOCKED':
-        # Explicit blockers latch: clear queue_state after correcting the recorded cause.
+    if data.get('queue_state') == 'BLOCKED' and not data.get('blocked_job_pid'):
         return
     # Collect genuine exit status for children owned by this watcher.
     for job in data['resume_queue']:
@@ -107,6 +186,11 @@ def tick(path, children):
             job.update(execution_finished=True, exit_code=child.returncode, exited_utc=utc(),
                        exit_evidence='waitpid via Popen.poll', final_artifacts=checkpoint_record(job))
             print(utc(), 'EXIT', job['purpose'], 'status', child.returncode, json.dumps(job['final_artifacts']), flush=True)
+            valid, evidence = record_completion(job)
+            if not valid:
+                data['blocked_job_pid'] = job['process']['pid']
+                announce(path, data, 'BLOCKED', job['purpose'] + ': ' + evidence['error'])
+                return
     heavy = [p for p in current.values() if p['command'].startswith(data['julia_executable'])
              and 'T' not in p['state'] and 'Z' not in p['state']]
     if heavy:
@@ -126,6 +210,12 @@ def tick(path, children):
             return
     for job in data['resume_queue']:
         if job.get('execution_finished'):
+            if data.get('blocked_job_pid') == job['process']['pid']:
+                valid, evidence = record_completion(job)
+                if not valid:
+                    announce(path, data, 'BLOCKED', job['purpose'] + ': ' + evidence['error'])
+                    return
+                data.pop('blocked_job_pid', None)
             continue
         saved = job.get('restart_process') if job.get('restart_launched') else job['process']
         process = current.get(saved['pid']) if saved else current.get(job.get('restart_pid'))
@@ -150,9 +240,13 @@ def tick(path, children):
                        exit_evidence='Pre-existing non-child process disappeared; exit status unavailable, success NOT inferred',
                        final_artifacts=checkpoint_record(job))
             print(utc(), 'EXIT STATUS UNKNOWN', job['purpose'], json.dumps(job['final_artifacts']), flush=True)
-            if job.get('protected'):
-                announce(path, data, 'BLOCKED', 'Protected process vanished; preserve checkpoints and reconstruct batch before replacement: ' + job['purpose'])
-                return
+            if job.get('protected') or job.get('restart_launched'):
+                valid, evidence = record_completion(job)
+                if not valid:
+                    data['blocked_job_pid'] = job['process']['pid']
+                    announce(path, data, 'BLOCKED', job['purpose'] + ': ' + evidence['error'])
+                    return
+                print(utc(), 'OUTPUT VALIDATED', job['purpose'], json.dumps(evidence), flush=True)
             continue
         if not job.get('restart_released') or not job.get('restart_validation', {}).get('validated'):
             announce(path, data, 'BLOCKED', 'No validated/released restart path for ' + job['purpose'])
@@ -180,7 +274,7 @@ def tick(path, children):
                    restart_process=processes().get(child.pid))
         announce(path, data, 'RUNNING', job['purpose'] + ' PID ' + str(child.pid))
         return
-    unverified = [j['purpose'] for j in data['resume_queue'] if not j.get('scientific_completion_verified')]
+    unverified = [j['purpose'] for j in data['resume_queue'] if not (j.get('completion_validated') or j.get('scientific_completion_verified'))]
     if unverified:
         announce(path, data, 'BLOCKED', 'All queued processes exited, but completion/convergence requires result validation: ' + '; '.join(unverified))
     else:
