@@ -1,0 +1,18 @@
+.2026-10-07T04:23:57.375282+00:00 EXIT protected chi512 status 7 {"log": "test"}
+2026-10-07T04:23:57.375353+00:00 TRANSITIONING: Resuming preserved in-memory PID 123
+2026-10-07T04:23:57.375592+00:00 RUNNING: protected chi512 PID 123
+.2026-10-07T04:23:57.390053+00:00 EXIT STATUS UNKNOWN protected chi512 {"source_checkpoint": null, "log": null, "latest_checkpoint_metadata_at_exit": "results/checkpoints/infinite_zigzag_w1_Ly1.73205_cell2_N18_chi128_unrestricted_seed7103_v3_finite_q0_star_stage228_complete.json", "checkpoint_scope": "Most recently written metadata; not a certificate of this batch completion"}
+2026-10-07T04:23:57.390151+00:00 BLOCKED: All queued processes exited, but completion/convergence requires result validation: protected chi512
+.2026-10-07T04:23:57.395799+00:00 EXIT STATUS UNKNOWN protected chi512 {"source_checkpoint": null, "log": null, "latest_checkpoint_metadata_at_exit": "results/checkpoints/infinite_zigzag_w1_Ly1.73205_cell2_N18_chi128_unrestricted_seed7103_v3_finite_q0_star_stage228_complete.json", "checkpoint_scope": "Most recently written metadata; not a certificate of this batch completion"}
+2026-10-07T04:23:57.395847+00:00 BLOCKED: Protected process vanished; preserve checkpoints and reconstruct batch before replacement: protected chi512
+.2026-10-07T04:23:57.397256+00:00 TRANSITIONING: Resuming preserved in-memory PID 123
+2026-10-07T04:23:57.397494+00:00 RUNNING: protected chi512 PID 123
+.2026-10-07T04:23:57.398529+00:00 RUNNING: Active Julia PID(s): 123
+.2026-10-07T04:23:57.400098+00:00 TRANSITIONING: Launching validated checkpoint: protected chi512
+2026-10-07T04:23:57.400434+00:00 RUNNING: protected chi512 PID 456
+.2026-10-07T04:23:57.401647+00:00 COMPLETE: [{"job": "protected chi512", "artifacts": null}]
+.
+----------------------------------------------------------------------
+Ran 8 tests in 0.029s
+
+OK

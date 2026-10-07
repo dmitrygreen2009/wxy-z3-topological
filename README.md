@@ -596,3 +596,21 @@ require the host's normal permissions). Release, memory and process audits
 are saved as `results/julia_checkpoint_ram_release_*.json`. Do not rerun the
 release utility on arbitrary processes: it requires the independently
 validated immutable snapshot and exact recorded process identity.
+
+Queue repair (2026-10-07): the existing lightweight watcher now resumes an
+identity-verified protected SIGSTOP process in memory with SIGCONT; it never
+replaces that process with an older checkpoint. It checks every 30 seconds,
+allows one heavy Julia worker, records actual exit codes for its own children,
+and advances through the existing validated checkpoint paths. Historical and
+resident non-child exit codes are explicitly unknown, never inferred successful.
+An OS lock prevents duplicate watchers. RUNNING/TRANSITIONING/BLOCKED/COMPLETE
+are saved in results/julia_resource_pause_audit.json. Unsafe recovery produces
+a timestamped results/QUEUE_BLOCKED.txt, log alert and attempted macOS desktop
+notification. BLOCKED is latched: correct the stated cause, then clear queue_state
+in the manifest to permit recovery; it does not repeatedly launch failed jobs.
+All process exits alone never certify scientific completion: validated results
+must explicitly set scientific_completion_verified for every queued item before
+QUEUE_COMPLETE.txt is written. This record concerns the queued jobs only, not
+proof that the entire two-dimensional phase program is complete. Test without
+running numerical solvers:
+`python3 -m unittest discover -s test -p 'test_julia_resource_queue.py'`.

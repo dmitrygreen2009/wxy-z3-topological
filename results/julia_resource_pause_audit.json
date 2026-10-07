@@ -33,7 +33,17 @@
       "note": "Latest disk checkpoint is the complete chi256 seed; current chi512 sweep is preserved in memory.",
       "status": "Process completed or no longer matches; no signal sent",
       "paused_utc": "2026-10-05T05:13:08.409469+00:00",
-      "resumed_utc": "2026-10-05T05:17:28.415266+00:00"
+      "resumed_utc": "2026-10-05T05:17:28.415266+00:00",
+      "execution_finished": true,
+      "exit_code": null,
+      "exited_utc": "2026-10-07T04:22:49.395004+00:00",
+      "exit_evidence": "Pre-existing non-child process disappeared; exit status unavailable, success NOT inferred",
+      "final_artifacts": {
+        "source_checkpoint": "results/checkpoints/armchair_w2_L4_N76_chi256_Nup31_seed7196_v3_star_charge_complete.jls",
+        "log": "results/armchair_L4_w2_Nup31_chi512_strict_local_continuation.log",
+        "latest_checkpoint_metadata_at_exit": "results/checkpoints/infinite_zigzag_w1_Ly1.73205_cell2_N18_chi128_unrestricted_seed7103_v3_finite_q0_star_stage228_complete.json",
+        "checkpoint_scope": "Most recently written metadata; not a certificate of this batch completion"
+      }
     },
     {
       "priority": 2,
@@ -52,9 +62,19 @@
       "log": "results/cylinder_number_search_resumed.log",
       "last_log_lines": "After sweep 2 energy=-29.855140629658056  maxlinkdim=256 maxerr=1.17E-05 time=2265.506\nAfter sweep 3 energy=-29.855627841053753  maxlinkdim=256 maxerr=1.70E-05 time=1878.626",
       "note": "Unfinished filling comparison; distinct from validated L2 width-one winding candidates.",
-      "status": "SIGCONT sent; resumed without restart",
+      "status": "Process completed or no longer matches; no signal sent",
       "paused_utc": "2026-10-05T05:13:09.236357+00:00",
-      "resumed_utc": "2026-10-05T20:37:51.706454+00:00"
+      "resumed_utc": "2026-10-05T20:37:51.706454+00:00",
+      "execution_finished": true,
+      "exit_code": null,
+      "exited_utc": "2026-10-07T04:22:49.413919+00:00",
+      "exit_evidence": "Pre-existing non-child process disappeared; exit status unavailable, success NOT inferred",
+      "final_artifacts": {
+        "source_checkpoint": "results/checkpoints/zigzag_w2_L4_N74_chi256_Nup31_seed7197_v3_star_charge_delta-6_latest.jls",
+        "log": "results/cylinder_number_search_resumed.log",
+        "latest_checkpoint_metadata_at_exit": "results/checkpoints/infinite_zigzag_w1_Ly1.73205_cell2_N18_chi128_unrestricted_seed7103_v3_finite_q0_star_stage228_complete.json",
+        "checkpoint_scope": "Most recently written metadata; not a certificate of this batch completion"
+      }
     },
     {
       "priority": 3,
@@ -145,10 +165,33 @@
         "original_stage_maxiter": 30
       },
       "restart_ready": true,
-      "restart_status": "Original paused process exited after SIGTERM; immutable restart snapshot retained",
+      "restart_status": "Restarted process exited; checkpoint/result audit still required",
       "restart_log": "results/resource_restart_pid79762.log",
       "restart_released": true,
-      "restart_release_utc": "2026-10-06T00:05:28.956271+00:00"
+      "restart_release_utc": "2026-10-06T00:05:28.956271+00:00",
+      "restart_launched": true,
+      "restart_pid": 11483,
+      "restart_launch_utc": "2026-10-06T02:25:09.003149+00:00",
+      "restart_command": [
+        "/private/tmp/julia-1.10.10/bin/julia",
+        "--project=.",
+        "-e",
+        "include(\"scripts/resume_checkpoint.jl\");resume_checkpoint(ARGS[1],parse(Int,ARGS[2]);preserve_stage_budget=true)",
+        "results/checkpoints/infinite_armchair_w2_cell2_N36_chi32_Sz0_seed7103_v3_qn_star_active_latest_resource_restart_snapshot.jls",
+        "64"
+      ],
+      "execution_finished": true,
+      "exit_code": null,
+      "exited_utc": "2026-10-07T04:22:49.415900+00:00",
+      "exit_evidence": "Pre-existing non-child process disappeared; exit status unavailable, success NOT inferred",
+      "final_artifacts": {
+        "source_checkpoint": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi32_Sz0_seed7103_v3_qn_star_active_latest.jls",
+        "log": "results/resource_restart_pid79762.log",
+        "latest_metadata": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi64_Sz0_seed7103_v3_qn_star_active_latest.json",
+        "latest_checkpoint": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi64_Sz0_seed7103_v3_qn_star_active_latest.jls",
+        "final_cap": 64,
+        "iteration": 6
+      }
     },
     {
       "priority": 4,
@@ -231,10 +274,33 @@
         "original_stage_maxiter": 40
       },
       "restart_ready": true,
-      "restart_status": "Original paused process exited after SIGTERM; immutable restart snapshot retained",
+      "restart_status": "Restarted process exited; checkpoint/result audit still required",
       "restart_log": "results/resource_restart_pid85940.log",
       "restart_released": true,
-      "restart_release_utc": "2026-10-06T00:04:52.236723+00:00"
+      "restart_release_utc": "2026-10-06T00:04:52.236723+00:00",
+      "restart_launched": true,
+      "restart_pid": 13441,
+      "restart_launch_utc": "2026-10-06T02:42:40.258543+00:00",
+      "restart_command": [
+        "/private/tmp/julia-1.10.10/bin/julia",
+        "--project=.",
+        "-e",
+        "include(\"scripts/resume_checkpoint.jl\");resume_checkpoint(ARGS[1],parse(Int,ARGS[2]);preserve_stage_budget=true)",
+        "results/checkpoints/infinite_zigzag_w1_cell2_N18_chi64_unrestricted_seed7103_v3_finite_q0_star_latest_resource_restart_snapshot.jls",
+        "128"
+      ],
+      "execution_finished": true,
+      "exit_code": null,
+      "exited_utc": "2026-10-07T04:22:49.417010+00:00",
+      "exit_evidence": "Pre-existing non-child process disappeared; exit status unavailable, success NOT inferred",
+      "final_artifacts": {
+        "source_checkpoint": "results/checkpoints/infinite_zigzag_w1_cell2_N18_chi64_unrestricted_seed7103_v3_finite_q0_star_latest.jls",
+        "log": "results/resource_restart_pid85940.log",
+        "latest_metadata": "results/checkpoints/infinite_zigzag_w1_cell2_N18_chi128_unrestricted_seed7103_v3_finite_q0_star_latest.json",
+        "latest_checkpoint": "results/checkpoints/infinite_zigzag_w1_cell2_N18_chi128_unrestricted_seed7103_v3_finite_q0_star_latest.jls",
+        "final_cap": 128,
+        "iteration": 40
+      }
     },
     {
       "priority": 5,
@@ -253,11 +319,13 @@
       "log": "results/extend_study.log",
       "last_log_lines": "After sweep 6 energy=-66.46386091913702  maxlinkdim=256 maxerr=3.79E-04 time=1156.723\nAfter sweep 1 energy=-45.36678582137518  maxlinkdim=512 maxerr=3.35E-05 time=20951.856",
       "note": "Latest disk checkpoint is complete chi256 seed; current chi512 sweep is preserved in memory.",
-      "status": "SIGSTOP sent; in-memory state and parent retained",
+      "status": "SIGCONT: existing in-memory solver state preserved",
       "paused_utc": "2026-10-05T05:13:10.636110+00:00",
       "restart_ready": false,
       "protected": true,
-      "protection_reason": "Only original chi256 seed is saved; chi512 sweep1 and partial sweep2 plus broad batch position remain in memory. No complete existing batch-resume path verified; do not terminate."
+      "protection_reason": "Only original chi256 seed is saved; chi512 sweep1 and partial sweep2 plus broad batch position remain in memory. No complete existing batch-resume path verified; do not terminate.",
+      "resumed_utc": "2026-10-07T04:22:49.419598+00:00",
+      "protected_resume_authorization": "Explicit user request 2026-10-07"
     },
     {
       "priority": 6,
@@ -1035,15 +1103,19 @@
       "restart_release_utc": "2026-10-06T00:00:55.541376+00:00"
     }
   ],
-  "scheduler_status": "Checkpoint-launch watcher active; nine original paused jobs released, protected finite batch retained",
+  "scheduler_status": "Active Julia PID(s): 39835",
   "checkpoint_restart_mode": true,
   "checkpoint_restart_conversion_utc": "2026-10-05T23:58:32.802631+00:00",
   "active_priority_pid_at_conversion": 75917,
   "scheduler_process": {
-    "pid": 94839,
-    "ppid": 94838,
+    "pid": 51372,
+    "ppid": 51369,
     "state": "S",
-    "started": "Mon Oct 5 20:06:28 2026",
+    "started": "Wed Oct 7 00:22:49 2026",
     "command": "/opt/homebrew/Cellar/python@3.14/3.14.0/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python scripts/julia_resource_queue.py watch results/julia_resource_pause_audit.json"
-  }
+  },
+  "queue_state": "RUNNING",
+  "scheduler_checked_utc": "2026-10-07T04:24:19.543505+00:00",
+  "watchdog_poll_seconds": 30,
+  "protected_sigcont_authorized": true
 }

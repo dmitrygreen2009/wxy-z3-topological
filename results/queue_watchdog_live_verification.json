@@ -1,0 +1,14 @@
+{
+  "checked_utc": "2026-10-07T04:24:31.992496+00:00",
+  "running_pid": 39835,
+  "watcher_pid": 51372,
+  "original_process_identity_verified": true,
+  "protected_chi512_state": "preserved; SIGCONT only, no restart",
+  "running_stage": "armchair L4 width3 chi512 continuation within original extend_study batch",
+  "sole_active_heavy_julia": true,
+  "watchdog_poll_seconds": 30,
+  "next_job": "Zigzag width-two parallel infinite refinement from validated chi32 snapshot to chi64",
+  "regression_tests_passed": 8,
+  "scientific_code_and_controls_unchanged": true,
+  "resident_exit_status_limitation": "Not a watcher child: real wait status unavailable; log unknown and require scientific result validation, never infer success"
+}

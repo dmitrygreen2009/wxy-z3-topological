@@ -26,3 +26,6 @@ results/julia_resource_resume_scheduler.log
 # Disposable resource-control stdout and full OS binary-image sampling.
 results/resource_restart_pid*.log
 results/julia_sigterm_shutdown_sample.txt
+
+# Local single-watcher lock (no scientific content)
+results/julia_resource_pause_audit.json.lock

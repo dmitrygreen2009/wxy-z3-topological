@@ -18,6 +18,7 @@ jobs:
       - run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
       - run: mkdir -p results
       - run: OPENBLAS_NUM_THREADS=1 python scripts/ed.py
+      - run: python -m unittest discover -s test -p 'test_julia_resource_queue.py'
       - run: python test/geometry_records.py
       - run: python test/finite_result_collection.py
       - run: python test/finite_energy_quality.py
