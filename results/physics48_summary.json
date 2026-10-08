@@ -1,0 +1,1168 @@
+{
+  "finite_states": [
+    {
+      "family": "armchair",
+      "length": 4,
+      "width": 2,
+      "cap": 256,
+      "physical_spins": 76,
+      "nup": 38.0,
+      "total_sz": 0.0,
+      "filling_fraction": 0.5,
+      "full_state_entropy": 2.752882086141472,
+      "winding_charge_probabilities": [
+        0.0002906613769388759,
+        0.0002723836286455672,
+        0.9994369549944158
+      ],
+      "winding_unitary_variance": 0.0016884214719204982,
+      "source_checkpoint": "results/armchair_L4_w2_chi256_star.jls",
+      "source_sha256": "92a0ed088b39e031797e0d2fa6517da048026055bb6c2cfe3f72383253d2126e",
+      "spatial_cut": 40,
+      "energy": -30.53419069041318,
+      "dominant_q": 2,
+      "projected_residual": 0.005622990550341343,
+      "maximum_truncation_error": 0.00016248825523000252,
+      "entropy_change_refinement": 0.015226955632951178,
+      "measurement_file": "results/physics48_armchair_L4_w2_chi256.json",
+      "phase_inference_eligible": false,
+      "owner_A_row_densities": [
+        {
+          "row": 0,
+          "spins": 18,
+          "density": 0.471992568011556
+        },
+        {
+          "row": 1,
+          "spins": 18,
+          "density": 0.5508553373644808
+        },
+        {
+          "row": 2,
+          "spins": 18,
+          "density": 0.4783675879121198
+        },
+        {
+          "row": 3,
+          "spins": 18,
+          "density": 0.49820724255148224
+        }
+      ],
+      "row_density_convention": "Matter at t and gauge allocated once to unwrapped owner A at t; outside-owner dangling edges excluded from row averages only."
+    },
+    {
+      "family": "armchair",
+      "length": 4,
+      "width": 2,
+      "cap": 512,
+      "physical_spins": 76,
+      "nup": 38.0,
+      "total_sz": 0.0,
+      "filling_fraction": 0.5,
+      "full_state_entropy": 3.084902398442294,
+      "winding_charge_probabilities": [
+        0.00015929155891234817,
+        0.00013831964084184042,
+        0.999702388800246
+      ],
+      "winding_unitary_variance": 0.0008926339814360196,
+      "source_checkpoint": "results/checkpoints/armchair_w2_Ly6.0_L4_N76_chi512_Nup38_seed7103_v3_star_continuation_pass2_complete.jls",
+      "source_sha256": "e315728db55a2f250e21e8157d1f2464c6a31060caba68fac8baf6480f08ecc8",
+      "spatial_cut": 40,
+      "energy": -30.634902075955978,
+      "dominant_q": 2,
+      "projected_residual": 0.005567728031335695,
+      "maximum_truncation_error": 0.00015957247846879252,
+      "entropy_change_refinement": 0.12461491639335387,
+      "measurement_file": "results/physics48_armchair_L4_w2_chi512.json",
+      "phase_inference_eligible": false,
+      "owner_A_row_densities": [
+        {
+          "row": 0,
+          "spins": 18,
+          "density": 0.5001781871731719
+        },
+        {
+          "row": 1,
+          "spins": 18,
+          "density": 0.5164875317839758
+        },
+        {
+          "row": 2,
+          "spins": 18,
+          "density": 0.48409052397245245
+        },
+        {
+          "row": 3,
+          "spins": 18,
+          "density": 0.4993481325883065
+        }
+      ],
+      "row_density_convention": "Matter at t and gauge allocated once to unwrapped owner A at t; outside-owner dangling edges excluded from row averages only."
+    },
+    {
+      "family": "armchair",
+      "length": 4,
+      "width": 3,
+      "cap": 256,
+      "physical_spins": 114,
+      "nup": 57.0,
+      "total_sz": 0.0,
+      "filling_fraction": 0.5,
+      "full_state_entropy": 2.9771541697972097,
+      "winding_charge_probabilities": [
+        0.9992936069954279,
+        0.00034150121356407714,
+        0.00036489179100801516
+      ],
+      "winding_unitary_variance": 0.0021180558734557042,
+      "source_checkpoint": "results/armchair_L4_w3_chi256_star.jls",
+      "source_sha256": "b49356ace972555e34cde7139d391c0229663644e47e0f40a5c27ef1e452c4d6",
+      "spatial_cut": 60,
+      "energy": -45.170640612249606,
+      "dominant_q": 0,
+      "projected_residual": 0.009355792675083687,
+      "maximum_truncation_error": 0.000361849782951124,
+      "entropy_change_refinement": 0.006416683897659148,
+      "measurement_file": "results/physics48_armchair_L4_w3_chi256.json",
+      "phase_inference_eligible": false,
+      "owner_A_row_densities": [
+        {
+          "row": 0,
+          "spins": 27,
+          "density": 0.5122388132939121
+        },
+        {
+          "row": 1,
+          "spins": 27,
+          "density": 0.5007547150267816
+        },
+        {
+          "row": 2,
+          "spins": 27,
+          "density": 0.49730754467065713
+        },
+        {
+          "row": 3,
+          "spins": 27,
+          "density": 0.49174158133508433
+        }
+      ],
+      "row_density_convention": "Matter at t and gauge allocated once to unwrapped owner A at t; outside-owner dangling edges excluded from row averages only."
+    },
+    {
+      "family": "armchair",
+      "length": 4,
+      "width": 3,
+      "cap": 512,
+      "physical_spins": 114,
+      "nup": 57.0,
+      "total_sz": 0.0,
+      "filling_fraction": 0.5,
+      "full_state_entropy": 3.4209742005627475,
+      "winding_charge_probabilities": [
+        0.9995091797656991,
+        0.0002430133082682954,
+        0.0002478069260326565
+      ],
+      "winding_unitary_variance": 0.0014719186505380843,
+      "source_checkpoint": "results/checkpoints/armchair_w3_Ly9.0_L4_N114_chi512_Nup57_seed7103_v3_star_continuation_pass2_complete.jls",
+      "source_sha256": "7ed7d11f74149f621f969cbfc1050e48ab1a175b6d034a02681c033a273db71f",
+      "spatial_cut": 60,
+      "energy": -45.66438793955968,
+      "dominant_q": 0,
+      "projected_residual": 0.005588527751771686,
+      "maximum_truncation_error": 0.00015047033769347582,
+      "entropy_change_refinement": 0.0006783483300023541,
+      "measurement_file": "results/physics48_armchair_L4_w3_chi512.json",
+      "phase_inference_eligible": false,
+      "owner_A_row_densities": [
+        {
+          "row": 0,
+          "spins": 27,
+          "density": 0.5165370838760458
+        },
+        {
+          "row": 1,
+          "spins": 27,
+          "density": 0.48764735947516114
+        },
+        {
+          "row": 2,
+          "spins": 27,
+          "density": 0.513189504509509
+        },
+        {
+          "row": 3,
+          "spins": 27,
+          "density": 0.4833583836068459
+        }
+      ],
+      "row_density_convention": "Matter at t and gauge allocated once to unwrapped owner A at t; outside-owner dangling edges excluded from row averages only."
+    },
+    {
+      "family": "armchair",
+      "length": 6,
+      "width": 2,
+      "cap": 256,
+      "physical_spins": 112,
+      "nup": 56.0,
+      "total_sz": 0.0,
+      "filling_fraction": 0.5,
+      "full_state_entropy": 2.4395714226881027,
+      "winding_charge_probabilities": [
+        0.00012319673086497174,
+        0.00013122107442982886,
+        0.9997455821947053
+      ],
+      "winding_unitary_variance": 0.0007631077286471832,
+      "source_checkpoint": "results/armchair_L6_w2_chi256_star.jls",
+      "source_sha256": "a506de05f440ad8bf02dc1c909f745a3d31941e23da065c8a374bd167597df6f",
+      "spatial_cut": 58,
+      "energy": -45.0862991430442,
+      "dominant_q": 2,
+      "projected_residual": 0.004233299965411532,
+      "maximum_truncation_error": 9.374779773192667e-05,
+      "entropy_change_refinement": 0.03108482545443758,
+      "measurement_file": "results/physics48_armchair_L6_w2_chi256.json",
+      "phase_inference_eligible": false,
+      "owner_A_row_densities": [
+        {
+          "row": 0,
+          "spins": 18,
+          "density": 0.5013228803509266
+        },
+        {
+          "row": 1,
+          "spins": 18,
+          "density": 0.5028075973063849
+        },
+        {
+          "row": 2,
+          "spins": 18,
+          "density": 0.5231033924559034
+        },
+        {
+          "row": 3,
+          "spins": 18,
+          "density": 0.5245184866194434
+        },
+        {
+          "row": 4,
+          "spins": 18,
+          "density": 0.473234770369007
+        },
+        {
+          "row": 5,
+          "spins": 18,
+          "density": 0.4719982272448151
+        }
+      ],
+      "row_density_convention": "Matter at t and gauge allocated once to unwrapped owner A at t; outside-owner dangling edges excluded from row averages only."
+    },
+    {
+      "family": "armchair",
+      "length": 6,
+      "width": 3,
+      "cap": 256,
+      "physical_spins": 168,
+      "nup": 84.0,
+      "total_sz": 0.0,
+      "filling_fraction": 0.5,
+      "full_state_entropy": 3.0185353642650186,
+      "winding_charge_probabilities": [
+        0.0004210448799455239,
+        0.9991784865462926,
+        0.0004004685737616735
+      ],
+      "winding_unitary_variance": 0.002463021553785971,
+      "source_checkpoint": "results/checkpoints/armchair_w3_Ly9.0_L6_N168_chi256_Nup84_seed7103_v3_star_refined_complete.jls",
+      "source_sha256": "96d1c734857e624336f0fe892a0ae286ff01b3c3bc80c3773646df5fb1939cfc",
+      "spatial_cut": 87,
+      "energy": -66.31813330837856,
+      "dominant_q": 1,
+      "projected_residual": 0.005613465396077267,
+      "maximum_truncation_error": 0.00043324804577037627,
+      "entropy_change_refinement": 0.0024245464940513273,
+      "measurement_file": "results/physics48_armchair_L6_w3_chi256.json",
+      "phase_inference_eligible": false,
+      "owner_A_row_densities": [
+        {
+          "row": 0,
+          "spins": 27,
+          "density": 0.523807723011886
+        },
+        {
+          "row": 1,
+          "spins": 27,
+          "density": 0.4662836331086264
+        },
+        {
+          "row": 2,
+          "spins": 27,
+          "density": 0.5071642496727709
+        },
+        {
+          "row": 3,
+          "spins": 27,
+          "density": 0.5175887496283484
+        },
+        {
+          "row": 4,
+          "spins": 27,
+          "density": 0.5025192698742033
+        },
+        {
+          "row": 5,
+          "spins": 27,
+          "density": 0.482236148580735
+        }
+      ],
+      "row_density_convention": "Matter at t and gauge allocated once to unwrapped owner A at t; outside-owner dangling edges excluded from row averages only."
+    },
+    {
+      "family": "zigzag",
+      "length": 4,
+      "width": 2,
+      "cap": 256,
+      "physical_spins": 74,
+      "nup": 37.0,
+      "total_sz": 0.0,
+      "filling_fraction": 0.5,
+      "full_state_entropy": 1.6279937865184928,
+      "winding_charge_probabilities": [
+        0.9988583545411567,
+        0.0005101147379943938,
+        0.0006315307208490384
+      ],
+      "winding_unitary_variance": 0.00342199277285149,
+      "source_checkpoint": "results/zigzag_L4_w2_chi256_star.jls",
+      "source_sha256": "88a735b17cfa1804e79e85dc7bae94b6d6920728b3c3da68296036f5b3882cb6",
+      "spatial_cut": 38,
+      "energy": -29.90430662518436,
+      "dominant_q": 0,
+      "projected_residual": 0.004605864035117702,
+      "maximum_truncation_error": 0.00042716174910530764,
+      "entropy_change_refinement": -0.012992394780566352,
+      "measurement_file": "results/physics48_zigzag_L4_w2_chi256.json",
+      "phase_inference_eligible": false,
+      "owner_A_row_densities": [
+        {
+          "row": 0,
+          "spins": 18,
+          "density": 0.5318358421455366
+        },
+        {
+          "row": 1,
+          "spins": 18,
+          "density": 0.499895451469035
+        },
+        {
+          "row": 2,
+          "spins": 18,
+          "density": 0.4812869813237985
+        },
+        {
+          "row": 3,
+          "spins": 18,
+          "density": 0.48662621061896505
+        }
+      ],
+      "row_density_convention": "Matter at t and gauge allocated once to unwrapped owner A at t; outside-owner dangling edges excluded from row averages only."
+    },
+    {
+      "family": "zigzag",
+      "length": 4,
+      "width": 2,
+      "cap": 512,
+      "physical_spins": 74,
+      "nup": 37.0,
+      "total_sz": 0.0,
+      "filling_fraction": 0.5,
+      "full_state_entropy": 2.1182355779682656,
+      "winding_charge_probabilities": [
+        0.9994229625701553,
+        0.0003011350731362457,
+        0.0002759023567085091
+      ],
+      "winding_unitary_variance": 0.0017303626245752657,
+      "source_checkpoint": "results/checkpoints/zigzag_w2_Ly3.4641_L4_N74_chi512_Nup37_seed7103_v3_star_continuation_pass2_complete.jls",
+      "source_sha256": "ae211e72a5babb44ee18a47851e28b35205270f316b0bb5c9766042a77c3ac0c",
+      "spatial_cut": 38,
+      "energy": -29.93513695620704,
+      "dominant_q": 0,
+      "projected_residual": 0.0037847260631599998,
+      "maximum_truncation_error": 0.00030628451031686926,
+      "entropy_change_refinement": 0.005596078434640717,
+      "measurement_file": "results/physics48_zigzag_L4_w2_chi512.json",
+      "phase_inference_eligible": false,
+      "owner_A_row_densities": [
+        {
+          "row": 0,
+          "spins": 18,
+          "density": 0.5329299948531634
+        },
+        {
+          "row": 1,
+          "spins": 18,
+          "density": 0.4978517583882711
+        },
+        {
+          "row": 2,
+          "spins": 18,
+          "density": 0.48238112763649954
+        },
+        {
+          "row": 3,
+          "spins": 18,
+          "density": 0.48648457540898604
+        }
+      ],
+      "row_density_convention": "Matter at t and gauge allocated once to unwrapped owner A at t; outside-owner dangling edges excluded from row averages only."
+    },
+    {
+      "family": "zigzag",
+      "length": 4,
+      "width": 3,
+      "cap": 256,
+      "physical_spins": 111,
+      "nup": 56.0,
+      "total_sz": 0.5,
+      "filling_fraction": 0.5045045045045045,
+      "full_state_entropy": 1.8890927776632689,
+      "winding_charge_probabilities": [
+        0.000884405503448075,
+        0.9973913911028411,
+        0.0017242033937104884
+      ],
+      "winding_unitary_variance": 0.007809986855251472,
+      "source_checkpoint": "results/zigzag_L4_w3_chi256_star.jls",
+      "source_sha256": "75bcc63d266e6c019f7f85226de67b45d839a76aadb759660070e77f7477c6d7",
+      "spatial_cut": 57,
+      "energy": -44.709036665857326,
+      "dominant_q": 1,
+      "projected_residual": 0.005612876380349619,
+      "maximum_truncation_error": 0.00028516788425154115,
+      "entropy_change_refinement": 0.011117310970818473,
+      "measurement_file": "results/physics48_zigzag_L4_w3_chi256.json",
+      "phase_inference_eligible": false,
+      "owner_A_row_densities": [
+        {
+          "row": 0,
+          "spins": 27,
+          "density": 0.4932478843543553
+        },
+        {
+          "row": 1,
+          "spins": 27,
+          "density": 0.4957820332475602
+        },
+        {
+          "row": 2,
+          "spins": 27,
+          "density": 0.5198503960687818
+        },
+        {
+          "row": 3,
+          "spins": 27,
+          "density": 0.5099235371552164
+        }
+      ],
+      "row_density_convention": "Matter at t and gauge allocated once to unwrapped owner A at t; outside-owner dangling edges excluded from row averages only."
+    },
+    {
+      "family": "zigzag",
+      "length": 4,
+      "width": 3,
+      "cap": 512,
+      "physical_spins": 111,
+      "nup": 56.0,
+      "total_sz": 0.5,
+      "filling_fraction": 0.5045045045045045,
+      "full_state_entropy": 2.1385179478824035,
+      "winding_charge_probabilities": [
+        9.777572979278541e-05,
+        0.9997510194362382,
+        0.00015120483396863227
+      ],
+      "winding_unitary_variance": 0.0007468000698089838,
+      "source_checkpoint": "results/checkpoints/zigzag_w3_Ly5.19615_L4_N111_chi512_Nup56_seed7103_v3_star_continuation_pass2_complete.jls",
+      "source_sha256": "9100d52c7562a373e9154fb19525db5b8a0f23d53e184415ff0627216a7eb190",
+      "spatial_cut": 57,
+      "energy": -44.773392928298264,
+      "dominant_q": 1,
+      "projected_residual": 0.0016221317940264394,
+      "maximum_truncation_error": 9.647412144371703e-05,
+      "entropy_change_refinement": 0.029215106014049752,
+      "measurement_file": "results/physics48_zigzag_L4_w3_chi512.json",
+      "phase_inference_eligible": false,
+      "owner_A_row_densities": [
+        {
+          "row": 0,
+          "spins": 27,
+          "density": 0.4954776217675214
+        },
+        {
+          "row": 1,
+          "spins": 27,
+          "density": 0.498248583283894
+        },
+        {
+          "row": 2,
+          "spins": 27,
+          "density": 0.5178970598225964
+        },
+        {
+          "row": 3,
+          "spins": 27,
+          "density": 0.5070694643480346
+        }
+      ],
+      "row_density_convention": "Matter at t and gauge allocated once to unwrapped owner A at t; outside-owner dangling edges excluded from row averages only."
+    },
+    {
+      "family": "zigzag",
+      "length": 6,
+      "width": 2,
+      "cap": 256,
+      "physical_spins": 110,
+      "nup": 55.0,
+      "total_sz": 0.0,
+      "filling_fraction": 0.5,
+      "full_state_entropy": 1.592340487987539,
+      "winding_charge_probabilities": [
+        0.00016171679983149426,
+        0.9996561683546287,
+        0.0001821148455396678
+      ],
+      "winding_unitary_variance": 0.0010312286286024985,
+      "source_checkpoint": "results/zigzag_L6_w2_chi256_star.jls",
+      "source_sha256": "3ecef06266d7ec4dfe1eb229deaacce7d43b2d633db8985ef27e2c66a9a7974e",
+      "spatial_cut": 56,
+      "energy": -44.486723744966305,
+      "dominant_q": 1,
+      "projected_residual": 0.0027542415549139053,
+      "maximum_truncation_error": 0.0003491039540508376,
+      "entropy_change_refinement": 0.0016334203732266683,
+      "measurement_file": "results/physics48_zigzag_L6_w2_chi256.json",
+      "phase_inference_eligible": false,
+      "owner_A_row_densities": [
+        {
+          "row": 0,
+          "spins": 18,
+          "density": 0.5360590532307268
+        },
+        {
+          "row": 1,
+          "spins": 18,
+          "density": 0.4554535002599156
+        },
+        {
+          "row": 2,
+          "spins": 18,
+          "density": 0.531535399177447
+        },
+        {
+          "row": 3,
+          "spins": 18,
+          "density": 0.4956875053900982
+        },
+        {
+          "row": 4,
+          "spins": 18,
+          "density": 0.464632567391503
+        },
+        {
+          "row": 5,
+          "spins": 18,
+          "density": 0.5170107863277082
+        }
+      ],
+      "row_density_convention": "Matter at t and gauge allocated once to unwrapped owner A at t; outside-owner dangling edges excluded from row averages only."
+    },
+    {
+      "family": "zigzag",
+      "length": 6,
+      "width": 3,
+      "cap": 256,
+      "physical_spins": 165,
+      "nup": 83.0,
+      "total_sz": 0.5,
+      "filling_fraction": 0.503030303030303,
+      "full_state_entropy": 1.874589666840344,
+      "winding_charge_probabilities": [
+        0.999267213558133,
+        0.0004017898107106695,
+        0.0003309966311563957
+      ],
+      "winding_unitary_variance": 0.0021971473709121447,
+      "source_checkpoint": "results/checkpoints/zigzag_w3_Ly5.19615_L6_N165_chi256_Nup83_seed7103_v3_star_refined_complete.jls",
+      "source_sha256": "dd3fdaf1832e0b45b82e4c93728dcb41b8761b580f15452337edb5587f985ff7",
+      "spatial_cut": 84,
+      "energy": -66.46386091913702,
+      "dominant_q": 0,
+      "projected_residual": 0.0024192798133175863,
+      "maximum_truncation_error": 0.00037867873513702544,
+      "entropy_change_refinement": 0.0023419321984370356,
+      "measurement_file": "results/physics48_zigzag_L6_w3_chi256.json",
+      "phase_inference_eligible": false,
+      "owner_A_row_densities": [
+        {
+          "row": 0,
+          "spins": 27,
+          "density": 0.5162195776706832
+        },
+        {
+          "row": 1,
+          "spins": 27,
+          "density": 0.4746479583667034
+        },
+        {
+          "row": 2,
+          "spins": 27,
+          "density": 0.5368953043093382
+        },
+        {
+          "row": 3,
+          "spins": 27,
+          "density": 0.48255317314481044
+        },
+        {
+          "row": 4,
+          "spins": 27,
+          "density": 0.498531313625626
+        },
+        {
+          "row": 5,
+          "spins": 27,
+          "density": 0.5098374350546934
+        }
+      ],
+      "row_density_convention": "Matter at t and gauge allocated once to unwrapped owner A at t; outside-owner dangling edges excluded from row averages only."
+    }
+  ],
+  "matched_bond_changes": [
+    {
+      "family": "armchair",
+      "width": 2,
+      "length": 4,
+      "entropy_change_256_to_512": 0.3320203123008221,
+      "energy_change_per_vertex": -0.006294461596424883,
+      "dominant_q_unchanged": true
+    },
+    {
+      "family": "armchair",
+      "width": 3,
+      "length": 4,
+      "entropy_change_256_to_512": 0.4438200307655378,
+      "energy_change_per_vertex": -0.020572805304586456,
+      "dominant_q_unchanged": true
+    },
+    {
+      "family": "zigzag",
+      "width": 2,
+      "length": 4,
+      "entropy_change_256_to_512": 0.49024179144977276,
+      "energy_change_per_vertex": -0.0019268956889173516,
+      "dominant_q_unchanged": true
+    },
+    {
+      "family": "zigzag",
+      "width": 3,
+      "length": 4,
+      "entropy_change_256_to_512": 0.24942517021913457,
+      "energy_change_per_vertex": -0.0026815109350390998,
+      "dominant_q_unchanged": true
+    }
+  ],
+  "infinite_states": [
+    {
+      "unit_cell_sz_expectation": 4.678647002372832e-09,
+      "unit_cell_nup_expectation": 18.000000004678647,
+      "filling_fraction_measured": 0.5000000001299624,
+      "filling_fixed": true,
+      "source": "results/infinite_armchair_w2_chi64_qn_star_active.json",
+      "family": "armchair",
+      "cap": 64,
+      "chi": 9,
+      "cell_spins": 36,
+      "cell_slices": 2,
+      "number_background": {
+        "label": "Sz0",
+        "site_qn_down": -1,
+        "physical_sz_background_per_cell": 0,
+        "interpretation": "A rational mean filling of the infinite U1 ansatz, not separate conservation of each cell's physical number. Site Sz matrices retain eigenvalues +/-1/2.",
+        "physical_number_density": 0.5,
+        "target_average_nup_per_cell": 18,
+        "individual_physical_sites_per_cell": 36,
+        "density_enforced": true,
+        "site_qn_up": 1,
+        "site_qn_name": "Sz"
+      },
+      "energy_per_vertex": -1.4369159039861603,
+      "spatial_entropy_slice_mean": 9.109625923878926e-23,
+      "solver_residual": 3.40351024013633e-09,
+      "canonical_error": 3.403509125240849e-09,
+      "xi_cells": 0.0,
+      "transfer_eigenvalues_real": [
+        1.0000000000000004
+      ],
+      "transfer_eigenvalues_imag": [
+        -1.804940305084619e-16
+      ],
+      "transfer_residuals": [
+        9.71445146547012e-17
+      ],
+      "bond_dimension_details": {
+        "bond_dimensions_by_tensor_representation": {
+          "AL": [
+            2,
+            4,
+            8,
+            8,
+            8,
+            8,
+            4,
+            2,
+            1,
+            2,
+            4,
+            8,
+            8,
+            8,
+            8,
+            4,
+            2,
+            2,
+            2,
+            4,
+            8,
+            9,
+            7,
+            8,
+            4,
+            2,
+            1,
+            2,
+            4,
+            8,
+            9,
+            7,
+            8,
+            4,
+            2,
+            1
+          ],
+          "AR": [
+            2,
+            4,
+            8,
+            8,
+            8,
+            8,
+            4,
+            2,
+            1,
+            2,
+            4,
+            8,
+            8,
+            8,
+            8,
+            4,
+            2,
+            2,
+            2,
+            4,
+            8,
+            9,
+            7,
+            8,
+            4,
+            2,
+            1,
+            2,
+            4,
+            8,
+            9,
+            7,
+            8,
+            4,
+            2,
+            1
+          ]
+        },
+        "historical_library_maxlinkdim": 9,
+        "periodic_wrap_bond_included": true,
+        "maximum_bond_dimension": 9
+      },
+      "phase_inference_eligible": false
+    },
+    {
+      "unit_cell_sz_expectation": -1.3817441830723247e-06,
+      "unit_cell_nup_expectation": 17.999998618255816,
+      "filling_fraction_measured": 0.49999996161821714,
+      "filling_fixed": false,
+      "source": "results/infinite_zigzag_w2_chi64_finite_seed_star.json",
+      "family": "zigzag",
+      "cap": 64,
+      "chi": 64,
+      "cell_spins": 36,
+      "cell_slices": 2,
+      "number_background": {
+        "label": "unrestricted",
+        "density_enforced": false
+      },
+      "energy_per_vertex": -1.8163356703653328,
+      "spatial_entropy_slice_mean": 0.6760176191111316,
+      "solver_residual": 0.004287377458111853,
+      "canonical_error": 0.004287321761543474,
+      "xi_cells": 0.14925759198454813,
+      "transfer_eigenvalues_real": [
+        0.9999999999999969,
+        0.0012311252378264714,
+        0.00021718568381264616,
+        1.829396442830837e-05,
+        -4.585880245788048e-06,
+        -4.585880245637893e-06,
+        1.0406787172845748e-05,
+        9.790227307923731e-06,
+        -9.49476228700145e-06,
+        -9.494762286846742e-06,
+        1.0529271495915865e-06,
+        4.647771250144146e-07,
+        4.6477712487994733e-07,
+        9.051781031642822e-07,
+        7.40565628294269e-07,
+        2.1633593119492505e-07,
+        1.4218515710199e-08,
+        -4.1704073123448735e-09,
+        -4.1704063197485086e-09,
+        8.229869317228832e-09,
+        4.023863575818914e-09,
+        4.024194092245105e-09,
+        6.312310491306703e-10,
+        5.908415471074779e-10,
+        4.765620147115317e-09,
+        2.4468122155008903e-09,
+        -1.9394076253292147e-09
+      ],
+      "transfer_eigenvalues_imag": [
+        1.1088248624988919e-15,
+        -1.8708381540255517e-18,
+        2.5766080525369994e-18,
+        -2.2437560414581728e-17,
+        1.0351731371553815e-05,
+        -1.0351731371573241e-05,
+        1.898492188643066e-16,
+        -4.134169939605597e-17,
+        1.4500691881249383e-06,
+        -1.4500691883084908e-06,
+        -6.48351834581052e-17,
+        -8.248970820812583e-07,
+        8.248970818815458e-07,
+        3.8141526754790366e-17,
+        2.933183978694697e-16,
+        7.463421694729079e-17,
+        -1.3480105182793465e-13,
+        -1.0385355615092828e-08,
+        1.0385351379597712e-08,
+        1.6338074877701636e-12,
+        -5.6468950992887336e-09,
+        5.641658080477929e-09,
+        -5.990730468898483e-09,
+        5.9506640466129024e-09,
+        -6.913047754275162e-11,
+        1.4074690107740313e-10,
+        1.4046941101932184e-09
+      ],
+      "transfer_residuals": [
+        2.4242556269783575e-15,
+        2.0284274287498536e-16,
+        3.763501786929926e-16,
+        4.251006044261036e-16,
+        9.770735648147566e-16,
+        8.129865138423802e-16,
+        3.161127187246755e-16,
+        6.799898317881376e-16,
+        1.3509802277621823e-15,
+        1.4350094790382767e-15,
+        4.614492637219194e-16,
+        1.302637340356637e-15,
+        1.447028493121722e-15,
+        4.65789949056163e-16,
+        3.2354751799027903e-16,
+        4.579071592679982e-16,
+        1.8165480569439828e-14,
+        5.058780406029898e-15,
+        4.697636735175656e-15,
+        4.02609048323769e-12,
+        4.980367983361392e-12,
+        1.1852806585280992e-12,
+        2.7815430764636242e-12,
+        1.329575503220305e-12,
+        7.183883940929299e-11,
+        1.4434285672818918e-10,
+        4.513931591555382e-11
+      ],
+      "bond_dimension_details": {
+        "bond_dimensions_by_tensor_representation": {
+          "AL": [
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            58,
+            64
+          ],
+          "AR": [
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            32,
+            58,
+            64
+          ]
+        },
+        "historical_library_maxlinkdim": 58,
+        "periodic_wrap_bond_included": true,
+        "maximum_bond_dimension": 64
+      },
+      "phase_inference_eligible": false
+    },
+    {
+      "unit_cell_sz_expectation": 9.569723144274194e-05,
+      "unit_cell_nup_expectation": 18.000095697231444,
+      "filling_fraction_measured": 0.500002658256429,
+      "filling_fixed": false,
+      "source": "results/infinite_zigzag_w2_chi64_finite_seed_star_parallel_expanded.json",
+      "family": "zigzag",
+      "cap": 64,
+      "chi": 64,
+      "cell_spins": 36,
+      "cell_slices": 2,
+      "number_background": {
+        "label": "unrestricted",
+        "density_enforced": false
+      },
+      "energy_per_vertex": -1.8235409106181335,
+      "spatial_entropy_slice_mean": 0.7652640424561095,
+      "solver_residual": 0.0031901541241995063,
+      "canonical_error": 0.0035907982760127037,
+      "xi_cells": 0.1622738436529246,
+      "transfer_eigenvalues_real": [
+        1.0000000000000162,
+        0.0021071423400325926,
+        0.00016604788492702993,
+        9.104253911800805e-05,
+        -5.6259414273230315e-05,
+        -5.625941427325071e-05,
+        4.683375081381045e-05,
+        2.5037994476564263e-06,
+        2.5037994474460788e-06,
+        -5.702092215436042e-06,
+        -5.702092215351422e-06,
+        -7.797186078278752e-07,
+        -7.797186081814519e-07,
+        3.920478480909164e-06,
+        1.92343522659245e-06,
+        1.042135377998941e-06,
+        -5.349545345211535e-07,
+        4.816281083620541e-07,
+        4.8162615811598e-07,
+        4.7421385166116353e-07
+      ],
+      "transfer_eigenvalues_imag": [
+        8.476876165770353e-16,
+        6.634663760538412e-18,
+        5.51922041849645e-17,
+        -1.4858844406606028e-17,
+        -5.5205704680323856e-05,
+        5.5205704680291486e-05,
+        -8.966992065686175e-19,
+        -2.1239512152228675e-05,
+        2.1239512152119492e-05,
+        -3.6250415639407e-06,
+        3.625041563950849e-06,
+        -3.973195466422931e-06,
+        3.9731954662402725e-06,
+        -8.524183093390464e-17,
+        -1.9965414707616382e-17,
+        -1.9582684649128234e-15,
+        -3.4253284525536207e-15,
+        -1.742358284371171e-07,
+        1.742375325651496e-07,
+        -2.5271051073972675e-12
+      ],
+      "transfer_residuals": [
+        1.2435657099953258e-15,
+        5.055510784828978e-16,
+        3.4748309579489546e-16,
+        2.225212536443267e-16,
+        3.4895047107658613e-16,
+        5.096620377223918e-16,
+        7.053134905550598e-16,
+        1.0221946728881216e-15,
+        9.931278720995153e-16,
+        1.0751963170701137e-15,
+        9.636111236795495e-16,
+        4.1623058043223987e-16,
+        3.662251867351628e-16,
+        2.867390715031046e-16,
+        4.762247466099678e-16,
+        1.081821756878578e-15,
+        3.1248080531061734e-14,
+        2.0324005358530034e-12,
+        1.7401001061373874e-12,
+        2.912672398943433e-11
+      ],
+      "bond_dimension_details": {
+        "bond_dimensions_by_tensor_representation": {
+          "AL": [
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64
+          ],
+          "AR": [
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64,
+            64
+          ]
+        },
+        "historical_library_maxlinkdim": 64,
+        "periodic_wrap_bond_included": true,
+        "maximum_bond_dimension": 64
+      },
+      "phase_inference_eligible": false
+    }
+  ],
+  "accepted_gamma_fit_points": 0,
+  "gamma_fits": null,
+  "reason_no_fit": "Unconverged entropy/energy, impure CGS winding sectors, unresolved bulk filling and MES; only two narrow circumferences."
+}

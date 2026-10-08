@@ -1,0 +1,4 @@
+ERROR zigzag2 KeyError: key "checkpoint_file" not found
+MEASURED zigzag L6 w3 cap256 S=1.874589666840344 loop=0.9989008203372005 + 6.130869190560497e-5im variance=0.0021971473709121447
+ERROR armchair2 KeyError: key "checkpoint_file" not found
+MEASURED armchair L6 w3 cap256 S=3.0185353642650186 loop=-0.49936843268007514 + 0.864967136305686im variance=0.002463021553785971

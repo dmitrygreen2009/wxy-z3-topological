@@ -1,0 +1,61 @@
+{
+  "records": [
+    {
+      "charges": [
+        0,
+        0
+      ],
+      "dimension": 5636,
+      "energies": [
+        -7.342883075943878,
+        -7.337288472472764
+      ],
+      "residuals": [
+        7.355446611891507e-13,
+        4.975031443475336e-13
+      ],
+      "saved_ground_vectors_deflated": 0,
+      "runtime_seconds": 0.04137110710144043
+    },
+    {
+      "charges": [
+        1,
+        0
+      ],
+      "dimension": 5454,
+      "energies": [
+        -7.296046028854623,
+        -7.289970027036085
+      ],
+      "residuals": [
+        4.351334931586303e-14,
+        5.312549048655993e-14
+      ],
+      "saved_ground_vectors_deflated": 0,
+      "runtime_seconds": 0.028508901596069336
+    },
+    {
+      "charges": [
+        1,
+        1
+      ],
+      "dimension": 5292,
+      "energies": [
+        -7.136881951622843,
+        -6.893915219882745
+      ],
+      "residuals": [
+        1.238035322592316e-13,
+        8.282202545564262e-14
+      ],
+      "saved_ground_vectors_deflated": 1,
+      "runtime_seconds": 0.04127001762390137
+    }
+  ],
+  "seed": 7310,
+  "tolerance": 1e-12,
+  "method": "Exact CGS orbit blocks; cached ground eigenvectors deflated, no ground-state Lanczos repeated",
+  "excited_vectors_previously_available": false,
+  "symmetry_equivalences": "R0 and R1 invert separate charges; Tx exchanges charges. Three charge orbits cover all nine sectors.",
+  "runtime_seconds": 1.3978829383850098
+}
