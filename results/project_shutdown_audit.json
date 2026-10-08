@@ -1,0 +1,27 @@
+{
+  "shutdown_utc": "2026-10-08T04:02:21.330425+00:00",
+  "actions": [
+    {
+      "pid": 26756,
+      "signal": "SIGTERM",
+      "purpose": "Disable automatic queue restarts"
+    },
+    {
+      "pid": 74718,
+      "signal": "SIGKILL",
+      "purpose": "Terminate stopped optimizer without running another iteration; checkpoint already load-validated and checksum reverified"
+    }
+  ],
+  "checkpoint_preserved": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi16_unrestricted_seed7104_v3_finite_charge_Nup33_star_latest.jls",
+  "checkpoint_sha256": "933fdf771d7224b21e4ee2de344daca9d0a8d11ce4109383c02c61f8710d9242",
+  "checkpoint_iteration": 30,
+  "checkpoint_previously_deserialized": true,
+  "all_completed_results_preserved": true,
+  "uncheckpointed_work": "Any partial iteration after saved iteration 30 is not recoverable; no completed checkpoint or result removed.",
+  "restart_queue_disabled": true,
+  "codex_project_automations_found": false,
+  "project_crontab_found": false,
+  "project_launchagent_found": false,
+  "remaining_project_jobs": [],
+  "final_process_verification": "No project computations, stopped Julia jobs, or queue watchers remain"
+}

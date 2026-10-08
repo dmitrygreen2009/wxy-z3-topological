@@ -1265,7 +1265,7 @@
       "restart_release_utc": "2026-10-06T00:00:55.541376+00:00"
     }
   ],
-  "scheduler_status": "User-authorized 48-hour physics extraction: production paused; do not auto-resume or launch optimizers",
+  "scheduler_status": "Project archived at explicit user request: all computation and automatic restart disabled; manual user authorization required to resume",
   "checkpoint_restart_mode": true,
   "checkpoint_restart_conversion_utc": "2026-10-05T23:58:32.802631+00:00",
   "active_priority_pid_at_conversion": 75917,
@@ -1277,10 +1277,10 @@
     "command": "/opt/homebrew/Cellar/python@3.14/3.14.0/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python scripts/julia_resource_queue.py watch results/julia_resource_pause_audit.json"
   },
   "queue_state": "BLOCKED",
-  "scheduler_checked_utc": "2026-10-08T01:44:03.180352+00:00",
+  "scheduler_checked_utc": "2026-10-08T04:02:19.757322+00:00",
   "watchdog_poll_seconds": 30,
   "protected_sigcont_authorized": true,
-  "intentional_blocker": "User-authorized 48-hour physics extraction: production paused; do not auto-resume or launch optimizers",
+  "intentional_blocker": "Project archived at explicit user request: all computation and automatic restart disabled; manual user authorization required to resume",
   "physics_extraction_checkpoint": {
     "metadata": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi16_unrestricted_seed7104_v3_finite_charge_Nup33_star_latest.json",
     "payload": "results/checkpoints/infinite_armchair_w2_cell2_N36_chi16_unrestricted_seed7104_v3_finite_charge_Nup33_star_latest.jls",
@@ -1288,5 +1288,6 @@
     "cap": 16,
     "iteration": 30,
     "stage_maxiter": 30
-  }
+  },
+  "automatic_restart_disabled": true
 }
