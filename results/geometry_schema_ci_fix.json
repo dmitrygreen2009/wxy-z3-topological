@@ -1,0 +1,191 @@
+{
+  "automatic_push_workflow_steps_passed": 29,
+  "automatic_push_workflow_step_count": 30,
+  "nonoptimization_julia_testsets": [
+    {
+      "testset": "Fresh cylinder exports retain physical axial metadata",
+      "passed": 4,
+      "total": 4
+    },
+    {
+      "testset": "Microscopic lattice regression",
+      "passed": 97,
+      "total": 97
+    },
+    {
+      "testset": "Infinite Hamiltonian physical incidence",
+      "passed": 55,
+      "total": 55
+    },
+    {
+      "testset": "MPO Hermiticity",
+      "passed": 3,
+      "total": 3
+    },
+    {
+      "testset": "Independent exact Schmidt spectra",
+      "passed": 4,
+      "total": 4
+    },
+    {
+      "testset": "Analytically known infinite transfer spectrum",
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "testset": "Stored transfer certificates require exact provenance and completeness",
+      "passed": 6,
+      "total": 6
+    },
+    {
+      "testset": "Degenerate fixed points are not hidden by scalar Krylov",
+      "passed": 7,
+      "total": 7
+    },
+    {
+      "testset": "Exact CGS projector and Hamiltonian commutation",
+      "passed": 9,
+      "total": 9
+    },
+    {
+      "testset": "Exact winding-sector penalty on both microscopic geometries",
+      "passed": 36,
+      "total": 36
+    },
+    {
+      "testset": "Direct winding QN is an exact microscopic basis change",
+      "passed": 42,
+      "total": 42
+    },
+    {
+      "testset": "Existing physical MPS to exact winding-QN checkpoint bridge",
+      "passed": 36,
+      "total": 36
+    },
+    {
+      "testset": "Exact real winding-basis microscopic MPO",
+      "passed": 39,
+      "total": 39
+    },
+    {
+      "testset": "Infinite Schmidt entropy from independently known fixed point",
+      "passed": 4,
+      "total": 4
+    },
+    {
+      "testset": "Conserved-spin infinite entropy via measurement-only densification",
+      "passed": 3,
+      "total": 3
+    },
+    {
+      "testset": "Independent local-loop operator checks",
+      "passed": 3,
+      "total": 3
+    },
+    {
+      "testset": "Legacy local-loop entry point translates scalar indices",
+      "passed": 3,
+      "total": 3
+    },
+    {
+      "testset": "Exact particle-hole state mapping retains QNs and entropy",
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "testset": "Individual-site star ordering realizes the declared spatial partition",
+      "passed": 36,
+      "total": 36
+    },
+    {
+      "testset": "Microscopic disjoint-dimer variational bound",
+      "passed": 3,
+      "total": 3
+    },
+    {
+      "testset": "Factorized microscopic circumference MPO and translated infinite support",
+      "passed": 24,
+      "total": 24
+    },
+    {
+      "testset": "Contractible microscopic operators from explicit lifted geometry",
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "testset": "Separated winding-loop adjoint products",
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "testset": "Independent-cell initializer: exact Bell entropy and physical filling",
+      "passed": 13,
+      "total": 13
+    },
+    {
+      "testset": "Shifted zero flux distinguishes physical fillings",
+      "passed": 21,
+      "total": 21
+    },
+    {
+      "testset": "Transfer vector charge labels in the original QN basis",
+      "passed": 10,
+      "total": 10
+    },
+    {
+      "testset": "Local eigenpair evidence detects achieved and missed tolerances",
+      "passed": 6,
+      "total": 6
+    },
+    {
+      "testset": "Individual-site microscopic infinite-cell periods",
+      "passed": 216,
+      "total": 216
+    },
+    {
+      "testset": "Independent coherent-spin exchange expectation across cell periods",
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "testset": "Transfer length conversion is invariant under regrouping periods",
+      "passed": 9,
+      "total": 9
+    },
+    {
+      "testset": "Projected stationarity of exactly checkable two-spin states",
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "testset": "Complex local-spin phases independently check infinite microscopic MPO",
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "testset": "Official nonlocal VUMPS center operator matches microscopic local fields",
+      "passed": 48,
+      "total": 48
+    },
+    {
+      "testset": "Infinite bond dimensions include the larger wrap bond",
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "testset": "Resume retains recorded local solver accuracy",
+      "passed": 5,
+      "total": 5
+    }
+  ],
+  "pending_optimization_fixtures": [
+    "test/checkpoints.jl",
+    "test/parallel_vumps.jl",
+    "test/infinite_winding_basis.jl",
+    "test/infinite_winding_driver.jl"
+  ],
+  "production_optimization_started": false,
+  "full_workflow_status": "pending_user_clarification_on_existing_optimization_fixtures",
+  "physics_graph_changed": false,
+  "validation_tolerances_changed": false
+}

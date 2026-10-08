@@ -1,6 +1,20 @@
 using Test
 include("../src/model.jl")
 include("../src/infinite_model.jl")
+@testset "Fresh cylinder exports retain physical axial metadata" begin
+    mktempdir() do directory
+        cd(directory) do
+            mkdir("geometry")
+            for family in ["zigzag","armchair"]
+                export_cylinder_geometry(family,6,3)
+                graph=JSON3.read(read("geometry/$(family)_L6_w3_star.json",String),Dict{String,Any})
+                c=graph["conventions"]
+                @test c["physical_axial_matter_offsets_A_B"]==(family=="zigzag" ? [0,1/3] : [0,0])
+                @test c["physical_axial_gauge_offsets_from_owner_A_by_leg"]==(family=="zigzag" ? [1/6,-1/3,1/6] : [0,-.5,.5])
+            end
+        end
+    end
+end
 @testset "Microscopic lattice regression" begin
     @test norm(W'*W-I)<1e-14
     for family in ["zigzag","armchair"], L in [2,4], w in [1,2,3]
