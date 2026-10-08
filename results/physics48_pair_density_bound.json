@@ -1,0 +1,122 @@
+{
+  "lambda_reused": -1.135665890491262,
+  "epsilon_pair_conservative": -0.3755476414066297,
+  "density_window": [
+    0.29231301639457336,
+    0.7076869836054267
+  ],
+  "records": [
+    {
+      "auxiliary_cluster_nup": 0,
+      "dimension": 1,
+      "lowest_shifted_eigenvalue": 0.0,
+      "conservative_epsilon": -1e-10,
+      "reconstruction_error": 0.0,
+      "orthogonality_error": 0.0,
+      "safety_margin": 1e-10
+    },
+    {
+      "auxiliary_cluster_nup": 1,
+      "dimension": 11,
+      "lowest_shifted_eigenvalue": -0.2785476718818338,
+      "conservative_epsilon": -0.27854767198185215,
+      "reconstruction_error": 5.309920144844202e-15,
+      "orthogonality_error": 2.7579222821350552e-15,
+      "safety_margin": 1.000183388471079e-10
+    },
+    {
+      "auxiliary_cluster_nup": 2,
+      "dimension": 55,
+      "lowest_shifted_eigenvalue": -0.3755476413064488,
+      "conservative_epsilon": -0.3755476414066297,
+      "reconstruction_error": 3.251803834229774e-14,
+      "orthogonality_error": 8.493705815059619e-15,
+      "safety_margin": 1.0018093440151815e-10
+    },
+    {
+      "auxiliary_cluster_nup": 3,
+      "dimension": 165,
+      "lowest_shifted_eigenvalue": -0.374330770754586,
+      "conservative_epsilon": -0.3743307708556016,
+      "reconstruction_error": 1.0430818357562707e-13,
+      "orthogonality_error": 2.182502381837818e-14,
+      "safety_margin": 1.0101565975253676e-10
+    },
+    {
+      "auxiliary_cluster_nup": 4,
+      "dimension": 330,
+      "lowest_shifted_eigenvalue": -0.35784329251896296,
+      "conservative_epsilon": -0.3578432926221483,
+      "reconstruction_error": 2.244936061324012e-13,
+      "orthogonality_error": 3.9440867864525826e-14,
+      "safety_margin": 1.0318533834169433e-10
+    },
+    {
+      "auxiliary_cluster_nup": 5,
+      "dimension": 462,
+      "lowest_shifted_eigenvalue": -0.17975894002589107,
+      "conservative_epsilon": -0.1797589401319103,
+      "reconstruction_error": 4.1144711963096253e-13,
+      "orthogonality_error": 5.2095102180172226e-14,
+      "safety_margin": 1.0601921944172145e-10
+    },
+    {
+      "auxiliary_cluster_nup": 6,
+      "dimension": 462,
+      "lowest_shifted_eigenvalue": 1.0856816227646093,
+      "conservative_epsilon": 1.0856816226575288,
+      "reconstruction_error": 4.612077740736465e-13,
+      "orthogonality_error": 5.237157368100061e-14,
+      "safety_margin": 1.0708059160228943e-10
+    },
+    {
+      "auxiliary_cluster_nup": 7,
+      "dimension": 330,
+      "lowest_shifted_eigenvalue": 2.6771168480658676,
+      "conservative_epsilon": 2.67711684796067,
+      "reconstruction_error": 3.8081301698817244e-13,
+      "orthogonality_error": 3.9278985240535173e-14,
+      "safety_margin": 1.0519753769774024e-10
+    },
+    {
+      "auxiliary_cluster_nup": 8,
+      "dimension": 165,
+      "lowest_shifted_eigenvalue": 4.283675836035708,
+      "conservative_epsilon": 4.28367583593317,
+      "reconstruction_error": 2.5765113366797834e-13,
+      "orthogonality_error": 2.3295982879137343e-14,
+      "safety_margin": 1.0253766206504823e-10
+    },
+    {
+      "auxiliary_cluster_nup": 9,
+      "dimension": 55,
+      "lowest_shifted_eigenvalue": 5.965350565159131,
+      "conservative_epsilon": 5.96535056505847,
+      "reconstruction_error": 1.0525166680918789e-13,
+      "orthogonality_error": 8.819946402697746e-15,
+      "safety_margin": 1.0066039945431054e-10
+    },
+    {
+      "auxiliary_cluster_nup": 10,
+      "dimension": 11,
+      "lowest_shifted_eigenvalue": 7.671113561556991,
+      "conservative_epsilon": 7.671113561456863,
+      "reconstruction_error": 4.717798853143312e-14,
+      "orthogonality_error": 2.5997663690486632e-15,
+      "safety_margin": 1.0012783513491025e-10
+    },
+    {
+      "auxiliary_cluster_nup": 11,
+      "dimension": 1,
+      "lowest_shifted_eigenvalue": 10.220993014421358,
+      "conservative_epsilon": 10.220993014321358,
+      "reconstruction_error": 0.0,
+      "orthogonality_error": 0.0,
+      "safety_margin": 1e-10
+    }
+  ],
+  "proof": "H=sum_cells(h_A+h_B)>=M*epsilon_pair(lambda)+lambda*N_up; each pair has one internal physical gauge, four external physical gauges, and six matter spins. Q_pair=Nm+N_internal+.5*N_external. Shared external gauges belong to two overlapping pair operators and count once in total Q. Full-plane primitive leg0 perfect matching only; not a parallel-edge tiny quotient.",
+  "qualification": "Exact operator inequality with a residual-checked floating-point endpoint, explicit margins, and no interval-arithmetic claim. Shifted-operator N labels are not the preferred filling of original H.",
+  "original_H_unchanged": true,
+  "runtime_seconds": 0.19831275939941406
+}

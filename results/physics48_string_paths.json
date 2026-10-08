@@ -1,0 +1,25 @@
+{
+  "short_path_edges": [
+    1
+  ],
+  "long_path_edges": [
+    0,
+    4,
+    3
+  ],
+  "same_endpoint_vertices": [
+    0,
+    3
+  ],
+  "difference_closed_cycle": "X",
+  "full_monomial_relation": "U_long=U_short U_X",
+  "ground_vector_relation_error": 3.870550778990305e-16,
+  "ground_charge_phase_errors": [
+    3.719763596794364e-13,
+    7.871232457075182e-14,
+    8.179682605711408e-14,
+    4.995667652071155e-13
+  ],
+  "interpretation": "Path-independent up to an exact cycle eigenvalue for fixed endpoints and a definite cycle-sector state. This is an exact symmetry identity, not an R-dependent defect energy or a topological excitation identification.",
+  "runtime_seconds": 0.08116269111633301
+}

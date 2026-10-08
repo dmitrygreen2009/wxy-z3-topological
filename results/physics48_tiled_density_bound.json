@@ -1,0 +1,45 @@
+{
+  "measured_2D_trial_energy_per_primitive_cell": -3.363276959736504,
+  "upward_rounded_trial_upper": -3.36327694,
+  "trial_safety_allowance": 1e-08,
+  "number_operator_density_window": [
+    0.2642439923647045,
+    0.7357560076352955
+  ],
+  "same_local_cluster_density_window": [
+    0.292313014732574,
+    0.707686985267426
+  ],
+  "local_cluster_multiplier_reused": -1.135665890491262,
+  "local_cluster_epsilon_reused": -0.1877738291969569,
+  "ordinary_symmetric_D_Z3_density_grid_remaining": [
+    "8/27",
+    "1/3",
+    "10/27",
+    "11/27",
+    "4/9",
+    "13/27",
+    "14/27",
+    "5/9",
+    "16/27",
+    "17/27",
+    "2/3",
+    "19/27"
+  ],
+  "state_phase_claim": false,
+  "benchmark_and_measurement_sources": [
+    "results/physics48_tiled_trial.json",
+    "results/physics48_density_bound.json",
+    "results/physics48_tiled_trial_validation.json"
+  ],
+  "qualification": "Exact physical tiling construction and operator inequalities; numerical endpoint evaluation uses stated margins and independent Bell-state fixtures, not interval-arithmetic certification. No shifted-star eigensolve repeated.",
+  "primitive_cell_pair_cover_lower_bound": {
+    "benchmark_minimum": -4.3967655435136574,
+    "downward_rounded_bound": -4.39676556,
+    "ground_energy_per_primitive_cell_window": [
+      -4.39676556,
+      -3.36327694
+    ],
+    "proof": "Pair each primitive A and B across leg0 in the full 2D honeycomb. H is the sum of these overlapping eleven-spin pair operators, each bounded below by the preserved full-number pair minimum. External gauges are one physical spin shared between pair blocks. This graph decomposition applies to the full 2D lattice, not a tiny quotient with extra parallel edges."
+  }
+}

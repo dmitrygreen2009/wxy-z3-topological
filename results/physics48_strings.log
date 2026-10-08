@@ -1,0 +1,157 @@
+{
+  "open_CGS_unitaries": [
+    {
+      "path_edges_zero_based": [
+        0
+      ],
+      "edge_exponents": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "endpoint_vertices_zero_based": [
+        0,
+        1
+      ],
+      "interior_H_invariance_error": 2.220446049250313e-16,
+      "CGS_commutator_errors": {
+        "Y0": 4.807406715958913e-17,
+        "Y1": 4.807406715958913e-17,
+        "X": 4.807406715958913e-17,
+        "P_hex": 4.807406715958913e-17
+      },
+      "energy_costs_four_ground_states": [
+        1.9495409748422539,
+        1.9495409748422041,
+        1.9495409748421908,
+        1.9495409748422627
+      ],
+      "endpoint_operator_norm_bound": 6.928203230275509,
+      "interpretation": "Exact unitary with matter action; H changes only at path endpoints, but all CGS cycle charges are unchanged. Bounded energy is automatic from the local symmetry, not a deconfinement test. Path length is not shortest endpoint separation on this tiny quotient."
+    },
+    {
+      "path_edges_zero_based": [
+        0,
+        4
+      ],
+      "edge_exponents": [
+        1,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "endpoint_vertices_zero_based": [
+        0,
+        2
+      ],
+      "interior_H_invariance_error": 3.554447978966673e-16,
+      "CGS_commutator_errors": {
+        "Y0": 4.807406715958913e-17,
+        "Y1": 4.807406715958913e-17,
+        "X": 4.807406715958913e-17,
+        "P_hex": 4.807406715958913e-17
+      },
+      "energy_costs_four_ground_states": [
+        1.949540974842261,
+        1.9495409748422006,
+        1.9495409748421624,
+        1.9495409748422752
+      ],
+      "endpoint_operator_norm_bound": 6.928203230275509,
+      "interpretation": "Exact unitary with matter action; H changes only at path endpoints, but all CGS cycle charges are unchanged. Bounded energy is automatic from the local symmetry, not a deconfinement test. Path length is not shortest endpoint separation on this tiny quotient."
+    },
+    {
+      "path_edges_zero_based": [
+        0,
+        4,
+        3
+      ],
+      "edge_exponents": [
+        1,
+        0,
+        0,
+        1,
+        2,
+        0
+      ],
+      "endpoint_vertices_zero_based": [
+        0,
+        3
+      ],
+      "interior_H_invariance_error": 3.554447978966673e-16,
+      "CGS_commutator_errors": {
+        "Y0": 4.807406715958913e-17,
+        "Y1": 4.807406715958913e-17,
+        "X": 4.807406715958913e-17,
+        "P_hex": 4.807406715958913e-17
+      },
+      "energy_costs_four_ground_states": [
+        1.9495409748422494,
+        1.949540974842197,
+        1.949540974842173,
+        1.9495409748422734
+      ],
+      "endpoint_operator_norm_bound": 6.928203230275509,
+      "interpretation": "Exact unitary with matter action; H changes only at path endpoints, but all CGS cycle charges are unchanged. Bounded energy is automatic from the local symmetry, not a deconfinement test. Path length is not shortest endpoint separation on this tiny quotient."
+    }
+  ],
+  "neutral_ladder_pair": {
+    "operator": "sigma^+_edge0 sigma^-_edge3",
+    "number_change": 0,
+    "covariance_shifts": {
+      "Y0": 1,
+      "Y1": 2,
+      "X": 0,
+      "P_hex": 2
+    },
+    "covariance_errors": {
+      "Y0": 5.264111511154694e-16,
+      "Y1": 5.703597753175952e-16,
+      "X": 0.0,
+      "P_hex": 5.703597753175952e-16
+    },
+    "ground_initial_charges": [
+      1,
+      1
+    ],
+    "final_charges": [
+      2,
+      0
+    ],
+    "state_norm_before_normalization": 0.24841296043544914,
+    "energy": -4.748540124516599,
+    "energy_cost": 2.615994714909168,
+    "energy_residual": 1.8798691691366527,
+    "exact_sector_minimum_reused": -7.296046028854623,
+    "exact_sector_minimum_cost": 0.06848881057114387,
+    "cycle_expectations": {
+      "Y0": [
+        -0.4999999999999999,
+        -0.8660254037844382
+      ],
+      "Y1": [
+        0.9999999999999991,
+        -1.3183898417423734e-16
+      ],
+      "X": [
+        -0.49999999999999933,
+        0.8660254037844389
+      ],
+      "P_hex": [
+        -0.4999999999999996,
+        -0.866025403784438
+      ]
+    },
+    "interpretation": "CGS-charge-covariant, not invariant under each local/cycle symmetry. Creates two winding-charge changes on this quotient; not a demonstrated localized anyon pair. No path or separation dependence can be inferred."
+  },
+  "definition_for_future_test": "For independently defined contractible CGS generators B_f, project onto a fixed reference q_f pattern except two endpoints q_f shifted +1,-1. E_pair(R) is the minimum of unchanged H in the nonzero joint projector range at specified N_up, boundary and winding sectors; subtract the compatible defect-free minimum. This tests interaction of these symmetry defects only after their identification as the desired physical excitation. If endpoints can move within a background with varying q_f, reference pattern must first be resolved.",
+  "no_confinement_fit": true,
+  "reason": "Tiny quotient lacks independent distant plaquettes. Saved larger MPS are unconverged and not separately optimized in two-defect sectors. Applying a trial string gives only an upper bound, not lowest defect energy. Closed CGS loop expectations and matter-dressed open symmetry strings cannot alone diagnose deconfinement.",
+  "runtime_seconds": 1.0903151035308838,
+  "solver": "No eigensolver: sparse operator identities and cached-vector expectations"
+}

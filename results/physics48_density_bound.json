@@ -1,0 +1,136 @@
+{
+  "trial_gauge_plus_phases": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0
+    ],
+    [
+      -0.49999999999999983,
+      0.8660254037844387
+    ]
+  ],
+  "trial_matter_ket_up_phases": [
+    [
+      0.8660254037844388,
+      -0.5000000000000001
+    ],
+    [
+      0.8660254037844388,
+      -0.5000000000000002
+    ],
+    [
+      -5.551115123125783e-17,
+      1.0
+    ]
+  ],
+  "trial_energy_per_primitive_cell": -3,
+  "trial_mean_filling": 0.5,
+  "trial_breaks_U1": true,
+  "trial_is_valid_without_assuming_ground_filling": true,
+  "fixed_number_benchmark_expectations": [
+    {
+      "geometry": "star",
+      "nup": 3,
+      "spins": 6,
+      "energy": -1.8000000000000003,
+      "prediction": -1.8,
+      "error": 2.220446049250313e-16,
+      "hamiltonian_hermiticity": 0
+    },
+    {
+      "geometry": "pair",
+      "nup": 5,
+      "spins": 11,
+      "energy": -3.2727272727272743,
+      "prediction": -3.272727272727273,
+      "error": 1.3322676295501878e-15,
+      "hamiltonian_hermiticity": 0
+    },
+    {
+      "geometry": "torus",
+      "nup": 9,
+      "spins": 18,
+      "energy": -6.352941176470849,
+      "prediction": -6.352941176470588,
+      "error": 2.611244553918368e-13,
+      "hamiltonian_hermiticity": 0
+    }
+  ],
+  "analytic_density_window": [
+    0.2357022603955158,
+    0.7642977396044842
+  ],
+  "cluster_inequality": "H>=Nv*epsilon(lambda)+lambda*N_up, epsilon=min eig(h_star-lambda*(Nm+Ng/2)); valid on closed degree-three bulk",
+  "cluster_multiplier": -1.135665890491262,
+  "cluster_epsilon_conservative": -0.1877738291969569,
+  "cluster_density_window": [
+    0.2567707793071674,
+    0.7432292206928326
+  ],
+  "small_matrix_certificates": [
+    {
+      "dimension": 1,
+      "reconstruction_error": 0.0,
+      "orthogonality_error": 0.0,
+      "conservative_margin": 1e-10
+    },
+    {
+      "dimension": 6,
+      "reconstruction_error": 3.1996762281357827e-15,
+      "orthogonality_error": 1.6769565609253733e-15,
+      "conservative_margin": 1.0000872002614754e-10
+    },
+    {
+      "dimension": 15,
+      "reconstruction_error": 1.1593222544357964e-14,
+      "orthogonality_error": 3.780411044129037e-15,
+      "conservative_margin": 1.0004310090859971e-10
+    },
+    {
+      "dimension": 20,
+      "reconstruction_error": 1.9330829041930722e-14,
+      "orthogonality_error": 5.175442713838775e-15,
+      "conservative_margin": 1.0008670860985394e-10
+    },
+    {
+      "dimension": 15,
+      "reconstruction_error": 1.8438664712076677e-14,
+      "orthogonality_error": 3.621001059083969e-15,
+      "conservative_margin": 1.0006965363858707e-10
+    },
+    {
+      "dimension": 6,
+      "reconstruction_error": 5.360408676168374e-15,
+      "orthogonality_error": 9.00438768627201e-16,
+      "conservative_margin": 1.0001502934398885e-10
+    },
+    {
+      "dimension": 1,
+      "reconstruction_error": 0.0,
+      "orthogonality_error": 0.0,
+      "conservative_margin": 1e-10
+    }
+  ],
+  "limitations": "Bulk degree-three lattice only. No narrow-cylinder energy density imported as a 2D trial. Number-projected trial retains the same limiting energy and half density, but the global bound does not assume the ground filling. Small-matrix inequality uses an explicit conservative 1e-10 margin; numerical certificate, not symbolic optimality proof.",
+  "particle_hole_locality_theorem": {
+    "statement": "The thermodynamic canonical ground energy density e(rho) has a minimum at rho=1/2, without assuming an unbroken particle-hole symmetry in a pure phase.",
+    "proof": "For any sequence of canonical states at density rho, construct two adjacent macroscopic regions in that state and its exact particle-hole image. Their densities average to 1/2 and their energy densities coincide. Finite-range bounded interactions add only O(boundary area) energy, which vanishes per volume. Thus e(1/2)<=e(rho). Equivalently canonical e is convex by domain mixing and particle-hole symmetric.",
+    "assumptions": [
+      "thermodynamic energy density exists",
+      "short-range bounded microscopic interactions",
+      "unrestricted thermodynamic limit allowing macroscopic domains"
+    ],
+    "not_proven": [
+      "uniqueness of the minimizing density",
+      "half filling of every pure clustering ground state",
+      "unbroken particle-hole or primitive translations",
+      "spectral or charge gap"
+    ],
+    "alternative": "If distinct rho and 1-rho are global pure-phase minima, convexity gives a flat energy-density interval containing half filling; the half-filled minimizer may be phase coexistence rather than a homogeneous phase."
+  },
+  "analysis_git_commit": "1013e4f818d33ff38125c985ec39741cc02e2d5e"
+}

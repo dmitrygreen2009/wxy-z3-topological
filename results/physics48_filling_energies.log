@@ -1,0 +1,534 @@
+Energy records 375 unreadable 0
+[
+  {
+    "method": "ED",
+    "geometry": "armchair_L2_w1",
+    "minimum_recorded_energy": -8.037741645057586,
+    "lowest_recorded_numbers": [
+      8,
+      12
+    ],
+    "lowest_recorded_fillings": [
+      0.4,
+      0.6
+    ],
+    "number_sectors_recorded": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "complete_number_scan": true,
+    "qualification": "Complete finite ED scan"
+  },
+  {
+    "method": "ED",
+    "geometry": "four_star_torus",
+    "minimum_recorded_energy": -7.364534839425783,
+    "lowest_recorded_numbers": [
+      9
+    ],
+    "lowest_recorded_fillings": [
+      0.5
+    ],
+    "number_sectors_recorded": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "complete_number_scan": true,
+    "qualification": "Complete finite ED scan"
+  },
+  {
+    "method": "ED",
+    "geometry": "shared_edge_pair",
+    "minimum_recorded_energy": -4.3967655435136574,
+    "lowest_recorded_numbers": [
+      5,
+      6
+    ],
+    "lowest_recorded_fillings": [
+      0.45454545454545453,
+      0.5454545454545454
+    ],
+    "number_sectors_recorded": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "complete_number_scan": true,
+    "qualification": "Complete finite ED scan"
+  },
+  {
+    "method": "ED",
+    "geometry": "single_star",
+    "minimum_recorded_energy": -2.4030921275401838,
+    "lowest_recorded_numbers": [
+      3
+    ],
+    "lowest_recorded_fillings": [
+      0.5
+    ],
+    "number_sectors_recorded": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "complete_number_scan": true,
+    "qualification": "Complete finite ED scan"
+  },
+  {
+    "method": "ED",
+    "geometry": "zigzag_L2_w1",
+    "minimum_recorded_energy": -7.696107978815068,
+    "lowest_recorded_numbers": [
+      9,
+      10
+    ],
+    "lowest_recorded_fillings": [
+      0.47368421052631576,
+      0.5263157894736842
+    ],
+    "number_sectors_recorded": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "complete_number_scan": true,
+    "qualification": "Complete finite ED scan"
+  },
+  {
+    "method": "variational",
+    "geometry": "armchair_L10_w1",
+    "minimum_recorded_energy": -37.30196521245592,
+    "lowest_recorded_numbers": [
+      46
+    ],
+    "lowest_recorded_fillings": [
+      0.5
+    ],
+    "number_sectors_recorded": [
+      46
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "armchair_L2_w1",
+    "minimum_recorded_energy": -8.037741644994776,
+    "lowest_recorded_numbers": [
+      8,
+      12
+    ],
+    "lowest_recorded_fillings": [
+      0.4,
+      0.6
+    ],
+    "number_sectors_recorded": [
+      8,
+      10,
+      12
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "armchair_L4_w1",
+    "minimum_recorded_energy": -15.345428885380793,
+    "lowest_recorded_numbers": [
+      18
+    ],
+    "lowest_recorded_fillings": [
+      0.47368421052631576
+    ],
+    "number_sectors_recorded": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "armchair_L4_w2",
+    "minimum_recorded_energy": -30.634902075955978,
+    "lowest_recorded_numbers": [
+      38
+    ],
+    "lowest_recorded_fillings": [
+      0.5
+    ],
+    "number_sectors_recorded": [
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "armchair_L4_w3",
+    "minimum_recorded_energy": -45.66438793955968,
+    "lowest_recorded_numbers": [
+      57
+    ],
+    "lowest_recorded_fillings": [
+      0.5
+    ],
+    "number_sectors_recorded": [
+      57
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "armchair_L4_w4",
+    "minimum_recorded_energy": -57.42849483718804,
+    "lowest_recorded_numbers": [
+      76
+    ],
+    "lowest_recorded_fillings": [
+      0.5
+    ],
+    "number_sectors_recorded": [
+      76
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "armchair_L6_w1",
+    "minimum_recorded_energy": -22.643972868480954,
+    "lowest_recorded_numbers": [
+      28
+    ],
+    "lowest_recorded_fillings": [
+      0.5
+    ],
+    "number_sectors_recorded": [
+      28
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "armchair_L6_w2",
+    "minimum_recorded_energy": -45.09339894620035,
+    "lowest_recorded_numbers": [
+      50
+    ],
+    "lowest_recorded_fillings": [
+      0.44642857142857145
+    ],
+    "number_sectors_recorded": [
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "armchair_L6_w3",
+    "minimum_recorded_energy": -66.31813330837856,
+    "lowest_recorded_numbers": [
+      84
+    ],
+    "lowest_recorded_fillings": [
+      0.5
+    ],
+    "number_sectors_recorded": [
+      84
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "armchair_L8_w2",
+    "minimum_recorded_energy": -59.58559917021514,
+    "lowest_recorded_numbers": [
+      74
+    ],
+    "lowest_recorded_fillings": [
+      0.5
+    ],
+    "number_sectors_recorded": [
+      74
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "zigzag_L10_w1",
+    "minimum_recorded_energy": -37.06357499045735,
+    "lowest_recorded_numbers": [
+      46
+    ],
+    "lowest_recorded_fillings": [
+      0.5054945054945055
+    ],
+    "number_sectors_recorded": [
+      46
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "zigzag_L2_w1",
+    "minimum_recorded_energy": -7.696107978313739,
+    "lowest_recorded_numbers": [
+      10
+    ],
+    "lowest_recorded_fillings": [
+      0.5263157894736842
+    ],
+    "number_sectors_recorded": [
+      10
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "zigzag_L4_w1",
+    "minimum_recorded_energy": -15.03374761027698,
+    "lowest_recorded_numbers": [
+      17
+    ],
+    "lowest_recorded_fillings": [
+      0.4594594594594595
+    ],
+    "number_sectors_recorded": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "zigzag_L4_w2",
+    "minimum_recorded_energy": -29.93513695620704,
+    "lowest_recorded_numbers": [
+      37
+    ],
+    "lowest_recorded_fillings": [
+      0.5
+    ],
+    "number_sectors_recorded": [
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "zigzag_L4_w3",
+    "minimum_recorded_energy": -44.773392928298264,
+    "lowest_recorded_numbers": [
+      56
+    ],
+    "lowest_recorded_fillings": [
+      0.5045045045045045
+    ],
+    "number_sectors_recorded": [
+      56
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "zigzag_L4_w4",
+    "minimum_recorded_energy": -59.067729040349704,
+    "lowest_recorded_numbers": [
+      74
+    ],
+    "lowest_recorded_fillings": [
+      0.5
+    ],
+    "number_sectors_recorded": [
+      74
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "zigzag_L6_w1",
+    "minimum_recorded_energy": -22.37819535397228,
+    "lowest_recorded_numbers": [
+      28
+    ],
+    "lowest_recorded_fillings": [
+      0.509090909090909
+    ],
+    "number_sectors_recorded": [
+      28
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "zigzag_L6_w2",
+    "minimum_recorded_energy": -44.50242012624812,
+    "lowest_recorded_numbers": [
+      50
+    ],
+    "lowest_recorded_fillings": [
+      0.45454545454545453
+    ],
+    "number_sectors_recorded": [
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "zigzag_L6_w3",
+    "minimum_recorded_energy": -66.46386091913702,
+    "lowest_recorded_numbers": [
+      83
+    ],
+    "lowest_recorded_fillings": [
+      0.503030303030303
+    ],
+    "number_sectors_recorded": [
+      83
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  },
+  {
+    "method": "variational",
+    "geometry": "zigzag_L8_w2",
+    "minimum_recorded_energy": -59.09715637960307,
+    "lowest_recorded_numbers": [
+      73
+    ],
+    "lowest_recorded_fillings": [
+      0.5
+    ],
+    "number_sectors_recorded": [
+      73
+    ],
+    "complete_number_scan": false,
+    "qualification": "Lowest stored variational upper bound only; branches and caps differ; no ground-sector certification"
+  }
+]
