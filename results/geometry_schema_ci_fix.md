@@ -28,6 +28,6 @@ negative fixtures. Validation ran in an isolated temporary checkout to avoid
 overwriting scientific results or checkpoints. The first 29 automatic push-CI
 steps passed. All non-optimization tests in the final Julia suite also passed. The final
 Julia suite contains existing DMRG/VUMPS optimization
-fixtures; permission to run those is pending under the user's explicit
-no-optimization instruction. Production remains paused. Full CI and push
-must not be reported as completed until this conflict is resolved.
+fixtures; the user explicitly declined these remaining fixtures and accepted the completed
+validation for archival purposes. Full CI was not run. The workflow is preserved
+as `.github/workflows/itensor.yml.disabled` so pushing cannot launch it.

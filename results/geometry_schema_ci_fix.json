@@ -185,7 +185,8 @@
     "test/infinite_winding_driver.jl"
   ],
   "production_optimization_started": false,
-  "full_workflow_status": "pending_user_clarification_on_existing_optimization_fixtures",
+  "full_workflow_status": "not_run: remaining optimization fixtures explicitly declined; partial validation accepted for archive",
   "physics_graph_changed": false,
-  "validation_tolerances_changed": false
+  "validation_tolerances_changed": false,
+  "github_actions_status": "disabled: workflow preserved as .github/workflows/itensor.yml.disabled"
 }
